@@ -24,6 +24,8 @@ Users who get results treat Devin as an **asynchronous junior engineer**, not a 
 
 **Beyond code.** A Cognition researcher reports Devin rebuilt — and finished — a Lean formalization that had taken him much of a semester nine years earlier, in **under 15 minutes** ([post](https://x.com/penlume/status/2115806616796921885)). Math formalization rewards the same trait as migrations: a machine-checkable definition of done.
 
+**Wired into observability.** [Dynatrace MCP + Devin](https://medium.com/lets-code-future/how-i-turned-devin-into-a-performance-analysis-agent-with-dynatrace-mcp-753d3f4790a2) turns Devin into a performance-analysis agent: it queries live metrics and traces, then diagnoses — the MCP server carries production context the repo can't (Medium). See also [Devin: from bug report to pull request](https://medium.com/@winter.inc/devin-from-bug-report-to-pull-request-25-days-of-ai-day-18-b158daa20f23) for the plain ticket→PR loop end-to-end.
+
 ## Where it failed, documented
 
 - **Vague or over-broad prompts.** Scott Logic's first prompt produced an unusable scaffold; narrowing the stack and the ask ("just the models") fixed it. Devin over-builds — tell it what *not* to build.
