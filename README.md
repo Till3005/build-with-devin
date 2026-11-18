@@ -14,7 +14,7 @@
 
 <sub>**16** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
 
-<sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
+<sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
 </div>
 

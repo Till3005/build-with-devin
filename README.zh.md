@@ -14,7 +14,7 @@
 
 <sub>**16** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
 
-<sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
+<sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
 </div>
 

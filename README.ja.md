@@ -14,7 +14,7 @@
 
 <sub>**16** ガイド · **3** トラック · すべてのパターンは実名・実証済みの導入から逆算</sub>
 
-<sub>[English](README.md) · [简体中文](README.zh.md) · 日本語 · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
+<sub>[English](README.md) · [简体中文](README.zh.md) · 日本語 · [Português](README.pt.md)</sub>
 
 </div>
 

@@ -14,7 +14,7 @@
 
 <sub>**16** guias · **3** trilhas · todo padrão derivado de uma implantação nomeada e documentada</sub>
 
-<sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
+<sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português</sub>
 
 </div>
 

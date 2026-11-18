@@ -10,7 +10,7 @@ Usage: python3 tools/sync.py [--write]
 import re, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-LANGS = ['zh', 'de', 'es', 'ja', 'pt']
+LANGS = ['zh', 'ja', 'pt']
 
 def guide_links(md):
     return sorted(set(re.findall(r'guides/[a-z0-9/-]+\.md', md)))
