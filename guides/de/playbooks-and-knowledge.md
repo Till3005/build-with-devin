@@ -38,6 +38,9 @@ Schlechte Einträge sind Aufsätze, Wünsche ("write good tests") oder Secrets (
 
 ## Schritt 3 — Playbooks für wiederholbare Arbeit
 
+> **Plattform-Hinweis (Nov 2026):** Playbooks wandern zu **Skills** — Accounts werden nacheinander migriert, neue Accounts bekommen nur Skills (jedes Playbook wird ein Skill mit demselben Org-/Enterprise-Scope). Alles in diesem Schritt gilt wortwörtlich für Skills: ein Skill ist dieselbe benannte, aufrufbare Prozedur.
+
+
 Ein Playbook paketiert eine Prozedur, sodass jede Session (oder Bot) sie gleich ausführt. Struktur, die funktioniert:
 
 ```markdown

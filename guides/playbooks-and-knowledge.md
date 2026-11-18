@@ -38,6 +38,8 @@ Bad entries are essays, wishes ("write good tests"), or secrets (never put crede
 
 ## Step 3 — Playbooks for repeatable work
 
+> **Platform note (Nov 2026):** Playbooks are moving to **Skills** — accounts are migrating one at a time and new accounts get Skills only (each playbook becomes a skill with the same org/enterprise scope). Everything in this step applies verbatim to skills: a skill is the same named, invocable procedure.
+
 A playbook packages a procedure so any session (or Bot) runs it the same way. Structure that works:
 
 ```markdown

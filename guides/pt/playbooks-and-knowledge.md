@@ -38,6 +38,9 @@ Más entradas são ensaios, votos ("write good tests") ou segredos (nunca coloqu
 
 ## Passo 3 — Playbooks para trabalho repetível
 
+> **Nota de plataforma (nov 2026):** Playbooks estão migrando para **Skills** — as contas migram uma a uma e contas novas só têm Skills (cada playbook vira um skill com o mesmo escopo org/enterprise). Tudo neste passo se aplica igualmente a skills: um skill é o mesmo procedimento nomeado e invocável.
+
+
 Um playbook empacota um procedimento para que qualquer sessão (ou Bot) o execute da mesma forma. Estrutura que funciona:
 
 ```markdown

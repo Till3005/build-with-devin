@@ -38,6 +38,8 @@
 
 ## 第 3 步 — 给可重复工作写 playbook
 
+> **平台更新（2026 年 11 月）：** Playbook 正在迁移到 **Skills**——各账号分批迁移，新账号只有 Skills（每个 playbook 会变成一个相同 org/enterprise 作用域的 skill）。本步所有内容对 skills 完全适用：skill 就是同样的、可调用的具名流程。
+
 playbook 把流程打包，让任何会话（或 Bot）以同样方式执行。有效的结构：
 
 ```markdown

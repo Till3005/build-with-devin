@@ -38,6 +38,9 @@ Las malas entradas son ensayos, deseos ("write good tests") o secretos (nunca po
 
 ## Paso 3 — Playbooks para trabajo repetible
 
+> **Nota de plataforma (nov 2026):** Los Playbooks están migrando a **Skills** — las cuentas migran de una en una y las nuevas solo tienen Skills (cada playbook se convierte en un skill con el mismo alcance org/enterprise). Todo lo de este paso se aplica igual a los skills: un skill es el mismo procedimiento nombrado e invocable.
+
+
 Un playbook empaqueta un procedimiento para que cualquier sesión (o Bot) lo ejecute igual. Estructura que funciona:
 
 ```markdown
