@@ -53,6 +53,7 @@ Everything below is a documented use case in the official gallery — each ships
 | Migration checklist on every PR | Repo skill catches destructive ops, validates schema changes |
 | Split a monolithic router | 2,000-line Express router → domain routes with shared middleware |
 | Raise code coverage | Devin analyzes the suite, writes tests to cover gaps |
+| Patch known CVEs across repos | Official skills ([devin-vuln-fixes](https://github.com/cognitionai/devin-vuln-fixes)): read-only inventory → approval gate → confirmed-target patch → before/after tests → one PR per repo |
 
 ### Migrations & feature work
 
