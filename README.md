@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md)</sub>
 
-<sub>**15** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
+<sub>**16** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
 
 <sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
 
@@ -52,6 +52,7 @@ flowchart LR
       G12["12 · CLI & extensibility"]
       G13["13 · Official cookbook"]
       G14["14 · Field reports"]
+      G15["15 · Living evals"]
     end
     G7 --> G9
     G11 --> G9
@@ -88,6 +89,7 @@ flowchart LR
 | 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: cloud handoff, skills, plugins, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
 | 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
 | 14 | [Community field reports](guides/community-field-reports.md) | What real teams learned — wins, failures, and named deployments with numbers | 15+ published hands-on accounts | Start here |
+| 15 | [Living evals from production traces](guides/living-evals.md) | A self-growing eval suite: Devin replays production failures in a full copy of your system | Rox — 72% usage coverage vs 43–57% hand-written | Advanced |
 
 <p align="right"><a href="#readme">back to top</a></p>
 
