@@ -80,6 +80,8 @@ flowchart LR
 | 13 | [Offizielles Use-Case-Cookbook](guides/official-cookbook.md) | 40+ dokumentierte Rezepte — Hygiene-Loops, Incidents, Qualität | [Use-Case-Galerie](https://docs.devin.ai/use-cases/gallery/index.md) | Starte hier |
 | 14 | [Community-Feldberichte](guides/community-field-reports.md) | Was echte Teams gelernt haben — Erfolge, Misserfolge, Deployments mit Zahlen | 15+ veröffentlichte Praxisberichte | Starte hier |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## So nutzt du dieses Repo
@@ -88,6 +90,8 @@ flowchart LR
 - **Schnelle Erfolge?** Die geplanten Hygiene-Rezepte aus Guide 13 sind der billigste Einstieg.
 - **Team-Leitung?** Guides 4, 7 und 9 sind für dich geschrieben.
 - Jeder Guide endet mit **Sources** — dem Launch-Post, Docs-Seite oder Report, aus dem das Muster destilliert wurde — und **Verify it**, der Prüfung, die bestätigt, dass die Reproduktion funktioniert hat.
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 

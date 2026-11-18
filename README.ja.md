@@ -80,6 +80,8 @@ flowchart LR
 | 13 | [公式ユースケースクックブック](guides/official-cookbook.md) | 40 以上の文書化レシピ —— 衛生ループ、インシデント、品質 | [ユースケースギャラリー](https://docs.devin.ai/use-cases/gallery/index.md) | ここから |
 | 14 | [コミュニティ実践レポート](guides/community-field-reports.md) | 実チームが学んだこと —— 成功、失敗、数字つきの実名導入 | 15 以上の公開実践記 | ここから |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## このリポジトリの使い方
@@ -88,6 +90,8 @@ flowchart LR
 - **すぐ成果が欲しい？** ガイド 13 のスケジュール衛生レシピが最も安い最初の導入。
 - **チームを率いている？** ガイド 4、7、9 があなた向け。
 - 各ガイドの末尾には **Sources**（パターンの蒸留元となる発表・ドキュメント・実践記）と **Verify it**（再現が成功したかを示すチェック）があります。
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 

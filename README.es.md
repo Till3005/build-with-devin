@@ -80,6 +80,8 @@ flowchart LR
 | 13 | [Cookbook oficial de casos de uso](guides/official-cookbook.md) | 40+ recetas documentadas — bucles de higiene, incidentes, calidad | [Galería de casos de uso](https://docs.devin.ai/use-cases/gallery/index.md) | Empieza aquí |
 | 14 | [Informes de campo de la comunidad](guides/community-field-reports.md) | Lo que equipos reales aprendieron — aciertos, fallos y despliegues nombrados con cifras | 15+ relatos hands-on publicados | Empieza aquí |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## Cómo usar este repositorio
@@ -88,6 +90,8 @@ flowchart LR
 - **¿Quieres victorias rápidas?** Las recetas de higiene programada de la guía 13 son el despliegue inicial más barato.
 - **¿Diriges un equipo?** Las guías 4, 7 y 9 están escritas para ti.
 - Cada guía termina con **Sources** — el post de lanzamiento, página de docs o relato del que se destiló el patrón — y **Verify it**, la comprobación que confirma que la reproducción funcionó.
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 

@@ -81,6 +81,8 @@ flowchart LR
 | 13 | [官方用例食谱](guides/zh/official-cookbook.md) | 40+ 个有据可查的配方 —— 卫生循环、事故响应、质量 | [用例 gallery](https://docs.devin.ai/use-cases/gallery/index.md) | 从这里开始 |
 | 14 | [社区实战报告](guides/zh/community-field-reports.md) | 真实团队的经验 —— 赢的、败的、带数字的实名部署 | 15+ 篇已发布实操记述 | 从这里开始 |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## 如何使用本库
@@ -89,6 +91,8 @@ flowchart LR
 - **想要快速见效？** 指南 13 的定时卫生配方是最便宜的第一个部署。
 - **带团队？** 指南 4、7、9 是为你写的。
 - 每篇指南以 **Sources** 收尾 —— 模式蒸馏自哪篇发布帖/文档/记述 —— 以及 **Verify it**，告诉你复现是否成功的检查项。
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 

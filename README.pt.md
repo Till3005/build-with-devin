@@ -80,6 +80,8 @@ flowchart LR
 | 13 | [Cookbook oficial de casos de uso](guides/official-cookbook.md) | 40+ receitas documentadas — loops de higiene, incidentes, qualidade | [Galeria de casos de uso](https://docs.devin.ai/use-cases/gallery/index.md) | Comece aqui |
 | 14 | [Relatos de campo da comunidade](guides/community-field-reports.md) | O que times reais aprenderam — vitórias, falhas e implantações nomeadas com números | 15+ relatos hands-on publicados | Comece aqui |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## Como usar este repositório
@@ -88,6 +90,8 @@ flowchart LR
 - **Quer vitórias rápidas?** As receitas de higiene agendada do guia 13 são a implantação inicial mais barata.
 - **Gerenciando um time?** Os guias 4, 7 e 9 foram escritos para você.
 - Todo guia termina com **Sources** — o post de lançamento, página de docs ou relato do qual o padrão foi destilado — e **Verify it**, a checagem que confirma que a reprodução funcionou.
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 

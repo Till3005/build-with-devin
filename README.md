@@ -18,11 +18,18 @@
 
 </div>
 
-> *Unofficial community project — not affiliated with, endorsed by, or sponsored by Cognition AI. "Devin" is a trademark of Cognition AI. Brand assets are used under the official kit at [devin.ai/brand](https://devin.ai/brand) — *"ready for whatever you're making."* Official docs: [docs.devin.ai](https://docs.devin.ai).*
+> *Unofficial community project — not affiliated with, endorsed by, or sponsored by Cognition AI. "Devin" is a trademark of Cognition AI. Brand assets are used under the official kit at [devin.ai/brand](https://devin.ai/brand) — "ready for whatever you're making." Official docs: [docs.devin.ai](https://docs.devin.ai).*
 
 **Build with Devin** is a tutorial collection: every guide takes a *documented, real-world* Devin deployment — from Cognition's own launch fleet to published customer cases — and reverse-engineers it into steps you can reproduce on your own account. No hypothetical demos; every pattern here is backed by a named deployment with reported numbers.
 
 **Pair it with [built-with-devin](https://github.com/Till3005/built-with-devin)** — the companion registry of everything the community and Cognition have shipped. Registry answers *what exists*; this repo answers *how to build it*.
+
+## Contents
+
+- [Devin Bots](#devin-bots) — guides 1–5 + the outcome-prompt reference
+- [Platform](#platform) — guides 6–10: automations, enterprise, design, playbooks, Apps
+- [Workflows](#workflows) — guides 11–14: migrations, CLI, cookbook, field reports
+- [How to use this repo](#how-to-use-this-repo) · [Conventions](#conventions) · [Contributing](#contributing)
 
 ```mermaid
 flowchart LR
@@ -82,6 +89,8 @@ flowchart LR
 | 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
 | 14 | [Community field reports](guides/community-field-reports.md) | What real teams learned — wins, failures, and named deployments with numbers | 15+ published hands-on accounts | Start here |
 
+<p align="right"><a href="#readme">back to top</a></p>
+
 ---
 
 ## How to use this repo
@@ -90,6 +99,8 @@ flowchart LR
 - **Want quick wins?** Guide 13's scheduled-hygiene recipes are the cheapest first deployment.
 - **Running a team?** Guides 4, 7 and 9 are written for you.
 - Every guide ends with **Sources** — the launch post, docs page, or write-up the pattern was distilled from — and **Verify it**, the check that tells you the reproduction worked.
+
+<p align="right"><a href="#readme">back to top</a></p>
 
 ---
 
