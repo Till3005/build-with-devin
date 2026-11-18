@@ -56,32 +56,32 @@ flowchart LR
 
 | # | ガイド | 作るもの | ベース | レベル |
 | --- | --- | --- | --- | --- |
-| 1 | [初めての Bot](guides/bots-101-first-bot.md) | 成果に責任を持つ Bot —— chat、セッション、Needs-you、メモリ、接続面 | [公式ドキュメント](https://docs.devin.ai/work-with-devin/bots) | ここから |
-| 2 | [プロダクトオーナー Bot](guides/bots-201-product-owner.md) | アプリ全体をプロダクト管理する Bot | Android Bot —— 44 日、1,134 PR | 中級 |
-| 3 | [スケジュール監視 Bot](guides/bots-202-scheduled-sentinel.md) | cron でチェックを監視し回帰を自ら修正する Bot | Layout Bot —— 3 週間で 159 PR | 中級 |
-| 4 | [マルチ Bot 組織](guides/bots-203-multi-bot-org.md) | grants とロールアップ報告を持つ Bot 階層 | SuperJennyStack —— ~20 Bot、週 1,900 PR | 上級 |
-| 5 | [参照グラウンデッド swarm](guides/bots-204-reference-grounded-swarm.md) | 検証済みシステムを書く指揮された swarm | Harvey "Phil" —— ~30 エージェント、100 万行超 | 上級 |
-| — | [Bot outcome prompt 解剖](guides/bot-outcome-prompts.md) | タスクではなく所有権を割り当てる outcome prompt —— 実物をリバースエンジニアリング | Android Bot prompt + 全 16 マーケットプレーステンプレート | リファレンス |
+| 1 | [初めての Bot](guides/ja/bots-101-first-bot.md) | 成果に責任を持つ Bot —— chat、セッション、Needs-you、メモリ、接続面 | [公式ドキュメント](https://docs.devin.ai/work-with-devin/bots) | ここから |
+| 2 | [プロダクトオーナー Bot](guides/ja/bots-201-product-owner.md) | アプリ全体をプロダクト管理する Bot | Android Bot —— 44 日、1,134 PR | 中級 |
+| 3 | [スケジュール監視 Bot](guides/ja/bots-202-scheduled-sentinel.md) | cron でチェックを監視し回帰を自ら修正する Bot | Layout Bot —— 3 週間で 159 PR | 中級 |
+| 4 | [マルチ Bot 組織](guides/ja/bots-203-multi-bot-org.md) | grants とロールアップ報告を持つ Bot 階層 | SuperJennyStack —— ~20 Bot、週 1,900 PR | 上級 |
+| 5 | [参照グラウンデッド swarm](guides/ja/bots-204-reference-grounded-swarm.md) | 検証済みシステムを書く指揮された swarm | Harvey "Phil" —— ~30 エージェント、100 万行超 | 上級 |
+| — | [Bot outcome prompt 解剖](guides/ja/bot-outcome-prompts.md) | タスクではなく所有権を割り当てる outcome prompt —— 実物をリバースエンジニアリング | Android Bot prompt + 全 16 マーケットプレーステンプレート | リファレンス |
 
 ### プラットフォーム
 
 | # | ガイド | 作るもの | ベース | レベル |
 | --- | --- | --- | --- | --- |
-| 6 | [イベント駆動 automations](guides/automations-101-event-driven.md) | Slack、GitHub、Linear、cron、webhook で発火するセッション | [Automations ドキュメント](https://docs.devin.ai/product-guides/automations) | ここから |
-| 7 | [エンタープライズ展開パターン](guides/enterprise-playbook.md) | 最大の顧客成果を生んだ 6 つの導入形態 | Nubank、Gumroad、EBANX、Modal、Airbyte…… | 中級 |
-| 8 | [デザイン・ビジュアル作業](guides/design-with-devin.md) | Devin チャットを通じた本番 UI のアートディレクション | Spraycash ランディングページ実践記 | 中級 |
-| 9 | [Playbooks とナレッジ](guides/playbooks-and-knowledge.md) | 組織の規約をエンコードし全セッションに継承させる | すべてのエンタープライズ成果の背後にある層 | 中級 |
-| 10 | [Devin Apps](guides/devin-apps.md) | Devin のマシンから提供されるライブ内部ツールとダッシュボード | [Devin Apps ローンチ](https://devin.ai/blog/devin-apps) | ここから |
+| 6 | [イベント駆動 automations](guides/ja/automations-101-event-driven.md) | Slack、GitHub、Linear、cron、webhook で発火するセッション | [Automations ドキュメント](https://docs.devin.ai/product-guides/automations) | ここから |
+| 7 | [エンタープライズ展開パターン](guides/ja/enterprise-playbook.md) | 最大の顧客成果を生んだ 6 つの導入形態 | Nubank、Gumroad、EBANX、Modal、Airbyte…… | 中級 |
+| 8 | [デザイン・ビジュアル作業](guides/ja/design-with-devin.md) | Devin チャットを通じた本番 UI のアートディレクション | Spraycash ランディングページ実践記 | 中級 |
+| 9 | [Playbooks とナレッジ](guides/ja/playbooks-and-knowledge.md) | 組織の規約をエンコードし全セッションに継承させる | すべてのエンタープライズ成果の背後にある層 | 中級 |
+| 10 | [Devin Apps](guides/ja/devin-apps.md) | Devin のマシンから提供されるライブ内部ツールとダッシュボード | [Devin Apps ローンチ](https://devin.ai/blog/devin-apps) | ここから |
 
 ### ワークフロー
 
 | # | ガイド | 作るもの | ベース | レベル |
 | --- | --- | --- | --- | --- |
-| 11 | [大規模マイグレーション](guides/migrations-at-scale.md) | 数百の小さな検証済み PR としてのマイグレーション | 公式 playbook + Nubank | 中級 |
-| 12 | [Devin CLI と拡張性](guides/devin-cli.md) | ローカルエージェント：クラウドハンドオフ、skills、plugins、hooks | [CLI ドキュメント](https://docs.devin.ai/cli/index.md) | 中級 |
-| 13 | [公式ユースケースクックブック](guides/official-cookbook.md) | 40 以上の文書化レシピ —— 衛生ループ、インシデント、品質 | [ユースケースギャラリー](https://docs.devin.ai/use-cases/gallery/index.md) | ここから |
-| 14 | [コミュニティ実践レポート](guides/community-field-reports.md) | 実チームが学んだこと —— 成功、失敗、数字つきの実名導入 | 15 以上の公開実践記 | ここから |
-| 15 | [本番トレースからの Living evals](guides/living-evals.md) | 自己増殖する eval スイート：Devin がシステムの完全コピーで本番障害を再生 | Rox —— 実使用量カバレッジ 72%（手書き 43–57%） | 上級 |
+| 11 | [大規模マイグレーション](guides/ja/migrations-at-scale.md) | 数百の小さな検証済み PR としてのマイグレーション | 公式 playbook + Nubank | 中級 |
+| 12 | [Devin CLI と拡張性](guides/ja/devin-cli.md) | ローカルエージェント：クラウドハンドオフ、skills、plugins、hooks | [CLI ドキュメント](https://docs.devin.ai/cli/index.md) | 中級 |
+| 13 | [公式ユースケースクックブック](guides/ja/official-cookbook.md) | 40 以上の文書化レシピ —— 衛生ループ、インシデント、品質 | [ユースケースギャラリー](https://docs.devin.ai/use-cases/gallery/index.md) | ここから |
+| 14 | [コミュニティ実践レポート](guides/ja/community-field-reports.md) | 実チームが学んだこと —— 成功、失敗、数字つきの実名導入 | 15 以上の公開実践記 | ここから |
+| 15 | [本番トレースからの Living evals](guides/ja/living-evals.md) | 自己増殖する eval スイート：Devin がシステムの完全コピーで本番障害を再生 | Rox —— 実使用量カバレッジ 72%（手書き 43–57%） | 上級 |
 
 <p align="right"><a href="#readme">back to top</a></p>
 

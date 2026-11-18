@@ -36,23 +36,22 @@ def main():
             if '--write' in sys.argv:
                 p.write_text(t[:m.start(1)] + str(n) + t[m.end(1):])
 
-    # link parity vs en guide links
+    # link parity vs en guide links — every lang README links guides/<lang>/<file>
     en_links = guide_links(en)
     for lang in LANGS:
         t = (ROOT / f'README.{lang}.md').read_text()
         lang_links = set(guide_links(t))
         for g in en_links:
-            if lang == 'zh':
-                want = 'guides/zh/' + g.split('/')[-1]
-                if want not in lang_links:
-                    drift.append(f'README.zh.md: missing {want}')
-            elif g not in lang_links:
-                drift.append(f'README.{lang}.md: missing {g}')
+            want = f'guides/{lang}/' + g.split('/')[-1]
+            if want not in lang_links:
+                drift.append(f'README.{lang}.md: missing {want}')
 
-    # zh guide files exist for every zh-linked path
-    for g in guide_links((ROOT / 'README.zh.md').read_text()):
-        if g.startswith('guides/zh/') and not (ROOT / g).exists():
-            drift.append(f'missing file: {g}')
+    # guide files exist for every lang-linked path
+    for lang in LANGS:
+        t = (ROOT / f'README.{lang}.md').read_text()
+        for g in guide_links(t):
+            if g.startswith(f'guides/{lang}/') and not (ROOT / g).exists():
+                drift.append(f'missing file: {g}')
 
     if drift:
         print('\n'.join('DRIFT: ' + d for d in drift)); sys.exit(1)

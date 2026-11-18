@@ -56,32 +56,32 @@ flowchart LR
 
 | # | Guide | Du baust | Grundlage | Niveau |
 | --- | --- | --- | --- | --- |
-| 1 | [Dein erster Bot](guides/bots-101-first-bot.md) | Einen Bot, der ein Ergebnis besitzt — Chat, Sessions, Needs-you, Gedächtnis, Oberflächen | [Offizielle Doku](https://docs.devin.ai/work-with-devin/bots) | Starte hier |
-| 2 | [Produkt-Owner-Bot](guides/bots-201-product-owner.md) | Einen Bot, der eine ganze App-Fläche als sein Produkt betreibt | Android Bot — 44 Tage, 1.134 PRs | Mittel |
-| 3 | [Geplanter Wachposten-Bot](guides/bots-202-scheduled-sentinel.md) | Einen Cron-Bot, der eine Prüfung besitzt und Regressionen behebt | Layout Bot — 159 PRs/3 Wo. | Mittel |
-| 4 | [Multi-Bot-Organisation](guides/bots-203-multi-bot-org.md) | Eine Bot-Hierarchie mit Grants und Roll-up-Reporting | SuperJennyStack — ~20 Bots, 1.900 PRs/Wo. | Fortgeschritten |
-| 5 | [Referenz-verankerter Swarm](guides/bots-204-reference-grounded-swarm.md) | Einen dirigierten Swarm, der ein verifiziertes System schreibt | Harvey „Phil" — ~30 Agenten, 1M+ Zeilen | Fortgeschritten |
-| — | [Bot-Outcome-Prompts, seziert](guides/bot-outcome-prompts.md) | Outcome-Prompts, die Ownership statt Tasks vergeben — die echten, rückentwickelt | Android-Bot-Prompt + alle 16 Marketplace-Templates | Referenz |
+| 1 | [Dein erster Bot](guides/de/bots-101-first-bot.md) | Einen Bot, der ein Ergebnis besitzt — Chat, Sessions, Needs-you, Gedächtnis, Oberflächen | [Offizielle Doku](https://docs.devin.ai/work-with-devin/bots) | Starte hier |
+| 2 | [Produkt-Owner-Bot](guides/de/bots-201-product-owner.md) | Einen Bot, der eine ganze App-Fläche als sein Produkt betreibt | Android Bot — 44 Tage, 1.134 PRs | Mittel |
+| 3 | [Geplanter Wachposten-Bot](guides/de/bots-202-scheduled-sentinel.md) | Einen Cron-Bot, der eine Prüfung besitzt und Regressionen behebt | Layout Bot — 159 PRs/3 Wo. | Mittel |
+| 4 | [Multi-Bot-Organisation](guides/de/bots-203-multi-bot-org.md) | Eine Bot-Hierarchie mit Grants und Roll-up-Reporting | SuperJennyStack — ~20 Bots, 1.900 PRs/Wo. | Fortgeschritten |
+| 5 | [Referenz-verankerter Swarm](guides/de/bots-204-reference-grounded-swarm.md) | Einen dirigierten Swarm, der ein verifiziertes System schreibt | Harvey „Phil" — ~30 Agenten, 1M+ Zeilen | Fortgeschritten |
+| — | [Bot-Outcome-Prompts, seziert](guides/de/bot-outcome-prompts.md) | Outcome-Prompts, die Ownership statt Tasks vergeben — die echten, rückentwickelt | Android-Bot-Prompt + alle 16 Marketplace-Templates | Referenz |
 
 ### Plattform
 
 | # | Guide | Du baust | Grundlage | Niveau |
 | --- | --- | --- | --- | --- |
-| 6 | [Event-gesteuerte Automations](guides/automations-101-event-driven.md) | Sessions, ausgelöst durch Slack, GitHub, Linear, Cron, Webhooks | [Automations-Docs](https://docs.devin.ai/product-guides/automations) | Starte hier |
-| 7 | [Enterprise-Rollout-Muster](guides/enterprise-playbook.md) | Die sechs Deployment-Formen hinter den größten Ergebnissen | Nubank, Gumroad, EBANX, Modal, Airbyte… | Mittel |
-| 8 | [Design- & Visual-Arbeit](guides/design-with-devin.md) | Art Direction einer Produktions-UI über den Devin-Chat | Spraycash-Landingpage-Report | Mittel |
-| 9 | [Playbooks & Wissen](guides/playbooks-and-knowledge.md) | Org-Konventionen kodifizieren, damit jede Session sie erbt | Die Schicht hinter jedem Enterprise-Ergebnis | Mittel |
-| 10 | [Devin Apps](guides/devin-apps.md) | Live-Interne-Tools und Dashboards aus Devins eigener Maschine | [Devin Apps Launch](https://devin.ai/blog/devin-apps) | Starte hier |
+| 6 | [Event-gesteuerte Automations](guides/de/automations-101-event-driven.md) | Sessions, ausgelöst durch Slack, GitHub, Linear, Cron, Webhooks | [Automations-Docs](https://docs.devin.ai/product-guides/automations) | Starte hier |
+| 7 | [Enterprise-Rollout-Muster](guides/de/enterprise-playbook.md) | Die sechs Deployment-Formen hinter den größten Ergebnissen | Nubank, Gumroad, EBANX, Modal, Airbyte… | Mittel |
+| 8 | [Design- & Visual-Arbeit](guides/de/design-with-devin.md) | Art Direction einer Produktions-UI über den Devin-Chat | Spraycash-Landingpage-Report | Mittel |
+| 9 | [Playbooks & Wissen](guides/de/playbooks-and-knowledge.md) | Org-Konventionen kodifizieren, damit jede Session sie erbt | Die Schicht hinter jedem Enterprise-Ergebnis | Mittel |
+| 10 | [Devin Apps](guides/de/devin-apps.md) | Live-Interne-Tools und Dashboards aus Devins eigener Maschine | [Devin Apps Launch](https://devin.ai/blog/devin-apps) | Starte hier |
 
 ### Workflows
 
 | # | Guide | Du baust | Grundlage | Niveau |
 | --- | --- | --- | --- | --- |
-| 11 | [Migrationen im Maßstab](guides/migrations-at-scale.md) | Eine Migration als hunderte kleine verifizierte PRs | Offizieller Playbook + Nubank | Mittel |
-| 12 | [Devin CLI & Erweiterbarkeit](guides/devin-cli.md) | Der lokale Agent: Cloud-Handoff, Skills, Plugins, Hooks | [CLI-Docs](https://docs.devin.ai/cli/index.md) | Mittel |
-| 13 | [Offizielles Use-Case-Cookbook](guides/official-cookbook.md) | 40+ dokumentierte Rezepte — Hygiene-Loops, Incidents, Qualität | [Use-Case-Galerie](https://docs.devin.ai/use-cases/gallery/index.md) | Starte hier |
-| 14 | [Community-Feldberichte](guides/community-field-reports.md) | Was echte Teams gelernt haben — Erfolge, Misserfolge, Deployments mit Zahlen | 15+ veröffentlichte Praxisberichte | Starte hier |
-| 15 | [Living Evals aus Produktions-Traces](guides/living-evals.md) | Eine selbstwachsende Eval-Suite: Devin spielt Produktionsfehler in einer vollständigen Systemkopie nach | Rox — 72% Nutzungs-Coverage vs. 43–57% handgeschrieben | Fortgeschritten |
+| 11 | [Migrationen im Maßstab](guides/de/migrations-at-scale.md) | Eine Migration als hunderte kleine verifizierte PRs | Offizieller Playbook + Nubank | Mittel |
+| 12 | [Devin CLI & Erweiterbarkeit](guides/de/devin-cli.md) | Der lokale Agent: Cloud-Handoff, Skills, Plugins, Hooks | [CLI-Docs](https://docs.devin.ai/cli/index.md) | Mittel |
+| 13 | [Offizielles Use-Case-Cookbook](guides/de/official-cookbook.md) | 40+ dokumentierte Rezepte — Hygiene-Loops, Incidents, Qualität | [Use-Case-Galerie](https://docs.devin.ai/use-cases/gallery/index.md) | Starte hier |
+| 14 | [Community-Feldberichte](guides/de/community-field-reports.md) | Was echte Teams gelernt haben — Erfolge, Misserfolge, Deployments mit Zahlen | 15+ veröffentlichte Praxisberichte | Starte hier |
+| 15 | [Living Evals aus Produktions-Traces](guides/de/living-evals.md) | Eine selbstwachsende Eval-Suite: Devin spielt Produktionsfehler in einer vollständigen Systemkopie nach | Rox — 72% Nutzungs-Coverage vs. 43–57% handgeschrieben | Fortgeschritten |
 
 <p align="right"><a href="#readme">back to top</a></p>
 

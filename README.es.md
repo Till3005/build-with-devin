@@ -56,32 +56,32 @@ flowchart LR
 
 | # | Guía | Construirás | Basada en | Nivel |
 | --- | --- | --- | --- | --- |
-| 1 | [Tu primer Bot](guides/bots-101-first-bot.md) | Un Bot dueño de un resultado — chat, sesiones, Needs-you, memoria, superficies | [Documentación oficial](https://docs.devin.ai/work-with-devin/bots) | Empieza aquí |
-| 2 | [Bot dueño de producto](guides/bots-201-product-owner.md) | Un Bot que gestiona como producto una superficie entera de app | Android Bot — 44 días, 1.134 PRs | Intermedio |
-| 3 | [Bot centinela programado](guides/bots-202-scheduled-sentinel.md) | Un Bot por cron que vigila una comprobación y corrige regresiones | Layout Bot — 159 PRs/3 sem. | Intermedio |
-| 4 | [Organización multi-Bot](guides/bots-203-multi-bot-org.md) | Una jerarquía de Bots con grants e informes consolidados | SuperJennyStack — ~20 Bots, 1.900 PRs/sem | Avanzado |
-| 5 | [Swarm anclado a referencia](guides/bots-204-reference-grounded-swarm.md) | Un swarm dirigido escribiendo un sistema verificado | Harvey "Phil" — ~30 agentes, 1M+ líneas | Avanzado |
-| — | [Prompts de outcome de Bots, diseccionados](guides/bot-outcome-prompts.md) | Prompts de outcome que asignan propiedad, no tareas — los reales, mediante ingeniería inversa | Prompt del Android Bot + las 16 plantillas del marketplace | Referencia |
+| 1 | [Tu primer Bot](guides/es/bots-101-first-bot.md) | Un Bot dueño de un resultado — chat, sesiones, Needs-you, memoria, superficies | [Documentación oficial](https://docs.devin.ai/work-with-devin/bots) | Empieza aquí |
+| 2 | [Bot dueño de producto](guides/es/bots-201-product-owner.md) | Un Bot que gestiona como producto una superficie entera de app | Android Bot — 44 días, 1.134 PRs | Intermedio |
+| 3 | [Bot centinela programado](guides/es/bots-202-scheduled-sentinel.md) | Un Bot por cron que vigila una comprobación y corrige regresiones | Layout Bot — 159 PRs/3 sem. | Intermedio |
+| 4 | [Organización multi-Bot](guides/es/bots-203-multi-bot-org.md) | Una jerarquía de Bots con grants e informes consolidados | SuperJennyStack — ~20 Bots, 1.900 PRs/sem | Avanzado |
+| 5 | [Swarm anclado a referencia](guides/es/bots-204-reference-grounded-swarm.md) | Un swarm dirigido escribiendo un sistema verificado | Harvey "Phil" — ~30 agentes, 1M+ líneas | Avanzado |
+| — | [Prompts de outcome de Bots, diseccionados](guides/es/bot-outcome-prompts.md) | Prompts de outcome que asignan propiedad, no tareas — los reales, mediante ingeniería inversa | Prompt del Android Bot + las 16 plantillas del marketplace | Referencia |
 
 ### Plataforma
 
 | # | Guía | Construirás | Basada en | Nivel |
 | --- | --- | --- | --- | --- |
-| 6 | [Automations dirigidas por eventos](guides/automations-101-event-driven.md) | Sesiones disparadas por Slack, GitHub, Linear, cron, webhooks | [Docs de Automations](https://docs.devin.ai/product-guides/automations) | Empieza aquí |
-| 7 | [Patrones de rollout empresarial](guides/enterprise-playbook.md) | Las seis formas de despliegue detrás de los mayores resultados | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermedio |
-| 8 | [Trabajo de diseño y visual](guides/design-with-devin.md) | Dirección de arte de UI de producción vía el chat de Devin | Relato de la landing de Spraycash | Intermedio |
-| 9 | [Playbooks y conocimiento](guides/playbooks-and-knowledge.md) | Codificar las convenciones de la org para que toda sesión las herede | La capa detrás de todo resultado empresarial | Intermedio |
-| 10 | [Devin Apps](guides/devin-apps.md) | Herramientas internas y dashboards en vivo servidos desde la máquina de Devin | [Lanzamiento de Devin Apps](https://devin.ai/blog/devin-apps) | Empieza aquí |
+| 6 | [Automations dirigidas por eventos](guides/es/automations-101-event-driven.md) | Sesiones disparadas por Slack, GitHub, Linear, cron, webhooks | [Docs de Automations](https://docs.devin.ai/product-guides/automations) | Empieza aquí |
+| 7 | [Patrones de rollout empresarial](guides/es/enterprise-playbook.md) | Las seis formas de despliegue detrás de los mayores resultados | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermedio |
+| 8 | [Trabajo de diseño y visual](guides/es/design-with-devin.md) | Dirección de arte de UI de producción vía el chat de Devin | Relato de la landing de Spraycash | Intermedio |
+| 9 | [Playbooks y conocimiento](guides/es/playbooks-and-knowledge.md) | Codificar las convenciones de la org para que toda sesión las herede | La capa detrás de todo resultado empresarial | Intermedio |
+| 10 | [Devin Apps](guides/es/devin-apps.md) | Herramientas internas y dashboards en vivo servidos desde la máquina de Devin | [Lanzamiento de Devin Apps](https://devin.ai/blog/devin-apps) | Empieza aquí |
 
 ### Workflows
 
 | # | Guía | Construirás | Basada en | Nivel |
 | --- | --- | --- | --- | --- |
-| 11 | [Migraciones a escala](guides/migrations-at-scale.md) | Una migración como cientos de PRs pequeños y verificados | Playbook oficial + Nubank | Intermedio |
-| 12 | [Devin CLI y extensibilidad](guides/devin-cli.md) | El agente local: handoff a la nube, skills, plugins, hooks | [Docs del CLI](https://docs.devin.ai/cli/index.md) | Intermedio |
-| 13 | [Cookbook oficial de casos de uso](guides/official-cookbook.md) | 40+ recetas documentadas — bucles de higiene, incidentes, calidad | [Galería de casos de uso](https://docs.devin.ai/use-cases/gallery/index.md) | Empieza aquí |
-| 14 | [Informes de campo de la comunidad](guides/community-field-reports.md) | Lo que equipos reales aprendieron — aciertos, fallos y despliegues nombrados con cifras | 15+ relatos hands-on publicados | Empieza aquí |
-| 15 | [Living evals desde trazas de producción](guides/living-evals.md) | Una suite de evals autoconstruida: Devin reproduce fallos de producción en una copia completa de tu sistema | Rox — 72% de cobertura de uso vs 43–57% escrito a mano | Avanzado |
+| 11 | [Migraciones a escala](guides/es/migrations-at-scale.md) | Una migración como cientos de PRs pequeños y verificados | Playbook oficial + Nubank | Intermedio |
+| 12 | [Devin CLI y extensibilidad](guides/es/devin-cli.md) | El agente local: handoff a la nube, skills, plugins, hooks | [Docs del CLI](https://docs.devin.ai/cli/index.md) | Intermedio |
+| 13 | [Cookbook oficial de casos de uso](guides/es/official-cookbook.md) | 40+ recetas documentadas — bucles de higiene, incidentes, calidad | [Galería de casos de uso](https://docs.devin.ai/use-cases/gallery/index.md) | Empieza aquí |
+| 14 | [Informes de campo de la comunidad](guides/es/community-field-reports.md) | Lo que equipos reales aprendieron — aciertos, fallos y despliegues nombrados con cifras | 15+ relatos hands-on publicados | Empieza aquí |
+| 15 | [Living evals desde trazas de producción](guides/es/living-evals.md) | Una suite de evals autoconstruida: Devin reproduce fallos de producción en una copia completa de tu sistema | Rox — 72% de cobertura de uso vs 43–57% escrito a mano | Avanzado |
 
 <p align="right"><a href="#readme">back to top</a></p>
 
