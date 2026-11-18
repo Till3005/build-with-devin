@@ -12,7 +12,7 @@
 
 <sub>维护者 [@darega0mae](https://x.com/darega0mae) · 姊妹登记库：[built-with-devin](https://github.com/Till3005/built-with-devin) · [改进指南](CONTRIBUTING.md)</sub>
 
-<sub>**14** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
+<sub>**15** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
 
 <sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
 
