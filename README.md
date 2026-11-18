@@ -42,10 +42,19 @@
 | 9 | [Playbooks & knowledge](guides/playbooks-and-knowledge.md) | Encoding org conventions so every session inherits them | The layer behind every enterprise result | Intermediate |
 | 10 | [Devin Apps](guides/devin-apps.md) | Live internal tools and dashboards served from Devin's machine | [Devin Apps launch](https://devin.ai/blog/devin-apps) | Start here |
 
+### Workflows
+
+| # | Guide | You'll build | Based on | Level |
+| --- | --- | --- | --- | --- |
+| 11 | [Migrations at scale](guides/migrations-at-scale.md) | A migration as hundreds of small verified PRs | Official playbook + Nubank | Intermediate |
+| 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: cloud handoff, skills, plugins, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
+| 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
+
 ## How to use this repo
 
 - **New to Bots?** Do guide 1, then pick 2 or 3 — they're the two most reproducible.
-- **Running a team?** Guides 4 and 7 are written for you.
+- **Want quick wins?** Guide 13's scheduled-hygiene recipes are the cheapest first deployment.
+- **Running a team?** Guides 4, 7 and 9 are written for you.
 - Every guide ends with **Sources** — the launch post, docs page, or write-up the pattern was distilled from — and **Verify it**, the check that tells you the reproduction worked.
 
 ## Conventions
