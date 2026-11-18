@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md)</sub>
 
-<sub>**14** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
+<sub>**15** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
 
 <sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
 
@@ -32,6 +32,7 @@ flowchart LR
       G2 --> G4["4 · Multi-Bot org"]
       G3 --> G4
       G4 --> G5["5 · Reference swarm"]
+      G5 --> GP["ref · Outcome prompts"]
     end
     subgraph Platform
       G6["6 · Automations"] --> G7["7 · Enterprise rollout"]
@@ -60,6 +61,7 @@ flowchart LR
 | 3 | [Scheduled-sentinel Bot](guides/bots-202-scheduled-sentinel.md) | A cron Bot that watches a check and fixes regressions | Layout Bot — 159 PRs/3wks | Intermediate |
 | 4 | [Multi-Bot organization](guides/bots-203-multi-bot-org.md) | A Bot hierarchy with grants and roll-up reporting | SuperJennyStack — ~20 Bots, 1,900 PRs/wk | Advanced |
 | 5 | [Reference-grounded swarm](guides/bots-204-reference-grounded-swarm.md) | A directed swarm writing a verified system | Harvey "Phil" — ~30 agents, 1M+ LOC | Advanced |
+| — | [Bot outcome prompts, dissected](guides/bot-outcome-prompts.md) | Outcome prompts that assign ownership, not tasks — the real ones, reverse-engineered | Android Bot prompt + all 16 marketplace templates | Reference |
 
 ### Platform
 
