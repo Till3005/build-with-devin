@@ -12,6 +12,8 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md)</sub>
 
+<sub>**14** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
+
 </div>
 
 > *Unofficial community project — not affiliated with, endorsed by, or sponsored by Cognition AI. "Devin" is a trademark of Cognition AI. Brand assets are used under the official kit at [devin.ai/brand](https://devin.ai/brand). Official docs: [docs.devin.ai](https://docs.devin.ai).*
@@ -19,6 +21,31 @@
 **Build with Devin** is a tutorial collection: every guide takes a *documented, real-world* Devin deployment — from Cognition's own launch fleet to published customer cases — and reverse-engineers it into steps you can reproduce on your own account. No hypothetical demos; every pattern here is backed by a named deployment with reported numbers.
 
 **Pair it with [built-with-devin](https://github.com/Till3005/built-with-devin)** — the companion registry of everything the community and Cognition have shipped. Registry answers *what exists*; this repo answers *how to build it*.
+
+```mermaid
+flowchart LR
+    subgraph Bots
+      G1["1 · Your first Bot"] --> G2["2 · Product-owner"]
+      G1 --> G3["3 · Scheduled sentinel"]
+      G2 --> G4["4 · Multi-Bot org"]
+      G3 --> G4
+      G4 --> G5["5 · Reference swarm"]
+    end
+    subgraph Platform
+      G6["6 · Automations"] --> G7["7 · Enterprise rollout"]
+      G8["8 · Design work"]
+      G9["9 · Playbooks & knowledge"]
+      G10["10 · Devin Apps"]
+    end
+    subgraph Workflows
+      G11["11 · Migrations"]
+      G12["12 · CLI & extensibility"]
+      G13["13 · Official cookbook"]
+      G14["14 · Field reports"]
+    end
+    G7 --> G9
+    G11 --> G9
+```
 
 ## Guides
 
@@ -51,12 +78,16 @@
 | 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
 | 14 | [Community field reports](guides/community-field-reports.md) | What real teams learned — wins, failures, and named deployments with numbers | 15+ published hands-on accounts | Start here |
 
+---
+
 ## How to use this repo
 
 - **New to Bots?** Do guide 1, then pick 2 or 3 — they're the two most reproducible.
 - **Want quick wins?** Guide 13's scheduled-hygiene recipes are the cheapest first deployment.
 - **Running a team?** Guides 4, 7 and 9 are written for you.
 - Every guide ends with **Sources** — the launch post, docs page, or write-up the pattern was distilled from — and **Verify it**, the check that tells you the reproduction worked.
+
+---
 
 ## Conventions
 
