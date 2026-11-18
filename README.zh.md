@@ -12,7 +12,7 @@
 
 <sub>维护者 [@darega0mae](https://x.com/darega0mae) · 姊妹登记库：[built-with-devin](https://github.com/Till3005/built-with-devin) · [改进指南](CONTRIBUTING.md)</sub>
 
-<sub>**16** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
+<sub>**17** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
 
 <sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -83,6 +83,7 @@ flowchart LR
 | 13 | [官方用例食谱](guides/zh/official-cookbook.md) | 40+ 个有据可查的配方 —— 卫生循环、事故响应、质量 | [用例 gallery](https://docs.devin.ai/use-cases/gallery/index.md) | 从这里开始 |
 | 14 | [社区实战报告](guides/zh/community-field-reports.md) | 真实团队的经验 —— 赢的、败的、带数字的实名部署 | 15+ 篇已发布实操记述 | 从这里开始 |
 | 15 | [生产 trace 驱动的活评测集](guides/zh/living-evals.md) | 自我增长的评测集：Devin 在你系统的完整副本里回放生产失败 | Rox —— 覆盖率 72%（手写 43–57%） | 进阶 |
+| 16 | [Skills 与 plugins](guides/zh/skills-and-plugins.md) | playbook 之后的那一层——SKILL.md 契约、发现机制、plugin 打包 | [Skills 文档](https://docs.devin.ai/product-guides/skills) | 中级 |
 
 <p align="right"><a href="#readme">back to top</a></p>
 

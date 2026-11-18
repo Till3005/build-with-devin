@@ -12,7 +12,7 @@
 
 <sub>Curado por [@darega0mae](https://x.com/darega0mae) · Registro irmão: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Melhore um guia](CONTRIBUTING.md)</sub>
 
-<sub>**16** guias · **3** trilhas · todo padrão derivado de uma implantação nomeada e documentada</sub>
+<sub>**17** guias · **3** trilhas · todo padrão derivado de uma implantação nomeada e documentada</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português</sub>
 
@@ -82,6 +82,7 @@ flowchart LR
 | 13 | [Cookbook oficial de casos de uso](guides/pt/official-cookbook.md) | 40+ receitas documentadas — loops de higiene, incidentes, qualidade | [Galeria de casos de uso](https://docs.devin.ai/use-cases/gallery/index.md) | Comece aqui |
 | 14 | [Relatos de campo da comunidade](guides/pt/community-field-reports.md) | O que times reais aprenderam — vitórias, falhas e implantações nomeadas com números | 15+ relatos hands-on publicados | Comece aqui |
 | 15 | [Living evals de traces de produção](guides/pt/living-evals.md) | Uma suite de evals autocrescente: Devin reproduz falhas de produção numa cópia completa do sistema | Rox — 72% de cobertura de uso vs 43–57% escrito à mão | Avançado |
+| 16 | [Skills e plugins](guides/pt/skills-and-plugins.md) | A camada pós-playbook — contrato SKILL.md, descoberta, empacotamento em plugins | [Docs de Skills](https://docs.devin.ai/product-guides/skills) | Intermediário |
 
 <p align="right"><a href="#readme">back to top</a></p>
 

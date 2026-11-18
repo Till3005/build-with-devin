@@ -1,0 +1,89 @@
+# Guide 17 — Skills & plugins: the post-playbook packaging layer
+
+**Goal:** encode your org's repeatable procedures as `SKILL.md` files so every session and Bot follows them — and package/share them across repos with plugins.
+**Level:** intermediate · the layer that replaced playbooks
+**Sources:** [docs.devin.ai/product-guides/skills](https://docs.devin.ai/product-guides/skills) · [release notes](https://docs.devin.ai/release-notes/overview) · complements [Guide 9](playbooks-and-knowledge.md)
+
+## Why skills are the layer that matters now
+
+Playbooks are moving to Skills: accounts migrate one at a time, and new accounts (from Oct 24, 2026) get Skills only — each playbook becomes a skill with the same org/enterprise scope. Skills also follow the open **Agent Skills** standard, so the same files work across other coding agents. Everything you knew about writing playbooks transfers; the file format and discovery model are what changed.
+
+| Artifact | Lives in | Best for |
+| --- | --- | --- |
+| Knowledge | Customize page / repo notes | Standing context — facts Devin can't know |
+| Bot instructions | The Bot | Job law for one employee |
+| Skill | `SKILL.md` in repo, or a plugin | A named, invocable procedure |
+| Rule | Plugin | Always-on constraint ("never force-push") |
+| Hook | Plugin | Deterministic enforcement around tool calls |
+
+## Step 1 — Where skills live
+
+Two discovery sources, both automatic:
+
+1. **Repositories** — commit `SKILL.md` files; Devin scans all ten vendor paths in every connected repo: `.agents/skills/` (recommended), `.devin/skills/`, `.github/skills/`, `.claude/skills/`, `.cognition/skills/`, `.windsurf/skills/`, `.cursor/skills/`, `.codex/skills/`, `.codeium/skills/`, `.kiro/skills/`. Repo skills are branch-versioned — a mid-session clone is scanned when it finishes.
+2. **Plugins** — a plugin bundles skills + rules + MCP servers + hooks, installed at personal, organization, or enterprise scope; its skills are in context before any repo clones.
+
+## Step 2 — The SKILL.md contract
+
+```markdown
+---
+name: test-before-pr
+description: Run the dev server and verify pages before any frontend PR.
+argument-hint: <environment>
+triggers: ["user"]
+allowed-tools: read, grep, glob
+permissions:
+  allow: ["Exec(npm run *)"]
+---
+
+## Setup
+1. `docker-compose up -d postgres` && `npm run dev`
+## Verify
+1. Open each page touched by the diff
+2. Screenshot at 1280px and 375px
+```
+
+Frontmatter that changes behavior:
+
+- **`description`** — the only thing Devin sees at session start; it decides auto-invocation. Write it as a trigger ("verify pages before any frontend PR"), not a summary.
+- **`triggers: ["user"]`** — disables auto-invocation; use it for anything destructive (deploys, migrations).
+- **`argument-hint`** + `$ARGUMENTS`/`$1` — parameterize: `@skills:deploy staging`.
+- **`allowed-tools` / `permissions`** — pre-approve or gate tools while the skill runs.
+
+## Step 3 — Invocation paths
+
+- **Automatic:** Devin matches the task against `description` and loads the body into context for the rest of the session.
+- **Explicit:** `@skills:<name> [args]` in a session or Bot message — the reliable way to share a procedure across a team.
+- **Suggested:** after Devin learns something (how to boot your stack), it proposes a `SKILL.md` in the session timeline with a **Create PR** button — accept it; this is how skill libraries grow without writing sessions.
+
+## Step 4 — Growing the library
+
+- Run two sessions in parallel against a new skill; gaps surface in minutes.
+- When you correct Devin mid-session, add the correction to the skill so the next session starts smarter.
+- Promote repo-proven skills into an org plugin so every repo gets them without copying.
+
+## Verify it
+
+- [ ] A fresh session lists your skill by name (name + description load at start)
+- [ ] `@skills:<name>` runs the procedure verbatim, with arguments substituting
+- [ ] A `triggers:["user"]` skill never fires on its own
+- [ ] A plugin-installed skill is available before the repo finishes cloning
+
+## Pitfalls
+
+- **Over-specifying.** Specific commands/flags/strings are the point; rigid prose isn't. Skills that narrate every decision remove Devin's ability to adapt mid-run.
+- **Writing the body but not the description.** Auto-invocation keys on the description; a great body with a vague description never fires.
+- **Letting destructive skills auto-invoke.** Deploys and migrations belong behind `triggers:["user"]` or an explicit `permissions.ask` gate.
+- **Keeping secrets in skills.** A skill is read by every session in scope — credentials go in the secrets store, referenced as `$VAR`.
+
+## Knowledge check
+
+1. Why does `description` matter more than the skill body? *(It's the only text loaded at session start — it drives auto-invocation; the body loads only after the skill is chosen.)*
+2. When should a procedure be a plugin skill rather than a repo skill? *(When every repo/session in a scope needs it — plugins load before cloning and can't drift per-branch.)*
+3. How do you make a skill safe for destructive steps? *(`triggers:["user"]` for explicit-only invocation, plus `permissions.ask` on the dangerous tool matchers.)*
+
+## Sources
+
+- [Devin Skills docs](https://docs.devin.ai/product-guides/skills) — file format, discovery paths, frontmatter
+- [Release notes](https://docs.devin.ai/release-notes/overview) — playbooks→Skills migration, Customize page
+- Related: [Guide 9 — Playbooks & knowledge](playbooks-and-knowledge.md) (the context layer skills sit beside)
