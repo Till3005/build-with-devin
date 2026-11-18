@@ -25,6 +25,7 @@ Follow the existing guide structure: goal/level/source header → pattern diagra
 - Every claim needs a source; every source needs a live link
 - Numbers come from the cited deployment, not estimates
 - One guide per PR
+- After adding/removing a guide or editing `README.md`, run `python3 tools/sync.py` — it keeps the stats line and all six language READMEs in parity. CI fails on drift.
 
 ## License
 

@@ -12,7 +12,7 @@
 
 <sub>Kuratiert von [@darega0mae](https://x.com/darega0mae) · Schwester-Register: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Verbessere einen Guide](CONTRIBUTING.md)</sub>
 
-<sub>**14** Guides · **3** Lernpfade · jedes Muster aus einem namentlich dokumentierten Deployment abgeleitet</sub>
+<sub>**16** Guides · **3** Lernpfade · jedes Muster aus einem namentlich dokumentierten Deployment abgeleitet</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · Deutsch</sub>
 
@@ -44,6 +44,7 @@ flowchart LR
       G12["12 · CLI & Erweiterbarkeit"]
       G13["13 · Offizielles Cookbook"]
       G14["14 · Feldberichte"]
+      G15["15 · Living Evals"]
     end
     G7 --> G9
     G11 --> G9
@@ -60,6 +61,7 @@ flowchart LR
 | 3 | [Geplanter Wachposten-Bot](guides/bots-202-scheduled-sentinel.md) | Einen Cron-Bot, der eine Prüfung besitzt und Regressionen behebt | Layout Bot — 159 PRs/3 Wo. | Mittel |
 | 4 | [Multi-Bot-Organisation](guides/bots-203-multi-bot-org.md) | Eine Bot-Hierarchie mit Grants und Roll-up-Reporting | SuperJennyStack — ~20 Bots, 1.900 PRs/Wo. | Fortgeschritten |
 | 5 | [Referenz-verankerter Swarm](guides/bots-204-reference-grounded-swarm.md) | Einen dirigierten Swarm, der ein verifiziertes System schreibt | Harvey „Phil" — ~30 Agenten, 1M+ Zeilen | Fortgeschritten |
+| — | [Bot-Outcome-Prompts, seziert](guides/bot-outcome-prompts.md) | Outcome-Prompts, die Ownership statt Tasks vergeben — die echten, rückentwickelt | Android-Bot-Prompt + alle 16 Marketplace-Templates | Referenz |
 
 ### Plattform
 
@@ -79,6 +81,7 @@ flowchart LR
 | 12 | [Devin CLI & Erweiterbarkeit](guides/devin-cli.md) | Der lokale Agent: Cloud-Handoff, Skills, Plugins, Hooks | [CLI-Docs](https://docs.devin.ai/cli/index.md) | Mittel |
 | 13 | [Offizielles Use-Case-Cookbook](guides/official-cookbook.md) | 40+ dokumentierte Rezepte — Hygiene-Loops, Incidents, Qualität | [Use-Case-Galerie](https://docs.devin.ai/use-cases/gallery/index.md) | Starte hier |
 | 14 | [Community-Feldberichte](guides/community-field-reports.md) | Was echte Teams gelernt haben — Erfolge, Misserfolge, Deployments mit Zahlen | 15+ veröffentlichte Praxisberichte | Starte hier |
+| 15 | [Living Evals aus Produktions-Traces](guides/living-evals.md) | Eine selbstwachsende Eval-Suite: Devin spielt Produktionsfehler in einer vollständigen Systemkopie nach | Rox — 72% Nutzungs-Coverage vs. 43–57% handgeschrieben | Fortgeschritten |
 
 <p align="right"><a href="#readme">back to top</a></p>
 

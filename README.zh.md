@@ -12,7 +12,7 @@
 
 <sub>维护者 [@darega0mae](https://x.com/darega0mae) · 姊妹登记库：[built-with-devin](https://github.com/Till3005/built-with-devin) · [改进指南](CONTRIBUTING.md)</sub>
 
-<sub>**15** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
+<sub>**16** 篇指南 · **3** 条轨道 · 每个模式都逆向自实名、有据可查的部署</sub>
 
 <sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md) · [Español](README.es.md) · [Deutsch](README.de.md)</sub>
 
@@ -44,6 +44,7 @@ flowchart LR
       G12["12 · CLI 与扩展"]
       G13["13 · 官方食谱"]
       G14["14 · 实战报告"]
+      G15["15 · 活评测集"]
     end
     G7 --> G9
     G11 --> G9
@@ -60,6 +61,7 @@ flowchart LR
 | 3 | [定时哨兵 Bot](guides/zh/bots-202-scheduled-sentinel.md) | 一个按 cron 盯检查项、自己修回归的 Bot | Layout Bot —— 3 周 159 个 PR | 进阶 |
 | 4 | [多 Bot 组织](guides/zh/bots-203-multi-bot-org.md) | 带 grants 和汇总上报的 Bot 层级 | SuperJennyStack —— ~20 个 Bot，每周 1,900 PR | 高级 |
 | 5 | [基准锚定 swarm](guides/zh/bots-204-reference-grounded-swarm.md) | 一个写出可验证系统的受指挥 swarm | Harvey "Phil" —— ~30 个 agent，100 万+ 行 | 高级 |
+| — | [Bot outcome prompt 解剖](guides/zh/bot-outcome-prompts.md) | 分配"所有权"而非"任务"的 outcome prompt —— 真实样本逆向工程 | Android Bot prompt + 全部 16 个市场模板 | 参考 |
 | — | [Bot outcome prompts 逐句拆解](guides/zh/bot-outcome-prompts.md) | 授予所有权而非派任务的 outcome prompt——真实案例反向拆解 | Android Bot 原话 prompt + 全部 16 个官方模板 | 参考 |
 
 ### 平台
@@ -80,6 +82,7 @@ flowchart LR
 | 12 | [Devin CLI 与扩展性](guides/zh/devin-cli.md) | 本地 agent：云端交接、skills、plugins、hooks | [CLI 文档](https://docs.devin.ai/cli/index.md) | 进阶 |
 | 13 | [官方用例食谱](guides/zh/official-cookbook.md) | 40+ 个有据可查的配方 —— 卫生循环、事故响应、质量 | [用例 gallery](https://docs.devin.ai/use-cases/gallery/index.md) | 从这里开始 |
 | 14 | [社区实战报告](guides/zh/community-field-reports.md) | 真实团队的经验 —— 赢的、败的、带数字的实名部署 | 15+ 篇已发布实操记述 | 从这里开始 |
+| 15 | [生产 trace 驱动的活评测集](guides/zh/living-evals.md) | 自我增长的评测集：Devin 在你系统的完整副本里回放生产失败 | Rox —— 覆盖率 72%（手写 43–57%） | 进阶 |
 
 <p align="right"><a href="#readme">back to top</a></p>
 
