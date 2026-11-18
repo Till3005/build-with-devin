@@ -78,6 +78,12 @@ Harvey layered a second check: **simulated lawyer negotiations** — realistic u
 - **Reviewing diffs.** It doesn't scale past ~2 agents; you'll become the bottleneck and lose the swarm's speed advantage.
 - **Ambiguous ownership.** Two agents editing one module produce merge hell — ownership boundaries are the architecture.
 
+## Knowledge check
+
+1. Why did Harvey's swarm work where most multi-agent attempts collapse? *(A trusted external reference — real Word behavior — made correctness machine-checkable at swarm speed.)*
+2. Why did humans steer through memory and decision logs instead of code review? *(1M+ LOC in 3 weeks exceeds any human read capacity; steering happens at the intent layer.)*
+3. What's the prerequisite you'd check before attempting this pattern? *(Whether your domain has a reference the swarm can check itself against — if not, build the oracle first.)*
+
 ## Sources
 
 - [@gabepereyra](https://x.com/gabepereyra) — Harvey's Phil write-up: ~30 agents, 1M+ LOC, Word-reference verification, lawyer simulations

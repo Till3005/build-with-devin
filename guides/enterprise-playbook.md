@@ -67,6 +67,22 @@ Six deployment shapes, distilled from the companies that published results. Most
 - **Pilot forever.** Published results all share one trait: a measured pilot that *graduated*. Set the graduation criterion upfront (PR share, incidents covered, hours saved).
 - **No knowledge layer.** Every big deployment encodes conventions somewhere — fine-tunes, playbooks, Bot instructions. Without it, quality varies by session.
 
+## Verify it
+
+- [ ] Your rollout doc names one pipeline stage, one metric, and a graduation criterion — before the first session
+- [ ] Week-2 checkpoint: can you state Devin's merged-PR share on that stage without querying anyone?
+
+## Pitfalls
+
+- **Scaling the pilot that never graduated.** Every big number here came after a measured pilot with an exit criterion.
+- **License-first thinking.** Buying seats before naming the owned stage produces shelfware — the pattern is stage → pilot → metric → then seats.
+
+## Knowledge check
+
+1. Why do all six deployment shapes share 'an owned stage' as their atom? *(Every published number came from a bounded, measurable surface — orgs that deployed 'everywhere' published nothing.)*
+2. What's the graduation criterion and why set it before the pilot? *(A metric + threshold that flips pilot → production; without it, pilots drift forever or get killed by vibes.)*
+3. Why does the knowledge layer appear in every large deployment? *(Consistency at scale requires shared context — the alternative is N different-quality sessions.)*
+
 ## Sources
 
 - [devin.ai/customers](https://devin.ai/customers) — all cases and numbers cited

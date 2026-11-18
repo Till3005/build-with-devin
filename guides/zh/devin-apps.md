@@ -46,6 +46,12 @@ Devin App 是一个直接托管在 Devin 云机器上的私密 web 应用。你�
 - **生产流量。** 一台机器、闲时休眠——别把用户导给它，把团队导给它。
 - **静态思维。** App 的威力在于它*活在 Devin 的环境里*——接上你的数据/MCP，否则你只是造了个低配 Vercel。
 
+## 自检
+
+1. Devin App 和 PR preview 的区别是什么？*（App 从 Devin 的机器上常驻服务于稳定 URL——有状态、持久、登录门控——不是构建产物。）*
+2. 「团队登录后打开」对内部工具意味着什么？*（鉴权继承自组织——不用再自建登录体系。）*
+3. 哪类内部工具最适合 Apps？*（dashboard 和 staging 类——「现在够用」胜过「以后完美」——维护成本近零。）*
+
 ## Sources
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)

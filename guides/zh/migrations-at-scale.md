@@ -91,6 +91,12 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 - **没有 before/after 示例。** 没示例的 skill 让每个会话产出不同风格。
 - **跳过人工评审。** 并行 ≠ 无人值守——每片进 `main` 前仍要过审。
 
+## 自检
+
+1. 为什么「广而浅」切片好过「深而全」？*（每片必须落地为绿——90 分钟的已验证 PR 会复利；3 天大分支会被 main 甩烂。）*
+2. 为什么每片都要自带验证？*（没有逐片证明，500 个 PR 的迁移就是 500 个未验证 diff——失败面是乘出来的不是除出来的。）*
+3. Nubank 报 8–12× 效率——为什么这数字可信而非营销？*（公开方法论：真实 ETL 管线前后阶段耗时实测，不是推算。）*
+
 ## Sources
 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)

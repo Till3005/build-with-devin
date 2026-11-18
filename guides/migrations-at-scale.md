@@ -91,6 +91,12 @@ Small error rates compound across thousands of slices. Operate on a dashboard, n
 - **No before/after examples.** The skill without examples produces a different style per session.
 - **Skipping human review.** Parallel ≠ unattended — each slice still gets reviewed before `main`.
 
+## Knowledge check
+
+1. Why 'wide and shallow' slices instead of 'deep and complete' ones? *(Each slice must land green — a 90-minute verified PR compounds; a 3-day mega-branch rots against main.)*
+2. Why does every slice need its own verification? *(Without per-slice proof, a 500-PR migration is 500 unverified diffs — the failure surface multiplies instead of dividing.)*
+3. Nubank reported 8–12× efficiency — what made that figure credible rather than marketing? *(Published methodology: measured stage times before/after on real ETL pipelines, not a projection.)*
+
 ## Sources
 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)

@@ -46,6 +46,12 @@ You can also say "publish this as an App" inside any session that produced a bro
 - **Production traffic.** One machine, sleeps when idle — don't point users at it; point your team at it.
 - **Static thinking.** An App's power is that it *lives in Devin's environment* — wire it to your data/MCPs, or you've built a weaker Vercel.
 
+## Knowledge check
+
+1. What's the difference between a Devin App and a PR preview? *(The App is served live from Devin's machine at a stable URL — stateful, persistent, sign-in gated — not a build artifact.)*
+2. Why does 'your team opens it by signing in' matter for internal tools? *(Auth is inherited from the org — no separate login system to build or secure.)*
+3. Which class of internal tool fits Apps best? *(Dashboards and staging surfaces where 'good enough now' beats 'perfect later' — the maintenance cost is near zero.)*
+
 ## Sources
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)

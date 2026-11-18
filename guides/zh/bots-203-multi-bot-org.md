@@ -105,6 +105,12 @@ Jenny **每天 4 次**跑这个、**用 emoji** 回答。纪律：你从不直�
 - **岗位边界模糊。** "Dev Bot" 和 "Fix Bot" 会打架。边界按组织架构走——QA *验证*、Release *发布*、PM *排优先级*。
 - **过度 grant。** 网状 grant（人人可达人人）复刻混乱。经编排者走星型拓扑。
 
+## 自检
+
+1. 为什么 SuperJennyStack 把所有人机交互汇成一条线程？*（注意力才是瓶颈，不是算力——20 个 Bot 发 20 条线程，等于又是 20 份工作。）*
+2. 什么时候用 grant 比「问 orchestrator」强？*（需要的能力已经归另一个 Bot 所有——grant 借所有权而不是复制所有权。）*
+3. 「每天 4 次、用 emoji 回复」说明了什么委托深度？*（Bot 替代的是决策带宽不是人头——人留下判断层，丢掉了打字层。）*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack 数字、grant 交接变体

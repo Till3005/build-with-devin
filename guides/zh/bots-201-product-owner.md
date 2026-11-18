@@ -101,6 +101,12 @@ what needs a human. Include a screen recording of visible changes.
 - **大 PR。** 这个部署的安全性来自小而可验证的单元。PR 变大就下指令：*"one ticket, one concern, one PR."*
 - **审代码而不是审方向。** 每周 30+ PR 时你审不完每个 diff——靠 CI + Devin Review + Bot 的证据把门，把你的消息花在方向上。
 
+## 自检
+
+1. Android Bot 自合并 88% 的 PR——什么让自合并足够安全？*（验证存在：2,841 个截图测试 + review 门；所有权能成立是因为「完成」是机器可检查的。）*
+2. 为什么让 Bot 自己建 ticket 而不是直接给会话下 prompt？*（ticket 形成可审计队列，Bot 按优先级分诊——人审一个队列而不是 50 个会话。）*
+3. 「22 天零消息」说明了什么控制模型？*（例外升级制：只有「完成」可验证时才成立；沉默是特性不是失职。）*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot 数字与 prompt

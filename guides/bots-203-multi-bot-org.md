@@ -105,6 +105,12 @@ Each Bot owns its loop; the orchestrator owns the schedule of loops.
 - **Vague job boundaries.** "Dev Bot" and "Fix Bot" will collide. Boundaries follow the org chart — QA *verifies*, Release *ships*, PM *prioritizes*.
 - **Over-granting.** Mesh grants (everyone can reach everyone) recreate chaos. Hub-and-spoke through the orchestrator.
 
+## Knowledge check
+
+1. Why does SuperJennyStack route all human contact through *one* consolidated thread? *(Attention is the bottleneck, not compute — 20 Bots generating 20 threads is just 20 jobs again.)*
+2. When does a grant beat 'ask the orchestrator'? *(When the needed capability is already owned by another Bot — grants borrow ownership instead of duplicating it.)*
+3. What does the human's '4×/day with emoji' cadence imply about delegation depth? *(Decision bandwidth, not headcount, is what Bots replace — the human kept the judgment layer and lost the typing layer.)*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack numbers, grant-handoff variant

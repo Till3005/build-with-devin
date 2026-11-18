@@ -78,6 +78,12 @@ Harvey 叠了第二层检查：**模拟律师谈判**——真实使用场景，
 - **审 diff。** 超过 ~2 个 agent 就不可扩展；你会成为瓶颈并失去 swarm 的速度优势。
 - **归属模糊。** 两个 agent 改同一个模块就是合并地狱——归属边界就是架构。
 
+## 自检
+
+1. 为什么 Harvey 的 swarm 能成而多数多 agent 尝试崩溃？*（可信的外部参照——真实 Word 行为——让正确性在 swarm 速度下仍可机器检查。）*
+2. 为什么人类通过 memory 和 decision log 引导而不是 review 代码？*（3 周 1M+ 行超出任何人阅读量；引导发生在意图层。）*
+3. 采用此模式前要先验证的前提是什么？*（你的领域有没有 swarm 可以自我核对的参照——没有就先建 oracle。）*
+
 ## Sources
 
 - [@gabepereyra](https://x.com/gabepereyra) — Harvey Phil 实录：~30 agent、1M+ 行、Word 基准验证、律师模拟

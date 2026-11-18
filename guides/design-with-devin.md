@@ -70,6 +70,12 @@ The write-up's real lesson: quality came from *iterations* — "the ring draws t
 - **One-shotting.** Accepting the first render is why agent-made pages look agent-made. The critique loop is where quality lives.
 - **Missing the lock-down.** Set palette + type system as constraints *first*; assets generated before constraints are set never match after.
 
+## Knowledge check
+
+1. Why did the Spraycash author publish every prompt verbatim? *(The prompt sequence *is* the design artifact — art direction through conversation is reproducible only if the conversation is.)*
+2. What does 'generated imagery + layered animation' require that a screenshot mock doesn't? *(Shippable assets and a working animation system — the verification is a rendered page, not a picture of one.)*
+3. When is chat-direction better than a design tool for landing pages? *(When the output must be production code anyway — the design session *is* the implementation.)*
+
 ## Sources
 
 - [Designing the Spraycash UI with Kimi K3 in Devin](https://dev.to/ibrahimpima/designing-the-spraycash-ui-with-kimi-k3-in-devin-4l2f) — full prompts and iteration history

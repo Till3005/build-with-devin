@@ -57,6 +57,24 @@ A good outcome prompt answers, in order:
 
 If a stranger couldn't check line 2's truth from outside, tighten it.
 
+## Verify it
+
+- [ ] Take a real backlog item from your repo and rewrite it as an outcome prompt — surface, verifiable state, standing behavior
+- [ ] Show it to someone who doesn't know the codebase: could they tell from outside when the Bot is "winning"?
+- [ ] The Bot's first reply should be a plan or clarifying questions about scope — if it asks "what do you want me to do first," the prompt didn't assign ownership
+
+## Pitfalls
+
+- **A task list wearing an outcome costume.** "Do X, then Y, then Z" is still a checklist — the Bot can't re-prioritize when the world changes.
+- **"Keep the app good" with no definition of good.** Without a verifiable state, the Bot picks one — and it won't be yours.
+- **Scope wider than one surface.** "Own engineering" fails; "own the iOS app" ships. Split by what a single outsider could fully observe.
+
+## Knowledge check
+
+1. Why does "own the Android app" work better than "fix Android bugs"? *(Ownership implies standing judgment — the Bot decides which bugs matter, not just whether to fix.)*
+2. What's wrong with "make the CI fast"? *(Not verifiable from outside — no threshold. "CI under 8 minutes" is.)*
+3. Which of the three questions does "text me if tests fail" answer? *(Standing behavior — it says what the Bot does about the state, nothing about the surface or the goal.)*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [Template marketplace](https://devin.ai/bots/templates)

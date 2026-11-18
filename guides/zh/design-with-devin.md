@@ -70,6 +70,12 @@ Spraycash 的圆环、云层、交错入场全部按这个精度指定——交�
 - **一发入魂。** 接受第一版渲染是 agent 页面看起来像 agent 做的原因。质量活在批评回路里。
 - **漏了锁定。** 色板 + 字体体系要*先*设成约束；约束之前生成的素材永远对不齐。
 
+## 自检
+
+1. Spraycash 作者为什么逐字公开每个 prompt？*（prompt 序列本身就是设计产物——对话式美术指导只有对话可复现才可复现。）*
+2. 「生成图像 + 分层动画」需要什么是截图 mock 给不了的？*（可上线的资产和能跑的动画系统——验证是渲染出的页面，不是页面的图片。）*
+3. 落地页什么时候对话式指导胜过设计工具？*（产出必须是生产代码时——设计会话本身就是实现。）*
+
 ## Sources
 
 - [Designing the Spraycash UI with Kimi K3 in Devin](https://dev.to/ibrahimpima/designing-the-spraycash-ui-with-kimi-k3-in-devin-4l2f) — 全部 prompt 与迭代记录

@@ -81,6 +81,12 @@ Devin Coach（官方 Bot 模板）就是为这个生的——每周汇报 Devin 
 - **设了就忘。** 过期知识比没有更糟——Devin 会自信地照办。每月复核。
 - **复制文档。** Knowledge 装的是 Devin *会错*或*不可能知道*的东西，不是你 wiki 的副本。
 
+## 自检
+
+1. playbook 和 knowledge 的区别？*（playbook 是具名任务的可重复规程；knowledge 是每个会话都该默认的常驻上下文。）*
+2. 为什么「把最强工程师的默认假设写下来」才是真正的企业瓶颈？*（agent 质量从来不是上限——缺失的上下文才是；knowledge layer 是组织惯例的存放地。）*
+3. 一条惯例什么时候该落成 playbook 而不是继续口口相传？*（第一次某个会话因为缺这一步而做错的时候。）*
+
 ## Sources
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge、playbooks、Bot instructions/memory

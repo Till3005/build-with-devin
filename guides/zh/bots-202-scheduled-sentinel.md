@@ -95,6 +95,12 @@ Layout Bot 的检查不是跑一次——它模拟**首次访问、重复访问�
 - **有 cron 没判断。** 裸定时 automation 能跑检查；Bot 决定失败是否真实。只有完全不需要分拣的检查才用裸 automation（第 6 篇）。
 - **只报警不修复。** 往频道里发"发现回归"的哨兵是在给人类造活。这个部署的价值在于它*修*——按这个标准要它。
 
+## 自检
+
+1. 为什么哨兵按计划构建生产 `main`，而不是等故障被人报上来？*（目标是「没有回归」而不是「修已报 bug」——所有权意味着在人发现问题之前先发现。）*
+2. Layout Bot 修 PR 时附 before/after 视频——这给 reviewer 带来了什么？*（不用本地复现就有合并信心；证据随 PR 走。）*
+3. 为什么回归要追到引入它的那个 PR 而不是只修症状？*（拥有检查意味着拥有其历史——修复落在根因上，知识留下来。）*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Layout Bot 机制与数字

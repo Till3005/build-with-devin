@@ -106,6 +106,12 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 - **把策略写进聊天。** 聊天里的规则会滚走；Instructions 里的规则每个会话都读。聊天 = 方向与答复；Instructions = 法。
 - **不看 Needs you。** Bot 的设计就是攒判断题——每天看一两次就行，不用盯。
 
+## 自检
+
+1. 一次性会话结束之后，Bot 还保留了什么？*（记忆——加上常驻的目标、计划和各个 surface。）*
+2. 为什么 Bot 是「needs-you」而不是会话中途问你？*（判断进入一条异步线程；人不是循环里的阻塞调用。）*
+3. 哪个机制把「聪明的会话」变成了「员工」？*（对结果的所有权——任何单个会话结束后目标仍在。）*
+
 ## Sources
 
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)

@@ -59,6 +59,22 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 
 The tasks Cognition itself delegates most: **frontend fixes, version upgrades, documentation, incident response, testing** — plus a "first line of defense" pattern where Devin analyzes crashes before humans engage, and DeepWiki research to *write better prompts*.
 
+## Verify it
+
+- [ ] Pick one report closest to your own stack and re-read the original, not the distillation — does the number still hold in context?
+- [ ] Write down the one lesson you'd bet money on reproducing in your org; if you can't name it, pick another report
+
+## Pitfalls
+
+- **Survivorship bias.** The glowing reports publish numbers; the quiet failures publish nothing. Read the failures in this collection as the median experience, the wins as the ceiling.
+- **Cargo-culting.** Scott Logic's prompt iteration worked *because* they iterated — copying their final prompt without their loop gets you their start, not their result.
+
+## Knowledge check
+
+1. What do the failure reports have in common that the success reports lack? *(Unverifiable delegation — the failures gave Devin work where nobody could check 'done'; every success defined a check.)*
+2. Why is Faros's 'debugging on a customer call' a deployment lesson, not an anecdote? *(It shows the live-triage motion: the agent as first responder while the human keeps the customer relationship.)*
+3. Why does this guide count a hostile report as a source on equal footing? *(Adversarial reports surface the boundary conditions — you learn the map's edges from people who walked off them.)*
+
 ## Sources
 
 - [Scott Logic — Rapid development with Devin](https://blog.scottlogic.com/2025/10/20/rapid-development-with-devin.html)

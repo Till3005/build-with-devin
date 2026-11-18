@@ -81,6 +81,12 @@ Devin Coach (an official Bot template) exists for exactly this — it reports we
 - **Set-and-forget.** Stale knowledge is worse than none — Devin follows it confidently. Review monthly.
 - **Duplicating docs.** Knowledge should hold what Devin *gets wrong* or *can't know*, not a copy of your wiki.
 
+## Knowledge check
+
+1. What's the difference between a playbook and knowledge? *(A playbook is a repeatable procedure for a named task; knowledge is standing context every session should assume.)*
+2. Why is 'write down what your best engineers assume' the actual enterprise bottleneck? *(Agent quality was never the limiter — missing context is; the knowledge layer is where org conventions live.)*
+3. When does a convention become a playbook vs. staying tribal knowledge? *(The first time a session gets it wrong in a way a written step would have prevented.)*
+
 ## Sources
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge, playbooks, Bot instructions/memory

@@ -95,6 +95,22 @@ Everything below is a documented use case in the official gallery — each ships
 2. Add one from **Incidents** if you have PagerDuty/Datadog/Sentry
 3. When a recipe works, freeze it as a **skill** (Guide 12) or a **Bot** (Guides 1–5) — every row above survives as either
 
+## Verify it
+
+- [ ] One hygiene recipe is running on a schedule and produced its first PR/report
+- [ ] Its output is frozen as a skill, playbook, or Bot — not living in someone's head
+
+## Pitfalls
+
+- **Ten recipes, zero frozen.** A recipe that stays a manual prompt is forgotten by Friday — operationalize or drop it.
+- **Copy-paste prompts without your repo's verification.** The gallery prompts assume a test suite exists; adapt the *check*, not just the task.
+
+## Knowledge check
+
+1. Why start with a scheduled-hygiene recipe rather than incident response? *(Cheapest possible win — it runs while you sleep, and a wrong nightly lint fix is recoverable; a wrong incident action isn't.)*
+2. What does 'freeze a recipe as a skill or Bot' actually prevent? *(Prompt drift and single-person dependency — the recipe survives the person who wrote it.)*
+3. Why adapt the verification part of a gallery prompt before the task part? *(The task describes intent; the check is what your repo can actually prove — wrong checks produce confident garbage.)*
+
 ## Sources
 
 - [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) — all recipes above, each with copy-paste prompts

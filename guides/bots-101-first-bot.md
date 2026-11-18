@@ -106,6 +106,12 @@ Only the creator and roles with Manage Bots see Archive/Delete. On Enterprise pl
 - **Chat for policy.** Rules typed in chat scroll away; rules in Instructions are read every session. Chat = direction and answers; Instructions = law.
 - **Ignoring Needs you.** Bots are designed to batch judgment calls — check once or twice a day, not continuously.
 
+## Knowledge check
+
+1. What survives between a Bot's sessions that a one-off session doesn't have? *(Memory — plus the standing outcome, schedules, and surfaces.)*
+2. Why does a Bot "needs-you" instead of asking mid-session? *(Judgment goes to one thread asynchronously; the human isn't a blocking call in the loop.)*
+3. Which mechanic turns "a smart session" into "an employee"? *(Ownership of an outcome — the goal persists after any single session ends.)*
+
 ## Sources
 
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)

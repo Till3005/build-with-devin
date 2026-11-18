@@ -60,6 +60,12 @@ This is where teams make the CLI *theirs* — same layering as Guide 9, applied 
 - **Local for parallel work.** The CLI is one agent in your terminal — for parallel slices use cloud sessions or a Bot; the CLI is the *hands-on* surface.
 - **Rules sprawl.** `AGENTS.md` + project rules + global rules interact by precedence — keep each rule in exactly one layer or they fight.
 
+## Knowledge check
+
+1. When do you use `/handoff` to Devin Cloud instead of finishing locally? *(When the work needs cloud-scale parallelism, org tools, or runs longer than your laptop stays open.)*
+2. What's the difference between a skill, a rule, and a plugin? *(A skill is a task procedure, a rule is standing context, a plugin is the package that ships both plus hooks.)*
+3. Why does hooks + subagents matter for team adoption? *(Hooks enforce org policy at every CLI session; subagents let one operator run a fleet — the two scale in opposite directions.)*
+
 ## Sources
 
 - [Devin CLI docs](https://docs.devin.ai/cli/index.md) — quickstart, commands, cloud integration, extensibility, ACP, models

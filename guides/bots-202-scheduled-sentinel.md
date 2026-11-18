@@ -95,6 +95,12 @@ Each of the 159 PRs carries **before/after video**. Equivalent evidence for your
 - **Cron without judgment.** A bare scheduled automation can run the check; a Bot decides whether a failure is real. Use a bare automation only for checks that need zero triage (Guide 6).
 - **Alert-only output.** A sentinel that reports "regression found" to a channel creates work for humans. The deployment's value is that it *fixes* — hold it to that.
 
+## Knowledge check
+
+1. Why does the sentinel build production `main` on a cron rather than waiting for failures to be reported? *(The outcome is 'no regressions', not 'fix reported bugs' — ownership means finding problems before humans do.)*
+2. Layout Bot ships fixes with before/after videos — what decision does that enable for the reviewer? *(Merge confidence without reproducing locally; the proof travels with the PR.)*
+3. Why trace a regression to its introducing PR instead of fixing the symptom? *(Ownership of a check means owning its history — the fix lands on the cause and the knowledge persists.)*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Layout Bot mechanics and numbers

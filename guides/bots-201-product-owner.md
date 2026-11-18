@@ -101,6 +101,12 @@ After the initial build, the same Bot switches to *owning* the surface:
 - **Big PRs.** The deployment's safety comes from small, verifiable units. If PRs balloon, instruct: *"one ticket, one concern, one PR."*
 - **Reviewing code instead of direction.** At 30+ PRs/week you can't review each diff — gate on CI + Devin Review + the Bot's evidence, and spend your messages on direction.
 
+## Knowledge check
+
+1. Android Bot merged 88% of its own PRs — what made self-merge safe enough to allow? *(Verification existed: 2,841 screenshot tests plus review gates; ownership worked because 'done' was machine-checkable.)*
+2. Why file tickets instead of just prompting sessions directly? *(Tickets create an auditable queue the Bot triages by priority — and the human reviews one queue, not 50 sessions.)*
+3. What does '22 days of silence' tell you about the control model? *(Escalation-by-exception works only when the Bot's definition of done is verifiable; silence is the feature, not neglect.)*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot numbers and prompt

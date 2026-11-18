@@ -60,6 +60,12 @@ local repo ──/handoff──► Devin Cloud session ──PR──► /open �
 - **并行活用云端。** CLI 是终端里的单个 agent——并行切片请用云会话或 Bot；CLI 是*亲手干*的那一面。
 - **Rules 蔓延。** `AGENTS.md` + 项目 rules + 全局 rules 按优先级相互作用——每条规则只放一层，否则会打架。
 
+## 自检
+
+1. 什么时候用 `/handoff` 上云而不是本地跑完？*（工作需要云端并行、组织工具，或跑得比你笔记本开着的时间还长。）*
+2. skill、rule、plugin 三者的区别？*（skill 是任务规程，rule 是常驻上下文，plugin 是打包两者的容器外加 hooks。）*
+3. 为什么 hooks + subagents 对团队采用重要？*（hooks 在每个 CLI 会话强制执行组织策略；subagents 让一个操作员开一队 agent——两个方向同时扩。）*
+
 ## Sources
 
 - [Devin CLI docs](https://docs.devin.ai/cli/index.md) — quickstart、命令、云集成、可扩展性、ACP、模型

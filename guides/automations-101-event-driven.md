@@ -99,6 +99,18 @@ Notes that bite people:
 - [ ] A non-matching event (wrong label, wrong channel) does nothing
 - [ ] The action's output lands where you expected (PR, Slack thread, ticket)
 
+## Pitfalls
+
+- **Loops.** An automation whose output can re-trigger itself (Devin comments on a PR, the trigger watches "new comment") will burn sessions forever. Gate on author, label, or event subtype.
+- **Trigger storms.** A webhook that fires per-commit instead of per-PR can spawn 50 sessions on a busy day. Throttle: one automation per *claimable unit* of work, not per raw event.
+- **No approval gate.** Auto-merging or auto-deploying on a trigger skips the human control point — keep the "session opens a PR, a person merges" pattern unless you have a measured reason not to.
+
+## Knowledge check
+
+1. A teammate wants Devin to "watch every GitHub notification" — what do you ask them to narrow first? *(Which event subtype actually implies actionable work — a label applied, a review requested — not every notification.)*
+2. Why must a non-matching event produce *no* session rather than a session that decides to no-op? *(Sessions cost ACUs; gating upstream is free, gating inside a session is not.)*
+3. When does an automation need a Bot instead? *(When the triggered work needs judgment accumulated over time — memory, priorities, a standing outcome.)*
+
 ## Sources
 
 - [Automations — docs](https://docs.devin.ai/product-guides/automations)

@@ -95,6 +95,22 @@
 2. 有 PagerDuty/Datadog/Sentry 就加一个**事故**配方
 3. 某个配方起效后，冻结成 **skill**（第 12 篇）或 **Bot**（第 1–5 篇）——上表每一行都能以这两种形态存续
 
+## 验证
+
+- [ ] 有一个卫生循环 recipe 在按计划运行，并产出了第一个 PR/报告
+- [ ] 它的产出物已固化成 skill、playbook 或 Bot——不活在某个人的脑子里
+
+## 常见陷阱
+
+- **十个 recipe，零个固化。** 停留为手动 prompt 的 recipe 到周五就被遗忘——要么固化要么扔掉。
+- **复制 prompt 却没换验证。** gallery 的 prompt 默认你有测试套件；要改的是*检查*，不只是任务。
+
+## 自检
+
+1. 为什么先从定时卫生循环入手而不是事故响应？*（最便宜的胜利——睡觉时也在跑，错误的深夜 lint 修复可恢复，错误的事故操作不可恢复。）*
+2. 「把 recipe 固化成 skill 或 Bot」实际防止了什么？*（prompt 漂移和单人依赖——写出它的人走了，recipe 还活着。）*
+3. 为什么先改 gallery prompt 的验证部分再改任务部分？*（任务描述意图；检查才是你的仓库真正能证明的东西——错检查产出自信的垃圾。）*
+
 ## Sources
 
 - [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) — 以上全部配方，每个带可复制 prompt

@@ -57,6 +57,24 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 
 如果一个陌生人无法从外部核验第 2 行的真伪，就收紧它。
 
+## 验证
+
+- [ ] 从你仓库挑一个真实 backlog 项，改写成 outcome prompt——边界、可验证状态、常驻行为
+- [ ] 拿给不熟悉代码库的人看：他能否从外部判断这个 Bot「做得好」？
+- [ ] Bot 的第一条回复应该是计划或关于边界的澄清问题——如果它问「你想让我先做什么」，说明 prompt 没有赋予所有权
+
+## 常见陷阱
+
+- **披着 outcome 外衣的任务清单。**「先做 X 再做 Y 再做 Z」仍是 checklist——世界一变，Bot 就无法重新排序。
+- **没有定义的「好」。**「让 app 保持好」无可验证状态，Bot 会替你选一个——而那不会是你想要的。
+- **边界大于单一表面。**「负责工程」会失败；「负责 iOS app」能成。按一个外部人能完整观察到的范围切。
+
+## 自检
+
+1. 为什么「own the Android app」比「修 Android bug」有效？*（所有权意味着常驻判断——Bot 决定哪些 bug 重要，而不只是修不修。）*
+2. 「让 CI 变快」错在哪？*（外部不可验证——没有阈值。「CI 低于 8 分钟」才有。）*
+3. 「测试挂了发消息给我」回答了三问中的哪一问？*（常驻行为——它说了 Bot 对状态做什么，但没说什么边界、什么目标。）*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [Template marketplace](https://devin.ai/bots/templates)
