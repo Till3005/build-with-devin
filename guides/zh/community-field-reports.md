@@ -43,6 +43,7 @@
 | arufian | Serverless GitHub 事件自动化（无常驻服务器）：`devin:fix`/`devin:plan` label 驱动 Devin 会话，配**优先级×复杂度策略表**和 plan-first 审批流 | 安全扫描拦截高风险 PR；高复杂度走 plan → 人批准 → `run that plan`（[report](https://zenn.dev/arufian/articles/f80a62f5217cee)，JP） |
 | Leverages (levtech) | 组织级铺开：14 个团队 / ~30 人 | ~2.5 个月 **177 个已合并 PR**；ROI 按 `ACU 成本 − 节省工时 × 工资` 计量并跟踪任务类型占比（[report](https://zenn.dev/levtech/articles/9c869303820844)，JP） |
 | Decagon | Devin Cloud 上的 AutoResearch：一个编排者 Devin + 并行子 agent 竞争假设；每个想法用 Modal GPU 上回放的生产流量验证 | 支持类流量上 **GPU 吞吐最高 2.5×**（[writeup](https://x.com/DecagonAI/article/2115511110120120437)） |
+| Nader Dabit | 个人 5-Bot 组织——**CTO**（全会话/全仓库，iMessage VIP 通道）、**Auto(mation)Bot**（代管 automations、性能报告）、**DevCommunityBot**（大使计划数据 → 迷你应用）、**DevRelBot**（文档 + 教程视频，*有自己的电脑、自己的 Devin/GitHub/Linear 账号、ElevenLabs 声纹克隆*） | 另有 **Windfable**：~10 个 SuperJennyStack Bot 跑 Unity iOS RPG，每 bot 配独立 macOS+Xcode+Unity，测 iPhone Duo 折叠/展开双态，前后截图+实机视频对比（[primer](https://x.com/dabit3/status/2122755275182469515)） |
 | Mark Fenner | 单人操作者跑 4 个分工 Bot，由一个协调者 Chief Agent Bot（"Frankie"）统领 | 经单一决策面汇总汇报——多 Bot 组织形态不需要团队就能跑（[walkthrough](https://x.com/markfenner/status/2122740244328145211)） |
 
 其中可复用的思想：**策略表门控**（arufian：只自动 PR 低风险活、复杂的走 plan-first）、**定式输出 prompt**（Skillnote：固定 CSV 格式 + 内联 Python 转换消除输出抖动）、**评审预消化**（rakko：人看之前 Devin 先摘要+标记）、**诚实记账**（levtech 的 ACU-vs-工资 ROI 公式）。

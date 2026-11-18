@@ -3,7 +3,7 @@
 **Goal:** a hierarchy of Bots that runs an entire business unit — one orchestrator delegating to specialist Bots, one human deciding through a single daily thread.
 **Level:** advanced
 **Source deployment:** Jenny Xu's **SuperJennyStack** — ~20 Bots running a mobile game studio. ~50 → **1,900 PRs/week**, weekly releases, studio revenue 6×'d. Published as a community template in the [Bot marketplace](https://devin.ai/bots/templates). The official **bot-to-bot grant handoff** (QA → Developer → retest → PM report) uses the same mechanics at smaller scale.
-**Sources:** Jenny Xu's published stack ([via launch coverage](https://x.com/cognition/status/2122737511684587551)) · [Bots docs](https://docs.devin.ai/work-with-devin/bots)
+**Sources:** Jenny Xu's published stack ([via launch coverage](https://x.com/cognition/status/2122737511684587551)) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)
 
 ## The pattern
 
@@ -91,6 +91,20 @@ Jenny runs this **4×/day** and answers **with emoji**. The discipline: you neve
 
 Each Bot owns its loop; the orchestrator owns the schedule of loops.
 
+## Step 6 — Inter-bot protocol (BotSpeak)
+
+The scale problem nobody warns you about: Jenny's 20+ Bots were sending **700+ messages/day** — she couldn't keep up. Her fix was **BotSpeak**, a token-saving shorthand Bots use *with each other* ([her writeup](https://x.com/xujennyc/status/2123111543105868166)):
+
+| Rule | What it means |
+| --- | --- |
+| Shorthand | `ACK` and friends instead of full replies |
+| ASD-STE100 | Simplified English grammar — the aviation doc standard, unambiguous and cheap in tokens |
+| Emoji receipts | React ✅ instead of "got it, thanks" |
+| No niceties | Bots send each other only what the other needs |
+| Human gets prose | The roll-up thread stays full sentences with decision context |
+
+Six days after switching: decisions made by Bots without her **12×'d**, repeated asks −50%, inter-bot clarifying posts −12%. The protocol exists because token waste isn't the real cost — *attention* waste is: shorter bot-to-bot messages mean the human's one thread stays readable.
+
 ## Verify it
 
 - [ ] Every specialist Bot has a scoped outcome prompt and active grants
@@ -104,6 +118,7 @@ Each Bot owns its loop; the orchestrator owns the schedule of loops.
 - **Skipping the orchestrator.** N Bots each DMing you is N× noise. The org only works if judgment funnels through one thread.
 - **Vague job boundaries.** "Dev Bot" and "Fix Bot" will collide. Boundaries follow the org chart — QA *verifies*, Release *ships*, PM *prioritizes*.
 - **Over-granting.** Mesh grants (everyone can reach everyone) recreate chaos. Hub-and-spoke through the orchestrator.
+- **Prose between Bots.** Bots writing paragraphs to each other is how you get 700 messages/day — adopt a BotSpeak-style protocol: shorthand + emoji receipts + no niceties; full sentences only for the human.
 
 ## Knowledge check
 
