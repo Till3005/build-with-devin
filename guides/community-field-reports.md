@@ -22,6 +22,8 @@ Users who get results treat Devin as an **asynchronous junior engineer**, not a 
 
 **Self-verification.** A [year-long practitioner comparison](https://architecttocto.substack.com/p/the-only-coding-agent-worth-paying) marks Devin's browser-driven e2e testing as the threshold moment: it navigates to what it built and checks it — a feedback loop that resembles engineering, not generation.
 
+**Beyond code.** A Cognition researcher reports Devin rebuilt — and finished — a Lean formalization that had taken him much of a semester nine years earlier, in **under 15 minutes** ([post](https://x.com/penlume/status/2115806616796921885)). Math formalization rewards the same trait as migrations: a machine-checkable definition of done.
+
 ## Where it failed, documented
 
 - **Vague or over-broad prompts.** Scott Logic's first prompt produced an unusable scaffold; narrowing the stack and the ask ("just the models") fixed it. Devin over-builds — tell it what *not* to build.
@@ -38,6 +40,8 @@ Real orgs publishing their Devin operating data — mostly from Japan's engineer
 | Skillnote (QA) | PR → Actions → Devin generates test-design drafts (CSV/Excel, incl. "why this case") posted to the PR | ~**35 min saved per 10 test cases**; Devin-designed cases caught bugs humans missed ([report](https://zenn.dev/skillnote/articles/5ba429ca249801), JP) |
 | arufian | Serverless GitHub-event automation (no standing server): labels `devin:fix`/`devin:plan` drive Devin sessions, with a **priority × complexity policy table** and a plan-first approval flow | Safety scans gate risky PRs; high-complexity work gets plan → human approve → `run that plan` ([report](https://zenn.dev/arufian/articles/f80a62f5217cee), JP) |
 | Leverages (levtech) | Org rollout: 14 teams / ~30 people | **177 merged PRs** in ~2.5 months; they measure ROI as `ACU cost − hours saved × wage` and track task-type mix ([report](https://zenn.dev/levtech/articles/9c869303820844), JP) |
+| Decagon | AutoResearch on Devin Cloud: one orchestrator Devin + parallel subagents competing hypotheses; every idea verified against replayed production traffic on Modal GPUs | **up to 2.5× more throughput per GPU** on support traffic ([writeup](https://x.com/DecagonAI/article/2115511110120120437)) |
+| Mark Fenner | Solo operator running four job-specific Bots under a coordinating Chief Agent Bot ("Frankie") | Consolidated updates via one decision surface — the multi-Bot org shape works without a team ([walkthrough](https://x.com/markfenner/status/2122740244328145211)) |
 
 The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-risk work, plan-first for complex), **fixed-output prompting** (Skillnote: fixed CSV format + inline Python for conversion kills output variance), **reviewer-pre-digest** (rakko: Devin summarizes + flags before the human reads), and **accounting for it honestly** (levtech's ACU-vs-wages ROI formula).
 
