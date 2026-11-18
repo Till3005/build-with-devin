@@ -49,6 +49,7 @@
 | 11 | [Migrations at scale](guides/migrations-at-scale.md) | A migration as hundreds of small verified PRs | Official playbook + Nubank | Intermediate |
 | 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: cloud handoff, skills, plugins, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
 | 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
+| 14 | [Community field reports](guides/community-field-reports.md) | What real teams learned — wins, failures, and named deployments with numbers | 15+ published hands-on accounts | Start here |
 
 ## How to use this repo
 
