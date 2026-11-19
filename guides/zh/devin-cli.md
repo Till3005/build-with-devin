@@ -25,6 +25,7 @@ local repo ──/handoff──► Devin Cloud session ──PR──► /open �
 | Subagents | 委派给独立 agent（前台/后台），各自带配置和权限 |
 | Models | 自适应路由按任务挑模型；Fusion 是前沿主力 + 廉价副手 |
 | ACP | 通过 Agent Client Protocol 跑在 JetBrains、Zed、Xcode 里 |
+| Daemon | v3000.13.4 起本地会话跑在后台进程——关掉应用不停会话，任何客户端可接回（`devin daemon`、`devin ls` 会话监视器） |
 
 ## 可扩展性栈
 

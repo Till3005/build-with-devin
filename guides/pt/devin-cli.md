@@ -24,6 +24,7 @@ repo local ──/handoff──► sessão Devin Cloud ──PR──► /open �
 | `devin ssh` / `devin forward` | SSH na VM de uma sessão cloud, forward de portas, `scp` de arquivos |
 | Subagents | Delega a agentes independentes (foreground/background) com perfis e permissões próprios |
 | Models | Adaptive routing escolhe o modelo por tarefa; Fusion emparelha um lead frontier + sidekick barato |
+| Daemon | Desde a v3000.13.4 sessões locais rodam num processo em background — fechar o app não interrompe, qualquer cliente reconecta (`devin daemon`, monitor `devin ls`) |
 | ACP | Roda dentro de JetBrains, Zed, Xcode via Agent Client Protocol |
 
 ## O stack de extensibilidade

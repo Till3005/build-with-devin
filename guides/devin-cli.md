@@ -25,6 +25,7 @@ local repo ──/handoff──► Devin Cloud session ──PR──► /open �
 | Subagents | Delegate to independent agents (foreground/background) with own profiles and permissions |
 | Models | Adaptive routing picks the model per task; Fusion pairs a frontier lead + cheap sidekick |
 | ACP | Runs inside JetBrains, Zed, Xcode via the Agent Client Protocol |
+| Daemon | Since v3000.13.4 local sessions run in a background process — close the app, reattach from any client (`devin daemon`, `devin ls` session monitor) |
 
 ## The extensibility stack
 
