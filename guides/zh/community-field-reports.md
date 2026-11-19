@@ -24,12 +24,16 @@
 
 **代码之外。** 一位 Cognition 研究员报告 Devin 重建——并完成——了他九年前花了一整个学期没做完的 Lean 形式化证明，用时**不到 15 分钟**（[post](https://x.com/penlume/status/2115806616796921885)）。数学形式化和迁移奖励同一种特质：机器可检验的完成定义。
 
+**枯燥但必要的清理。** 一个月实测报告：陈旧仓库清理 + 一句「modernize this」把 gulp/webpack 时代的构建环境翻新成现代配置，约一小时——脏活队列才是托管价值最高的地方（[report](https://zenn.dev/mei999/articles/7d6132f1ca36b6)，JP）。
+
 **接入可观测性。** [Dynatrace MCP + Devin](https://medium.com/lets-code-future/how-i-turned-devin-into-a-performance-analysis-agent-with-dynatrace-mcp-753d3f4790a2) 把 Devin 变成性能分析 agent：它查询实时指标和 trace 然后诊断——MCP server 带来了 repo 里没有的生产上下文（Medium）。另见 [Devin: from bug report to pull request](https://medium.com/@winter.inc/devin-from-bug-report-to-pull-request-25-days-of-ai-day-18-b158daa20f23) 的完整 ticket→PR 循环。
 
 ## 有据可查的失败场景
 
 - **模糊或过宽的 prompt。** Scott Logic 的第一条 prompt 产出了不可用的脚手架；收窄技术栈和诉求（"just the models"）后解决。Devin 会过度构建——告诉它*不要*建什么。
 - **贴合既有规范的任务。** "Add pagination to this endpoint" 在两份独立报告里都返回了不符合代码库惯例的实现（[amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios)、[mohitkhare](https://web.archive.org/web/20260718112612/https://mohitkhare.me/blog/devin-vs-claude-code/)）——除非你把规范带给它，Devin 是在真空中构建（→ 第 9 篇）。
+- **优雅降级的边角。** 一篇[三 agent 对决](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)里同一个限流任务，Devin 的实现贴合代码库规范、Redis 滑动窗口也写对了——但 Redis 挂了的路径抛出未处理 rejection 而不是放行兜底。没人读错误路径就上不了线。
+- **整个品类不合适的情况。** [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) 用 Pro 做了一周、10 个会话、3 个仓库的严谨评估，最终主动决定*不采用*——不是 Devin 不行，而是云端 agent 的优势和他们不匹配：提需求的全是工程师（Slack/Jira 入口反而成了会话跟踪负担）、6 人团队会话共享多余、iOS 模拟器跑不了 Linux 沙箱、成本拆不到会话粒度。正确的拒绝和采用同样有信息量。
 - **不可检验的活。** [expectedwrong](https://expectedwrong.com/devin-appraised) 和 [alanwest 的 10 任务测试](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063)记录了失败模式：自信但坏掉或缺失的输出、credit 在循环中烧掉。他们的任务偏向没有明确验证的活——正是官方 playbook 强制要求的那道闸（第 11 篇）。
 
 ## 实名团队部署（社区、带数字）
@@ -61,7 +65,7 @@
 
 ## 蒸馏出的教训
 
-1. **切的是片，不是项目。** 成功全是有边界的单元；失败都是"去把这个大致建/修一下"。（官方教条：第 13 篇。）
+1. **切的是片，不是项目。** 成功全是有边界的单元；失败都是"去把这个大致建/修一下"。（官方教条：第 13 篇。）社区给出的甜区：约 ±150–250 行改动、3–5 个文件、~30 分钟 agent 工时（[FAL-coffee](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69)，JP）。
 2. **能验证才委派。** 给 Devin 机器能判定"完成"的活——测试、构建、能跑的 `curl`、渲染出来的页面。
 3. **带上下文，不带假设。** 规范、最新文档（经 MCP）、你的技术栈形态——失败都是上下文失败，不是能力失败。
 4. **委派；别盯着。** 每篇正面报告里的 ROI 都来自*异步*——任务在你干别的时跑。盯着它打字是你觉得它"慢"的原因。
@@ -114,4 +118,8 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 - [SMARTCAMP — Trivy scan → Devin remediation pipeline](https://zenn.dev/smartcamp/articles/97ac804043530e)（日语）
 - [canly — Classifying ~700 support inquiries with Devin](https://zenn.dev/canly/articles/9c19bb123e208c)（日语）
 - [smasato — Maximizing Devin: tips for success](https://zenn.dev/smasato/articles/6aebb0da2f56eb)（日语/英译版）
+- [vesslabs — Why we decided not to adopt Devin](https://zenn.dev/vesslabs/articles/da9593d77369ee)（日语/英译版）
+- [Dextra — Devin vs Claude Code vs Cursor Agent shootout](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)
+- [FAL-coffee — 导入 Devin 的团队第一篇该读的](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69)（日语）
+- [mei999 — 把 Devin 用到极致：清理、现代化、自动化](https://zenn.dev/mei999/articles/7d6132f1ca36b6)（日语/英译版）
 - [掘金 — Devin vs Cursor：个人开发者和中小项目怎么选](https://juejin.cn/post/7689030315844026414)（中文）

@@ -24,12 +24,16 @@ Users who get results treat Devin as an **asynchronous junior engineer**, not a 
 
 **Beyond code.** A Cognition researcher reports Devin rebuilt — and finished — a Lean formalization that had taken him much of a semester nine years earlier, in **under 15 minutes** ([post](https://x.com/penlume/status/2115806616796921885)). Math formalization rewards the same trait as migrations: a machine-checkable definition of done.
 
+**Tedious-but-necessary cleanup.** A month of hands-on use reports stale-repository cleanup and a "modernize this" legacy build environment (gulp/webpack-era → current tooling) done in about an hour — the mundane queue is where offloading pays most ([report](https://zenn.dev/mei999/articles/7d6132f1ca36b6), JP).
+
 **Wired into observability.** [Dynatrace MCP + Devin](https://medium.com/lets-code-future/how-i-turned-devin-into-a-performance-analysis-agent-with-dynatrace-mcp-753d3f4790a2) turns Devin into a performance-analysis agent: it queries live metrics and traces, then diagnoses — the MCP server carries production context the repo can't (Medium). See also [Devin: from bug report to pull request](https://medium.com/@winter.inc/devin-from-bug-report-to-pull-request-25-days-of-ai-day-18-b158daa20f23) for the plain ticket→PR loop end-to-end.
 
 ## Where it failed, documented
 
 - **Vague or over-broad prompts.** Scott Logic's first prompt produced an unusable scaffold; narrowing the stack and the ask ("just the models") fixed it. Devin over-builds — tell it what *not* to build.
 - **Convention-fitting tasks.** "Add pagination to this endpoint" came back misaligned with codebase conventions in two independent reports ([amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios), [mohitkhare](https://web.archive.org/web/20260718112612/https://mohitkhare.me/blog/devin-vs-claude-code/)) — Devin builds in isolation unless you carry the conventions to it (→ Guide 9).
+- **Graceful-degradation edge cases.** In a [three-agent shootout](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2) on the same rate-limiting task, Devin's implementation matched codebase conventions and its Redis sliding-window was correct — but the Redis-down path threw an unhandled rejection instead of falling through. Wouldn't have shipped without a human reading the error path.
+- **When the whole category doesn't fit.** [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) ran a disciplined one-week, 10-session Pro evaluation across 3 repos and deliberately *didn't* adopt — not because Devin failed, but because the cloud-agent strengths didn't match their shape: requesters were all engineers (Slack/Jira entry points became session-tracking overhead), session sharing was redundant at 6 people, the iOS simulator can't run on a Linux sandbox, and per-part cost breakdown was missing. The right rejection is as instructive as an adoption.
 - **Uncheckable work.** [expectedwrong](https://expectedwrong.com/devin-appraised) and [alanwest's 10-task test](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) document the failure mode: confident output that's broken or absent, credit burned in loops. Their tasks skewed to work with no clear verification — the same gate the official playbook makes mandatory (Guide 11).
 
 ## Named team deployments (community, with numbers)
@@ -61,7 +65,7 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 
 ## The distilled lessons
 
-1. **Scope the slice, not the project.** The successes are all bounded units; the failures are "go build/fix this broadly." (Official doctrine: Guide 13.)
+1. **Scope the slice, not the project.** The successes are all bounded units; the failures are "go build/fix this broadly." (Official doctrine: Guide 13.) A community-reported sweet spot: roughly ±150–250 lines changed, 3–5 files, ~30 minutes of agent work ([FAL-coffee](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69), JP).
 2. **Verify or don't delegate.** Give Devin work where a machine can check "done" — tests, builds, a working `curl`, a rendered page.
 3. **Carry context, not assumptions.** Conventions, current docs (via MCP), your stack's shape — the failures are context failures, not capability failures.
 4. **Delegate; don't watch.** The ROI in every positive report is *asynchrony* — tasks run while you do something else. Watching it type is how you decide it's "slow."
@@ -114,3 +118,7 @@ The tasks Cognition itself delegates most: **frontend fixes, version upgrades, d
 - [SMARTCAMP — Trivy scan → Devin remediation pipeline](https://zenn.dev/smartcamp/articles/97ac804043530e) (JP)
 - [canly — Classifying ~700 support inquiries with Devin](https://zenn.dev/canly/articles/9c19bb123e208c) (JP)
 - [smasato — Maximizing Devin: tips for success](https://zenn.dev/smasato/articles/6aebb0da2f56eb) (JP/EN)
+- [vesslabs — Why we decided not to adopt Devin](https://zenn.dev/vesslabs/articles/da9593d77369ee) (JP/EN)
+- [Dextra — Devin vs Claude Code vs Cursor Agent shootout](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)
+- [FAL-coffee — The first article for teams adopting Devin](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69) (JP)
+- [mei999 — Using Devin to the fullest: cleanup, modernization, automation](https://zenn.dev/mei999/articles/7d6132f1ca36b6) (JP/EN)

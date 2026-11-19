@@ -24,12 +24,16 @@ Usuários que obtêm resultados tratam o Devin como um **engenheiro júnior ass�
 
 **Além de código.** Um pesquisador da Cognition relata que o Devin reconstruiu — e terminou — uma formalização em Lean que lhe tomou boa parte de um semestre nove anos antes, em **menos de 15 minutos** ([post](https://x.com/penlume/status/2115806616796921885)). Formalização matemática recompensa o mesmo traço das migrações: uma definição de pronto verificável por máquina.
 
+**Limpeza tediosa mas necessária.** Um mês de uso prático reporta limpeza de repositórios abandonados e um "modernize this" que refez um ambiente de build da era gulp/webpack para a stack atual em cerca de uma hora — a fila entediante é onde o offloading mais paga ([relato](https://zenn.dev/mei999/articles/7d6132f1ca36b6), JP).
+
 **Ligado à observabilidade.** [Dynatrace MCP + Devin](https://medium.com/lets-code-future/how-i-turned-devin-into-a-performance-analysis-agent-with-dynatrace-mcp-753d3f4790a2) transforma o Devin num agente de análise de performance: ele consulta métricas e traces ao vivo, depois diagnostica — o servidor MCP carrega contexto de produção que o repo não pode (Medium). Veja também [Devin: do bug report ao pull request](https://medium.com/@winter.inc/devin-from-bug-report-to-pull-request-25-days-of-ai-day-18-b158daa20f23) para o loop ticket→PR simples ponta a ponta.
 
 ## Onde falhou, documentado
 
 - **Prompts vagos ou amplos demais.** O primeiro prompt da Scott Logic produziu um scaffold inutilizável; estreitar o stack e o pedido ("just the models") resolveu. O Devin super-constrói — diga a ele o que *não* construir.
 - **Tarefas de encaixar em convenções.** "Add pagination to this endpoint" voltou desalinhado das convenções do codebase em dois relatos independentes ([amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios), [mohitkhare](https://web.archive.org/web/20260718112612/https://mohitkhare.me/blog/devin-vs-claude-code/)) — o Devin constrói em isolamento a menos que você carregue as convenções até ele (→ Guia 9).
+- **Bordas de degradação elegante.** Num [duelo de três agentes](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2) na mesma tarefa de rate-limiting, a implementação do Devin seguiu as convenções do codebase e o sliding-window em Redis estava correto — mas o caminho de falha do Redis lançou um rejection não tratado em vez de continuar. Não teria ido a produção sem um humano ler o caminho de erro.
+- **Quando a categoria inteira não serve.** A [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) rodou uma avaliação disciplinada de uma semana, 10 sessões no Pro, em 3 repositórios, e deliberadamente *não adotou* — não porque o Devin falhou, mas porque os pontos fortes do agente em nuvem não combinavam com seu formato: os solicitantes eram todos engenheiros (as entradas via Slack/Jira viraram overhead de rastreamento de sessões), o compartilhamento de sessões era redundante com 6 pessoas, o simulador de iOS não roda num sandbox Linux e faltava detalhamento de custo por parte. A recusa certa ensina tanto quanto uma adoção.
 - **Trabalho não verificável.** [expectedwrong](https://expectedwrong.com/devin-appraised) e o [teste de 10 tarefas de alanwest](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) documentam o modo de falha: saída confiante que está quebrada ou ausente, créditos queimados em loops. Suas tarefas penderam para trabalho sem verificação clara — o mesmo gate que o playbook oficial torna obrigatório (Guia 11).
 
 ## Implantações de times nomeados (comunidade, com números)
@@ -61,7 +65,7 @@ As ideias reutilizáveis dentro: **gating por tabela de política** (arufian: s�
 
 ## As lições destiladas
 
-1. **Escopo na fatia, não no projeto.** Os sucessos são todos unidades delimitadas; as falhas são "construa/conserte isso amplamente." (Doutrina oficial: Guia 13.)
+1. **Escopo na fatia, não no projeto.** Os sucessos são todos unidades delimitadas; as falhas são "construa/conserte isso amplamente." (Doutrina oficial: Guia 13.) Um ponto ideal reportado pela comunidade: cerca de ±150–250 linhas alteradas, 3–5 arquivos, ~30 minutos de trabalho do agente ([FAL-coffee](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69), JP).
 2. **Verifique ou não delegue.** Dê ao Devin trabalho onde uma máquina possa checar "pronto" — testes, builds, um `curl` funcional, uma página renderizada.
 3. **Carregue contexto, não suposições.** Convenções, docs atuais (via MCP), a forma do seu stack — as falhas são falhas de contexto, não de capacidade.
 4. **Delegue; não assista.** O ROI em todo relato positivo é *assincronia* — as tarefas rodam enquanto você faz outra coisa. Assistir ele digitar é como você decide que ele é "lento".
@@ -114,3 +118,7 @@ As tarefas que a própria Cognition mais delega: **correções de frontend, upgr
 - [SMARTCAMP — pipeline Trivy scan → remediação pelo Devin](https://zenn.dev/smartcamp/articles/97ac804043530e) (JP)
 - [canly — Classificando ~700 tickets de suporte com o Devin](https://zenn.dev/canly/articles/9c19bb123e208c) (JP)
 - [smasato — Maximizando o Devin: dicas de sucesso](https://zenn.dev/smasato/articles/6aebb0da2f56eb) (JP/EN)
+- [vesslabs — Por que decidimos não adotar o Devin](https://zenn.dev/vesslabs/articles/da9593d77369ee) (JP/EN)
+- [Dextra — Devin vs Claude Code vs Cursor Agent](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)
+- [FAL-coffee — O primeiro artigo para equipes adotando Devin](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69) (JP)
+- [mei999 — Usando o Devin ao máximo: limpeza, modernização, automação](https://zenn.dev/mei999/articles/7d6132f1ca36b6) (JP/EN)

@@ -24,12 +24,16 @@
 
 **コードを超えて。** Cognition の研究者は、9 年前に学期の大半を費やした Lean 形式化を Devin が再構築し——完成させたと報告。**15 分以内**で（[投稿](https://x.com/penlume/status/2115806616796921885)）。数学の形式化は移行と同じ特性を報酬とする：機械チェック可能な完了定義。
 
+**退屈だが必要なクリーンアップ。** 1 か月の実践レポート：放置リポジトリの整理と、「modernize this」の一言で gulp/webpack 時代のビルド環境を現代構成に刷新（約 1 時間）——地味なキューこそオフロードの価値が最大（[レポート](https://zenn.dev/mei999/articles/7d6132f1ca36b6)）。
+
 **オブザーバビリティへの配線。** [Dynatrace MCP + Devin](https://medium.com/lets-code-future/how-i-turned-devin-into-a-performance-analysis-agent-with-dynatrace-mcp-753d3f4790a2)は Devin をパフォーマンス分析エージェントに変える：ライブ指標とトレースを問い合わせて診断——MCP サーバーがリポジトリにない本番コンテキストを運ぶ（Medium）。素直なチケット→PR ループの全行程は [Devin: バグレポートから PR へ](https://medium.com/@winter.inc/devin-from-bug-report-to-pull-request-25-days-of-ai-day-18-b158daa20f23)も参照。
 
 ## 失敗した、記録された事例
 
 - **曖昧または広すぎるプロンプト。** Scott Logic の最初のプロンプトは使えないスキャフォールドを産んだ；スタックと依頼を絞る（「モデルだけ」）ことで修正。Devin は作りすぎる——何を作る*な*かを伝える。
 - **規約適合タスク。** 「このエンドポイントにページネーションを追加」がコードベースの規約と不整合で返ってきた事例が独立した 2 レポートにある（[amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios)、[mohitkhare](https://web.archive.org/web/20260718112612/https://mohitkhare.me/blog/devin-vs-claude-code/)）——規約を運ばない限り Devin は孤立して作る（→ ガイド 9）。
+- **グレースフルデグラデーションのエッジ。** [3 エージェント対決](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)の同じレート制限タスクで、Devin の実装はコードベースの規約に合致し Redis スライディングウィンドウも正しかった——しかし Redis 障害パスがフォールスルーではなく未処理 rejection を投げた。人間がエラーパスを読まなければ出荷できなかった。
+- **カテゴリごと合わないケース。** [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) は Pro で 1 週間・10 セッション・3 リポジトリの厳密な評価を行い、意図的に*不採用*を選んだ——Devin が失敗したのではなく、クラウドエージェントの強みが自社と合わなかった：依頼者が全員エンジニア（Slack/Jira の入口がセッション追跡の負担化）、6 人ではセッション共有が不要、iOS シミュレータが Linux サンドボックスで動かない、部位ごとのコスト内訳が取れない。正しい不採用は採用と同じくらい学びがある。
 - **検査不能な仕事。** [expectedwrong](https://expectedwrong.com/devin-appraised)と [alanwest の 10 タスク検査](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063)が失敗モードを記録：壊れているか存在しない自信満々の出力、ループで燃えるクレジット。彼らのタスクは明確な検証のない仕事に偏っていた——公式プレイブックが必須とするのと同じゲート（ガイド 11）。
 
 ## 名付けられたチーム導入（コミュニティ、数値つき）
@@ -61,7 +65,7 @@ Devin の運用データを公開している実組織——異常に記録の�
 
 ## 抽出された教訓
 
-1. **プロジェクトではなくスライスをスコープする。** 成功はすべて境界のある単位；失敗は「広くこれを作って/直して」。（公式ドクトリン：ガイド 13。）
+1. **プロジェクトではなくスライスをスコープする。** 成功はすべて境界のある単位；失敗は「広くこれを作って/直して」。（公式ドクトリン：ガイド 13。）コミュニティ報告のスイートスポット：変更約 ±150–250 行、3–5 ファイル、エージェント作業 ~30 分（[FAL-coffee](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69)）。
 2. **検証するか委任しないか。** 機械が「完了」をチェックできる仕事を Devin に——テスト、ビルド、動く `curl`、レンダリングされたページ。
 3. **仮定ではなくコンテキストを運ぶ。** 規約、（MCP 経由の）最新ドキュメント、スタックの形——失敗は能力の失敗ではなくコンテキストの失敗。
 4. **委任する；見守らない。** すべての好意的レポートの ROI は*非同期性*——あなたが別のことをしている間にタスクが走る。タイピングを見つめるのが「遅い」と判断する方法。
@@ -114,3 +118,7 @@ Cognition 自身が最も委任するタスク：**フロントエンド修正�
 - [SMARTCAMP — Trivy スキャン → Devin 修復パイプライン](https://zenn.dev/smartcamp/articles/97ac804043530e)（日本語）
 - [canly — 約 700 件の問い合わせを Devin で分類](https://zenn.dev/canly/articles/9c19bb123e208c)（日本語）
 - [smasato — Devin を最大化する：成功のための Tips](https://zenn.dev/smasato/articles/6aebb0da2f56eb)（日本語）
+- [vesslabs — Devin の採用を見送った理由](https://zenn.dev/vesslabs/articles/da9593d77369ee)
+- [Dextra — Devin vs Claude Code vs Cursor Agent 対決](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)
+- [FAL-coffee — Devin を導入したチームが最初に読む記事](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69)
+- [mei999 — Devin を使い倒した：整理・モダナイズ・自動化](https://zenn.dev/mei999/articles/7d6132f1ca36b6)
