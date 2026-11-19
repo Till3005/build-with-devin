@@ -123,32 +123,6 @@ Bot が何かを報告したら **Needs you**（チャット上部）を開く�
 
 Archive/Delete を見られるのは作成者と Manage Bots 権限を持つロールのみ。Enterprise プランでは `Use Bots` / `Manage Bots` / `Manage Bots across the enterprise` がカスタムロール内の独立した権限。
 
-## 実録ウォークスルー — Devin Desktop v3.14（Pro プラン）で収録
-
-Pro アカウントでステップ 1-2 を実演：Bots ページ、テンプレートライブラリ、作成フローの全部——このプランがどこで止まるかも正直に収録。
-
-**動画（95 秒、無音）：** Bots ページ → テンプレートライブラリ → スクラッチ作成 → カスタマイズ → プラウゲート。
-
-[![Bot テンプレートライブラリ — Software Factory、Product Engineer、QA Engineer のカード](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough.mp4)
-
-![1. Bots ページ — From you / From teammates、Create Bot、Template library](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step1-bots-page.webp)
-*1. Bots ページ —「From you」/「From teammates」、Create Bot、Template library*
-
-![2. Bot テンプレート — 注目：Software Factory、Product Engineer、QA Engineer。カテゴリは Engineering → General](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step2-template-library.webp)
-*2. Bot テンプレート — 注目：Software Factory、Product Engineer、QA Engineer。カテゴリは Engineering → General*
-
-![3. ライブラリの続き — Anomaly Watcher、Code Reaper、Workflow Importer](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step3-more-templates.webp)
-*3. ライブラリの続き — Anomaly Watcher、Code Reaper、Workflow Importer*
-
-![4. "What's your goal?" — 作成ダイアログ。ガイドの選択は Start from scratch](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step4-create-dialog.webp)
-*4. "What's your goal?" — 作成ダイアログ。ガイドの選択は Start from scratch*
-
-![5. Bot をカスタマイズ — アバター選択、色、提案名（"Paul"）](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step5-customize-bot.webp)
-*5. Bot をカスタマイズ — アバター選択、色、提案名（"Paul"）*
-
-![6. 正直な境界 — Paul は作成されたが、チャットは "Bots require Max or Teams"](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step6-max-teams-gate.webp)
-*6. 正直な境界 — 作成は成功（Paul がリストに入った）が、チャットは "Bots require Max or Teams"：Pro では Bot を作り名付けられるが、成果の割り当て（ステップ 2）には上位プランが必要*
-
 ## 検証チェックリスト
 
 - [ ] Bot を作成・命名し、チャットで成果プロンプトを送信した

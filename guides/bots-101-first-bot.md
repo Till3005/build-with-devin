@@ -123,32 +123,6 @@ Two things the launch posts skip that the docs spell out:
 
 Only the creator and roles with Manage Bots see Archive/Delete. On Enterprise plans, `Use Bots` / `Manage Bots` / `Manage Bots across the enterprise` are separate permissions in custom roles.
 
-## Walkthrough — recorded on Devin Desktop v3.14 (Pro plan)
-
-A real pass through Steps 1-2 on a Pro account: the Bots page, the template library, and the full create flow — captured honestly, including where this plan stops.
-
-**Video (95 s, no audio):** Bots page → template library → create-from-scratch → customize → the plan gate.
-
-[![The Bot template library — Software Factory, Product Engineer, QA Engineer cards](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough.mp4)
-
-![1. The Bots page — From you / From teammates, Create Bot, Template library](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step1-bots-page.webp)
-*1. The Bots page — "From you" / "From teammates", Create Bot, Template library*
-
-![2. Bot templates — featured: Software Factory, Product Engineer, QA Engineer; categories Engineering to General](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step2-template-library.webp)
-*2. Bot templates — featured: Software Factory, Product Engineer, QA Engineer; categories run Engineering → General*
-
-![3. More of the library — Anomaly Watcher, Code Reaper, Workflow Importer](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step3-more-templates.webp)
-*3. More of the library — Anomaly Watcher, Code Reaper, Workflow Importer*
-
-![4. "What's your goal?" — the create dialog; the guide's pick is Start from scratch](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step4-create-dialog.webp)
-*4. "What's your goal?" — the create dialog; the guide's pick is Start from scratch*
-
-![5. Customize your Bot — avatar picker, colors, a suggested name ("Paul")](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step5-customize-bot.webp)
-*5. Customize your Bot — avatar picker, colors, a suggested name ("Paul")*
-
-![6. The honest boundary — Paul was created, but the chat reads "Bots require Max or Teams"](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step6-max-teams-gate.webp)
-*6. The honest boundary — creation succeeds (Paul is in the list), but the chat reads "Bots require Max or Teams": on Pro you can create and name a Bot; assigning the outcome (Step 2) needs a higher plan*
-
 ## Verify it
 
 - [ ] Bot created and named; outcome prompt sent in chat
