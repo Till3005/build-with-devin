@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · 姉妹レジストリ：[built-with-devin](https://github.com/Till3005/built-with-devin) · [ガイドを改善](CONTRIBUTING.md)</sub>
 
-<sub>**17** ガイド · **3** トラック · すべてのパターンは実名・実証済みの導入から逆算</sub>
+<sub>**18** ガイド · **3** トラック · すべてのパターンは実名・実証済みの導入から逆算</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · 日本語 · [Português](README.pt.md)</sub>
 
@@ -83,6 +83,7 @@ flowchart LR
 | 14 | [コミュニティ実践レポート](guides/ja/community-field-reports.md) | 実チームが学んだこと —— 成功、失敗、数字つきの実名導入 | 15 以上の公開実践記 | ここから |
 | 15 | [本番トレースからの Living evals](guides/ja/living-evals.md) | 自己増殖する eval スイート：Devin がシステムの完全コピーで本番障害を再生 | Rox —— 実使用量カバレッジ 72%（手書き 43–57%） | 上級 |
 | 16 | [Skills と plugins](guides/ja/skills-and-plugins.md) | playbook の次の層——SKILL.md 契約、発見機構、plugin パッケージング | [Skills ドキュメント](https://docs.devin.ai/product-guides/skills) | 中級 |
+| 17 | [Devin Desktop](guides/ja/devin-desktop.md) | エージェントネイティブなエディタ：Command Center、永続ローカルセッション、Bots——1つのウィンドウ | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | 入門 |
 
 <p align="right"><a href="#readme">back to top</a></p>
 
