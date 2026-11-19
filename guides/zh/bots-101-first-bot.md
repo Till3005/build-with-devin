@@ -123,6 +123,32 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 
 只有创建者和带 Manage Bots 权限的角色能看到 Archive/Delete。企业版里 `Use Bots` / `Manage Bots` / `Manage Bots across the enterprise` 是自定义角色里的独立权限。
 
+## 实录演示 —— 录于 Devin Desktop v3.14（Pro 方案）
+
+Pro 账号真走了一遍第 1-2 步：Bots 页面、模板库、完整创建流程——如实记录，包括这个方案停在哪。
+
+**视频（95 秒，无声）：** Bots 页 → 模板库 → 从零创建 → 定制 → 方案门。
+
+[![Bot 模板库——Software Factory、Product Engineer、QA Engineer 卡片](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/walkthrough.mp4)
+
+![1. Bots 页——From you / From teammates、Create Bot、Template library](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step1-bots-page.webp)
+*1. Bots 页——“From you” / “From teammates”、Create Bot、Template library*
+
+![2. Bot 模板——精选：Software Factory、Product Engineer、QA Engineer；分类 Engineering → General](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step2-template-library.webp)
+*2. Bot 模板——精选：Software Factory、Product Engineer、QA Engineer；分类从 Engineering 到 General*
+
+![3. 库里还有——Anomaly Watcher、Code Reaper、Workflow Importer](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step3-more-templates.webp)
+*3. 库里还有——Anomaly Watcher、Code Reaper、Workflow Importer*
+
+![4. “What's your goal?”——创建对话框；教程建议选 Start from scratch](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step4-create-dialog.webp)
+*4. “What's your goal?”——创建对话框；教程建议选 Start from scratch*
+
+![5. 定制你的 Bot——头像选择器、颜色、推荐名字（“Paul”）](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step5-customize-bot.webp)
+*5. 定制你的 Bot——头像选择器、颜色、推荐名字（“Paul”）*
+
+![6. 如实边界——Paul 建出来了，但聊天页写 “Bots require Max or Teams”](https://till3005.github.io/built-with-devin/assets/guides/bots-101-first-bot/step6-max-teams-gate.webp)
+*6. 如实边界——创建成功（Paul 已在列表里），但聊天页写 “Bots require Max or Teams”：Pro 能建 Bot、起名；指派结果（第 2 步）需要更高方案*
+
 ## Verify it
 
 - [ ] Bot 已创建并命名；outcome prompt 已在聊天里发出
