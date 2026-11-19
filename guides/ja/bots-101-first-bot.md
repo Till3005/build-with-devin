@@ -45,6 +45,30 @@ You own the Android app now. Keep it at feature parity with iOS.
 
 タスクは終われば完了するが、成果は Bot に永遠の再計画を促す。
 
+### 限定された最初の任務
+
+「所有権」は正しい*形*だが、最初の実行では*範範囲*を絞る：1つのフロー、1つの環境、1人のレビュアー——あなた。ANO フィールドガイドのパターンが最も確実な出発点：
+
+```text
+Own the newsletter signup check for [project] on staging.
+Use [repository], [staging URL] and the test mailbox I provide.
+Check the journey from submitting the form to receiving the
+correct welcome email and opening its resource link.
+
+Start with one run. Show me the result before proposing a schedule.
+If you find a defect, reproduce it, make the smallest suitable fix,
+and open a pull request with the evidence.
+
+Do not merge, deploy, email real subscribers, change billing,
+or connect another service without asking me.
+
+Return: what passed/failed, screenshots or a short recording,
+the PR if a fix was needed, anything you could not verify,
+and any decision you need from me.
+```
+
+重要な行：ジャーニーの定義（フォーム→メール→リンク。「フォームが動く」だけではない）、*スケジュールの前に1回実行*、明示的な merge・deploy 禁止、期待する証拠の指定。Bot が信頼できる証拠を2回返してから、任務を広げる。
+
 ## ステップ 3 — 一緒に働く
 
 成果が設定された後、あなたのメッセージの大半はチェックインになる：
@@ -70,6 +94,13 @@ Bot が何かを報告したら **Needs you**（チャット上部）を開く�
 - **Memory**（Settings → Memory）：Bot が自分で書くファイル——好み、修正、プロジェクトの事実。記憶を変えたければチャットで伝えるだけ（「覚えておいて：デプロイは Cloud Run。ベア VM は絶対ダメ」）。Bot を使える全員がメモリを読める——共有 Bot のメモリは共有情報として扱う。
 
 スケールするパターン：Bot を一度修正し、それをメモリに書かせる。以後の全セッションがそれを継承する。Cognition はこのループで週 2,000 件以上の PR をマージしている。
+
+## 共有する前に——アクセスと使用量
+
+ローンチ記事が省略してドキュメントが明記していることが2つある：
+
+- **プライベート Bot はあなたのリソースを黙って引き継ぐ。** あなたが既に持つアクセスは、新しい確認プロンプトなしに grant として記録されうる——プライベート Bot はサンドボックスではない。共有前に Settings → Access を開き、任務に不要な grant を外す。会話や認証情報を見せずに方法だけ真似させたいなら、Bot ではなく*テンプレート*を共有する。
+- **Bot の使用量 = チャット + 起動した全セッション。** Max：同梱クォータの後オンデマンド——Bot 専用の上限なし。Teams：自分のクォータの後チームクレジット。管理者が Bot 専用のオンデマンド上限を設定可能。Enterprise：別途割当がない限り作成者の上限に計上。チャット内の支出指示は設定済み上限ではない——Settings で設定し、文章で書かない。
 
 ## ステップ 5 — 働く場所に置く
 
@@ -113,6 +144,9 @@ Archive/Delete を見られるのは作成者と Manage Bots 権限を持つロ�
 3. 「賢いセッション」を「従業員」に変える機構は？*（成果の所有——個々のセッションが終わっても目標が残る）*
 
 ## 出典
+
+- [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) —— コミュニティフィールドガイド；上の限定任務パターンとアクセス/使用量の注意はここから
+- 前：[ガイド 18 — Devin への伝え方](talking-to-devin.md)（outcome prompt の根底にある教義）
 
 - [Devin Bots — ドキュメント](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)

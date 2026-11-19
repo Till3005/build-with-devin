@@ -45,6 +45,30 @@ Esse é o prompt literal com que o Android Bot da Cognition começou. Compare:
 
 Uma tarefa acaba quando termina; um resultado faz o Bot re-planejar para sempre.
 
+### Uma primeira atribuição limitada
+
+"Propriedade" é a *forma* certa, mas delimite a *superfície* na primeira rodada: um fluxo, um ambiente, um revisor — você. O padrão do guia de campo ANO é o ponto de partida confiável:
+
+```text
+Own the newsletter signup check for [project] on staging.
+Use [repository], [staging URL] and the test mailbox I provide.
+Check the journey from submitting the form to receiving the
+correct welcome email and opening its resource link.
+
+Start with one run. Show me the result before proposing a schedule.
+If you find a defect, reproduce it, make the smallest suitable fix,
+and open a pull request with the evidence.
+
+Do not merge, deploy, email real subscribers, change billing,
+or connect another service without asking me.
+
+Return: what passed/failed, screenshots or a short recording,
+the PR if a fix was needed, anything you could not verify,
+and any decision you need from me.
+```
+
+As linhas estruturais: a definição da jornada (formulário → email → link, não só "o form funciona"), *uma execução antes do agendamento*, a cerca explícita de não-merge/não-deploy, e a evidência nomeada que você espera. Amplie a atribuição só depois que o Bot devolver evidência confiável duas vezes.
+
 ## Passo 3 — Trabalhar com ele
 
 Depois que o resultado está definido, a maioria das suas mensagens são check-ins:
@@ -70,6 +94,13 @@ Você pode responder com suas próprias palavras, adiar ou descartar qualquer it
 - **Memory** (Settings → Memory): arquivos que o próprio Bot escreve — preferências, correções, fatos do projeto. Para mudar o que ele lembra, basta dizer no chat ("remember: we deploy via Cloud Run, never bare VMs"). Todo mundo que pode usar o Bot pode ler sua memória — trate a memória de um Bot compartilhado como compartilhada.
 
 O padrão que escala: corrija o Bot uma vez, deixe-o gravar a correção na memória, e toda sessão futura a herda. A Cognition mergeia mais de 2.000 PRs/semana nesse loop.
+
+## Antes de compartilhar — acesso e uso
+
+Duas coisas que os posts de lançamento pulam e a documentação explicita:
+
+- **Um Bot privado herda seus recursos sem perguntar.** O acesso que você já tem pode ser registrado como grants sem novo prompt de permissão — um Bot privado não é uma sandbox. Antes de compartilhar, abra Settings → Access e remova grants que a tarefa não precisa. Se colegas devem copiar o método sem ver sua conversa ou credenciais, compartilhe um *template*, não o Bot.
+- **O uso de um Bot cobre o chat dele mais toda sessão que ele dispara.** Max: consome sua cota incluída e depois on-demand — sem cap separado de Bot. Teams: sua cota e depois créditos do time; um admin pode definir cap on-demand específico do Bot. Enterprise: conta no limite do criador, a menos que receba um próprio. Uma instrução de gasto no chat não é um cap configurado — defina o limite em Settings, não o descreva em prosa.
 
 ## Passo 5 — Colocar onde você trabalha
 
@@ -113,6 +144,9 @@ Apenas o criador e papéis com Manage Bots veem Archive/Delete. Em planos Enterp
 3. Qual mecânica transforma "uma sessão esperta" em "um funcionário"? *(A propriedade de um resultado — a meta persiste depois que qualquer sessão termina.)*
 
 ## Fontes
+
+- [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) —— guia de campo da comunidade; o padrão de primeira atribuição limitada e os avisos de acesso/uso acima vêm daqui
+- Anterior: [Guia 18 — Falando com Devin](talking-to-devin.md) (a doutrina sob o outcome prompt)
 
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)

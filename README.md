@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md)</sub>
 
-<sub>**18** guides · **3** tracks · every pattern reverse-engineered from a named, documented deployment</sub>
+<sub>**19** guides · **4** stages · every pattern reverse-engineered from a named, documented deployment</sub>
 
 <sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -26,72 +26,89 @@
 
 ## Contents
 
-- [Devin Bots](#devin-bots) — guides 1–5 + the outcome-prompt reference
-- [Platform](#platform) — guides 6–10: automations, enterprise, design, playbooks, Apps
-- [Workflows](#workflows) — guides 11–14: migrations, CLI, cookbook, field reports
+- [Stage 0 — Foundations](#stage-0--foundations) — talking to Devin, the surfaces, your first Bot, the cookbook
+- [Stage 1 — Operate](#stage-1--operate) — outcome prompts, automations, playbooks, skills, Apps, design
+- [Stage 2 — Scale](#stage-2--scale) — one Bot to an org, migrations, evals, enterprise rollout
+- [Stage 3 — Field wisdom](#stage-3--field-wisdom) — what real teams learned
 - [How to use this repo](#how-to-use-this-repo) · [Conventions](#conventions) · [Contributing](#contributing)
 
 ```mermaid
 flowchart LR
-    subgraph Bots
-      G1["1 · Your first Bot"] --> G2["2 · Product-owner"]
-      G1 --> G3["3 · Scheduled sentinel"]
-      G2 --> G4["4 · Multi-Bot org"]
-      G3 --> G4
-      G4 --> G5["5 · Reference swarm"]
-      G5 --> GP["ref · Outcome prompts"]
+    subgraph S0["Stage 0 · Foundations"]
+      G18["18 · Talking to Devin"] --> G17["17 · Desktop"]
+      G18 --> G12["12 · CLI"]
+      G17 --> G1["1 · Your first Bot"]
+      G12 --> G1
+      G1 --> G13["13 · Official cookbook"]
     end
-    subgraph Platform
-      G6["6 · Automations"] --> G7["7 · Enterprise rollout"]
-      G8["8 · Design work"]
-      G9["9 · Playbooks & knowledge"]
+    subgraph S1["Stage 1 · Operate"]
+      GP["ref · Outcome prompts"] --> G6["6 · Automations"]
+      G6 --> G9["9 · Playbooks"]
+      G9 --> G16["16 · Skills & plugins"]
       G10["10 · Devin Apps"]
+      G8["8 · Design work"]
     end
-    subgraph Workflows
-      G11["11 · Migrations"]
-      G12["12 · CLI & extensibility"]
-      G13["13 · Official cookbook"]
+    subgraph S2["Stage 2 · Scale"]
+      G2["2 · Product-owner"] --> G4["4 · Multi-Bot org"]
+      G3["3 · Sentinel"] --> G4
+      G4 --> G5["5 · Swarm"]
+      G11["11 · Migrations"] --> G15["15 · Living evals"]
+      G7["7 · Enterprise rollout"]
+    end
+    subgraph S3["Stage 3 · Field wisdom"]
       G14["14 · Field reports"]
-      G15["15 · Living evals"]
     end
-    G7 --> G9
-    G11 --> G9
+    S0 --> S1 --> S2
 ```
 
 ## Guides
 
-### Devin Bots
+### Stage 0 · Foundations
+
+*From zero to a task that ships. Everyone starts here — these four guides and one reference teach the two surfaces, the prompting doctrine, and the first ownership.*
 
 | # | Guide | You'll build | Based on | Level |
 | --- | --- | --- | --- | --- |
-| 1 | [Your first Bot](guides/bots-101-first-bot.md) | A Bot that owns an outcome — chat, sessions, Needs-you, memory, surfaces | [Official docs](https://docs.devin.ai/work-with-devin/bots) | Start here |
+| 18 | [Talking to Devin](guides/talking-to-devin.md) | Briefs Devin can't misread — say-how, checkable success, the 80% rule | [Coding Agents 101](https://devin.ai/agents101) + [official prompting docs](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) | Start here |
+| 17 | [Devin Desktop](guides/devin-desktop.md) | The agent-native editor: Command Center, durable local sessions, Bots — one window | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | Start here |
+| 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: daemon sessions, cloud handoff, skills, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
+| 1 | [Your first Bot](guides/bots-101-first-bot.md) | A Bot that owns an outcome — chat, sessions, Needs-you, memory, surfaces | [Official docs](https://docs.devin.ai/work-with-devin/bots) + launch post | Start here |
+| 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
+
+### Stage 1 · Operate
+
+*The daily loop delegated: a Bot that knows the standard, sessions that fire on events, conventions encoded once, tools served live.*
+
+| # | Guide | You'll build | Based on | Level |
+| --- | --- | --- | --- | --- |
+| — | [Bot outcome prompts, dissected](guides/bot-outcome-prompts.md) | Outcome prompts that assign ownership, not tasks — the real ones, reverse-engineered | Android Bot prompt + all 16 marketplace templates | Reference |
+| 6 | [Event-driven automations](guides/automations-101-event-driven.md) | Sessions that fire on Slack, GitHub, Linear, cron, webhooks | [Automations docs](https://docs.devin.ai/product-guides/automations) | Start here |
+| 9 | [Playbooks & knowledge](guides/playbooks-and-knowledge.md) | Encoding org conventions so every session inherits them | The layer behind every enterprise result | Intermediate |
+| 16 | [Skills & plugins](guides/skills-and-plugins.md) | The post-playbook layer — SKILL.md contract, discovery, packaging as plugins | [Skills docs](https://docs.devin.ai/product-guides/skills) | Intermediate |
+| 10 | [Devin Apps](guides/devin-apps.md) | Live internal tools and dashboards served from Devin's machine | [Devin Apps launch](https://devin.ai/blog/devin-apps) | Start here |
+| 8 | [Design & visual work](guides/design-with-devin.md) | Art-directing production UI through Devin chat | Spraycash landing page write-up | Intermediate |
+
+### Stage 2 · Scale
+
+*One Bot to an organization: the four named-deployment archetypes, then the heavy machinery — migrations, evals, the enterprise rollout.*
+
+| # | Guide | You'll build | Based on | Level |
+| --- | --- | --- | --- | --- |
 | 2 | [Product-owner Bot](guides/bots-201-product-owner.md) | A Bot that product-manages a whole app surface | Android Bot — 44 days, 1,134 PRs | Intermediate |
 | 3 | [Scheduled-sentinel Bot](guides/bots-202-scheduled-sentinel.md) | A cron Bot that watches a check and fixes regressions | Layout Bot — 159 PRs/3wks | Intermediate |
 | 4 | [Multi-Bot organization](guides/bots-203-multi-bot-org.md) | A Bot hierarchy with grants and roll-up reporting | SuperJennyStack — ~20 Bots, 1,900 PRs/wk | Advanced |
 | 5 | [Reference-grounded swarm](guides/bots-204-reference-grounded-swarm.md) | A directed swarm writing a verified system | Harvey "Phil" — ~30 agents, 1M+ LOC | Advanced |
-| — | [Bot outcome prompts, dissected](guides/bot-outcome-prompts.md) | Outcome prompts that assign ownership, not tasks — the real ones, reverse-engineered | Android Bot prompt + all 16 marketplace templates | Reference |
-
-### Platform
-
-| # | Guide | You'll build | Based on | Level |
-| --- | --- | --- | --- | --- |
-| 6 | [Event-driven automations](guides/automations-101-event-driven.md) | Sessions that fire on Slack, GitHub, Linear, cron, webhooks | [Automations docs](https://docs.devin.ai/product-guides/automations) | Start here |
-| 7 | [Enterprise rollout patterns](guides/enterprise-playbook.md) | The six deployment shapes behind the biggest customer results | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediate |
-| 8 | [Design & visual work](guides/design-with-devin.md) | Art-directing production UI through Devin chat | Spraycash landing page write-up | Intermediate |
-| 9 | [Playbooks & knowledge](guides/playbooks-and-knowledge.md) | Encoding org conventions so every session inherits them | The layer behind every enterprise result | Intermediate |
-| 10 | [Devin Apps](guides/devin-apps.md) | Live internal tools and dashboards served from Devin's machine | [Devin Apps launch](https://devin.ai/blog/devin-apps) | Start here |
-
-### Workflows
-
-| # | Guide | You'll build | Based on | Level |
-| --- | --- | --- | --- | --- |
 | 11 | [Migrations at scale](guides/migrations-at-scale.md) | A migration as hundreds of small verified PRs | Official playbook + Nubank | Intermediate |
-| 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: cloud handoff, skills, plugins, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
-| 13 | [Official use-case cookbook](guides/official-cookbook.md) | 40+ documented recipes — hygiene loops, incidents, quality | [Use-case gallery](https://docs.devin.ai/use-cases/gallery/index.md) | Start here |
+| 15 | [Living evals from production traces](guides/living-evals.md) | A self-growing eval suite replaying production failures | Rox — 72% usage coverage vs 43–57% hand-written | Advanced |
+| 7 | [Enterprise rollout patterns](guides/enterprise-playbook.md) | The six deployment shapes behind the biggest customer results | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediate |
+
+### Stage 3 · Field wisdom
+
+*What teams actually learned — wins, failures, and the numbers they published.*
+
+| # | Guide | You'll build | Based on | Level |
+| --- | --- | --- | --- | --- |
 | 14 | [Community field reports](guides/community-field-reports.md) | What real teams learned — wins, failures, and named deployments with numbers | 15+ published hands-on accounts | Start here |
-| 15 | [Living evals from production traces](guides/living-evals.md) | A self-growing eval suite: Devin replays production failures in a full copy of your system | Rox — 72% usage coverage vs 43–57% hand-written | Advanced |
-| 16 | [Skills & plugins](guides/skills-and-plugins.md) | The post-playbook layer — SKILL.md contract, discovery, packaging as plugins | [Skills docs](https://docs.devin.ai/product-guides/skills) | Intermediate |
-| 17 | [Devin Desktop](guides/devin-desktop.md) | The agent-native editor: Command Center, durable local sessions, Bots — one window | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | Start here |
 
 <p align="right"><a href="#readme">back to top</a></p>
 
@@ -99,10 +116,13 @@ flowchart LR
 
 ## How to use this repo
 
-- **New to Bots?** Do guide 1, then pick 2 or 3 — they're the two most reproducible.
+Read stages in order the first time; after that, jump.
+
+- **Solo developer, first contact:** 18 → 17 (or 12 if you live in a terminal) → 1 → 13. That's a weekend.
 - **Want quick wins?** Guide 13's scheduled-hygiene recipes are the cheapest first deployment.
-- **Running a team?** Guides 4, 7 and 9 are written for you.
-- Every guide ends with **Sources** — the launch post, docs page, or write-up the pattern was distilled from — and **Verify it**, the check that tells you the reproduction worked.
+- **Team lead:** add 6, 9, 16 — the loop, the conventions, the reuse layer.
+- **Running an org?** All of Stage 2, then 7 — and read 14 for what other teams actually hit.
+- Every guide ends with **Sources** — official docs *and* the community/field account the pattern was distilled from — and **Verify it**, the check that tells you the reproduction worked.
 
 <p align="right"><a href="#readme">back to top</a></p>
 

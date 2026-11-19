@@ -45,6 +45,30 @@ You own the Android app now. Keep it at feature parity with iOS.
 
 任务做完就结束；结果让 Bot 永远重新规划。
 
+### 有界的第一个任务
+
+"所有权"是对的*形状*，但第一次跑要把*面*收窄：一条流程、一个环境、一个审阅人——你。ANO 实战指南的模式是最稳的起点：
+
+```text
+Own the newsletter signup check for [project] on staging.
+Use [repository], [staging URL] and the test mailbox I provide.
+Check the journey from submitting the form to receiving the
+correct welcome email and opening its resource link.
+
+Start with one run. Show me the result before proposing a schedule.
+If you find a defect, reproduce it, make the smallest suitable fix,
+and open a pull request with the evidence.
+
+Do not merge, deploy, email real subscribers, change billing,
+or connect another service without asking me.
+
+Return: what passed/failed, screenshots or a short recording,
+the PR if a fix was needed, anything you could not verify,
+and any decision you need from me.
+```
+
+承重的那几行：旅程的定义（表单 → 邮件 → 链接，不只是"表单能用"）、*先跑一次再谈排程*、明写的禁 merge/禁部署边界、以及点名要的证据。Bot 连续两次交回可信证据之后，再扩大任务面。
+
 ## 第 3 步 — 与它协作
 
 结果设定后，你的消息大多是查岗：
@@ -70,6 +94,13 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 - **Memory**（Settings → Memory）：Bot 自己写的文件——偏好、纠正、项目事实。要改它的记忆，直接在聊天里说（"remember: we deploy via Cloud Run, never bare VMs"）。能用这个 Bot 的人都能读它的记忆——共享 Bot 的记忆按共享对待。
 
 可扩展的模式：纠正 Bot 一次，让它把纠正写进记忆，之后每个会话都继承。Cognition 就靠这个循环每周合并 2,000+ PR。
+
+## 共享之前——权限与用量
+
+发布帖不会讲但文档写明了两件事：
+
+- **私有 Bot 会不打招呼继承你的资源。** 你已有的权限可以不经新的确认就被记录成 grants——私有 Bot 不是沙箱。共享之前打开 Settings → Access，摘掉任务不需要的 grants。如果想让队友抄方法但看不到你的对话和凭证，共享*模板*，不是 Bot 本体。
+- **Bot 的用量 = 它的聊天 + 它起的全部会话。** Max：先用你的包含额度再用按需付费——没有单独的 Bot 上限。Teams：你的额度然后团队点数，管理员可以设 Bot 专属按需上限。Enterprise：默认计入创建者上限，除非单独分配。聊天里写的花费指令不是配置好的上限——上限在 Settings 里设，别用自然语言描述。
 
 ## 第 5 步 — 放到你工作的地方
 
@@ -114,6 +145,7 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 
 ## Sources
 
-- [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
-- 下一篇：[第 2 篇 — 产品所有制 Bot](bots-201-product-owner.md)
+- [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots) —— 机制、权限、用量上限
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) —— 发布帖，Android Bot 的原话 prompt
+- [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) —— 社区实战指南；上面的有界首个任务和权限/用量提醒出自此
+- 上一篇：[指南 18 — 跟 Devin 说话](talking-to-devin.md)（outcome prompt 底下的基本法）· 下一篇：[第 2 篇 — 产品所有制 Bot](bots-201-product-owner.md)

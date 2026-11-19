@@ -45,6 +45,30 @@ That's the verbatim prompt Cognition's Android Bot started from. Compare:
 
 A task ends when it's done; an outcome makes the Bot re-plan forever.
 
+### A bounded first assignment
+
+Ownership is the right *shape*, but bound the *surface* on the first run: one flow, one environment, one reviewer — you. The ANO field guide's pattern is the reliable starter:
+
+```text
+Own the newsletter signup check for [project] on staging.
+Use [repository], [staging URL] and the test mailbox I provide.
+Check the journey from submitting the form to receiving the
+correct welcome email and opening its resource link.
+
+Start with one run. Show me the result before proposing a schedule.
+If you find a defect, reproduce it, make the smallest suitable fix,
+and open a pull request with the evidence.
+
+Do not merge, deploy, email real subscribers, change billing,
+or connect another service without asking me.
+
+Return: what passed/failed, screenshots or a short recording,
+the PR if a fix was needed, anything you could not verify,
+and any decision you need from me.
+```
+
+The load-bearing lines: the journey definition (form → email → link, not just "form works"), *one run before a schedule*, the explicit no-merge/no-deploy fence, and the named evidence you expect back. Expand the assignment only after the Bot returns evidence you can trust twice.
+
 ## Step 3 — Work with it
 
 After the outcome is set, most of your messages are check-ins:
@@ -70,6 +94,13 @@ You can reply in your own words, snooze, or dismiss any item.
 - **Memory** (Settings → Memory): files the Bot writes itself — preferences, corrections, project facts. To change what it remembers, just tell it in chat ("remember: we deploy via Cloud Run, never bare VMs"). Everyone who can use the Bot can read its memory — treat shared-Bot memory as shared.
 
 The pattern that scales: correct the Bot once, let it write the correction to memory, and every future session inherits it. Cognition merges 2,000+ PRs/week on this loop.
+
+## Before you share it — access and usage
+
+Two things the launch posts skip that the docs spell out:
+
+- **A private Bot inherits your resources without asking.** Access you already have can be recorded as grants with no new permission prompt — a private Bot is not a sandbox. Before sharing, open Settings → Access and strip grants the job doesn't need. If teammates should copy the method without seeing your conversation or credentials, share a *template*, not the Bot.
+- **A Bot's usage covers its chat plus every session it spawns.** Max: draws your included quota then on-demand — no separate Bot cap. Teams: your quota then team credits, an admin can set a Bot-specific on-demand cap. Enterprise: counts against the creator's limit unless assigned its own. A spending instruction in chat is not a configured cap — set the limit in Settings, don't describe it in prose.
 
 ## Step 5 — Put it where you work
 
@@ -114,6 +145,7 @@ Only the creator and roles with Manage Bots see Archive/Delete. On Enterprise pl
 
 ## Sources
 
-- [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
-- Next: [Guide 2 — Product-owner Bot](bots-201-product-owner.md)
+- [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots) — mechanics, access, usage limits
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — launch post, the Android Bot prompt
+- [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) — community field guide; the bounded-first-assignment pattern and access/usage caveats above
+- Back: [Guide 18 — Talking to Devin](talking-to-devin.md) (the doctrine under the outcome prompt) · Next: [Guide 2 — Product-owner Bot](bots-201-product-owner.md)
