@@ -45,6 +45,32 @@ Cognition 自己的样板 prompt，逐行注解：
 
 会话指令回答的是*"把这件事做好"*。Bot 的 outcome prompt 回答的是*"把这块地盘管好"*。教义相同——具体、边界、可检查的成功——只是对象从任务变成了责任。练熟了这里的写法，[outcome-prompts 参考](bot-outcome-prompts.md)会展示同一套肌肉怎么产出 Android Bot 的 1,134 个 PR。
 
+## 实录演示 —— 录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+教义实盘跑在一个丢弃用的 `demo-repo` 上：四行 brief——做法+机制、点名文件、可检验的成功线、明确边界。一次会话，零中途澄清，自检通过。
+
+**视频（90 秒，无声）：** brief → 改代码 → 权限提示 → 自检 → 边界被遵守。
+
+[![SWE-2 Flash Medium 完成任务——5 个 unittest 全绿，未提交](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/walkthrough.mp4)
+
+![1. CLI REPL 在 demo-repo 里跑 SWE-2 Flash Medium，composer 就绪](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step1-repl-flash.webp)
+*1. CLI REPL 在 demo-repo 里跑 SWE-2 Flash Medium——composer 就绪*
+
+![2. 那份 brief——四行对应四条规则：怎么做、从哪开始、成功检查、边界](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step2-the-brief.webp)
+*2. 那份 brief——四行对应四条规则：怎么做、从哪开始、成功检查、边界*
+
+![3. 中途：正在写 test_app.py——权限提示给出 Allow / accept-edits / bypass / deny](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step3-edits-approval.webp)
+*3. 中途：正在写 test_app.py——权限提示给出 Allow / accept-edits / bypass / deny*
+
+![4. 自证：agent 请求跑的正是点名的检查——python3 -m unittest -v](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step4-self-check-prompt.webp)
+*4. 自证：agent 请求跑的正是点名的检查——`python3 -m unittest -v`*
+
+![5. 完成——5 个测试全过；汇报自己写明 "No commit made."](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step5-tests-green.webp)
+*5. 完成——5 个测试全过；汇报自己写明边界已守："No commit made."*
+
+![6. /exit 后——`devin -r` 恢复提示；git status 证明边界守住了：两个文件被改、零新提交](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step6-no-commit.webp)
+*6. /exit 后——`devin -r` 恢复提示，`git status` 证明边界守住了：两个文件被改、零新提交*
+
 ## 验证一下
 
 - [ ] 拿你 backlog 里的一个真实任务，你能在 10 分钟内写出含：点名的仓库/文件、参考模式、明确的验收检查、声明的边界的指令。

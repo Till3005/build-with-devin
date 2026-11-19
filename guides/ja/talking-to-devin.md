@@ -45,6 +45,32 @@ Cognition 自身のモデルプロンプトに注釈：
 
 セッション指示は*「このタスクをうまくやれ」*に答える。Bot の outcome prompt は*「この領域を持て」*に答える。教義は同じ——具体性、境界、チェック可能な成功——だが対象がタスクから責任に変わる。ここが流暢になったら、[outcome-prompts リファレンス](bot-outcome-prompts.md)が同じ筋肉で Android Bot の 1,134 PR を生む様子を見せてくれる。
 
+## 実録ウォークスルー — Devin CLI v3000.14（swe-2-flash-medium）で収録
+
+使い捨ての `demo-repo` でドクトリンを実演：4 行のブリーフ——方法＋機構、ファイル名指名、検証可能な成功条件、明示の境界。1 セッション、途中確認ゼロ、自己検証済み。
+
+**動画（90 秒、無音）：** ブリーフ → 編集 → 権限プロンプト → セルフチェック → 境界遵守。
+
+[![SWE-2 Flash Medium がタスク完了 — 5 件の unittest 全パス、コミットなし](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/walkthrough.mp4)
+
+![1. demo-repo の CLI REPL、SWE-2 Flash Medium — composer 準備完了](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step1-repl-flash.webp)
+*1. demo-repo の CLI REPL、SWE-2 Flash Medium — composer 準備完了*
+
+![2. そのブリーフ — 4 行に 4 つのルール：方法、起点、成功条件、境界](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step2-the-brief.webp)
+*2. そのブリーフ — 4 行に 4 つのルール：方法、起点、成功条件、境界*
+
+![3. 途中：test_app.py を記述中 — 権限プロンプトは Allow / accept-edits / bypass / deny](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step3-edits-approval.webp)
+*3. 途中：test_app.py を記述中 — 権限プロンプトは Allow / accept-edits / bypass / deny*
+
+![4. 自己検証：エージェントが指名どおりのチェック `python3 -m unittest -v` を要求](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step4-self-check-prompt.webp)
+*4. 自己検証：エージェントが指名どおりのチェック `python3 -m unittest -v` を要求*
+
+![5. 完了 — 5 テスト全パス；報告自体が境界を確認「No commit made.」](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step5-tests-green.webp)
+*5. 完了 — 5 テスト全パス；報告自体が境界を確認：「No commit made.」*
+
+![6. /exit 後 — `devin -r` 再開ヒントと、境界が守られた `git status`：2 ファイル変更、新規コミットなし](https://till3005.github.io/built-with-devin/assets/guides/talking-to-devin/step6-no-commit.webp)
+*6. /exit 後 — `devin -r` の再開ヒント、境界が守られた `git status`：2 ファイル変更、新規コミットなし*
+
 ## 確認
 
 - [ ] バックログの実タスクに対し、10 分以内に「名前付きリポ/ファイル、参照パターン、明示的な成功チェック、宣言された境界」を含むブリーフが書ける。
