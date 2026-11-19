@@ -27,7 +27,7 @@ O Command Center é o hub de sessões — não é um editor:
 Desde a v3.13.4 (Desktop) / v3000.13.4 (CLI), uma sessão local roda num **processo em background**, não dentro da janela que a iniciou:
 
 - Fechar ou reabrir o Devin Desktop — ou o CLI — **não** para a sessão.
-- A mesma sessão abre em **vários clientes ao mesmo tempo**: janela do desktop e terminal anexados, cada um mostrando saída e perguntas.
+- A mesma sessão é **visível a todos os clientes** (`devin ls`, a lista do Desktop), mas a anexação é exclusiva: o segundo cliente vê um banner de trava e o force-open para o primeiro e transfere a sessão.
 - `devin daemon` inicia/para/verifica o processo; ele sai ~10 min depois que a última sessão e o último cliente saem.
 - `--process-model` escolhe `daemon` vs `in-process`; `process_model` no `config.json` ou `/config` define o padrão.
 - `devin ls`, `devin -r` e `/resume` abrem um **monitor de sessões** — sessões por última atualização, com status, diretório e contagem de mensagens.
@@ -46,10 +46,48 @@ Consequência prática: trabalho local agora é durável. Comece uma tarefa long
 
 **2. Uma janela, todas as superfícies.** Command Center para a visão da frota, Local para o repo em que você está, um Bot para o resultado que você não quer cuidar — Desktop é o único lugar onde os três dividem uma janela.
 
+## Passo a passo real — gravado no Devin Desktop v3.14.30825
+
+Uma execução de verdade, não uma montagem: macOS, plano Pro. Uma sessão Devin Local edita um `demo-repo` descartável em SWE-2 High, sobrevive ao fechamento do app e é passada entre o CLI e o Desktop.
+
+**Vídeo (91 s, sem áudio):** Command Center → abas → Bots → Devin Local → prova do daemon → IDE view.
+
+[![Sessão Devin Local terminando em SWE-2 High — 2 arquivos alterados no demo-repo](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough.mp4)
+
+![1. Command Center Home — sessões recentes, Your Bots, alternador Cloud/Local no composer](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step1-command-center.webp)
+*1. Command Center Home — sessões recentes, Your Bots e o alternador Cloud/Local no composer*
+
+![2. O seletor de modelo do composer — níveis de capacidade e previews de modelos](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step2-model-picker.webp)
+*2. O seletor de modelo do composer: níveis de capacidade (Fusion → Free) e previews incl. SWE-2 Lightning/Flash*
+
+![3. Uma sessão em nuvem abre como aba; a barra direita tem Computer, Files, Changes, Terminal](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step3-session-tab.webp)
+*3. Uma sessão em nuvem abre como aba — a barra direita tem Computer, Files, Changes, Terminal*
+
+![4. O menu "..." do cabeçalho da sessão — uso, arquivar, config de rede, criar automation/skill da sessão](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step4-session-menu.webp)
+*4. O menu "..." do cabeçalho da sessão; servidores MCP aparecem aqui quando a sessão os tem (esta não tem)*
+
+![5. Bots no Desktop — a página Bots abre, mas enviar mensagens exige Max ou Teams](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step5-bots-gate.webp)
+*5. Bots no Desktop: a página abre, mas este plano não envia mensagens a um Bot — "Bots require Max or Teams" (lacuna honesta)*
+
+![6. Devin Local pede aprovação antes de rodar comandos — Allow ou Reject, um a um](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step6-local-approval.webp)
+*6. Devin Local pede aprovação antes de rodar comandos — Allow ou Reject, um a um*
+
+![7. A sessão Local terminou em SWE-2 High — 2 arquivos alterados, com diff de revisão rápida](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step7-local-done.webp)
+*7. A sessão Local terminou em SWE-2 High — 2 arquivos alterados, com diff de revisão rápida*
+
+![8. Prova do daemon: ao sair do Desktop, `devin ls` ainda lista a sessão; retomar anexa com o transcript completo](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step8-cli-attached.webp)
+*8. Prova do daemon: ao sair do Desktop, `devin ls` ainda lista a sessão — retomar anexa com o transcript completo*
+
+![9. O segundo cliente vê banner de trava; Force open transfere a sessão, o primeiro desconecta](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step9-force-open.webp)
+*9. Dois clientes não co-pilotam: o segundo vê banner de trava, Force open transfere a sessão, o primeiro desconecta*
+
+![10. IDE view: Source Control lista as edições da sessão; abas não salvas mostram um ponto até Cmd+S](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step10-ide-view.webp)
+*10. IDE view: um editor real em volta da mesma sessão — Source Control lista suas edições; abas não salvas mostram um ponto até Cmd+S*
+
 ## Verifique
 
 - [ ] Uma sessão Devin Local sobrevive a fechar e reabrir o Desktop
-- [ ] A mesma sessão local anexada do Desktop e do `devin` CLI ao mesmo tempo
+- [ ] `devin ls` viu uma sessão criada no Desktop e `devin -r` a retomou com o transcript completo
 - [ ] `devin ls` abriu o monitor de sessões e entrou numa sessão em execução
 - [ ] Um Bot criado no chat do Desktop respondeu nesse chat
 
@@ -61,7 +99,7 @@ Consequência prática: trabalho local agora é durável. Comece uma tarefa long
 
 ## Teste rápido
 
-1. O que mudou nas sessões locais na v3.13.4? *(Passaram a rodar num processo em background — fechar o app não as interrompe mais, e vários clientes podem anexar à mesma sessão.)*
+1. O que mudou nas sessões locais na v3.13.4? *(Passaram a rodar num processo em background — fechar o app não as interrompe mais, e qualquer cliente pode ver e assumir a sessão.)*
 2. Quando escolher Devin Local em vez de sessão cloud? *(Quando você quer edições práticas no repo checked-out com contexto local; delegue ao cloud para escala ou integrações da org.)*
 3. O que há no menu "..." do cabeçalho da sessão? *(Os MCP servers da sessão — liga/desliga ou reautentica por sessão.)*
 

@@ -27,7 +27,7 @@ Command Center はセッションのハブであり、エディタではない�
 v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは起動したウィンドウではなく**バックグラウンドプロセス**で動く：
 
 - Devin Desktop や CLI を閉じて開き直しても、セッションは**止まらない**。
-- 同一セッションに**複数クライアントが同時接続**できる：Desktop ウィンドウとターミナルの両方で出力と質問が見える。
+- 同一セッションは**全クライアントに見える**（`devin ls`、Desktop の一覧）が、アタッチは単一所有：2 番目のクライアントにはロックバナーが出、Force open で最初のクライアントを止めてセッションを引き継ぐ。
 - `devin daemon` がプロセスの起動/停止/状態確認を行う。最後のセッションとクライアントが離れて約10分で自動終了する。
 - `--process-model` が `daemon` と `in-process` を切替える。`config.json` の `process_model` または `/config` がデフォルト設定。
 - `devin ls`、`devin -r`、`/resume` は**セッションモニター**を開く——最終更新順のセッション一覧にステータス・ディレクトリ・メッセージ数付き。
@@ -46,10 +46,48 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 
 **2. 1つのウィンドウ、全サーフェス。** Command Center でフリート全体、Local で手元の repo、Bot で見守りたくない成果——3つが同じウィンドウを共有するのは Desktop だけ。
 
+## 実録ウォークスルー — Devin Desktop v3.14.30825 で収録
+
+モックではなく実演：macOS、Pro プラン。Devin Local セッションが使い捨ての `demo-repo` を SWE-2 High で編集し、アプリを閉じても生き残り、CLI と Desktop 間で受け渡しされる。
+
+**動画（91 秒、無音）：** Command Center → タブ → Bots → Devin Local → daemon 実証 → IDE ビュー。
+
+[![SWE-2 High で完了する Devin Local セッション — demo-repo の 2 ファイル変更](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough.mp4)
+
+![1. Command Center ホーム — 最近のセッション、Your Bots、コンポーザーの Cloud/Local 切替](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step1-command-center.webp)
+*1. Command Center ホーム — 最近のセッション、Your Bots、コンポーザーの Cloud/Local 切替*
+
+![2. コンポーザーのモデルピッカー — 能力ティアとモデルプレビュー](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step2-model-picker.webp)
+*2. コンポーザーのモデルピッカー：能力ティア（Fusion → Free）とプレビュー（SWE-2 Lightning/Flash を含む）*
+
+![3. クラウドセッションがタブで開き、右レールに Computer、Files、Changes、Terminal](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step3-session-tab.webp)
+*3. クラウドセッションがタブで開く — 右レールに Computer、Files、Changes、Terminal*
+
+![4. セッションヘッダーの「…」メニュー — 使用量、アーカイブ、ネットワーク設定、セッションから automation/skill を作成](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step4-session-menu.webp)
+*4. セッションヘッダーの「…」メニュー；MCP サーバーがあるセッションではここに出る（これには無い）*
+
+![5. Desktop の Bots — Bots ページは開くが、メッセージ送信は Max または Teams が必要](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step5-bots-gate.webp)
+*5. Desktop の Bots：ページは開くがこのプランでは Bot に送れない —「Bots require Max or Teams」（正直なギャップ）*
+
+![6. Devin Local はコマンド実行前に確認 — 逐条 Allow / Reject](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step6-local-approval.webp)
+*6. Devin Local はコマンド実行前に確認 — 逐条 Allow / Reject*
+
+![7. SWE-2 High の Local セッション完了 — 2 ファイル変更、クイックレビュー diff 付き](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step7-local-done.webp)
+*7. SWE-2 High の Local セッション完了 — 2 ファイル変更、クイックレビュー diff 付き*
+
+![8. daemon の実証：Desktop を閉じても `devin ls` に残り、resume で全文転写つき接続](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step8-cli-attached.webp)
+*8. daemon の実証：Desktop を閉じても `devin ls` に残る — resume で全文転写つき接続*
+
+![9. 2 番目のクライアントにはロックバナー；Force open でセッションを引き継ぎ、先のクライアントは切断](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step9-force-open.webp)
+*9. 2 クライアントは同居できない：2 番目にはロック表示、Force open で引き継ぎ、先のクライアントは切断*
+
+![10. IDE ビュー：Source Control にセッションの変更一覧；未保存タブはドット表示、Cmd+S で保存](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step10-ide-view.webp)
+*10. IDE ビュー：同じセッションを包む本物のエディタ — Source Control に変更一覧；未保存タブはドット表示、Cmd+S で保存*
+
 ## 検証
 
 - [ ] Devin Local セッションが Desktop を閉じて開き直しても動き続ける
-- [ ] 同一ローカルセッションに Desktop と `devin` CLI から同時に接続できる
+- [ ] `devin ls` に Desktop 発のセッションが見え、`devin -r` で全文転写つき再開できた
 - [ ] `devin ls` でセッションモニターが開き、実行中のセッションに join できる
 - [ ] Desktop のチャットで作った Bot が同じチャットで返答する
 
@@ -61,7 +99,7 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 
 ## 理解度チェック
 
-1. v3.13.4 でローカルセッションは何が変わったか？（バックグラウンドプロセスで動作するようになった——アプリを閉じても止まらず、複数クライアントが同時接続できる。）
+1. v3.13.4 でローカルセッションは何が変わったか？（バックグラウンドプロセスで動作するようになった——アプリを閉じても止まらず、どのクライアントからも確認・引き継ぎできる。）
 2. いつクラウドセッションではなく Devin Local を選ぶか？（ローカルコンテキストでチェックアウト済み repo を直接編集したいとき。規模や組織統合が必要ならクラウドへ。）
 3. セッションヘッダーの "..." メニューには何があるか？（そのセッションの MCP servers——セッションごとの切替え・再認証。）
 

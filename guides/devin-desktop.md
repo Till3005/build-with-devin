@@ -27,7 +27,7 @@ The Command Center is the session hub — not an editor:
 Since v3.13.4 (Desktop) / v3000.13.4 (CLI), a local session runs in a **background process**, not inside the window that started it:
 
 - Closing or reopening Devin Desktop — or the CLI — does **not** stop a session.
-- The same session opens in **several clients at once**: desktop window and terminal both attached, each showing output and questions.
+- The same session is **visible to every client** (`devin ls`, the Desktop list), but attachment is single-owner: a second client gets a lock banner and force-open stops the first client and hands the session over.
 - `devin daemon` starts/stops/checks the process; it exits ~10 min after its last session and client leave.
 - `--process-model` chooses `daemon` vs `in-process`; `process_model` in `config.json` or `/config` sets the default.
 - `devin ls`, `devin -r` and `/resume` open a **session monitor** — sessions by last update, with status, directory and message count.
@@ -46,10 +46,48 @@ The practical consequence: local work is now durable. Start a long task, close t
 
 **2. One window, many surfaces.** Command Center for the fleet view, Local for the repo you're in, a Bot for the outcome you don't want to babysit — Desktop is the only place all three share a window.
 
+## Walkthrough — recorded on Devin Desktop v3.14.30825
+
+A real run, not a mock-up: macOS, Pro plan. A Devin Local session edits a throwaway `demo-repo` on SWE-2 High, then survives the app quitting and gets handed between the CLI and Desktop.
+
+**Video (91 s, no audio):** Command Center → tabs → Bots → Devin Local → daemon proof → IDE view.
+
+[![Devin Local session finishing on SWE-2 High — 2 files changed in demo-repo](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/walkthrough.mp4)
+
+![1. Command Center Home — recent sessions, Your Bots, Cloud/Local toggle on the composer](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step1-command-center.webp)
+*1. Command Center Home — recent sessions, Your Bots, and the Cloud/Local toggle on the composer*
+
+![2. The composer model picker — capability tiers plus model previews](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step2-model-picker.webp)
+*2. The composer model picker: capability tiers (Fusion → Free) and previews incl. SWE-2 Lightning/Flash*
+
+![3. A cloud session opens as a tab; the right rail holds Computer, Files, Changes, Terminal](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step3-session-tab.webp)
+*3. A cloud session opens as a tab — the right rail holds Computer, Files, Changes, Terminal*
+
+![4. The session header "..." menu — usage stats, archive, network config, create-automation/skill-from-session](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step4-session-menu.webp)
+*4. The session header "..." menu; MCP servers appear here when a session has them (this one has none)*
+
+![5. Bots in Desktop — the Bots page opens, but messaging needs Max or Teams](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step5-bots-gate.webp)
+*5. Bots in Desktop: the Bots page opens, but this plan can't message a Bot — "Bots require Max or Teams" (honest gap)*
+
+![6. Devin Local asks before running commands — Allow or Reject, per command](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step6-local-approval.webp)
+*6. Devin Local asks before running commands — Allow or Reject, per command*
+
+![7. The Local session finished on SWE-2 High — 2 files changed, quick-review diff](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step7-local-done.webp)
+*7. The Local session finished on SWE-2 High — 2 files changed, with a quick-review diff*
+
+![8. Daemon proof: quit Desktop, `devin ls` still lists the session; resuming attaches with the full transcript](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step8-cli-attached.webp)
+*8. Daemon proof: quit Desktop, `devin ls` still lists the session — resuming attaches with the full transcript*
+
+![9. A second client gets a lock banner; Force open transfers the session, the first client disconnects](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step9-force-open.webp)
+*9. Two clients can't co-pilot: the second gets a lock banner, Force open transfers the session, the first client disconnects*
+
+![10. IDE view: source control lists the session's edits; unsaved tabs show a dot until Cmd+S](https://till3005.github.io/built-with-devin/assets/guides/devin-desktop/step10-ide-view.webp)
+*10. IDE view: a real editor around the same session — source control lists its edits; unsaved tabs show a dot until Cmd+S*
+
 ## Verify it
 
 - [ ] A Devin Local session survives closing and reopening Desktop
-- [ ] The same local session attached from Desktop and from `devin` CLI at once
+- [ ] `devin ls` saw a Desktop-spawned session and `devin -r` resumed it with its full transcript
 - [ ] `devin ls` opened the session monitor and joined a running session
 - [ ] A Bot created from its Desktop chat answered in that chat
 
@@ -61,7 +99,7 @@ The practical consequence: local work is now durable. Start a long task, close t
 
 ## Knowledge check
 
-1. What changed about local sessions in v3.13.4? *(They run in a background process — closing the app no longer stops them, and multiple clients can attach to the same session.)*
+1. What changed about local sessions in v3.13.4? *(They run in a background process — closing the app no longer stops them, and any client can see and take over the session.)*
 2. When do you pick Devin Local over a cloud session? *(When you want hands-on edits in your checked-out repo with your local context; hand off to cloud for scale or org integrations.)*
 3. What lives in the session header's "..." menu? *(The session's MCP servers — toggle or re-authenticate them per session.)*
 
