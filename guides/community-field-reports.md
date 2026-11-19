@@ -45,8 +45,19 @@ Real orgs publishing their Devin operating data — mostly from Japan's engineer
 | Decagon | AutoResearch on Devin Cloud: one orchestrator Devin + parallel subagents competing hypotheses; every idea verified against replayed production traffic on Modal GPUs | **up to 2.5× more throughput per GPU** on support traffic ([writeup](https://x.com/DecagonAI/article/2115511110120120437)) |
 | Nader Dabit | Personal 5-bot org — **CTO** (all sessions/repos, iMessage VIP), **Auto(mation)Bot** (runs his automations, perf reports), **DevCommunityBot** (ambassador program data → mini-apps), **DevRelBot** (docs + tutorial videos with *its own computer, own Devin/GitHub/Linear accounts, ElevenLabs voice clone*) | Plus **Windfable**: ~10 SuperJennyStack Bots on a Unity iOS RPG, each with own macOS+Xcode+Unity, testing iPhone Duo folded/unfolded modes with screenshot/video diffs ([primer](https://x.com/dabit3/status/2122755275182469515)) |
 | Mark Fenner | Solo operator running four job-specific Bots under a coordinating Chief Agent Bot ("Frankie") | Consolidated updates via one decision surface — the multi-Bot org shape works without a team ([walkthrough](https://x.com/markfenner/status/2122740244328145211)) |
+| hubble | Two standing loops: every Dependabot PR gets a Devin investigation before a human reads it — a GREEN/YELLOW/RED risk label **plus the reasoning in a comment**; a weekly Datadog CCM loop picks a cost candidate, digs in, and hands back a decision-ready report | Review material is already assembled when the human opens the PR; the reasoning, not the label, is the deliverable ([Dependabot loop](https://zenn.dev/hubble/articles/88429bd24db476), [cost loop](https://zenn.dev/hubble/articles/091e29a0c86ec3), JP) |
+| SMARTCAMP | Standing security pipeline: scheduled GitHub Actions pull ECS images → Trivy scan (HIGH/CRITICAL) → file issues → Devin remediates; AWS creds and scanner jobs split so only artifacts cross; hash-pinning + 7-day release grace guard against scanner lag | Vulnerability remediation as a pipeline, not a session ([report](https://zenn.dev/smartcamp/articles/97ac804043530e), JP) |
+| canly | Devin as analyst, not coder: classified ~700 historical support tickets to find what "cause unidentified" actually was | Over half weren't bugs; choosing what context to give the AI (DB? docs?) mattered more than the model ([report](https://zenn.dev/canly/articles/9c19bb123e208c), JP) |
 
-The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-risk work, plan-first for complex), **fixed-output prompting** (Skillnote: fixed CSV format + inline Python for conversion kills output variance), **reviewer-pre-digest** (rakko: Devin summarizes + flags before the human reads), and **accounting for it honestly** (levtech's ACU-vs-wages ROI formula).
+The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-risk work, plan-first for complex), **fixed-output prompting** (Skillnote: fixed CSV format + inline Python for conversion kills output variance), **reviewer-pre-digest** (rakko: Devin summarizes + flags before the human reads), **reason-first triage** (hubble: the label is a pointer; the comment carrying the evidence is the deliverable), **pipeline-shaped remediation** (SMARTCAMP: scan → issue → fix as one CI-shaped loop with credentialed and unprivileged stages separated), and **accounting for it honestly** (levtech's ACU-vs-wages ROI formula).
+
+**The org-management fine print** (from Leverages' ~30-user rollout, same report):
+
+- One Slack workspace can bind to only **one** Devin organization — check whether another department already claimed yours before planning Slack-driven sessions.
+- There's no per-team ACU quota; they aggregate usage by listing sessions via the API and scraping each session's ACU from the web UI — budget by visibility, not enforcement.
+- Silent ACU burn: by default every comment on a Devin-authored PR wakes a session. They switched on **"Only respond to PR comments that mention Devin"** so people can discuss PRs freely.
+- Repo onboarding is serial — one repository mid-setup blocks the next; schedule it.
+- Their ROI split: high on PR pre-review (~1–2 ACU each via a `devin-review` label → Actions → API Playbook), scheduled library-upgrade risk assessments, and legacy work fed a *similar existing PR*; low on wide refactors and tasks too small to matter.
 
 ## The distilled lessons
 
@@ -55,6 +66,7 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 3. **Carry context, not assumptions.** Conventions, current docs (via MCP), your stack's shape — the failures are context failures, not capability failures.
 4. **Delegate; don't watch.** The ROI in every positive report is *asynchrony* — tasks run while you do something else. Watching it type is how you decide it's "slow."
 5. **Iterate the prompt, not the tool.** Scott Logic's fix wasn't a different agent — it was a narrower prompt. Treat a failed first run as a prompt bug.
+6. **Ship evidence, not verdicts.** hubble rewrote their Dependabot skill's last step from "decide whether to merge" to "assess the risk" — the agent assembles the case, the human keeps the decision.
 
 ## Scott Wu's internal top-5 (from the Lenny's interview)
 
@@ -88,3 +100,7 @@ The tasks Cognition itself delegates most: **frontend fixes, version upgrades, d
 - [architect to CTO — The only coding agent worth paying for](https://architecttocto.substack.com/p/the-only-coding-agent-worth-paying)
 - [expectedwrong — Devin, appraised](https://expectedwrong.com/devin-appraised) · [dev.to — 10 real tasks, 3 completed](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) · [amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios)
 - [Signadot — Testing Devin's changes end to end](https://dev.to/signadot/test-devins-changes-end-to-end-with-signadot-a0)
+- [hubble — Dependabot PRs investigated by Devin first](https://zenn.dev/hubble/articles/88429bd24db476) · [hubble — Datadog CCM × Devin weekly cost ops](https://zenn.dev/hubble/articles/091e29a0c86ec3) (JP)
+- [SMARTCAMP — Trivy scan → Devin remediation pipeline](https://zenn.dev/smartcamp/articles/97ac804043530e) (JP)
+- [canly — Classifying ~700 support inquiries with Devin](https://zenn.dev/canly/articles/9c19bb123e208c) (JP)
+- [smasato — Maximizing Devin: tips for success](https://zenn.dev/smasato/articles/6aebb0da2f56eb) (JP/EN)

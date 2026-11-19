@@ -45,8 +45,19 @@
 | Decagon | Devin Cloud 上的 AutoResearch：一个编排者 Devin + 并行子 agent 竞争假设；每个想法用 Modal GPU 上回放的生产流量验证 | 支持类流量上 **GPU 吞吐最高 2.5×**（[writeup](https://x.com/DecagonAI/article/2115511110120120437)） |
 | Nader Dabit | 个人 5-Bot 组织——**CTO**（全会话/全仓库，iMessage VIP 通道）、**Auto(mation)Bot**（代管 automations、性能报告）、**DevCommunityBot**（大使计划数据 → 迷你应用）、**DevRelBot**（文档 + 教程视频，*有自己的电脑、自己的 Devin/GitHub/Linear 账号、ElevenLabs 声纹克隆*） | 另有 **Windfable**：~10 个 SuperJennyStack Bot 跑 Unity iOS RPG，每 bot 配独立 macOS+Xcode+Unity，测 iPhone Duo 折叠/展开双态，前后截图+实机视频对比（[primer](https://x.com/dabit3/status/2122755275182469515)） |
 | Mark Fenner | 单人操作者跑 4 个分工 Bot，由一个协调者 Chief Agent Bot（"Frankie"）统领 | 经单一决策面汇总汇报——多 Bot 组织形态不需要团队就能跑（[walkthrough](https://x.com/markfenner/status/2122740244328145211)） |
+| hubble | 两条常驻回路：每个 Dependabot PR 在人看之前先由 Devin 调查——打 GREEN/YELLOW/RED 风险标签**并把依据写进评论**；每周 Datadog CCM 回路挑一个成本候选、深挖、交回可直接决策的报告 | 人打开 PR 时评审材料已经备好；交付物是依据而非标签（[Dependabot 回路](https://zenn.dev/hubble/articles/88429bd24db476)、[成本回路](https://zenn.dev/hubble/articles/091e29a0c86ec3)，JP） |
+| SMARTCAMP | 常驻安全流水线：定时 GitHub Actions 拉 ECS 镜像 → Trivy 扫（HIGH/CRITICAL）→ 建 issue → Devin 修复；AWS 凭证与扫描任务隔离只让产物跨边界；hash 固定 + 发布后 7 天宽限期防扫描器滞后 | 漏洞修复做成流水线，不是一次性会话（[report](https://zenn.dev/smartcamp/articles/97ac804043530e)，JP） |
+| canly | Devin 当分析师而非码农：把 ~700 条历史工单分类，弄清「原因未特定」到底是什么 | 过半根本不是 bug；给 AI 喂什么上下文（DB？文档？）比选哪个模型更关键（[report](https://zenn.dev/canly/articles/9c19bb123e208c)，JP） |
 
-其中可复用的思想：**策略表门控**（arufian：只自动 PR 低风险活、复杂的走 plan-first）、**定式输出 prompt**（Skillnote：固定 CSV 格式 + 内联 Python 转换消除输出抖动）、**评审预消化**（rakko：人看之前 Devin 先摘要+标记）、**诚实记账**（levtech 的 ACU-vs-工资 ROI 公式）。
+其中可复用的思想：**策略表门控**（arufian：只自动 PR 低风险活、复杂的走 plan-first）、**定式输出 prompt**（Skillnote：固定 CSV 格式 + 内联 Python 转换消除输出抖动）、**评审预消化**（rakko：人看之前 Devin 先摘要+标记）、**理由先行分诊**（hubble：标签只是指针，带着证据的评论才是交付物）、**流水线化修复**（SMARTCAMP：扫描 → issue → 修复一条 CI 式回路，带凭证与免凭证的段分开）、**诚实记账**（levtech 的 ACU-vs-工资 ROI 公式）。
+
+**组织运营的细账**（来自 Leverages ~30 人的铺开，同一篇报告）：
+
+- 一个 Slack workspace 只能绑**一个** Devin 组织——规划 Slack 驱动会话前，先查有没有别的部门已经占了坑。
+- 没有按团队限 ACU 的配额功能；他们用 API 列会话、再抓网页拿每个会话的 ACU 来汇总——预算靠可视化，不靠硬限制。
+- 隐形 ACU 消耗：默认 Devin 开的 PR 上每条评论都会唤醒会话。他们打开了 **"Only respond to PR comments that mention Devin"**，让人随便讨论。
+- 仓库 onboarding 是串行的——一个在 setup 中就卡住下一个，得排期。
+- 他们的 ROI 分布：高的在 PR 预评审（`devin-review` 标签 → Actions → API Playbook，每次 ~1–2 ACU）、定期库升级风险评估、以及喂了*相似既有 PR* 的遗留代码活；低的在大范围重构和小到不值得的任务。
 
 ## 蒸馏出的教训
 
@@ -55,6 +66,7 @@
 3. **带上下文，不带假设。** 规范、最新文档（经 MCP）、你的技术栈形态——失败都是上下文失败，不是能力失败。
 4. **委派；别盯着。** 每篇正面报告里的 ROI 都来自*异步*——任务在你干别的时跑。盯着它打字是你觉得它"慢"的原因。
 5. **迭代 prompt，不是迭代工具。** Scott Logic 的修复不是换 agent——是收窄 prompt。把第一次失败当 prompt bug 处理。
+6. **交付证据，不交付判决。** hubble 把 Dependabot skill 的最后一步从「决定是否合并」改成「评估风险」——agent 组装案情，人保留决定权。
 
 ## Scott Wu 的内部 top-5（来自 Lenny's 访谈）
 
@@ -88,3 +100,8 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 - [architect to CTO — The only coding agent worth paying for](https://architecttocto.substack.com/p/the-only-coding-agent-worth-paying)
 - [expectedwrong — Devin, appraised](https://expectedwrong.com/devin-appraised) · [dev.to — 10 real tasks, 3 completed](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) · [amillionmonkeys](https://www.amillionmonkeys.co.uk/blog/ai-coding-tools-small-studios)
 - [Signadot — Testing Devin's changes end to end](https://dev.to/signadot/test-devins-changes-end-to-end-with-signadot-a0)
+- [hubble — Dependabot PRs investigated by Devin first](https://zenn.dev/hubble/articles/88429bd24db476) · [hubble — Datadog CCM × Devin weekly cost ops](https://zenn.dev/hubble/articles/091e29a0c86ec3)（日语）
+- [SMARTCAMP — Trivy scan → Devin remediation pipeline](https://zenn.dev/smartcamp/articles/97ac804043530e)（日语）
+- [canly — Classifying ~700 support inquiries with Devin](https://zenn.dev/canly/articles/9c19bb123e208c)（日语）
+- [smasato — Maximizing Devin: tips for success](https://zenn.dev/smasato/articles/6aebb0da2f56eb)（日语/英译版）
+- [掘金 — Devin vs Cursor：个人开发者和中小项目怎么选](https://juejin.cn/post/7689030315844026414)（中文）
