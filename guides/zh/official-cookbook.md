@@ -95,6 +95,32 @@
 2. 有 PagerDuty/Datadog/Sentry 就加一个**事故**配方
 3. 某个配方起效后，冻结成 **skill**（第 12 篇）或 **Bot**（第 1–5 篇）——上表每一行都能以这两种形态存续
 
+## 实录演示 —— 一条食谱真跑一遍，录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+拿「代码质量」栏里的 **Raise code coverage** 食谱端到端跑了一遍：一个小仓库里放着故意少测的 `orders.py`（折扣码、运费档位、边界条件）。prompt 只有一行，剩下的全交给 Devin。
+
+**视频（74 秒，无声）：** 食谱 prompt → 读文件 → 写测试 → 命令审批 → 全绿。
+
+[![Devin 在写缺失的测试用例——test_orders.py 的 diff，下方是权限菜单](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough.mp4)
+
+![1. swe-2-flash-medium 上的 CLI REPL——Pro 方案免费档](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step0-repl.webp)
+*1. swe-2-flash-medium 上的 CLI REPL——Pro 方案，免费档*
+
+![2. 食谱 prompt 已提交——Devin 先读 orders.py 和 test_orders.py 再动手](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step1-recipe-prompt.webp)
+*2. 食谱 prompt 已提交——Devin 先读 orders.py 和 test_orders.py*
+
+![3. 写测试——+43 行新用例：空购物车、SAVE10/SAVE20/未知码、每个运费档](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step2-writing-tests.webp)
+*3. 写测试——+43 行覆盖空购物车、折扣码、每个运费档*
+
+![4. 命令审批——跑测试套件也要先批准](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step3-command-approval.webp)
+*4. 命令审批——`python3 -m unittest -v test_orders.py` 等一个 Allow*
+
+![5. 11 个测试全过——报告点名每个已覆盖分支；orders.py 未动、零提交](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step4-all-tests-pass.webp)
+*5. 11 个测试全过——每个原先未测的分支都被点名；orders.py 未动、零提交*
+
+![6. /exit 后验证——16 个测试全绿，改动停在工作区未提交](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step5-verify-exit.webp)
+*6. /exit 后验证——`Ran 16 tests ... OK`，改动按指令未提交*
+
 ## 验证
 
 - [ ] 有一个卫生循环 recipe 在按计划运行，并产出了第一个 PR/报告

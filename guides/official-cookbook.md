@@ -95,6 +95,32 @@ Everything below is a documented use case in the official gallery — each ships
 2. Add one from **Incidents** if you have PagerDuty/Datadog/Sentry
 3. When a recipe works, freeze it as a **skill** (Guide 12) or a **Bot** (Guides 1–5) — every row above survives as either
 
+## Walkthrough — one recipe run for real, on Devin CLI v3000.14 (swe-2-flash-medium)
+
+The **Raise code coverage** recipe from the *Code quality* shelf, run end-to-end on a small repo with a deliberately under-tested `orders.py` (discount codes, shipping tiers, edge cases). A one-line prompt; Devin did the rest.
+
+**Video (74 s, silent):** recipe prompt → reads → test-writing edit → command approval → all green.
+
+[![Devin writing the missing test cases — diff of test_orders.py with the permission menu open](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough.mp4)
+
+![1. The CLI REPL on swe-2-flash-medium — Pro plan, free tier](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step0-repl.webp)
+*1. The CLI REPL on swe-2-flash-medium — free tier on a Pro plan*
+
+![2. The recipe prompt — Devin reads orders.py and test_orders.py before touching anything](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step1-recipe-prompt.webp)
+*2. The recipe prompt submitted — Devin reads orders.py and test_orders.py first*
+
+![3. Writing tests — +43 lines of new cases: empty cart, SAVE10/SAVE20/unknown code, every shipping tier](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step2-writing-tests.webp)
+*3. Writing tests — +43 lines covering empty cart, discount codes, and every shipping tier*
+
+![4. Command approval — running the suite still asks first](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step3-command-approval.webp)
+*4. Command approval — `python3 -m unittest -v test_orders.py` waits for an Allow*
+
+![5. All 11 tests pass — the report names every branch covered; orders.py unchanged, no commits](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step4-all-tests-pass.webp)
+*5. All 11 tests pass — every previously untested branch named; orders.py untouched, no commits*
+
+![6. Verified after /exit — 16 tests green, changes are uncommitted working-tree edits](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step5-verify-exit.webp)
+*6. Verified after /exit — `Ran 16 tests ... OK`, changes stay uncommitted as instructed*
+
 ## Verify it
 
 - [ ] One hygiene recipe is running on a schedule and produced its first PR/report

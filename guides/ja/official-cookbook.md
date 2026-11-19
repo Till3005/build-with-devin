@@ -95,6 +95,32 @@
 2. PagerDuty/Datadog/Sentry があれば **インシデント**から 1 つ追加
 3. レシピが動いたら **スキル**(ガイド 12)か **Bot**(ガイド 1–5)に凍結する — 上の行すべてはどちらかの形で生き残る
 
+## 実録ウォークスルー — レシピを1本実演、Devin CLI v3000.14（swe-2-flash-medium）で収録
+
+*Code quality* 棚の **Raise code coverage** レシピを端から端まで実行：意図的にテスト不足にした `orders.py`（割引コード、送料ティア、エッジケース）を持つ小さなリポジトリで。プロンプトは一行、あとは Devin 任せ。
+
+**動画（74 秒、無音）：** レシピプロンプト → ファイル読込 → テスト作成 → コマンド承認 → 全パス。
+
+[![Devin が不足分のテストを記述中 — test_orders.py の差分と権限メニュー](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough.mp4)
+
+![1. swe-2-flash-medium の CLI REPL — Pro プラン無料枠](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step0-repl.webp)
+*1. swe-2-flash-medium の CLI REPL — Pro プラン、無料枠*
+
+![2. レシピプロンプト送信 — Devin はまず orders.py と test_orders.py を読む](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step1-recipe-prompt.webp)
+*2. レシピプロンプト送信 — 最初に orders.py と test_orders.py を読む*
+
+![3. テスト作成 — +43 行の新規ケース：空カート、SAVE10/SAVE20/不明コード、全送料ティア](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step2-writing-tests.webp)
+*3. テスト作成 — +43 行で空カート・割引コード・全送料ティアを網羅*
+
+![4. コマンド承認 — スイート実行にも確認が入る](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step3-command-approval.webp)
+*4. コマンド承認 — `python3 -m unittest -v test_orders.py` が Allow を待つ*
+
+![5. 11 テスト全パス — カバーした全ブランチを列挙；orders.py 無変更、コミットなし](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step4-all-tests-pass.webp)
+*5. 11 テスト全パス — 未テストだった全ブランチを列挙；orders.py 無変更、コミットなし*
+
+![6. /exit 後に検証 — 16 テスト全パス、変更は未コミットの作業ツリーのまま](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step5-verify-exit.webp)
+*6. /exit 後に検証 — `Ran 16 tests ... OK`、変更は指示どおり未コミット*
+
 ## 検証チェックリスト
 
 - [ ] ハイジーンレシピ 1 つがスケジュールで動き、最初の PR/レポートを出した

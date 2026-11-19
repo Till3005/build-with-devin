@@ -95,6 +95,32 @@ Tudo abaixo é um caso de uso documentado na galeria oficial — cada um vem com
 2. Adicione uma de **Incidentes** se você tem PagerDuty/Datadog/Sentry
 3. Quando uma receita funciona, congele-a como um **skill** (Guia 12) ou um **Bot** (Guias 1–5) — cada linha acima sobrevive como um dos dois
 
+## Passo a passo real — uma receita executada de verdade, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+A receita **Raise code coverage** da prateleira *Code quality*, executada de ponta a ponta num repositório pequeno com um `orders.py` propositalmente sub-testado (códigos de desconto, faixas de frete, casos de borda). Um prompt de uma linha; o Devin fez o resto.
+
+**Vídeo (74 s, sem áudio):** prompt da receita → leitura → edição dos testes → aprovação de comando → tudo verde.
+
+[![Devin escrevendo os casos de teste que faltavam — diff de test_orders.py com o menu de permissão aberto](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/walkthrough.mp4)
+
+![1. O REPL do CLI em swe-2-flash-medium — plano Pro, cota gratuita](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step0-repl.webp)
+*1. O REPL do CLI em swe-2-flash-medium — plano Pro, cota gratuita*
+
+![2. O prompt da receita enviado — Devin lê orders.py e test_orders.py antes de mexer](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step1-recipe-prompt.webp)
+*2. O prompt da receita enviado — primeiro lê orders.py e test_orders.py*
+
+![3. Escrevendo testes — +43 linhas de casos novos: carrinho vazio, SAVE10/SAVE20/código desconhecido, toda faixa de frete](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step2-writing-tests.webp)
+*3. Escrevendo testes — +43 linhas cobrindo carrinho vazio, códigos de desconto e toda faixa de frete*
+
+![4. Aprovação de comando — rodar a suíte também pede permissão](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step3-command-approval.webp)
+*4. Aprovação de comando — `python3 -m unittest -v test_orders.py` espera um Allow*
+
+![5. 11 testes passando — o relatório cita cada branch coberta; orders.py intacto, sem commits](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step4-all-tests-pass.webp)
+*5. 11 testes passando — cada branch antes sem teste citada; orders.py intacto, sem commits*
+
+![6. Verificado após /exit — 16 testes verdes, mudanças continuam não commitadas](https://till3005.github.io/built-with-devin/assets/guides/official-cookbook/step5-verify-exit.webp)
+*6. Verificado após /exit — `Ran 16 tests ... OK`, mudanças não commitadas como instruído*
+
 ## Checklist de verificação
 
 - [ ] Uma receita de higiene está rodando em agenda e produziu seu primeiro PR/relatório
