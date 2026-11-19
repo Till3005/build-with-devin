@@ -72,6 +72,16 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 
 The tasks Cognition itself delegates most: **frontend fixes, version upgrades, documentation, incident response, testing** — plus a "first line of defense" pattern where Devin analyzes crashes before humans engage, and DeepWiki research to *write better prompts*.
 
+## Deep dives — what to copy, what to watch
+
+**hubble's Dependabot loop.** Every Dependabot PR triggers a Devin session driven by a Skill file: it reads the diff, lockfile changes, release notes and CI state, then comments a GREEN/YELLOW/RED risk label *plus the evidence* — updated libs and update type, risk class with rationale, compat findings, CI status, and what a human should still check by hand. Why it works: the Skill encodes "what risk means here" (which gems are critical, what to verify even on green CI) — tacit reviewer knowledge, now in a file the whole team can read and grow. They deliberately deleted the "decide whether to merge" step in favor of "assess the risk." Copy: write your review procedure as a Skill first — if you can't write the procedure, the automation can't run it. Watch: labels alone decay; without the reasoning comment the system teaches nothing.
+
+**hubble's weekly cost loop.** A weekly Datadog CCM pass: Devin picks one cost-reduction candidate, digs into config and usage, and hands back a decision-ready report. The loop's product is a *candidate with a recommendation*, not a bill. Copy: "pick one candidate, dig, hand over" generalizes to any standing hygiene queue. Watch: first-party tools (AWS cost tooling) overlap — this wins when your cost data lives in Datadog and the fix needs repo context.
+
+**SMARTCAMP's scan→fix pipeline.** Scheduled GitHub Actions pull ECS images → Trivy scan (HIGH/CRITICAL, OS packages) → file issues → Devin remediates. The details worth stealing are the hardening, not the arrow: the AWS-credentialed pull job and the unprivileged scanner job are split so only artifacts cross; they wait ~7 days after a release before trusting results (scanner databases lag fresh packages); image digests are hash-pinned with a PR check that flags stale hashes. Watch: this is defense-in-depth against the scanner itself as supply-chain surface — copying only "scan → Devin" misses the point.
+
+**canly's analyst deployment.** Devin classified ~700 historical support tickets stuck in the "cause unidentified" bucket. Over half weren't bugs at all — and the exercise's real output was a map of what context the AI still needs (docs, DB visibility, ticket metadata), not the labels. Copy: Devin-as-analyst is a first-class use — point it at the pile nobody ever classified before buying tooling. Watch: the bottleneck is context selection, not model quality.
+
 ## Verify it
 
 - [ ] Pick one report closest to your own stack and re-read the original, not the distillation — does the number still hold in context?
