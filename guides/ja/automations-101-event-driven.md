@@ -80,11 +80,12 @@ Action:    Start session: "Sweep yesterday's Sentry issues in
 
 ## 作り方
 
-Automations ページの 3 つの作成経路：
+Automations ページ右上の **Create automation** ドロップダウンに 4 つの作成経路：
 
-1. **Create** —— 空のエディタ：トリガー → 条件 → アクションを選ぶ
-2. **Template** —— よくあるワークフロー向けの事前設定済み自動化ギャラリー
-3. **Generate with Devin** —— 英語で記述（*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*）、生成された設定をレビュー
+1. **Create manually** —— 空のエディタ：トリガー → 条件 → アクションを選ぶ
+2. **Create from template** —— よくあるワークフロー向けの事前設定済み自動化ギャラリー
+3. **Create with Devin** —— 平易な言葉で記述（*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*）；セッションが設定を質問し、組み立てた自動化を承認に出す
+4. **Ask Devin for suggestions** —— Devin がリポジトリを走査し、作る価値のある自動化を提案
 
 人がハマる注意点：
 
@@ -92,6 +93,38 @@ Automations ページの 3 つの作成経路：
 - Teams のプライベートチャンネルは @メンションでのみ発火
 - GitHub トリガーは特定リポジトリを指名する必要がある
 - 多数運用するなら **Terraform provider** で宣言的管理
+
+## 実録ウォークスルー — automation を実際に作成・発火・検証、Devin Desktop v3.14（Pro プラン）で収録
+
+*Create with Devin* 経路を端から端まで：毎週 changelog スイープを平易に記述 → 設定質問に回答 → 生成された automation を承認 → 手動発火 → 本物のレポートが届くまで。
+
+**動画（5 分、無音、4 倍速）：** Automations ページ → 生成セッション → 承認カード → 手動発火 → レポート。
+
+[![生成セッションのオプションカード — アカウントの既存 automation を既に把握している](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough.mp4)
+
+![1. Automations ページ — 既存の automation と Create automation ドロップダウン](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step1-automations-page.webp)
+*1. Automations ページ — 既存の automation と Create automation ドロップダウン*
+
+![2. 4 つの作成経路 — Create manually / from template / with Devin / ask for suggestions](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step2-create-options.webp)
+*2. 4 つの作成経路 — Create manually / from template / with Devin / ask for suggestions*
+
+![3. 生成セッションは的を絞った質問をする — 既存の automation を既に列挙](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step3-generate-options.webp)
+*3. 生成セッションは的を絞った質問をする — 既存の automation を把握済み*
+
+![4. すべての作成が承認カードにゲートされる — トリガー・範囲・run-as・ネットワークポリシーを表示](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step4-approve-card.webp)
+*4. すべての作成が承認カードにゲートされる — トリガー・範囲・run-as・ネットワークポリシーを表示*
+
+![5. Automation 作成完了 — 毎週金曜 10:00（北京時間）、読み取り専用レポート、メール通知](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step5-created.webp)
+*5. Automation 作成完了 — 毎週金曜 10:00（北京時間）、読み取り専用レポート、メール通知*
+
+![6. 手動発火 — 同じ承認カードのゲート；起動したセッションがサイドバーに現れる](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step6-manual-run.webp)
+*6. 手動発火 — 同じ承認カードのゲート；起動したセッションがサイドバーに現れる*
+
+![7. 正直なつまずき — 起動セッションの git プロキシ経由 clone が 403 を返した（2 回）；github.com をネットワークポリシーに追加 + 匿名 clone フォールバックで解決](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step7-403-fix.webp)
+*7. 正直なつまずき — 起動セッションの git プロキシ経由 clone が 2 回 403；修復は github.com をネットワークポリシーに追加 + 匿名 clone フォールバック——automation が起動するセッションはローカル shell の git アクセスを自動では引き継がない*
+
+![8. 検証された出力 — 今週の 103 コミットを分類した本物の changelog、artifact として配信](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
+*8. 検証された出力 — 今週の 103 コミットを分類した本物の changelog、artifact として配信*
 
 ## 検証チェックリスト
 

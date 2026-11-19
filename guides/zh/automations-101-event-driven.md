@@ -80,11 +80,12 @@ Action:    Start session: "Sweep yesterday's Sentry issues in
 
 ## 动手建
 
-Automations 页面上三条创建路径：
+Automations 页面右上 **Create automation** 下拉里有四条创建路径：
 
-1. **Create** —— 空白编辑器：选 trigger → conditions → action
-2. **Template** —— 常见工作流的预配 automation 画廊
-3. **Generate with Devin** —— 用英文描述（*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*），复核生成的配置
+1. **Create manually** —— 空白编辑器：选 trigger → conditions → action
+2. **Create from template** —— 常见工作流的预配 automation 画廊
+3. **Create with Devin** —— 用大白话描述（*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*）；它会起个会话问你配置问题，再把拼好的 automation 交给你批准
+4. **Ask Devin for suggestions** —— 让 Devin 扫你的仓库，推荐值得建的 automation
 
 咬过人的细节：
 
@@ -92,6 +93,38 @@ Automations 页面上三条创建路径：
 - Teams 私有频道只在 @mention 时触发
 - GitHub 触发器必须指定具体 repo
 - automation 多了用 **Terraform provider** 声明式管理
+
+## 实录演示 —— 真建、真触发、真验证一个 automation，录于 Devin Desktop v3.14（Pro 方案）
+
+走 *Create with Devin* 路径端到端：用大白话描述一个每周 changelog 清扫 → 回答它的配置问题 → 批准生成的 automation → 手动触发 → 看着一份真报告落地。
+
+**视频（5 分钟，无声，4 倍速）：** Automations 页 → 生成会话 → 批准卡片 → 手动触发 → 报告。
+
+[![生成会话的选项卡——它已经知道你账号里现有的 automation](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough.mp4)
+
+![1. Automations 页——现有 automation + Create automation 下拉](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step1-automations-page.webp)
+*1. Automations 页——现有 automation + Create automation 下拉*
+
+![2. 四条创建路径——Create manually / from template / with Devin / ask for suggestions](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step2-create-options.webp)
+*2. 四条创建路径——Create manually / from template / with Devin / ask for suggestions*
+
+![3. 生成会话问的都是定向问题——它已经列出了你现有的 automation](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step3-generate-options.webp)
+*3. 生成会话问的都是定向问题——它已经知道你现有的 automation*
+
+![4. 每次创建都卡一张批准卡——触发、范围、run-as、网络策略全列出](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step4-approve-card.webp)
+*4. 每次创建都卡一张批准卡——触发、范围、run-as、网络策略全列出*
+
+![5. Automation 已创建——每周五 10:00 北京时间、只读报告、邮件通知](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step5-created.webp)
+*5. Automation 已创建——每周五 10:00 北京时间、只读报告、邮件通知*
+
+![6. 手动触发——同样的批准卡门禁；拉起的会话出现在侧栏](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step6-manual-run.webp)
+*6. 手动触发——同样的批准卡门禁；拉起的会话出现在侧栏*
+
+![7. 一次如实的磕绊——子会话走 git 代理 clone 连续 403；把 github.com 加进网络白名单 + 匿名 clone 兑底才修通](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step7-403-fix.webp)
+*7. 一次如实的磕绊——子会话走 git 代理 clone 两次 403；修法是把 github.com 加进网络白名单 + 匿名 clone 兑底——automation 拉起的会话不会自动继承你本机 shell 的 git 权限*
+
+![8. 验证过的产出——一份真把本周 103 个 commit 分类的 changelog，以附件交付](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
+*8. 验证过的产出——一份真把本周 103 个 commit 分类的 changelog，以 artifact 交付*
 
 ## Verify it
 

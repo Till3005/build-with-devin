@@ -80,11 +80,12 @@ Daily hygiene loops (Sentry sweeps, dependency updates, smoke tests) are the hig
 
 ## Build it
 
-Three creation paths on the Automations page:
+Four creation paths on the Automations page, under the **Create automation** dropdown:
 
-1. **Create** — the blank editor: pick trigger → conditions → action
-2. **Template** — the gallery of pre-configured automations for common workflows
-3. **Generate with Devin** — describe it in English (*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*), review the generated config
+1. **Create manually** — the blank editor: pick trigger → conditions → action
+2. **Create from template** — the gallery of pre-configured automations for common workflows
+3. **Create with Devin** — describe it in English (*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*); a session asks config questions, then presents the assembled automation for approval
+4. **Ask Devin for suggestions** — Devin scans your repos and proposes automations worth having
 
 Notes that bite people:
 
@@ -92,6 +93,38 @@ Notes that bite people:
 - Private Teams channels only fire on @mention
 - A GitHub trigger must name a specific repo
 - Manage automations declaratively with the **Terraform provider** if you're running many
+
+## Walkthrough — an automation built, fired and verified on Devin Desktop v3.14 (Pro plan)
+
+The *Create with Devin* path end-to-end: describe a weekly changelog sweep in plain language, answer its config questions, approve the generated automation, fire it manually — and watch a real report land.
+
+**Video (5 min, silent, 4× speed):** Automations page → generate session → approval cards → manual run → report.
+
+[![The generate session's option card — it already knows the account's existing automations](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough.mp4)
+
+![1. The Automations page — existing automations plus the Create automation dropdown](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step1-automations-page.webp)
+*1. The Automations page — existing automations plus the Create automation dropdown*
+
+![2. Four creation paths — Create manually / from template / with Devin / ask for suggestions](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step2-create-options.webp)
+*2. Four creation paths — Create manually / from template / with Devin / ask for suggestions*
+
+![3. The generate session asks targeted questions — it already lists your existing automations](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step3-generate-options.webp)
+*3. The generate session asks targeted questions — it already knows your existing automations*
+
+![4. Every creation is gated on an approval card — trigger, scope, run-as and network policy shown](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step4-approve-card.webp)
+*4. Every creation is gated on an approval card — trigger, scope, run-as and network policy shown*
+
+![5. Automation created — weekly Friday 10:00 CST, read-only report, email notification](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step5-created.webp)
+*5. Automation created — weekly Friday 10:00 CST, read-only report, email notification*
+
+![6. The manual fire — same approval-card gate; the spawned session appears in the sidebar](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step6-manual-run.webp)
+*6. The manual fire — same approval-card gate; the spawned session appears in the sidebar*
+
+![7. An honest hiccup — the spawned session's git-proxy clone 403'd; adding github.com to its network policy plus an anonymous-clone fallback fixed it](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step7-403-fix.webp)
+*7. An honest hiccup — the spawned session's git-proxy clone returned 403 (twice); the fix was adding github.com to its network policy plus an anonymous-clone fallback — automation sessions don't automatically share your shell's git access*
+
+![8. The verified output — a real categorized changelog of the week's 103 commits, delivered as a file](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
+*8. The verified output — a real categorized changelog of the week's 103 commits, delivered as an artifact*
 
 ## Verify it
 

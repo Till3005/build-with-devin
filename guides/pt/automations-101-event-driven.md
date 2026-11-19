@@ -80,11 +80,12 @@ Loops de higiene diários (varreduras do Sentry, updates de dependências, smoke
 
 ## Construir
 
-Três caminhos de criação na página de Automations:
+Quatro caminhos de criação na página de Automations, no dropdown **Create automation**:
 
-1. **Create** — o editor em branco: escolha trigger → conditions → action
-2. **Template** — a galeria de automações pré-configuradas para workflows comuns
-3. **Generate with Devin** — descreva em inglês (*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*), revise o config gerado
+1. **Create manually** — o editor em branco: escolha trigger → conditions → action
+2. **Create from template** — a galeria de automações pré-configuradas para workflows comuns
+3. **Create with Devin** — descreva em linguagem simples (*"when a CI check fails on my-org/my-repo, have Devin fix it and push to the same branch"*); uma sessão pergunta a configuração e apresenta a automação montada para aprovação
+4. **Ask Devin for suggestions** — Devin escaneia seus repos e propõe automações que valem a pena
 
 Notas que mordem as pessoas:
 
@@ -92,6 +93,38 @@ Notas que mordem as pessoas:
 - Canais privados do Teams só disparam em @menção
 - Um trigger de GitHub precisa nomear um repo específico
 - Gerencie automações declarativamente com o **provider Terraform** se você roda muitas
+
+## Passo a passo real — uma automação criada, disparada e verificada no Devin Desktop v3.14 (plano Pro)
+
+O caminho *Create with Devin* de ponta a ponta: descrever uma varredura semanal de changelog em linguagem simples → responder às perguntas de configuração → aprovar a automação gerada → disparar manualmente → e ver um relatório real chegar.
+
+**Vídeo (5 min, sem áudio, 4× velocidade):** página de Automations → sessão geradora → cartões de aprovação → disparo manual → relatório.
+
+[![O cartão de opções da sessão geradora — ela já conhece as automações existentes da conta](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/walkthrough.mp4)
+
+![1. A página Automations — automações existentes e o dropdown Create automation](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step1-automations-page.webp)
+*1. A página Automations — automações existentes e o dropdown Create automation*
+
+![2. Quatro caminhos de criação — Create manually / from template / with Devin / ask for suggestions](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step2-create-options.webp)
+*2. Quatro caminhos de criação — Create manually / from template / with Devin / ask for suggestions*
+
+![3. A sessão geradora faz perguntas certeiras — já lista suas automações existentes](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step3-generate-options.webp)
+*3. A sessão geradora faz perguntas certeiras — já conhece suas automações existentes*
+
+![4. Toda criação passa por um cartão de aprovação — trigger, escopo, run-as e política de rede à mostra](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step4-approve-card.webp)
+*4. Toda criação passa por um cartão de aprovação — trigger, escopo, run-as e política de rede à mostra*
+
+![5. Automação criada — semanal sexta 10:00 CST, relatório somente-leitura, notificação por email](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step5-created.webp)
+*5. Automação criada — semanal sexta 10:00 CST, relatório somente-leitura, notificação por email*
+
+![6. O disparo manual — mesmo portão de cartão de aprovação; a sessão gerada aparece na barra lateral](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step6-manual-run.webp)
+*6. O disparo manual — mesmo portão de cartão de aprovação; a sessão gerada aparece na barra lateral*
+
+![7. Um tropeço honesto — o clone via proxy git da sessão gerada retornou 403 (duas vezes); adicionar github.com à política de rede + fallback de clone anônimo resolveu](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step7-403-fix.webp)
+*7. Um tropeço honesto — o clone via proxy git da sessão gerada retornou 403 (duas vezes); a correção foi adicionar github.com à política de rede + fallback de clone anônimo — sessões de automação não herdam automaticamente o acesso git do seu shell*
+
+![8. A saída verificada — um changelog categorizado real dos 103 commits da semana, entregue como artifact](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
+*8. A saída verificada — um changelog categorizado real dos 103 commits da semana, entregue como artifact*
 
 ## Checklist de verificação
 
