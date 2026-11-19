@@ -9,10 +9,10 @@
 Devin CLI はターミナルに住み Devin Cloud に接続するコーディングエージェント。2 つの動作モードがあり、力はその往復にある：
 
 - **ローカル** —— チェックアウト済みのリポジトリをあなたのマシン上で編集
-- **クラウド** —— `devin --cloud` でクラウドセッションを作成/操縦/再開；`/handoff` でローカルのタスクをクラウド Devin に送り、`/open` でクラウドセッションの PR を手元に引き戻す
+- **クラウド** —— `devin --cloud` でクラウドセッションを作成/操縦/再開；`/handoff` でローカルのタスクをクラウド Devin に送り、`/pickup` でクラウドセッションを手元に引き戻す（`/open` は Web アプリか Devin Desktop で開く）
 
 ```text
-ローカルリポジトリ ──/handoff──► Devin Cloud セッション ──PR──► /open ──► ローカルリポジトリ
+ローカルリポジトリ ──/handoff──► Devin Cloud セッション ──/pickup──► ローカルリポジトリ
      ▲                                │
      └──── devin ssh / forward（VM 内を検査）────┘
 ```
@@ -43,16 +43,61 @@ Devin CLI はターミナルに住み Devin Cloud に接続するコーディン
 
 ## 真似る価値のある 3 つのワークフロー
 
-**1. ローカル → クラウドへの展開。** タスクをローカルで始め、限界に当たったら `/handoff` で専用マシン上のクラウドセッションに継続させ、PR は `/open` で引き戻す。
+**1. ローカル → クラウドへの展開。** タスクをローカルで始め、限界に当たったら `/handoff` で専用マシン上のクラウドセッションに継続させ、作業は `/pickup` で手元に引き戻す。
 
 **2. メモリとしてのスキル。** 繰り返す手順（ガイド 11 の移行スキル、緊急修正ランブック、リリースカット）を `SKILL.md` にする——CLI ドキュメントは*成功したセッションの記録*をスキルに還流させて隙間を埋めることを推奨。プラグインがパッケージ化してチーム全体に共有する。
 
 **3. フックによるガードレール。** `rm -rf` パターンをブロックしたりマイグレーションにレビューを強制したりする `PreToolUse` フック——強制は期待されるモデル挙動ではなくフックに住む。
 
+## 実演 —— Devin CLI v3000.14 で録画
+
+モックではなく実際の実行です：Linux 上の Devin CLI `3000.14.30821`、Pro プラン、`app.py` だけの使い捨て `demo-repo`。モデルは編集タスクに `swe-2-flash-high`、スキル実行に `swe-2-high`（`devin models` では SWE-2 の両ティアが **Free** 表示）。
+
+**動画（67 秒・音声なし）：**ログインから handoff のエラーまで、下記のセッション全体。
+
+[![2. プロンプト：subtract 関数とテストを追加。Devin が diff を示して許可を求める —— Allow / Accept edits mode / Bypass mode / Deny](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/walkthrough.mp4)
+
+![1. devin --model swe-2-flash-high —— ログイン確認の後、ディレクトリ信頼の確認](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step1-login-trust.webp)
+*1. devin --model swe-2-flash-high —— ログイン確認の後、ディレクトリ信頼の確認*
+
+![2. プロンプト：subtract 関数とテストを追加。Devin が diff を示して許可を求める —— Allow / Accept edits mode / Bypass mode / Deny](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step3-permission-prompt.webp)
+*2. プロンプト：subtract 関数とテストを追加。Devin が diff を示して許可を求める —— Allow / Accept edits mode / Bypass mode / Deny*
+
+![3. 結果：app.py を編集し test_app.py を作成。pytest が無いため python -c でテストを実行し、その旨を報告](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step4-task-done.webp)
+*3. 結果：app.py を編集し test_app.py を作成。pytest が無いため python -c でテストを実行し、その旨を報告*
+
+![4. /model —— Adaptive、Fusion（リード + サイドキック）、各モデルファミリー。SWE-2 Flash は FREE でクォータ消費なし](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step5-model-picker.webp)
+*4. /model —— Adaptive、Fusion（リード + サイドキック）、各モデルファミリー。SWE-2 Flash は FREE でクォータ消費なし*
+
+![5. /exit で devin -r <slug> の再開ヒントが出る。devin ls はローカルのセッションモニター](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step6-devin-ls.webp)
+*5. /exit で devin -r <slug> の再開ヒントが出る。devin ls はローカルのセッションモニター*
+
+![6. devin --cloud から /list-sessions —— アカウントのクラウドセッションを新しい順に表示](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step8-cloud-sessions.webp)
+*6. devin --cloud から /list-sessions —— アカウントのクラウドセッションを新しい順に表示*
+
+![7. .devin/skills/review/SKILL.md が /review として swe-2-high で動き、未コミットの変更をレビュー](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step10-skill-result.webp)
+*7. .devin/skills/review/SKILL.md が /review として swe-2-high で動き、未コミットの変更をレビュー*
+
+![8. 落とし穴：git remote の無いリポジトリでは /handoff が失敗 ——「Handoff only works from git repos with a remote configured」](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step11-handoff-no-remote.webp)
+*8. 落とし穴：git remote の無いリポジトリでは /handoff が失敗 ——「Handoff only works from git repos with a remote configured」*
+
+手順 7 で使ったスキル（原文）：
+
+```markdown
+---
+name: review
+description: Review recent changes in this repo and report issues
+---
+
+Review the working tree's uncommitted changes. List each changed file,
+summarize what it does, and flag anything that looks wrong or risky.
+Keep it under 10 lines.
+```
+
 ## 検証チェックリスト
 
 - [ ] `devin` でローカルセッションが動き、`devin --cloud` でクラウドセッションを一覧/作成できる
-- [ ] `/handoff` したタスクがクラウドで完了し、PR が `/open` で戻ってきた
+- [ ] `/handoff` したタスクがクラウドで完了し、`/pickup` で手元に戻ってきた
 - [ ] スラッシュコマンドで呼んだ `SKILL.md` があなたの手順を実行した
 - [ ] （Enterprise）チームマーケットプレイスがあなたのプラグインを別メンバーに配れた
 
@@ -60,6 +105,7 @@ Devin CLI はターミナルに住み Devin Cloud に接続するコーディン
 
 - **並列作業にローカルを使う。** CLI はターミナルの 1 エージェント——並列スライスにはクラウドセッションか Bot を使う；CLI は*手を動かす*面。
 - **ルールの散乱。** `AGENTS.md` + プロジェクトルール + グローバルルールは優先順位で相互作用——各ルールはちょうど 1 層に置かないと衝突する。
+- **`/handoff` には remote が必要。** git remote の無いリポジトリでは即失敗する —— 先に Devin Cloud が clone できる場所へ push しておく。
 
 ## 理解度チェック
 

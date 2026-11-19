@@ -9,10 +9,10 @@
 Devin CLI 是住在你终端里、连着 Devin Cloud 的编码 agent。两种工作模式，威力在两者之间移动：
 
 - **本地** —— 直接编辑你机器上已检出的 repo
-- **云端** —— `devin --cloud` 创建/操控/恢复云会话；`/handoff` 把本地任务交给云端 Devin，`/open` 把云会话的 PR 拉回你机器
+- **云端** —— `devin --cloud` 创建/操控/恢复云会话；`/handoff` 把本地任务交给云端 Devin，`/pickup` 把云会话接回你本机（`/open` 则是在网页端或 Devin Desktop 里打开它）
 
 ```text
-local repo ──/handoff──► Devin Cloud session ──PR──► /open ──► local repo
+local repo ──/handoff──► Devin Cloud session ──/pickup──► local repo
      ▲                        │
      └──── devin ssh / forward (inspect its VM) ────┘
 ```
@@ -43,16 +43,61 @@ local repo ──/handoff──► Devin Cloud session ──PR──► /open �
 
 ## 三个值得抄的工作流
 
-**1. 本地 → 云端扇出。** 本地起任务、触到上限、`/handoff` 给一个在自己机器上继续跑的云会话——PR 用 `/open` 拉回来。
+**1. 本地 → 云端扇出。** 本地起任务、触到上限、`/handoff` 给一个在自己机器上继续跑的云会话——用 `/pickup` 把会话接回本机。
 
 **2. Skills 当记忆。** 把任何重复流程（第 11 篇的迁移 skill、hotfix runbook、发版切割）写成 `SKILL.md`——CLI docs 建议把*成功会话的记录*回灌进 skill 来补缺。plugins 把它们打包分发给全团队。
 
 **3. Hooks 当护栏。** 一个 `PreToolUse` hook 拦截 `rm -rf` 模式或对迁移强制评审——执行发生在 hook 里，而不是指望模型自觉。
 
+## 实录 —— 录制于 Devin CLI v3000.14
+
+真实跑出来的，不是示意图：Linux 上的 Devin CLI `3000.14.30821`，Pro 套餐，一个临时 `demo-repo`（只有 `app.py`）。模型：改代码用 `swe-2-flash-high`，跑 skill 用 `swe-2-high`（`devin models` 里两个 SWE-2 档位都标着 **Free**）。
+
+**视频（67 秒，无声）：**下面整段会话，从登录一直到 handoff 报错。
+
+[![2. 提示词：加一个 subtract 函数并写测试。Devin 先给出 diff 再请求权限——Allow / Accept edits mode / Bypass mode / Deny](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/walkthrough.mp4)
+
+![1. devin --model swe-2-flash-high —— 登录确认后弹出“是否信任该目录”](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step1-login-trust.webp)
+*1. devin --model swe-2-flash-high —— 登录确认后弹出“是否信任该目录”*
+
+![2. 提示词：加一个 subtract 函数并写测试。Devin 先给出 diff 再请求权限——Allow / Accept edits mode / Bypass mode / Deny](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step3-permission-prompt.webp)
+*2. 提示词：加一个 subtract 函数并写测试。Devin 先给出 diff 再请求权限——Allow / Accept edits mode / Bypass mode / Deny*
+
+![3. 结果：改了 app.py、写了 test_app.py；环境里没有 pytest，Devin 改用 python -c 跑测试并如实说明](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step4-task-done.webp)
+*3. 结果：改了 app.py、写了 test_app.py；环境里没有 pytest，Devin 改用 python -c 跑测试并如实说明*
+
+![4. /model —— Adaptive、Fusion（主模型 + 副手）和各模型家族；SWE-2 Flash 标 FREE，不耗额度](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step5-model-picker.webp)
+*4. /model —— Adaptive、Fusion（主模型 + 副手）和各模型家族；SWE-2 Flash 标 FREE，不耗额度*
+
+![5. /exit 会打印 devin -r <slug> 恢复命令；devin ls 是本地会话监视器](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step6-devin-ls.webp)
+*5. /exit 会打印 devin -r <slug> 恢复命令；devin ls 是本地会话监视器*
+
+![6. devin --cloud 后输入 /list-sessions —— 列出账号下的云会话，最新在前](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step8-cloud-sessions.webp)
+*6. devin --cloud 后输入 /list-sessions —— 列出账号下的云会话，最新在前*
+
+![7. .devin/skills/review/SKILL.md 变成 /review 斜杠命令，用 swe-2-high 审查未提交的改动](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step10-skill-result.webp)
+*7. .devin/skills/review/SKILL.md 变成 /review 斜杠命令，用 swe-2-high 审查未提交的改动*
+
+![8. 坑：仓库没配 git remote 时 /handoff 直接失败——“Handoff only works from git repos with a remote configured”](https://till3005.github.io/built-with-devin/assets/guides/devin-cli/step11-handoff-no-remote.webp)
+*8. 坑：仓库没配 git remote 时 /handoff 直接失败——“Handoff only works from git repos with a remote configured”*
+
+第 7 步用到的 skill 原文：
+
+```markdown
+---
+name: review
+description: Review recent changes in this repo and report issues
+---
+
+Review the working tree's uncommitted changes. List each changed file,
+summarize what it does, and flag anything that looks wrong or risky.
+Keep it under 10 lines.
+```
+
 ## Verify it
 
 - [ ] `devin` 能跑本地会话；`devin --cloud` 能列出/创建云会话
-- [ ] 一个 `/handoff` 的任务在云端完成、PR 经 `/open` 拉回来了
+- [ ] 一个 `/handoff` 的任务在云端完成、经 `/pickup` 接回了本机
 - [ ] 斜杠命令调用 `SKILL.md` 跑通了你的流程
 - [ ] （企业版）团队 marketplace 能把你的 plugin 发给另一个成员
 
@@ -60,6 +105,7 @@ local repo ──/handoff──► Devin Cloud session ──PR──► /open �
 
 - **并行活用云端。** CLI 是终端里的单个 agent——并行切片请用云会话或 Bot；CLI 是*亲手干*的那一面。
 - **Rules 蔓延。** `AGENTS.md` + 项目 rules + 全局 rules 按优先级相互作用——每条规则只放一层，否则会打架。
+- **`/handoff` 需要 remote。** 仓库没配 git remote 会直接失败——先把仓库推到 Devin Cloud 能 clone 的地方。
 
 ## 自检
 
