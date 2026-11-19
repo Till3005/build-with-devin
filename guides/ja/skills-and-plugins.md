@@ -62,6 +62,29 @@ permissions:
 - セッション中に Devin を訂正したら、その訂正を skill に追記 — 次のセッションはより賢く始まります。
 - 単一リポジトリで実証された skill は org plugin に昇格 — コピーなしで全リポジトリに届きます。
 
+## 実録ウォークスルー — リポジトリスキルを実際に起動、Devin CLI v3000.14（swe-2-flash-medium）で収録
+
+ステップ 3 の *明示的* な経路を端から端まで：デモリポジトリに `.devin/skills/coverage-check/SKILL.md` をコミットし、新しいセッションで起動。発見はドキュメント通り——`/` を打つとスキルが名前で列挙され、`description` が補完の説明文になる。
+
+**動画（60 秒、無音）：** SKILL.md → スラッシュ補完 → `Invoked skill coverage-check` → 承認 → レポート。
+
+[![スキルのレポート — app.py と orders.py の関数別カバレッジ表](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough.mp4)
+
+![1. ディスク上のスキル — frontmatter の name/description と番号付き手順](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step1-skill-file.webp)
+*1. ディスク上のスキル — `.devin/skills/coverage-check/SKILL.md`：frontmatter `name`/`description` と番号付き手順*
+
+![2. `/` でスキルが列挙される — 名前 + description が補完エントリ](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step2-slash-autocomplete.webp)
+*2. `/` でスキルが列挙される — 発見で読み込まれるのは名前 + `description` そのもの*
+
+![3. `Invoked skill coverage-check` — 最初のコマンドも Allow 待ち](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step3-invoked.webp)
+*3. `Invoked skill coverage-check` — 最初のコマンドにも Allow が必要*
+
+![4. 手順がそのまま実行される — unittest を走らせ、全ソース/テストファイルを読む](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step4-coverage-report.webp)
+*4. 手順がそのまま実行される — `python3 -m unittest -v`、続いて app.py・orders.py・両テストファイルを読む*
+
+![5. 結果：フルカバレッジ — 全ブランチを挙げた関数別表；ファイル無変更、コミットなし](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
+*5. 結果：フルカバレッジ — SKILL.md が要求した通りのレポート*
+
 ## 検証チェックリスト
 
 - [ ] 新しいセッションが skill を名前つきで列挙する（起動時に name + description が読まれる）

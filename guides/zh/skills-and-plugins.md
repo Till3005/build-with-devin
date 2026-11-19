@@ -62,6 +62,29 @@ permissions:
 - 会话中纠正了 Devin 什么，就把这条纠正写进 skill——下一个会话起步就更聪明。
 - 在单个仓库验证过的 skill 提升为 org plugin，让每个仓库不复制就能用。
 
+## 实录演示 —— 真调用一个 repo skill，录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+第 3 步的「显式调用」路径端到端：在演示仓库提交 `.devin/skills/coverage-check/SKILL.md`，然后在新会话里调用。发现机制和文档完全一致——输入 `/` 就按名字列出了这个 skill，`description` 就是补全栏里那行说明。
+
+**视频（60 秒，无声）：** SKILL.md → 斜杠补全 → `Invoked skill coverage-check` → 审批 → 报告。
+
+[![skill 产出的报告——app.py 和 orders.py 的逐函数覆盖表](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough.mp4)
+
+![1. 磁盘上的 skill——frontmatter 的 name/description，下面是一编号的流程](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step1-skill-file.webp)
+*1. 磁盘上的 skill——`.devin/skills/coverage-check/SKILL.md`：frontmatter `name`/`description` + 编号流程*
+
+![2. 输入 `/` 列出 skill——名字 + description 就是补全条目](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step2-slash-autocomplete.webp)
+*2. 输入 `/` 列出 skill——发现机制加载的正是 name + `description`*
+
+![3. `Invoked skill coverage-check`——第一条命令也要等 Allow](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step3-invoked.webp)
+*3. `Invoked skill coverage-check`——skill 的第一条命令仍需 Allow*
+
+![4. 流程按原文执行——跑 unittest，再逐个读源文件和测试文件](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step4-coverage-report.webp)
+*4. 流程按原文执行——`python3 -m unittest -v`，再读 app.py、orders.py 和两个测试文件*
+
+![5. 结果：全覆盖——逐函数表列出每个分支；未改文件、零提交](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
+*5. 结果：全覆盖——每个分支都有交代，正是 SKILL.md 要求的报告*
+
 ## 验证清单
 
 - [ ] 新会话能按名字列出你的 skill（启动时载入 name + description）

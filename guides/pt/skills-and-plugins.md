@@ -62,6 +62,29 @@ Campos de frontmatter que mudam o comportamento:
 - Quando você corrige Devin no meio da sessão, adicione a correção ao skill — a próxima sessão já começa mais esperta.
 - Promova skills provados num repo para um plugin da org — todo repo passa a tê-los sem copiar.
 
+## Passo a passo real — uma skill de repositório invocada de verdade, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+O caminho *explícito* do Passo 3, de ponta a ponta: uma skill `coverage-check` commitada em `.devin/skills/coverage-check/SKILL.md` num repositório demo, depois invocada numa sessão nova. A descoberta funciona como documentado — digitar `/` listou a skill pelo nome, com a `description` como texto do autocomplete.
+
+**Vídeo (60 s, sem áudio):** SKILL.md → autocomplete de barra → `Invoked skill coverage-check` → aprovação → relatório.
+
+[![O relatório da skill — tabelas de cobertura por função de app.py e orders.py](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough.mp4)
+
+![1. A skill no disco — name/description no frontmatter, depois um procedimento numerado](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step1-skill-file.webp)
+*1. A skill no disco — `.devin/skills/coverage-check/SKILL.md`: `name`/`description` no frontmatter + procedimento numerado*
+
+![2. Digitar `/` lista a skill — nome + description são a entrada do autocomplete](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step2-slash-autocomplete.webp)
+*2. Digitar `/` lista a skill — a descoberta carrega exatamente nome + `description`*
+
+![3. `Invoked skill coverage-check` — até o primeiro comando espera um Allow](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step3-invoked.webp)
+*3. `Invoked skill coverage-check` — o primeiro comando já precisa de Allow*
+
+![4. O procedimento roda literalmente — unittest, depois lê cada arquivo-fonte e de teste](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step4-coverage-report.webp)
+*4. O procedimento roda literalmente — `python3 -m unittest -v`, depois lê app.py, orders.py e os dois arquivos de teste*
+
+![5. Resultado: cobertura total — tabelas por função citando cada branch; nenhum arquivo modificado, sem commits](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
+*5. Resultado: cobertura total — cada branch contabilizada, exatamente o relatório que a SKILL.md pediu*
+
 ## Checklist de verificação
 
 - [ ] Uma sessão nova lista seu skill pelo nome (name + description carregam no início)

@@ -62,6 +62,29 @@ Frontmatter that changes behavior:
 - When you correct Devin mid-session, add the correction to the skill so the next session starts smarter.
 - Promote repo-proven skills into an org plugin so every repo gets them without copying.
 
+## Walkthrough — a repo skill invoked for real, on Devin CLI v3000.14 (swe-2-flash-medium)
+
+Step 3's *explicit* path, end-to-end: a `coverage-check` skill committed at `.devin/skills/coverage-check/SKILL.md` in a demo repo, then invoked in a fresh session. Discovery works exactly as documented — typing `/` surfaced the skill by name, with its `description` as the autocomplete blurb.
+
+**Video (60 s, silent):** SKILL.md → slash autocomplete → `Invoked skill coverage-check` → approval → report.
+
+[![The skill's report — per-function coverage tables for app.py and orders.py](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/walkthrough.mp4)
+
+![1. The skill on disk — frontmatter name/description, then a numbered procedure](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step1-skill-file.webp)
+*1. The skill on disk — `.devin/skills/coverage-check/SKILL.md`: frontmatter `name`/`description`, then a numbered procedure*
+
+![2. Typing `/` lists the skill — name + description are the autocomplete entry](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step2-slash-autocomplete.webp)
+*2. Typing `/` lists the skill — name + `description` are exactly what discovery loads*
+
+![3. `Invoked skill coverage-check` — the first command already waits on an Allow](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step3-invoked.webp)
+*3. `Invoked skill coverage-check` — its first command still needs an Allow*
+
+![4. The procedure runs verbatim — unittest, then read every source and test file](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step4-coverage-report.webp)
+*4. The procedure runs verbatim — `python3 -m unittest -v`, then reads app.py, orders.py, both test files*
+
+![5. Result: full coverage — per-function tables naming every branch; no files modified, no commits](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
+*5. Result: full coverage — every branch accounted for, exactly the report the SKILL.md asked for*
+
 ## Verify it
 
 - [ ] A fresh session lists your skill by name (name + description load at start)
