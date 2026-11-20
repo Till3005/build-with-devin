@@ -76,6 +76,29 @@ The write-up's real lesson: quality came from *iterations* — "the ring draws t
 2. What does 'generated imagery + layered animation' require that a screenshot mock doesn't? *(Shippable assets and a working animation system — the verification is a rendered page, not a picture of one.)*
 3. When is chat-direction better than a design tool for landing pages? *(When the output must be production code anyway — the design session *is* the implementation.)*
 
+## Walkthrough — brief by mechanism, refine by critique, on Devin CLI v3000.14 (swe-2-flash-medium)
+
+A bare fintech page (`index.html`, default sans-serif), one Spraycash-style brief with real mechanisms — hex palette, `stroke-dashoffset` ring over 1.4s ease-out, three cloud layers at 40/60/90s, a 3-font scale — then one critique round with exact corrections. Both rounds happened inside one session.
+
+**Video (61 s, silent):** bare page → mechanism brief → implementation → rendered hero → critique → refined render.
+
+[![From a bare HTML page to a designed hero — brief, render, critique, re-render]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. The starting point — plain HTML, default styling]({B}/step1-bare-page.webp)
+*1. Before: three lines of copy and a button, nothing else*
+
+![2. The implementation report — every mechanism named: dashoffset 1131→203.6 over 1.4s, 40/60/90s layers, 56/28/16 scale]({B}/step2-brief-applied.webp)
+*2. The brief's numbers landed verbatim in the code — plus a prefers-reduced-motion fallback it added itself*
+
+![3. First render — navy hero, draw-on ring at 82%, drifting cloud layers, mono stat figures]({B}/step3-first-render.webp)
+*3. Round 1 output — real CSS/SVG, not a mockup*
+
+![4. The critique round applied — clouds to 12% opacity, ring muted to #3ECF8E, stats gap 48px; it even flagged the CTA still used the old green]({B}/step4-critique-applied.webp)
+*4. Critique is where the craft lives: exact values in, exact diff out — and it caught a mismatch we didn't mention*
+
+![5. Final render — same structure, muted and balanced]({B}/step5-final-render.webp)
+*5. Round 2 output — the loop is a message, not a ticket*
+
 ## Sources
 
 - [Designing the Spraycash UI with Kimi K3 in Devin](https://dev.to/ibrahimpima/designing-the-spraycash-ui-with-kimi-k3-in-devin-4l2f) — full prompts and iteration history

@@ -76,6 +76,29 @@ A lição real do relato: a qualidade veio de *iterações* — "o anel desenha 
 2. O que "imagem gerada + animação em camadas" exige que um mock de screenshot não exige? *(Assets entregáveis e um sistema de animação funcionando — a verificação é uma página renderizada, não a foto de uma.)*
 3. Quando direção por chat é melhor que uma ferramenta de design para landing pages? *(Quando a saída precisa ser código de produção de qualquer forma — a sessão de design *é* a implementação.)*
 
+## Demonstração — brief por mecanismo, refinamento por crítica, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+Uma página fintech crua (`index.html`, fonte padrão), um brief estilo Spraycash com mecanismos reais — paleta em hex, anel `stroke-dashoffset` em 1.4s ease-out, três camadas de nuvens a 40/60/90s, escala de 3 fontes — e uma rodada de crítica com valores exatos. As duas rodadas aconteceram na mesma sessão.
+
+**Vídeo (61 s, sem som):** página crua → brief mecânico → implementação → hero renderizado → crítica → render refinado.
+
+[![De HTML cru a um hero desenhado — brief, render, crítica, re-render]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. O ponto de partida — HTML puro, estilo padrão]({B}/step1-bare-page.webp)
+*1. Antes: três linhas de texto e um botão*
+
+![2. O relatório de implementação — cada mecanismo nomeado: dashoffset 1131→203.6 em 1.4s, camadas 40/60/90s, escala 56/28/16]({B}/step2-brief-applied.webp)
+*2. Os números do brief caíram verbatim no código — mais um fallback de prefers-reduced-motion que ele mesmo adicionou*
+
+![3. Primeiro render — hero navy, anel desenhando a 82%, nuvens à deriva, números em mono]({B}/step3-first-render.webp)
+*3. Saída da rodada 1 — CSS/SVG real, não mockup*
+
+![4. A crítica aplicada — nuvens a 12% de opacidade, anel suavizado para #3ECF8E, gap de stats 48px; ele até apontou que o CTA ainda usava o verde antigo]({B}/step4-critique-applied.webp)
+*4. O ofício mora na crítica: valores exatos entram, diff exato sai — e ele pegou uma inconsistência que não mencionamos*
+
+![5. Render final — mesma estrutura, equilibrada e sóbria]({B}/step5-final-render.webp)
+*5. Saída da rodada 2 — a iteração é uma mensagem, não um ticket*
+
 ## Fontes
 
 - [Designing the Spraycash UI with Kimi K3 in Devin](https://dev.to/ibrahimpima/designing-the-spraycash-ui-with-kimi-k3-in-devin-4l2f) — prompts completos e histórico de iteração
