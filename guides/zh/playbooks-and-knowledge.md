@@ -38,7 +38,7 @@
 
 ## 第 3 步 — 给可重复工作写 playbook
 
-> **平台更新（2026 年 11 月）：** Playbook 正在迁移到 **Skills**——各账号分批迁移，新账号只有 Skills（每个 playbook 会变成一个相同 org/enterprise 作用域的 skill）。本步所有内容对 skills 完全适用：skill 就是同样的、可调用的具名流程。
+> **平台更新（2026 年 11 月）：** Playbook 正在迁移到 **Skills**——各账号分批迁移，新账号只有 Skills（每个 playbook 会变成一个相同 org/enterprise 作用域的 skill）。本步所有内容对 skills 完全适用：skill 就是同样的、可调用的具名流程。**Knowledge 也已弃用**——org 知识条目正在迁移到 Plugins 里的 skills（docs.devin.ai/product-guides/knowledge），所以第 1–2 步「写下来」的产出物最终也落在同一个地方：一个 skill 文件。
 
 playbook 把流程打包，让任何会话（或 Bot）以同样方式执行。有效的结构：
 

@@ -38,7 +38,7 @@ Bad entries are essays, wishes ("write good tests"), or secrets (never put crede
 
 ## Step 3 — Playbooks for repeatable work
 
-> **Platform note (Nov 2026):** Playbooks are moving to **Skills** — accounts are migrating one at a time and new accounts get Skills only (each playbook becomes a skill with the same org/enterprise scope). Everything in this step applies verbatim to skills: a skill is the same named, invocable procedure.
+> **Platform note (Nov 2026):** Playbooks are moving to **Skills** — accounts are migrating one at a time and new accounts get Skills only (each playbook becomes a skill with the same org/enterprise scope). Everything in this step applies verbatim to skills: a skill is the same named, invocable procedure. **Knowledge is also deprecated** — org knowledge entries are migrating to skills in Plugins (docs.devin.ai/product-guides/knowledge), so Steps 1–2's 'write it down' advice now lands in the same place: a skill file.
 
 A playbook packages a procedure so any session (or Bot) runs it the same way. Structure that works:
 

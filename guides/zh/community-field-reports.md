@@ -89,6 +89,12 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 
 **canly 的分析师部署。** 让 Devin 把 ~700 条积压的「原因未特定」工单做了分类：过半根本不是 bug——而这件事真正的产出是一张「AI 还缺什么上下文」的地图（文档、DB 可见性、工单元数据），标签本身是次要的。抄法：Devin 当分析师是一等用法——买工具之前，先让它把没人分类过的那堆数据分类一遍。防什么：瓶颈是上下文的选择，不是模型质量。
 
+**Tavrn 的 HIPAA 租户舰队。** 8 个工程师在 HIPAA 租户里（SSO、权限范围、审计日志）从 Slack 给跨工程/运营/客服/销售的 Devin 派活：六周 1,600 个会话 → 1,800+ 个 PR，已评审 PR 合并率 ~80%，上个月合并代码的 93% 由 Devin 产出。真正的故事在中位数：告警→调查只要 35 秒，~90% 告警拿到完整在线调查，运营/客服/销售转给工程的问题量降了 ~80%——五分之四被 Devin 的回答吸收了。抄法：收益不在更多 PR，在于「调查变得免费」——一个每日 automation 重新调查质检失败的案例，系统自己的评估结果反过来喂给它活。防什么：「把全公司的问题都给它」成立的前提，是租户权限早已做死——先把 SSO/权限范围/审计日志做对，再开水龙头。
+
+**Hamming 的「Devinable」框架。** Hamming 不问「Devin 能不能做这个任务」，而是把活分成 Devinable 与非 Devinable：任务必须同时满足有界、规格清晰、有客观评估（测试、检查、数字）才算合格。在此之上他们有意识地让代码库对 agent 友好：函数式优先于 OOP，评估驱动优先于无断言测试。结果：Devin 贡献全公司 25% 代码量，与两位人类工程师并列第一。抄法：这套过滤器明天就能用——派活前检查「有界+规格+客观评估」，缺一样，失败就是你的任务形状问题，不是模型问题。防什么：为 agent 优化代码库是真金白银的投入——只有 fleet 规模够大才回本。
+
+**Cognition 自己的成绩单。** 这份 18 个月表现复核是厂商里少见的诚实：PR 合并率 34%→67%，漏洞修复比人快 20 倍（30 分钟→1.5 分钟/个），ETL 迁移 10 倍，测试覆盖率常见地从 50–60% 升到 80–90%，自家 webapp 约三分之一 commit 是 Devin 写的——而且它点名了自己的弱点：需求模糊、中途改范围、软技能（不会反驳一个烂计划）。抄法：拿它在组织内部设预期——Devin 的强项是机械可测的，它的失败模式恰好是一份好 brief 能防住的那几种。防什么：所有强项数字都是厂商自报——这份复核本身是样板：引用任何数字前，先照它的方法审计你自己的 fleet。
+
 **Ryan Carson 的一人舰队。** Untangle 的独立创始人以 ~$20k/月同时跑 ~15 个 Devin agent——调度不用仪表盘，用文件夹系统加一张写着 P0 的纸，因为那个规模下真正的瓶颈是*他的*注意力，不是 agent 吞吐。两个 playbook 撑起整个运营：「Watchdog」盯每个律所账号，一个人顶替整个客户成功团队；「LAN PR」每天合 ~40 个 PR——review 回路 + 视频走查 + auto-merge，没有 QA 审阅人。抄法：扩展的单位是「每个面一份命名 playbook」，不是更多 agent。防什么：他几乎全面弃用本地 agent——长回路归云 agent；唯一保留的例外是用 Codex 跑范围卡死的设计稿实现。
 
 ## 验证
@@ -132,3 +138,6 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 - [HN — 哈佛研究：agent 把瓶颈挪到了 code review](https://news.ycombinator.com/item?id=50538303)
 - [知乎 — AI software engineer 如何接管工作区：Devin、SWE-agent 与 OpenHands](https://zhuanlan.zhihu.com/p/2025994849590026406)（中文）—— 最清晰的中文架构分析：ACI 设计、受控沙箱 vs 开发者同域两条路线、三大真实瓶颈（全局导航失真、失败恢复链、隐式上下文）
 - [掘金 — AI 编码 Agent 90 天落地清单](https://juejin.cn/post/7671231304077361203)（中文）—— 做对了的 CI gate 模式：AI 代码走独立安全扫描、检测与扫描分两步、混合工具栈运营模型
+- [Cognition — Devin's 2025 Performance Review](https://cognition.com/blog/devin-annual-performance-review-2025) — strengths and named weaknesses, 18 months of internal numbers
+- [Tavrn customer story](https://devin.ai/customers/tavrn) · [Hamming customer story](https://devin.ai/customers/hamming) · [Crosby customer story](https://devin.ai/customers/crosby) — fleet telemetry, the "Devinable" task filter, lawyer-in-the-loop triage
+- [AI Engineer — Walden Yan: 40× merged PRs on 2.7× engineers](https://aietalks.com/talks/40x-more-merged-prs-with-2-7x-the-engineers) — Cognition's internal software-factory talk

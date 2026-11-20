@@ -38,7 +38,7 @@
 
 ## ステップ 3 — 再現可能な作業のプレイブック化
 
-> **プラットフォーム更新（2026年11月）：** Playbook は **Skills** へ移行中 — アカウントは順次移行され、新規アカウントは Skills のみ（各 playbook は同じ org/enterprise スコープの skill になります）。本ステップの内容はすべて skills にそのまま適用できます：skill は同じ、呼び出し可能な名前付き手順です。
+> **プラットフォーム更新（2026年11月）：** Playbook は **Skills** へ移行中 — アカウントは順次移行され、新規アカウントは Skills のみ（各 playbook は同じ org/enterprise スコープの skill になります）。本ステップの内容はすべて skills にそのまま適用できます：skill は同じ、呼び出し可能な名前付き手順です。**Knowledge も廃止予定**——org の知識エントリは Plugins 内の skills へ移行中（docs.devin.ai/product-guides/knowledge）。ステップ 1–2 の「書き留める」成果物も結局同じ場所——skill ファイル——に行き着きます。
 
 
 プレイブックは手順をパッケージ化し、どのセッション（や Bot）も同じやり方で実行できるようにする。機能する構造：

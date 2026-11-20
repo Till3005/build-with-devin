@@ -89,6 +89,12 @@ Cognition 自身が最も委任するタスク：**フロントエンド修正�
 
 **canly のアナリスト導入。** Devin に「原因未特定」で滞留した約 700 件の問い合わせ履歴を分類させた。半数以上はバグではなかった——そしてこの取り組みの真の産物はラベルではなく、AI にまだ足りないコンテキストの地図（ドキュメント、DB 可視性、チケットのメタデータ）だった。真似る点：アナリストとしての Devin は第一級の使い道——ツールを買う前に「誰も分類したことがない山」に向けてみる。注意点：ボトルネックはモデルの質ではなくコンテキストの選び方。
 
+**Tavrn の HIPAA テナント艦隊。** 8 人のエンジニアが HIPAA テナント内（SSO・スコープ権限・監査ログ）で Slack から eng/ops/CS/sales 横断の Devin に指示：6 週間で 1,600 セッション → 1,800+ PR、決定済み PR のマージ率 ~80%、先月のマージコードの 93% が Devin 発。本質は中央値：アラート→調査 35 秒、~90% のアラートがスレッド内で完全調査、ops/CS/sales から eng への質問は ~80% 減——5 件中 4 件は Devin の回答で吸収。真似る点：価値は PR 数ではなく「調査が無料になる」こと——日次 automation が品質判定落ちの案件を再調査し、システム自身の評価が次の仕事を供給する。注意点：「全社の質問を投げる」が成立するのはテナント権限が最初から完璧だから——SSO/スコープ/監査ログを先に固めてから蛇口を開ける。
+
+**Hamming の「Devinable」フレームワーク。** Hamming は「Devin にできるか」ではなく、タスクを Devinable / 非 Devinable に振り分ける：有界・仕様が明確・客観的評価（テスト・チェック・数値）があるものだけが合格。その上でコードベース自体をエージェント向けに最適化：OOP より関数型、無アサーションテストより eval 駆動。結果：Devin が全コード量の 25% を生成し、人間エンジニア 2 人と並ぶトップ貢献者。真似る点：明日から使えるフィルター——派遣前に「有界+仕様+客観評価」を確認。どれか欠けたら、失敗はモデルではなくタスクの形の問題。注意点：エージェント向けコードベース最適化は本物の投資——艦隊規模が見合って初めて回収できる。
+
+**Cognition 自身の通信簿。** 18 ヶ月のパフォーマンスレビューはベンダーとして異例に正直：PR マージ率 34%→67%、脆弱性修正は人間の 20 倍速（30 分→1.5 分/件）、ETL 移行 10 倍、カバレッジは概ね 50–60%→80–90%、自社 webapp コミットの約 1/3 が Devin 作——弱点も名指ししている：曖昧な要件、途中でのスコープ変更、ソフトスキル（悪い計画に異議を唱えない）。真似る点：組織内の期待値設定に使う——Devin の強みは機械的で測定可能、失敗モードは良い brief が防げるものだけ。注意点：強みの数字はすべてベンダー公表——このレビュー自体が、どの数字も引用する前に自艦隊を監査する方法の見本。
+
 **Ryan Carson のワンマン艦隊。** Untangle のソロファウンダーは月 ~$20k で ~15 台の Devin エージェントを同時稼働——統制はダッシュボードではなくフォルダシステム + 紙の P0 リスト。その規模で本当のボトルネックはエージェントのスループットではなく*彼の*注意力だから。運用を支える 2 つの playbook：「Watchdog」が全法律事務所アカウントを監視し一人でカスタマーサクセスを担い、「LAN PR」が ~40 PR/日を締める——レビューループ + ビデオウォークスルー + 自動マージ、QA レビュアーなし。真似る点：スケールの単位は「面ごとの命名済み playbook」であってエージェント数ではない。注意点：ローカルエージェントはほぼ卒業——長いループはクラウド担当。残した例外は Codex での厳密スコープの設計書ビルドだけ。
 
 ## 検証チェックリスト
@@ -131,3 +137,6 @@ Cognition 自身が最も委任するタスク：**フロントエンド修正�
 - [HN — ハーバード研究：エージェントはボトルネックをコードレビューへ移した](https://news.ycombinator.com/item?id=50538303)
 - [知乎 — AI software engineer 如何接管工作区：Devin、SWE-agent 与 OpenHands](https://zhuanlan.zhihu.com/p/2025994849590026406)（中国語）—— 最も明晰な中国語のアーキテクチャ分析：ACI 設計、サンドボックス vs 開発者同域の 2 路線、3 つの真のボトルネック
 - [掘金 — AI 编码 Agent 90 天落地清单](https://juejin.cn/post/7671231304077361203)（中国語）—— 正しい CI ゲート：AI 生成コードに独立したセキュリティスキャン、検出とスキャンを 2 段階に分離、混成スタック運用
+- [Cognition — Devin's 2025 Performance Review](https://cognition.com/blog/devin-annual-performance-review-2025) — strengths and named weaknesses, 18 months of internal numbers
+- [Tavrn customer story](https://devin.ai/customers/tavrn) · [Hamming customer story](https://devin.ai/customers/hamming) · [Crosby customer story](https://devin.ai/customers/crosby) — fleet telemetry, the "Devinable" task filter, lawyer-in-the-loop triage
+- [AI Engineer — Walden Yan: 40× merged PRs on 2.7× engineers](https://aietalks.com/talks/40x-more-merged-prs-with-2-7x-the-engineers) — Cognition's internal software-factory talk
