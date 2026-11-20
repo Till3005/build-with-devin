@@ -134,6 +134,16 @@ Read stages in order the first time; after that, jump.
 - Prompts are quoted verbatim where a source published them; otherwise they're reconstructed and marked as such.
 - Numbers in a guide come from the cited deployment, not from our guesses.
 
+## Watchlist
+
+Curriculum gaps found by the steward — each needs a fix in all 4 languages:
+
+1. **Guide 12 (devin-cli):** local sessions now run in a background daemon — `devin daemon`, `--process-model daemon|in-process`, `process_model` in config.json; multi-client join semantics changed (CLI v3000.13.4, Nov 16). https://docs.devin.ai/cli/changelog/stable
+2. **Bots guides (1–5):** bot templates + "Share as template" + the 16-template public marketplace; a template-created Bot starts with no connections, secrets or memory. https://docs.devin.ai/work-with-devin/bots/templates
+3. **Automation/API guide (6):** session create accepts `memory_enabled: false` (also applies to child sessions). https://docs.devin.ai/api-reference/release-notes
+4. **Session hygiene (several):** "Mark done" replaced "Archive" (the session keeps running); subscribers sidebar; Phonebook links identities across Slack/Teams/git/Jira/Linear (Nov 16). Any guide telling readers to "archive" sessions is now outdated. https://docs.devin.ai/release-notes/2026
+5. **Guide 17 (devin-desktop):** Desktop v3.14.30819 (Nov 17) ships Bots in Desktop + `DetectProxy` device policy for enterprise. https://docs.devin.ai/desktop/changelog
+
 ## Contributing
 
 Found a better recipe, or reproduced one and have numbers? See [CONTRIBUTING.md](CONTRIBUTING.md).
