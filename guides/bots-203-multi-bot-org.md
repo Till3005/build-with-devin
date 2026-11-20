@@ -119,6 +119,7 @@ Six days after switching: decisions made by Bots without her **12×'d**, repeate
 - **Vague job boundaries.** "Dev Bot" and "Fix Bot" will collide. Boundaries follow the org chart — QA *verifies*, Release *ships*, PM *prioritizes*.
 - **Over-granting.** Mesh grants (everyone can reach everyone) recreate chaos. Hub-and-spoke through the orchestrator.
 - **Prose between Bots.** Bots writing paragraphs to each other is how you get 700 messages/day — adopt a BotSpeak-style protocol: shorthand + emoji receipts + no niceties; full sentences only for the human.
+**Session tracking is the first thing that doesn't scale.** The [100 Days of Devin](https://www.raijuna.com/blog/devin-100-day-challenge-day-1) field log found fleet ops break on 'which Bot produced this PR? which one needs me?' — and setup alone consumed ~18% of weekly quota. Budget for fleet observability from day one.
 
 ## Knowledge check
 

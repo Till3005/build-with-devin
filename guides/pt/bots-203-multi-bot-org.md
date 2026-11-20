@@ -113,6 +113,7 @@ Seis dias após a troca: decisões tomadas por Bots sem ela **12×**, pedidos re
 - [ ] Um handoff entre Bots completou ponta a ponta (achar → corrigir → verificar → reportar)
 - [ ] Mensagens humanas de hoje < número de PRs mergeados
 
+- **O rastreamento de sessões quebra primeiro.** O log de campo [100 Days of Devin](https://www.raijuna.com/blog/devin-100-day-challenge-day-1) mostra que a frota quebra em 'qual Bot abriu este PR? qual está me esperando?' — e só o setup consumiu ~18% da cota semanal. Inclua observabilidade da frota no orçamento desde o dia um.
 ## Armadilhas
 
 - **Pular o orquestrador.** N Bots cada um te mandando DM é N× ruído. A org só funciona se o julgamento passa por uma thread.
