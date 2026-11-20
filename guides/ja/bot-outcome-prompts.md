@@ -75,6 +75,35 @@ Android Bot の割り当てのすべて。一文が 44 日間の自走的作業�
 2. "make the CI fast" の何が悪いか？*（外部から検証不能——閾値がない。"CI under 8 minutes" は検証可能）*
 3. "text me if tests fail" は 3 問のどれに答えているか？*（恒常の振る舞い——状態に対し Bot が何をするかは言うが、領域も目標も言わない）*
 
+## 実録 —— outcome プロンプト vs タスク プロンプト、Devin CLI v3000.14（swe-2-flash-medium）で実演
+
+Bot には Max または Teams プランが必要——しかしこのガイドが教えるプロンプトの仕組みは surface に依存しないため、無料の SWE-2 CLI 枠で収録。同じリポジトリ（`orders.py`、ベースラインはテスト 2 件のみ）、同一のコピーを 2 つ用意し、それぞれに 1 つずつプロンプトを投入：
+
+- **タスク型：** 「apply_discount('SAVE10') が 90.0 を返すテストと total([]) が 0 を返すテストを追加……」
+- **outcome 型：** 「orders.py のテストカバレッジをあなたの担当領域とする。良い状態：total・apply_discount・shipping_fee の全分岐にテストがあり、python3 -m unittest -v が全緑。」
+
+**動画（64 秒・無音）：** ベースライン → タスク実行 → +6 行 → outcome 実行 → 自ら分解したカバレッジマップ → +37 行。
+
+[![outcome 実行のレポート——13 テスト全緑、分岐カバレッジはエージェント自身が列挙]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. ベースラインにタスク型プロンプト——テスト 2 件、項目を列挙するだけ]({B}/step1-task-prompt.webp)
+*1. タスク型プロンプト——エージェントに渡したのは買い物リスト*
+
+![2. タスク実行完了——指定の 2 テストだけ追加、4 件全緑、「Nothing committed」、その後停止]({B}/step2-task-done.webp)
+*2. タスク型：リストを終えたら停止——オーナーではなくセッション*
+
+![3. 同一コピーに outcome 型プロンプト——役割・担当面・検証可能な状態。項目リストなし]({B}/step3-outcome-prompt.webp)
+*3. outcome 型：役割 + 境界ある担当面 + 「良い状態」の定義——チェックリストなし*
+
+![4. outcome プロンプトが生んだ diff——全分岐をエージェントが自分で列挙]({B}/step4-outcome-diff.webp)
+*4. どのテストを書くか教えていない——+39 行、分岐はすべて自己列挙*
+
+![5. レポートは「完了」ではなく「状態」——「All 13 tests pass. Branch coverage: …」]({B}/step5-coverage-report.webp)
+*5. 「良い状態」の定義に照らして検証し、カバレッジマップを報告*
+
+![6. 並べて比較——タスク型 +6 行、outcome 型 +37 行。同じモデル・同じリポジトリ]({B}/step6-side-by-side.webp)
+*6. 同モデル・同リポジトリ、違いはプロンプトの形だけ：+6 対 +37、テスト 4 対 13*
+
 ## 出典
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) · [テンプレートマーケットプレイス](https://devin.ai/bots/templates)

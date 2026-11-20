@@ -75,6 +75,35 @@ If a stranger couldn't check line 2's truth from outside, tighten it.
 2. What's wrong with "make the CI fast"? *(Not verifiable from outside — no threshold. "CI under 8 minutes" is.)*
 3. Which of the three questions does "text me if tests fail" answer? *(Standing behavior — it says what the Bot does about the state, nothing about the surface or the goal.)*
 
+## Walkthrough — outcome vs task, side by side, on Devin CLI v3000.14 (swe-2-flash-medium)
+
+Bots need a Max or Teams plan — but the *prompt mechanics* this guide teaches are surface-agnostic, so we recorded them on the free SWE-2 CLI tier. Same repo (`orders.py` with a deliberately thin 2-test suite), two identical checkouts, one prompt each:
+
+- **Task-shaped:** "Add a test for apply_discount('SAVE10') returning 90.0 and one for total([]) returning 0 …"
+- **Outcome-shaped:** "Your job is to own the test coverage of orders.py. Good looks like: every branch of total, apply_discount and shipping_fee has a test, and python3 -m unittest -v is all green."
+
+**Video (64 s, silent):** baseline → task run → +6 lines → outcome run → self-decomposed coverage map → +37 lines.
+
+[![The outcome run's report — 13 tests green, branch coverage enumerated by the agent]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. The task-shaped prompt on the baseline — 2 tests, named items only]({B}/step1-task-prompt.webp)
+*1. Task-shaped prompt on the baseline — the agent is given a shopping list*
+
+![2. Task run finished — exactly the 2 named tests, 4 green, "Nothing committed", then it idles]({B}/step2-task-done.webp)
+*2. Task run: exactly the listed items, then it stops — a session, not an owner*
+
+![3. The outcome-shaped prompt on an identical copy — role, surface, verifiable state, no item list]({B}/step3-outcome-prompt.webp)
+*3. Outcome-shaped prompt: role + bounded surface + a definition of good — no checklist*
+
+![4. The diff the outcome prompt produced — the agent enumerated every branch itself]({B}/step4-outcome-diff.webp)
+*4. +39 lines written without being told which tests — it named every branch on its own*
+
+![5. The report is a state, not a checklist — "All 13 tests pass. Branch coverage: …"]({B}/step5-coverage-report.webp)
+*5. It verifies against the stated definition of good and reports the coverage map*
+
+![6. Side by side — task prompt: +6 lines; outcome prompt: +37 lines. Same model, same repo]({B}/step6-side-by-side.webp)
+*6. Same model, same repo, different prompt shape: +6 vs +37 — and 4 vs 13 tests*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [Template marketplace](https://devin.ai/bots/templates)

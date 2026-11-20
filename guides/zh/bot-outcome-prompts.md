@@ -75,6 +75,35 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 2. 「让 CI 变快」错在哪？*（外部不可验证——没有阈值。「CI 低于 8 分钟」才有。）*
 3. 「测试挂了发消息给我」回答了三问中的哪一问？*（常驻行为——它说了 Bot 对状态做什么，但没说什么边界、什么目标。）*
 
+## 实录演示 —— outcome prompt 与 task prompt 正面对比，录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+Bot 需要 Max 或 Teams 方案——但本篇教的 prompt 机制与接入面无关，所以用 SWE-2 免费档 CLI 实录。同一个仓库（`orders.py`，基线只有 2 个测试），两个完全相同的副本，各喂一条 prompt：
+
+- **任务式：** “给 apply_discount('SAVE10') → 90.0 和 total([]) → 0 各加一个测试……”
+- **outcome 式：** “你的职责是管好 orders.py 的测试覆盖。好的标准：total、apply_discount、shipping_fee 每个分支都有测试，且 python3 -m unittest -v 全绿。”
+
+**视频（64 秒，无声）：** 基线 → 任务式跑 → +6 行 → outcome 式跑 → 自己分解出覆盖图 → +37 行。
+
+[![outcome 会话的汇报——13 个测试全绿，覆盖图是 agent 自己列的]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. 基线上输入任务式 prompt——2 个测试，只点名条目]({B}/step1-task-prompt.webp)
+*1. 基线上的任务式 prompt——给 agent 的是一张购物清单*
+
+![2. 任务式跑完——恰好加了点名的 2 个测试、4 个全绿、“Nothing committed”，然后停住]({B}/step2-task-done.webp)
+*2. 任务式：做完清单就停——这是个会话，不是个 owner*
+
+![3. 相同副本上输入 outcome 式 prompt——角色、界面边界、可验证状态，没有任务清单]({B}/step3-outcome-prompt.webp)
+*3. outcome 式：角色 + 有边界的管辖面 + “好”的定义——不给清单*
+
+![4. outcome prompt 产出的 diff——每个分支都是 agent 自己枚举的]({B}/step4-outcome-diff.webp)
+*4. 没人告诉它写哪些测试——+39 行，分支全是它自己列的*
+
+![5. 汇报的是一个“状态”而不是“做完了”——“All 13 tests pass. Branch coverage: …”]({B}/step5-coverage-report.webp)
+*5. 它对着“好”的定义自检，汇报的是覆盖图*
+
+![6. 并排对比——任务式 +6 行；outcome 式 +37 行。同一模型、同一仓库]({B}/step6-side-by-side.webp)
+*6. 同模型同仓库，只差 prompt 形状：+6 对 +37，4 个测试对 13 个*
+
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [Template marketplace](https://devin.ai/bots/templates)

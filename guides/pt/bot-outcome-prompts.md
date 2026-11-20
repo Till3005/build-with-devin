@@ -75,6 +75,35 @@ Se um estranho não conseguisse checar a verdade da linha 2 de fora, aperte-a.
 2. O que há de errado com "make the CI fast"? *(Não verificável de fora — sem limiar. "CI under 8 minutes" é.)*
 3. Qual das três perguntas "text me if tests fail" responde? *(Comportamento permanente — diz o que o Bot faz sobre o estado, nada sobre a superfície ou a meta.)*
 
+## Demonstração — prompt de resultado vs prompt de tarefa, lado a lado, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+Bots exigem plano Max ou Teams — mas a *mecânica de prompt* deste guia independe da superfície, então gravamos na cota gratuita do CLI SWE-2. Mesmo repositório (`orders.py` com uma suíte-base de 2 testes), dois checkouts idênticos, um prompt em cada:
+
+- **Em forma de tarefa:** "Add a test for apply_discount('SAVE10') returning 90.0 and one for total([]) returning 0 …"
+- **Em forma de resultado:** "Your job is to own the test coverage of orders.py. Good looks like: every branch … has a test, and python3 -m unittest -v is all green."
+
+**Vídeo (64 s, sem som):** baseline → execução por tarefa → +6 linhas → execução por resultado → mapa de cobertura decomposto pelo agente → +37 linhas.
+
+[![Relatório da execução por resultado — 13 testes verdes, cobertura de branches enumerada pelo agente]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. Prompt em forma de tarefa na baseline — 2 testes, só itens nomeados]({B}/step1-task-prompt.webp)
+*1. Prompt-tarefa — o agente recebe uma lista de compras*
+
+![2. Execução-tarefa concluída — exatamente os 2 testes nomeados, 4 verdes, "Nothing committed", e parou]({B}/step2-task-done.webp)
+*2. Tarefa: fez a lista e parou — uma sessão, não um dono*
+
+![3. Prompt em forma de resultado numa cópia idêntica — papel, superfície delimitada, estado verificável, sem lista]({B}/step3-outcome-prompt.webp)
+*3. Resultado: papel + superfície delimitada + definição de "bom" — sem checklist*
+
+![4. O diff produzido pelo prompt de resultado — o agente enumerou sozinho cada branch]({B}/step4-outcome-diff.webp)
+*4. +39 linhas sem ninguém dizer quais testes — ele nomeou cada branch sozinho*
+
+![5. O relatório é um estado, não um checklist — "All 13 tests pass. Branch coverage: …"]({B}/step5-coverage-report.webp)
+*5. Ele verifica contra a definição de "bom" e reporta o mapa de cobertura*
+
+![6. Lado a lado — prompt-tarefa: +6 linhas; prompt-resultado: +37. Mesmo modelo, mesmo repo]({B}/step6-side-by-side.webp)
+*6. Mesmo modelo, mesmo repo, só muda a forma do prompt: +6 vs +37 — e 4 vs 13 testes*
+
 ## Fontes
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [Docs de Bots](https://docs.devin.ai/work-with-devin/bots) · [Marketplace de templates](https://devin.ai/bots/templates)
