@@ -97,6 +97,26 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 2. 为什么每片都要自带验证？*（没有逐片证明，500 个 PR 的迁移就是 500 个未验证 diff——失败面是乘出来的不是除出来的。）*
 3. Nubank 报 8–12× 效率——为什么这数字可信而非营销？*（公开方法论：真实 ETL 管线前后阶段耗时实测，不是推算。）*
 
+## 实录演示 —— 迁移回路串行跑一遍，录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+「几百个并行会话」那部分要云端额度，但*回路本身*不需要——所以用免费档串行演示。`migrate-demo`：4 个 optparse CLI（greeter/calc/backup/report），每个工具一个行为测试，变换配方写成 `.devin/skills/optparse-to-argparse/SKILL.md`。prompt：“按独立 slice 迁移……每迁一个工具跑测试，绿了才动下一个。”
+
+**视频（41 秒，无声）：** 基线 → skill 被调用 → 4 片各绿 → optparse 残留为零。
+
+[![完整切片回路——每个工具迁完都跑测试，逐 skill 配方的收尾汇报]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. 基线——4 个 optparse 工具，7 个行为测试全绿]({B}/step1-baseline.webp)
+*1. 基线：4 个 OptionParser 工具、7 个测试、一个已提交的 skill 配方*
+
+![2. skill 从 .devin/skills 自动调用——先读全部工具和测试文件再动手]({B}/step2-skill-invoked.webp)
+*2. `Invoked skill optparse-to-argparse`——配方驱动整轮*
+
+![3. 切片回路——“Green. Now calc.py——它靠 rest 读位置参数，所以用 parse_known_args 保持形状。”]({B}/step3-slice-loop.webp)
+*3. 逐片验证；它甚至自己发现 calc.py 需要 `parse_known_args` 保位置参数*
+
+![4. /exit 后验证——4 个文件迁完，+18/−18，optparse 引用清零，零提交]({B}/step4-verify-diff.webp)
+*4. 四个各自验证过的小 diff——这就是切片纪律，只是没有并行舰队*
+
 ## Sources
 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)

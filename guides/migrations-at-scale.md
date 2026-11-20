@@ -97,6 +97,26 @@ Small error rates compound across thousands of slices. Operate on a dashboard, n
 2. Why does every slice need its own verification? *(Without per-slice proof, a 500-PR migration is 500 unverified diffs — the failure surface multiplies instead of dividing.)*
 3. Nubank reported 8–12× efficiency — what made that figure credible rather than marketing? *(Published methodology: measured stage times before/after on real ETL pipelines, not a projection.)*
 
+## Walkthrough — the migration loop run serially, on Devin CLI v3000.14 (swe-2-flash-medium)
+
+The scale part (hundreds of parallel sessions) needs cloud quota — the *loop* doesn't, so we ran it serially on the free tier. `migrate-demo`: four optparse CLIs (`greeter`, `calc`, `backup`, `report`), one behavior test per tool, and the transformation written as `.devin/skills/optparse-to-argparse/SKILL.md`. Prompt: "migrate as independent slices … run the test suite, and only move to the next tool when it's green."
+
+**Video (41 s, silent):** baseline → skill invoked → 4 slices, suite green after each → zero `optparse` left.
+
+[![The full slice loop — each tool migrated, suite green after each, per-skill recipe summary]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. Baseline — 4 optparse tools, 7 behavior tests green]({B}/step1-baseline.webp)
+*1. Baseline: 4 tools on OptionParser, 7 tests, one skill recipe committed*
+
+![2. Skill auto-invoked from .devin/skills — then it reads every tool and the test file first]({B}/step2-skill-invoked.webp)
+*2. `Invoked skill optparse-to-argparse` — the recipe drives the run*
+
+![3. The slice loop — "Green. Now calc.py — it relies on rest for positional args, so parse_known_args preserves that shape."]({B}/step3-slice-loop.webp)
+*3. Per-slice verify; it even caught that calc.py needs `parse_known_args` to keep positional operands*
+
+![4. Verified after /exit — 4 files migrated, +18/−18, no optparse references left, nothing committed]({B}/step4-verify-diff.webp)
+*4. Four small verified diffs — the slice discipline, minus the parallel fleet*
+
 ## Sources
 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)

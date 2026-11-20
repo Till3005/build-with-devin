@@ -97,6 +97,26 @@ Taxas de erro pequenas compõem através de milhares de fatias. Opere num dashbo
 2. Por que toda fatia precisa de sua própria verificação? *(Sem prova por fatia, uma migração de 500 PRs é 500 diffs não verificados — a superfície de falha multiplica em vez de dividir.)*
 3. A Nubank reportou 8–12× de eficiência — o que tornou esse número crível e não marketing? *(Metodologia publicada: tempos de estágio medidos antes/depois em pipelines ETL reais, não uma projeção.)*
 
+## Demonstração — o loop de migração executado em série, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+A parte de escala (centenas de sessões paralelas) precisa de cota de nuvem — o *loop* não, então rodamos serialmente na cota gratuita. `migrate-demo`: quatro CLIs em optparse (`greeter`, `calc`, `backup`, `report`), um teste de comportamento por ferramenta e a transformação escrita em `.devin/skills/optparse-to-argparse/SKILL.md`. Prompt: "migrate as independent slices … run the test suite, and only move to the next tool when it's green."
+
+**Vídeo (41 s, sem som):** baseline → skill invocado → 4 fatias, suíte verde após cada uma → zero `optparse`.
+
+[![O loop de fatias completo — cada ferramenta migrada, suíte verde após cada uma, resumo fiel à receita]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. Baseline — 4 ferramentas optparse, 7 testes de comportamento verdes]({B}/step1-baseline.webp)
+*1. Baseline: 4 ferramentas em OptionParser, 7 testes, uma receita-skill commitada*
+
+![2. Skill invocado automaticamente de .devin/skills — primeiro lê todas as ferramentas e os testes]({B}/step2-skill-invoked.webp)
+*2. `Invoked skill optparse-to-argparse` — a receita dirige a execução*
+
+![3. O loop de fatias — "Green. Now calc.py — it relies on rest for positional args, so parse_known_args preserves that shape."]({B}/step3-slice-loop.webp)
+*3. Verificação por fatia; ele mesmo notou que calc.py precisa de `parse_known_args` para manter operandos posicionais*
+
+![4. Verificado após /exit — 4 arquivos migrados, +18/−18, nenhuma referência a optparse, nada commitado]({B}/step4-verify-diff.webp)
+*4. Quatro diffs pequenos e verificados — a disciplina de fatias, sem a frota paralela*
+
 ## Fontes
 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)

@@ -97,6 +97,26 @@ Devin 自身のドキュメントはスケールするものを率直に述べ�
 2. なぜすべてのスライスが独自の検証を要るのか？*（スライスごとの証明がなければ、500 PR の移行は 500 の未検証 diff——失敗面は分割されるのでなく増殖する）*
 3. Nubank が 8–12 倍の効率を報告——それをマーケティングでなく信頼できる数値にしたものは？*（公開された方法論：実際の ETL パイプラインで前後の段階時間を計測、予測ではなく）*
 
+## 実録 —— 移行ループを逐次実行、Devin CLI v3000.14（swe-2-flash-medium）
+
+数百の並列セッションはクラウドのクォータが必要——だが*ループ自体*には不要。無料枠で逐次実行した。`migrate-demo`：optparse CLI 4 本（greeter/calc/backup/report）、ツールごとに振る舞いテスト、変換レシピは `.devin/skills/optparse-to-argparse/SKILL.md`。プロンプト：「独立したスライスとして移行……各ツールを移行したらテストを実行し、緑になってから次へ。」
+
+**動画（41 秒・無音）：** ベースライン → skill 呼び出し → 4 スライスそれぞれで緑 → `optparse` 残存ゼロ。
+
+[![スライスループ全体——各ツール移行後にテスト緑、レシピどおりのまとめ]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. ベースライン——optparse ツール 4 本、振る舞いテスト 7 件全緑]({B}/step1-baseline.webp)
+*1. ベースライン：OptionParser 4 本・テスト 7 件・skill レシピをコミット済み*
+
+![2. .devin/skills から skill が自動呼び出し——まず全ツールとテストを読む]({B}/step2-skill-invoked.webp)
+*2. `Invoked skill optparse-to-argparse`——レシピが実行を駆動*
+
+![3. スライスループ——「Green. Now calc.py——rest で位置引数を読むので parse_known_args で形を保つ」]({B}/step3-slice-loop.webp)
+*3. スライスごとに検証。calc.py に `parse_known_args` が必要な点も自力で検出*
+
+![4. /exit 後に検証——4 ファイル移行、+18/−18、optparse 参照ゼロ、コミットなし]({B}/step4-verify-diff.webp)
+*4. 検証済みの小さな diff ×4——スライス規律そのもの（並列フリートは除く）*
+
 ## 出典
 
 - [ベストプラクティス — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)
