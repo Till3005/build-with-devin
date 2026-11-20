@@ -10,7 +10,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](LICENSE)
 
-<sub>Curated by [@darega0mae](https://x.com/darega0mae) · 姉妹レジストリ：[built-with-devin](https://github.com/Till3005/built-with-devin) · [ガイドを改善](CONTRIBUTING.md)</sub>
+<sub>Curated by [@darega0mae](https://x.com/darega0mae) · 姉妹レジストリ：[built-with-devin](https://github.com/Till3005/built-with-devin) · [ガイドを改善](CONTRIBUTING.md) · [サイトで読む](https://till3005.github.io/built-with-devin/guides/ja/index.html)</sub>
 
 <sub>**19** ガイド · **4** ステージ · すべてのパターンは実名・実証済みの導入から逆算</sub>
 
