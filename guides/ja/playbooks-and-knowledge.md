@@ -90,6 +90,23 @@ Bot の **Instructions**（ガイド 1）はナレッジの Bot スコープ版�
 2. 「最高のエンジニアが当たり前と思うことを書き下せ」が実際のエンタープライズ・ボトルネックなのはなぜ？*（エージェントの品質は限界ではなかった——欠けたコンテキストが限界；ナレッジ層は組織の規約が住む場所）*
 3. 規約が部族知識のままではなくプレイブックになるのはいつか？*（セッションが、書かれた手順が防げたはずの形で間違えた最初の瞬間）*
 
+## 実録 —— 定着するナレッジ、Devin CLI v3000.14（swe-2-flash-medium）
+
+組織の playbook はクラウド側だが、本ガイドの核心——*規約を一度書けば全セッションが従う*——はローカルで検証できる。`devin rules` は `.windsurf/rules/*.md` を常時コンテキストとして読む。「過去の修正指示」3 件を `house-rules.md` に落とし（テストは unittest・pytest 禁止、コミット禁止、金額計算は `total()` 再利用）、新しいセッションで要件だけを伝えた。
+
+**動画（30 秒・無音）：** ルールファイル → 何も言われていないセッション → 3 条すべて遵守。
+
+[![ハウスルール、ヒントなしの依頼、すべてのルール遵守]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. 採掘したルールと素のプロンプト——「line_total(items) を追加して。テストも書いて」]({B}/step1-rules-and-prompt.webp)
+*1. ルール 3 条をコミット済み。プロンプトは規約に触れない*
+
+![2. total() を再利用し、`python3 -m unittest`（pytest ではなく）を実行、3 件全パス]({B}/step2-rules-obeyed.webp)
+*2. リマインドなしで全遵守——ナレッジ層の実働*
+
+![3. /exit 後——`M orders.py`、`M tests/test_orders.py`、`git log` には init コミットのみ]({B}/step3-no-commits.webp)
+*3. 「コミット禁止」まで守られた——報告ではなく git で検証*
+
 ## 出典
 
 - [docs.devin.ai](https://docs.devin.ai) — ナレッジ、プレイブック、Bot の instructions/memory

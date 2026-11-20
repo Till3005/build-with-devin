@@ -90,6 +90,23 @@ O Devin Coach (um template oficial de Bot) existe exatamente para isso — repor
 2. Por que "escrever o que seus melhores engenheiros presumem" é o gargalo enterprise de verdade? *(Qualidade do agente nunca foi o limitante — contexto faltante é; a camada de knowledge é onde vivem as convenções da org.)*
 3. Quando uma convenção vira playbook vs. permanece conhecimento tribal? *(Na primeira vez que uma sessão erra de um jeito que um passo escrito teria prevenido.)*
 
+## Demonstração — conhecimento que pega, no Devin CLI v3000.14 (swe-2-flash-medium)
+
+Playbooks de organização vivem na nuvem, mas a tese central deste guia — *escreva a convenção uma vez e toda sessão a segue* — é testável localmente. `devin rules` lê contexto sempre ativo de `.windsurf/rules/*.md`. Mineramos três "correções passadas" em `house-rules.md` — testes com unittest (nunca pytest), nunca commitar, reutilizar `total()` para matemática de itens — e abrimos uma sessão nova pedindo só a feature.
+
+**Vídeo (30 s, sem som):** o arquivo de regras → sessão sem lembretes → as três regras obedecidas.
+
+[![Arquivo de regras, um pedido sem dicas, todas as regras seguidas]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. As regras mineradas e o prompt cru — "Add a line_total(items) function … Write a test for it too."]({B}/step1-rules-and-prompt.webp)
+*1. Três regras commitadas; o prompt não menciona convenções*
+
+![2. Ele reutilizou total(), rodou `python3 -m unittest` (não pytest), 3 testes passaram]({B}/step2-rules-obeyed.webp)
+*2. Todas as regras seguidas sem um único lembrete — é a camada de conhecimento funcionando*
+
+![3. Após /exit — `M orders.py`, `M tests/test_orders.py`, e `git log` mostra só o commit inicial]({B}/step3-no-commits.webp)
+*3. Até "nunca commitar" foi respeitado — verificado no git, não no relatório*
+
 ## Fontes
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge, playbooks, instructions/memória de Bot

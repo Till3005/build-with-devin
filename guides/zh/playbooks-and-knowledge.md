@@ -89,6 +89,23 @@ Devin Coach（官方 Bot 模板）就是为这个生的——每周汇报 Devin 
 2. 为什么「把最强工程师的默认假设写下来」才是真正的企业瓶颈？*（agent 质量从来不是上限——缺失的上下文才是；knowledge layer 是组织惯例的存放地。）*
 3. 一条惯例什么时候该落成 playbook 而不是继续口口相传？*（第一次某个会话因为缺这一步而做错的时候。）*
 
+## 实录演示 —— 写得下来的约定才管用，录于 Devin CLI v3000.14（swe-2-flash-medium）
+
+组织级 playbook 在云端，但本篇的核心论点——*约定写一次，之后每个会话都遵守*——本地就能验证。`devin rules` 会把 `.windsurf/rules/*.md` 当作 always-on 上下文。我们把三条「过往纠正」挖成 `house-rules.md`（用 unittest 跑测试、永不提交、算金额必须复用 `total()`），然后开新会话只提需求、不提规矩。
+
+**视频（30 秒，无声）：** 规则文件 → 没提规矩的新会话 → 三条全守住。
+
+[![家规文件、一个不带提醒的需求、条条被遵守]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+
+![1. 挖出来的规则 + 光秃秃的 prompt——“加个 line_total(items)，再写个测试”]({B}/step1-rules-and-prompt.webp)
+*1. 三条家规已入库；prompt 对约定一字未提*
+
+![2. 它复用了 total()、跑的是 `python3 -m unittest`（不是 pytest）、3 个测试全过]({B}/step2-rules-obeyed.webp)
+*2. 零提醒下条条遵守——这就是知识层在起作用*
+
+![3. /exit 之后——`M orders.py`、`M tests/test_orders.py`，`git log` 只有 init 一个提交]({B}/step3-no-commits.webp)
+*3. 连「永不提交」都守住了——用 git 验证，不是听它自己汇报*
+
 ## Sources
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge、playbooks、Bot instructions/memory
