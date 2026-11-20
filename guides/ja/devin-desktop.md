@@ -96,6 +96,7 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 - **"Not authorized to use the CLI"** —— Desktop 権限はあるが CLI 権限のないアカウントが Devin Local のサインインで出るエラー（v3.14.30825 で修正済み。見かけたら更新）。
 - **タブはウィンドウの状態。** セッションページ内の操作は自分のタブだけに作用——ただし*セッション*は共有なので、別クライアントが接続するとコピーではなく同じ生きたセッションが見える。
 - **管理対象マシン：** エンタープライズ管理者はデバイスポリシーで Desktop 設定を制御する（例：言語サーバーの `DetectProxy`）。ネットワークを疑う前に IT に確認。
+- **「Archive」対「Mark done」。** Desktop の "..." メニュー（フレーム 4）はまだ *Archive* だが、webapp では *Mark done* に改名（11/16）：セッションは Done フォルダに移るが実行は続き、他の購読者からも見える——サイドバーには購読中のセッションが並ぶので、他人が依存するセッションを「掃除」しないこと。関連：新しい **Phonebook** が各メンバーの Devin/Slack/Teams/git/Jira/Linear の ID を紐付ける。
 
 ## 理解度チェック
 
@@ -105,6 +106,7 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 
 ## ソース
 
-- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（タブ、バックグラウンドローカルセッション）、v3.14（Desktop 内 Bots）
+- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（タブ、バックグラウンドローカルセッション）、v3.14（Desktop 内 Bots、`DetectProxy` ポリシー）
+- [Devin リリースノート](https://docs.devin.ai/release-notes/2026) —— 11/16：*Mark done* が Archive を置換、購読サイドバー、Phonebook
 - [Devin CLI changelog](https://docs.devin.ai/cli/changelog/stable) —— v3000.13.4：`devin daemon`、`--process-model`、セッションモニター
 - 関連：[ガイド 12 — Devin CLI と拡張性](devin-cli.md) · [ガイド 1 — 初めての Bot](bots-101-first-bot.md)

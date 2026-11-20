@@ -136,13 +136,9 @@ Read stages in order the first time; after that, jump.
 
 ## Watchlist
 
-Curriculum gaps found by the steward — each needs a fix in all 4 languages:
+Curriculum gaps found by the steward — each needs a fix in all 4 languages.
 
-1. **Guide 12 (devin-cli):** local sessions now run in a background daemon — `devin daemon`, `--process-model daemon|in-process`, `process_model` in config.json; multi-client join semantics changed (CLI v3000.13.4, Nov 16). https://docs.devin.ai/cli/changelog/stable
-2. **Bots guides (1–5):** bot templates + "Share as template" + the 16-template public marketplace; a template-created Bot starts with no connections, secrets or memory. https://docs.devin.ai/work-with-devin/bots/templates
-3. **Automation/API guide (6):** session create accepts `memory_enabled: false` (also applies to child sessions). https://docs.devin.ai/api-reference/release-notes
-4. **Session hygiene (several):** "Mark done" replaced "Archive" (the session keeps running); subscribers sidebar; Phonebook links identities across Slack/Teams/git/Jira/Linear (Nov 16). Any guide telling readers to "archive" sessions is now outdated. https://docs.devin.ai/release-notes/2026
-5. **Guide 17 (devin-desktop):** Desktop v3.14.30819 (Nov 17) ships Bots in Desktop + `DetectProxy` device policy for enterprise. https://docs.devin.ai/desktop/changelog
+Resolved in the Nov 20 drift pass (all 4 languages): CLI daemon deep-dive + multi-client join semantics (Guide 12, with our recorded Desktop lock exception), Bot template mechanics — library/marketplace/empty-start/Share-as-template (Guide 1), `memory_enabled: false` on session create (Guide 6), *Mark done* vs Archive + subscribers/Phonebook (Guide 17), `DetectProxy` policy (Guide 17).
 
 ## Contributing
 

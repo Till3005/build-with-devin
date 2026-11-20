@@ -93,6 +93,7 @@ Notas que mordem as pessoas:
 - Canais privados do Teams só disparam em @menção
 - Um trigger de GitHub precisa nomear um repo específico
 - Gerencie automações declarativamente com o **provider Terraform** se você roda muitas
+- A API v3 de criação de sessão aceita `memory_enabled: false` — a sessão criada (e suas filhas) roda com memória desligada, para automações que não devem carregar contexto aprendido entre execuções
 
 ## Passo a passo real — uma automação criada, disparada e verificada no Devin Desktop v3.14 (plano Pro)
 

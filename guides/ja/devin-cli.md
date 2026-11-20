@@ -27,6 +27,8 @@ Devin CLI はターミナルに住み Devin Cloud に接続するコーディン
 | ACP | Agent Client Protocol 経由で JetBrains、Zed、Xcode 内で動作 |
 | Daemon | v3000.13.4 以降、ローカルセッションはバックグラウンドプロセスで実行——アプリを閉じても止まらず、任意のクライアントから再接続（`devin daemon`、`devin ls` セッションモニター） |
 
+daemon はマルチクライアントの挙動も書き換えた：別のターミナルやエディタで開いているセッションはもはやロックされない——2 つ目のクライアントは*ジョイン*し、どのクライアントにも出力と質問が見える。`devin daemon start|stop|status` がプロセスを管理（最後のセッションとクライアントが離れて約 10 分で自動終了）。`--process-model daemon|in-process` が起動ごとの選択、`config.json` か `/config` の `process_model` が既定値。録画上の例外：Desktop v3.14.30825 では 2 台目の Desktop ウィンドウにロックバナー + *Force open* が出た——ジョインは CLI 側で成立（ガイド 17、フレーム 9）。
+
 ## 拡張性スタック
 
 チームが CLI を*自分のもの*にする場所——ガイド 9 と同じ層構造のローカル版：

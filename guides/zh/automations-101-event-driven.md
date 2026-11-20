@@ -93,6 +93,7 @@ Automations 页面右上 **Create automation** 下拉里有四条创建路径：
 - Teams 私有频道只在 @mention 时触发
 - GitHub 触发器必须指定具体 repo
 - automation 多了用 **Terraform provider** 声明式管理
+- v3 的会话创建 API 接受 `memory_enabled: false`——派生会话（及其子会话）全程不开记忆，适合不希望跨运行携带学习上下文的 automation
 
 ## 实录演示 —— 真建、真触发、真验证一个 automation，录于 Devin Desktop v3.14（Pro 方案）
 

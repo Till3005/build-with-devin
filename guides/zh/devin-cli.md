@@ -27,6 +27,8 @@ local repo ──/handoff──► Devin Cloud session ──/pickup──► lo
 | ACP | 通过 Agent Client Protocol 跑在 JetBrains、Zed、Xcode 里 |
 | Daemon | v3000.13.4 起本地会话跑在后台进程——关掉应用不停会话，任何客户端可接回（`devin daemon`、`devin ls` 会话监视器） |
 
+daemon 还重写了多客户端语义：在别的终端或编辑器里打开的会话不再被锁——第二个客户端是*加入*它，每个客户端都能看到输出和提问。`devin daemon start|stop|status` 管理进程（最后一个会话和客户端退出约 10 分钟后自动退出）；`--process-model daemon|in-process` 每次启动可选，`config.json` 或 `/config` 里的 `process_model` 设默认。一个实测例外：我们在 Desktop v3.14.30825 的录制中，第二个 Desktop 窗口仍看到锁定横幅 + *Force open*——join 语义在 CLI 侧成立（见第 17 篇第 9 帧）。
+
 ## 可扩展性栈
 
 团队在这里把 CLI 变成*自己的*——和第 9 篇同样的分层，应用在本地：

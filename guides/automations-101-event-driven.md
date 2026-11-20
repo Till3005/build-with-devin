@@ -93,6 +93,7 @@ Notes that bite people:
 - Private Teams channels only fire on @mention
 - A GitHub trigger must name a specific repo
 - Manage automations declaratively with the **Terraform provider** if you're running many
+- The v3 session-create API accepts `memory_enabled: false` — the spawned session (and its child sessions) runs with memory off, for automations that shouldn't carry learned context between runs
 
 ## Walkthrough — an automation built, fired and verified on Devin Desktop v3.14 (Pro plan)
 

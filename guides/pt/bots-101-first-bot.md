@@ -25,7 +25,9 @@ Sidebar → **Bots** → *Create new Bot* → escolha um template ou *Start from
 
 Um Bot novo é privado para você até ser compartilhado. Seu uso conta no seu plano como qualquer sessão.
 
-> Dica: um template vem com instruções para uma função (QA Engineer, Data Analyst, …). *Start from scratch* é a escolha certa para os guias deste repositório — você vai escrever o prompt de resultado você mesmo.
+> Dica: a **Template library** (barra lateral → Bots) lista os templates da Cognition — QA Engineer, Migration Engineer, Data Analyst, … — além dos compartilhados na sua org; o mesmo conjunto dá para explorar sem login no [Bot marketplace](https://devin.ai/bots/templates) público. *Start from scratch* continua sendo a escolha certa para os guias deste repositório — você vai escrever o prompt de resultado você mesmo.
+
+Um Bot criado de template recebe o prompt e **mais nada** — é privado, sem connections, secrets ou memory. Diga no chat do que ele é dono (repositório, projeto, canal), configure as connections como em qualquer Bot novo e, se o template roda num gatilho, o Bot se oferece para configurá-lo no primeiro contato. Ele guarda a própria cópia do prompt — edições posteriores no template não chegam até ele. (*Add to a current Bot* manda o prompt do template para um Bot que você já tem, em vez de criar um novo.)
 
 ## Passo 2 — Atribuir o resultado
 
@@ -99,7 +101,7 @@ O padrão que escala: corrija o Bot uma vez, deixe-o gravar a correção na mem�
 
 Duas coisas que os posts de lançamento pulam e a documentação explicita:
 
-- **Um Bot privado herda seus recursos sem perguntar.** O acesso que você já tem pode ser registrado como grants sem novo prompt de permissão — um Bot privado não é uma sandbox. Antes de compartilhar, abra Settings → Access e remova grants que a tarefa não precisa. Se colegas devem copiar o método sem ver sua conversa ou credenciais, compartilhe um *template*, não o Bot.
+- **Um Bot privado herda seus recursos sem perguntar.** O acesso que você já tem pode ser registrado como grants sem novo prompt de permissão — um Bot privado não é uma sandbox. Antes de compartilhar, abra Settings → Access e remova grants que a tarefa não precisa. Se colegas devem copiar o método sem ver sua conversa ou credenciais, compartilhe um *template*, não o Bot: menu do Bot na barra lateral → *Share as template* — ele rascunha nome, descrição de uma linha e um prompt limpo, publicando na Template library da org (Teams/Enterprise) ou como link público (Pro+). O link embute o template inteiro assinado na URL — não dá para editar nem revogar e qualquer um lê o prompt completo, então remova nomes internos antes de copiar.
 - **O uso de um Bot cobre o chat dele mais toda sessão que ele dispara.** Max: consome sua cota incluída e depois on-demand — sem cap separado de Bot. Teams: sua cota e depois créditos do time; um admin pode definir cap on-demand específico do Bot. Enterprise: conta no limite do criador, a menos que receba um próprio. Uma instrução de gasto no chat não é um cap configurado — defina o limite em Settings, não o descreva em prosa.
 
 ## Passo 5 — Colocar onde você trabalha

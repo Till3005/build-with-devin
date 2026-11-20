@@ -27,6 +27,8 @@ local repo ──/handoff──► Devin Cloud session ──/pickup──► lo
 | ACP | Runs inside JetBrains, Zed, Xcode via the Agent Client Protocol |
 | Daemon | Since v3000.13.4 local sessions run in a background process — close the app, reattach from any client (`devin daemon`, `devin ls` session monitor) |
 
+The daemon also rewrote multi-client semantics: a session open in another terminal or editor is no longer locked — a second client *joins* it, and every client sees its output and questions. `devin daemon start|stop|status` manages the process (it exits ~10 min after the last session and client leave); `--process-model daemon|in-process` picks per launch, `process_model` in `config.json` or `/config` sets the default. One recorded exception: in our Desktop v3.14.30825 run a second Desktop window still got a lock banner with *Force open* — join held CLI-side (Guide 17, frame 9).
+
 ## The extensibility stack
 
 This is where teams make the CLI *theirs* — same layering as Guide 9, applied locally:

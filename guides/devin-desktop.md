@@ -96,6 +96,7 @@ A real run, not a mock-up: macOS, Pro plan. A Devin Local session edits a throwa
 - **"Not authorized to use the CLI"** — accounts with Desktop access but no CLI access hit this on Devin Local sign-in (fixed in v3.14.30825; update if you see it).
 - **Tabs are per-window state.** An action in a session page only acts on its tab — but the *session* is shared, so a second client attaching sees the same live session, not a copy.
 - **Managed machines:** enterprise admins control Desktop settings via device policies (e.g. `DetectProxy` for the language server) — check with IT before debugging the network yourself.
+- **"Archive" vs "Mark done".** Desktop's "..." menu (frame 4) still says *Archive*, but the webapp renamed it *Mark done* (Nov 16): the session moves to your Done folder yet keeps running and stays visible to its other subscribers — the sidebar now lists sessions you're subscribed to, so don't "clean up" a session other people depend on. Related: a new **Phonebook** links each member's identities across Devin/Slack/Teams/git/Jira/Linear.
 
 ## Knowledge check
 
@@ -105,6 +106,7 @@ A real run, not a mock-up: macOS, Pro plan. A Devin Local session edits a throwa
 
 ## Sources
 
-- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) — v3.13.4 (tabs, background local sessions), v3.14 (Bots in Desktop)
+- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) — v3.13.4 (tabs, background local sessions), v3.14 (Bots in Desktop, `DetectProxy` policy)
+- [Devin release notes](https://docs.devin.ai/release-notes/2026) — Nov 16: *Mark done* replaces Archive, subscribers sidebar, Phonebook
 - [Devin CLI changelog](https://docs.devin.ai/cli/changelog/stable) — v3000.13.4: `devin daemon`, `--process-model`, session monitor
 - Related: [Guide 12 — Devin CLI & extensibility](devin-cli.md) · [Guide 1 — Your first Bot](bots-101-first-bot.md)

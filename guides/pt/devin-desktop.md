@@ -96,6 +96,7 @@ Uma execução de verdade, não uma montagem: macOS, plano Pro. Uma sessão Devi
 - **"Not authorized to use the CLI"** — contas com acesso ao Desktop mas sem acesso ao CLI batem nisso no sign-in do Devin Local (corrigido na v3.14.30825; atualize se aparecer).
 - **Abas são estado da janela.** Uma ação numa página de sessão só atua na própria aba — mas a *sessão* é compartilhada, então um segundo cliente anexando vê a mesma sessão viva, não uma cópia.
 - **Máquinas gerenciadas:** admins de enterprise controlam as configurações do Desktop via políticas de dispositivo (ex.: `DetectProxy` para o language server) — confira com o TI antes de depurar a rede sozinho.
+- **"Archive" vs "Mark done".** O menu "..." do Desktop (frame 4) ainda diz *Archive*, mas o webapp renomeou para *Mark done* (16/11): a sessão vai para a pasta Done mas continua rodando e visível aos demais assinantes — a barra lateral agora lista as sessões que você assina, então não "limpe" uma sessão da qual outros dependem. Relacionado: o novo **Phonebook** vincula as identidades de cada membro entre Devin/Slack/Teams/git/Jira/Linear.
 
 ## Teste rápido
 
@@ -105,6 +106,7 @@ Uma execução de verdade, não uma montagem: macOS, plano Pro. Uma sessão Devi
 
 ## Fontes
 
-- [Changelog do Devin Desktop](https://docs.devin.ai/desktop/changelog) — v3.13.4 (abas, sessões locais em background), v3.14 (Bots no Desktop)
+- [Changelog do Devin Desktop](https://docs.devin.ai/desktop/changelog) — v3.13.4 (abas, sessões locais em background), v3.14 (Bots no Desktop, política `DetectProxy`)
+- [Release notes do Devin](https://docs.devin.ai/release-notes/2026) — 16/11: *Mark done* substitui Archive, barra de assinaturas, Phonebook
 - [Changelog do Devin CLI](https://docs.devin.ai/cli/changelog/stable) — v3000.13.4: `devin daemon`, `--process-model`, monitor de sessões
 - Relacionado: [Guia 12 — Devin CLI e extensibilidade](devin-cli.md) · [Guia 1 — Seu primeiro Bot](bots-101-first-bot.md)

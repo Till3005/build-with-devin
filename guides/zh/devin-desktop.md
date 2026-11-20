@@ -96,6 +96,7 @@ Command Center 是会话中枢，不是编辑器：
 - **"Not authorized to use the CLI"** —— 有 Desktop 权限但没 CLI 权限的账号在 Devin Local 登录会撞这个错（v3.14.30825 已修；见到就升级）。
 - **标签页是窗口级状态。** 会话页面里的操作只作用于自己的标签——但*会话*是共享的，第二个客户端连上看到的是同一个活会话，不是副本。
 - **受管机器：** 企业管理员通过设备策略控制 Desktop 设置（如语言服务器的 `DetectProxy`）——网络出问题先问 IT，别自己瞎调。
+- **"Archive" 与 "Mark done" 之别。** Desktop 的 "..." 菜单（第 4 帧）仍写 *Archive*，但 webapp 已改名 *Mark done*（11 月 16 日）：会话进你的 Done 文件夹但继续运行，对其他订阅者仍可见——侧栏现在列出你订阅的会话，别把别人还依赖的会话「清理」掉。相关新增：**Phonebook** 把每位成员在 Devin/Slack/Teams/git/Jira/Linear 上的身份关联起来。
 
 ## 自测
 
@@ -105,6 +106,7 @@ Command Center 是会话中枢，不是编辑器：
 
 ## 来源
 
-- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（标签页、后台本地会话）、v3.14（Bots 进 Desktop）
+- [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（标签页、后台本地会话）、v3.14（Bots 进 Desktop、`DetectProxy` 策略）
+- [Devin release notes](https://docs.devin.ai/release-notes/2026) —— 11 月 16 日：*Mark done* 取代 Archive、订阅侧栏、Phonebook
 - [Devin CLI changelog](https://docs.devin.ai/cli/changelog/stable) —— v3000.13.4：`devin daemon`、`--process-model`、会话监视器
 - 相关：[指南 12 — Devin CLI 与可扩展性](devin-cli.md) · [指南 1 — 你的第一个 Bot](bots-101-first-bot.md)

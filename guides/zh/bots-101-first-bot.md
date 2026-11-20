@@ -25,7 +25,9 @@
 
 新 Bot 默认私密，分享前只有你能用。它的用量像普通会话一样计入你的方案。
 
-> 提示：模板自带某一岗位的指令（QA Engineer、Data Analyst……）。本仓库的指南适合 *Start from scratch*——outcome prompt 你自己写。
+> 提示：**Template library**（侧栏 → Bots）列出 Cognition 官方模板——QA Engineer、Migration Engineer、Data Analyst 等——加上你组织内共享的；同一套在公开的 [Bot marketplace](https://devin.ai/bots/templates) 上不登录也能逛。本仓库的指南仍适合 *Start from scratch*——outcome prompt 你自己写。
+
+用模板建出来的 Bot 只拿到 prompt，**其它什么都没有**——私有、无 connections、无 secrets、无 memory。要在聊天里告诉它它负责什么（仓库、项目、频道），像新 Bot 一样配好 connections；如果模板本身要跑触发器，第一次对话时 Bot 会主动提出帮你配。它持有 prompt 的独立副本——之后改模板不会同步给它。（*Add to a current Bot* 是把模板 prompt 送进你已有的 Bot，而不是新建一个。）
 
 ## 第 2 步 — 指派结果
 
@@ -99,7 +101,7 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 
 发布帖不会讲但文档写明了两件事：
 
-- **私有 Bot 会不打招呼继承你的资源。** 你已有的权限可以不经新的确认就被记录成 grants——私有 Bot 不是沙箱。共享之前打开 Settings → Access，摘掉任务不需要的 grants。如果想让队友抄方法但看不到你的对话和凭证，共享*模板*，不是 Bot 本体。
+- **私有 Bot 会不打招呼继承你的资源。** 你已有的权限可以不经新的确认就被记录成 grants——私有 Bot 不是沙箱。共享之前打开 Settings → Access，摘掉任务不需要的 grants。如果想让队友抄方法但看不到你的对话和凭证，共享*模板*，不是 Bot 本体：Bot 侧栏菜单 → *Share as template*，它会拟好名称、一句话描述和清洗过的 prompt——发到组织 Template library（Teams/Enterprise）或生成公开链接（Pro+）。链接把整个签名后的模板压进 URL——不能编辑、不能撤销、任何人都能读到 prompt 全文，复制之前先把内部名字摘掉。
 - **Bot 的用量 = 它的聊天 + 它起的全部会话。** Max：先用你的包含额度再用按需付费——没有单独的 Bot 上限。Teams：你的额度然后团队点数，管理员可以设 Bot 专属按需上限。Enterprise：默认计入创建者上限，除非单独分配。聊天里写的花费指令不是配置好的上限——上限在 Settings 里设，别用自然语言描述。
 
 ## 第 5 步 — 放到你工作的地方

@@ -93,6 +93,7 @@ Automations ページ右上の **Create automation** ドロップダウンに 4 
 - Teams のプライベートチャンネルは @メンションでのみ発火
 - GitHub トリガーは特定リポジトリを指名する必要がある
 - 多数運用するなら **Terraform provider** で宣言的管理
+- v3 のセッション作成 API は `memory_enabled: false` を受け付ける——起動されたセッション（とその子セッション）はメモリ無効で動く。実行間に学習コンテキストを持ち越したくない automation 向け
 
 ## 実録ウォークスルー — automation を実際に作成・発火・検証、Devin Desktop v3.14（Pro プラン）で収録
 
