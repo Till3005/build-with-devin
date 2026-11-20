@@ -93,6 +93,6 @@ The doctrine run live on a throwaway `demo-repo`: a four-line brief — scope + 
 
 - [Coding Agents 101](https://devin.ai/agents101) — Cognition's prompting doctrine: say-how, where-to-start, defensive prompting, feedback loops, the 80% rule
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — the official do/don't list and the reference brief dissected above
-- [Devin tutorial library](https://docs.devin.ai/tutorial-library) + [Devin University](https://devin.ai/university) — official videos and courses if you want the same material in another medium
+- [Devin tutorial library](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — official videos and courses if you want the same material in another medium
 - Field note: every report in [community field reports](community-field-reports.md) converges on the same conclusion — briefs, not wishes
 - Next: [Guide 1 — Your first Bot](bots-101-first-bot.md) (same doctrine, bigger object) · [Outcome prompts reference](bot-outcome-prompts.md)

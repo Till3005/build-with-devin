@@ -93,6 +93,6 @@ Cognition 自身のモデルプロンプトに注釈：
 
 - [Coding Agents 101](https://devin.ai/agents101) — Cognition のプロンプト教義：say-how、起点指示、防御的プロンプト、フィードバックループ、80% ルール
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — 公式 do/don't と上で解剖した見本ブリーフ
-- [Devin チュートリアルライブラリ](https://docs.devin.ai/tutorial-library) + [Devin University](https://devin.ai/university) — 動画・コース形式の教材
+- [Devin チュートリアルライブラリ](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — 動画・コース形式の教材
 - 現場メモ：[コミュニティ実践レポート](community-field-reports.md)のすべてが同じ結論に収束する——願いではなくブリーフを
 - 次：[ガイド 1 — 初めての Bot](bots-101-first-bot.md)（同じ教義、より大きな対象）· [outcome prompts リファレンス](bot-outcome-prompts.md)

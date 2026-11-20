@@ -93,6 +93,6 @@ A doutrina executada num `demo-repo` descartável: um brief de quatro linhas —
 
 - [Coding Agents 101](https://devin.ai/agents101) — a doutrina de prompting da Cognition: say-how, ponto de partida, prompting defensivo, feedback loops, a regra dos 80%
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — a lista oficial de do/don't e o brief de referência dissecado acima
-- [Biblioteca de tutoriais](https://docs.devin.ai/tutorial-library) + [Devin University](https://devin.ai/university) — o mesmo material em vídeo e curso
+- [Biblioteca de tutoriais](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — o mesmo material em vídeo e curso
 - Nota de campo: todos os relatos em [community field reports](community-field-reports.md) convergem para a mesma conclusão — briefs, não desejos
 - Próximo: [Guia 1 — Seu primeiro Bot](bots-101-first-bot.md) (mesma doutrina, objeto maior) · [referência de outcome prompts](bot-outcome-prompts.md)
