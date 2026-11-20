@@ -52,6 +52,7 @@
 | hubble | 两条常驻回路：每个 Dependabot PR 在人看之前先由 Devin 调查——打 GREEN/YELLOW/RED 风险标签**并把依据写进评论**；每周 Datadog CCM 回路挑一个成本候选、深挖、交回可直接决策的报告 | 人打开 PR 时评审材料已经备好；交付物是依据而非标签（[Dependabot 回路](https://zenn.dev/hubble/articles/88429bd24db476)、[成本回路](https://zenn.dev/hubble/articles/091e29a0c86ec3)，JP） |
 | SMARTCAMP | 常驻安全流水线：定时 GitHub Actions 拉 ECS 镜像 → Trivy 扫（HIGH/CRITICAL）→ 建 issue → Devin 修复；AWS 凭证与扫描任务隔离只让产物跨边界；hash 固定 + 发布后 7 天宽限期防扫描器滞后 | 漏洞修复做成流水线，不是一次性会话（[report](https://zenn.dev/smartcamp/articles/97ac804043530e)，JP） |
 | canly | Devin 当分析师而非码农：把 ~700 条历史工单分类，弄清「原因未特定」到底是什么 | 过半根本不是 bug；给 AI 喂什么上下文（DB？文档？）比选哪个模型更关键（[report](https://zenn.dev/canly/articles/9c19bb123e208c)，JP） |
+| Ryan Carson（Untangle） | 独立创始人同时跑 ~15 个 Devin agent——靠文件夹系统 + 纸上 P0 清单调度，不用仪表盘；「Watchdog」playbook 盯每个律所账号；「LAN PR」skill 闭环——review、视频走查、auto-merge | 月烧 ~$20k；每天合 ~40 个 PR、无 QA 审阅人；几乎全面弃用本地 agent（[Lenny's 播客](https://www.lennysnewsletter.com/p/i-spent-20000-on-devin-in-a-month)） |
 
 其中可复用的思想：**策略表门控**（arufian：只自动 PR 低风险活、复杂的走 plan-first）、**定式输出 prompt**（Skillnote：固定 CSV 格式 + 内联 Python 转换消除输出抖动）、**评审预消化**（rakko：人看之前 Devin 先摘要+标记）、**理由先行分诊**（hubble：标签只是指针，带着证据的评论才是交付物）、**流水线化修复**（SMARTCAMP：扫描 → issue → 修复一条 CI 式回路，带凭证与免凭证的段分开）、**诚实记账**（levtech 的 ACU-vs-工资 ROI 公式）。
 
@@ -72,6 +73,8 @@
 5. **迭代 prompt，不是迭代工具。** Scott Logic 的修复不是换 agent——是收窄 prompt。把第一次失败当 prompt bug 处理。
 6. **交付证据，不交付判决。** hubble 把 Dependabot skill 的最后一步从「决定是否合并」改成「评估风险」——agent 组装案情，人保留决定权。
 
+这六条背后的约束现在是被测量过的，不是民间智慧：[哈佛一项研究](https://news.ycombinator.com/item?id=50538303)（11 月 16 日，HN 459 条评论）发现 AI 编码 agent 把工程瓶颈挪到了 *code review*——所以本指南里每个立得住的模式都以一道 review 关（人或脚本）收尾，而不是静默合并。
+
 ## Scott Wu 的内部 top-5（来自 Lenny's 访谈）
 
 Cognition 自己委派最多的任务：**前端修复、版本升级、文档、事故响应、测试**——外加"第一道防线"模式（Devin 在人介入前先分析 crash），以及用 DeepWiki 调研来*写出更好的 prompt*。
@@ -85,6 +88,8 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 **SMARTCAMP 的扫描→修复流水线。** 定时 GitHub Actions：拉 ECS 镜像 → Trivy 扫（HIGH/CRITICAL、OS 包）→ 建 issue → Devin 修复。值得抄的是加固细节而不是那个箭头：带 AWS 凭证的拉取任务和免凭证的扫描任务分开，只有产物跨边界；发布后等 ~7 天才信扫描结果（扫描器数据库滞后于新包）；镜像 digest 用 hash 固定，并有 PR 检查标记过期 hash。防什么：这是把扫描器本身当供应链攻击面做的纵深防御——只抄「扫描 → Devin」这一截就没抄到点子上。
 
 **canly 的分析师部署。** 让 Devin 把 ~700 条积压的「原因未特定」工单做了分类：过半根本不是 bug——而这件事真正的产出是一张「AI 还缺什么上下文」的地图（文档、DB 可见性、工单元数据），标签本身是次要的。抄法：Devin 当分析师是一等用法——买工具之前，先让它把没人分类过的那堆数据分类一遍。防什么：瓶颈是上下文的选择，不是模型质量。
+
+**Ryan Carson 的一人舰队。** Untangle 的独立创始人以 ~$20k/月同时跑 ~15 个 Devin agent——调度不用仪表盘，用文件夹系统加一张写着 P0 的纸，因为那个规模下真正的瓶颈是*他的*注意力，不是 agent 吞吐。两个 playbook 撑起整个运营：「Watchdog」盯每个律所账号，一个人顶替整个客户成功团队；「LAN PR」每天合 ~40 个 PR——review 回路 + 视频走查 + auto-merge，没有 QA 审阅人。抄法：扩展的单位是「每个面一份命名 playbook」，不是更多 agent。防什么：他几乎全面弃用本地 agent——长回路归云 agent；唯一保留的例外是用 Codex 跑范围卡死的设计稿实现。
 
 ## 验证
 
@@ -123,3 +128,7 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 - [FAL-coffee — 导入 Devin 的团队第一篇该读的](https://qiita.com/FAL-coffee/items/be4d59093dd2bb06fb69)（日语）
 - [mei999 — 把 Devin 用到极致：清理、现代化、自动化](https://zenn.dev/mei999/articles/7d6132f1ca36b6)（日语/英译版）
 - [掘金 — Devin vs Cursor：个人开发者和中小项目怎么选](https://juejin.cn/post/7689030315844026414)（中文）
+- [Lenny's Newsletter — Ryan Carson：一个月在 Devin 上烧 $20,000](https://www.lennysnewsletter.com/p/i-spent-20000-on-devin-in-a-month)
+- [HN — 哈佛研究：agent 把瓶颈挪到了 code review](https://news.ycombinator.com/item?id=50538303)
+- [知乎 — AI software engineer 如何接管工作区：Devin、SWE-agent 与 OpenHands](https://zhuanlan.zhihu.com/p/2025994849590026406)（中文）—— 最清晰的中文架构分析：ACI 设计、受控沙箱 vs 开发者同域两条路线、三大真实瓶颈（全局导航失真、失败恢复链、隐式上下文）
+- [掘金 — AI 编码 Agent 90 天落地清单](https://juejin.cn/post/7671231304077361203)（中文）—— 做对了的 CI gate 模式：AI 代码走独立安全扫描、检测与扫描分两步、混合工具栈运营模型
