@@ -67,6 +67,8 @@ staging ──► PM Bot reporta status no canal
 
 Aprove grants de forma estreita: o orquestrador lê e manda mensagem aos especialistas; especialistas não precisam todos se alcançar.
 
+**Modelo de acesso de 20/11.** Bots compartilhados e service users agora só enxergam recursos explicitamente concedidos — repos, segredos, plugins, playbooks, skills e servidores MCP têm escopo por Bot, e sessões carregam controles próprios de compartilhamento/privacidade. Leia [acesso e segurança](https://docs.devin.ai/work-with-devin/bots/access-and-security) antes de ligar a org: um Bot que manda mensagem a um especialista mas não lê o repo dele não pega o handoff de verdade.
+
 ## Passo 4 — A thread consolidada
 
 Esta é a instrução mais importante — converte interrupções de 20 Bots num hábito só:
@@ -131,5 +133,5 @@ Seis dias após a troca: decisões tomadas por Bots sem ela **12×**, pedidos re
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — números do SuperJennyStack, variante grant-handoff
 - [Bot marketplace](https://devin.ai/bots/templates) — template comunitário SuperJennyStack + 16 templates oficiais
-- [Docs de Bots](https://docs.devin.ai/work-with-devin/bots) — grants, memória, acesso
+- [Docs de Bots](https://docs.devin.ai/work-with-devin/bots) — grants, memória, [acesso e segurança](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Relacionado: [Guia 5 — Enxame ancorado em referência](bots-204-reference-grounded-swarm.md) para enxames que *escrevem* em vez de *operar*

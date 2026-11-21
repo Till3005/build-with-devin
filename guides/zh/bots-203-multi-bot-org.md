@@ -67,6 +67,8 @@ staging ──► PM Bot reports status in channel
 
 grant 按窄批准：编排者能读和发消息给专家；专家之间不必互达。
 
+**11/20 权限模型。** 共享 Bot 和 service user 现在只能看到你显式授予的资源——repo、密钥、plugin、playbook、skill 和 MCP server 都按 Bot 逐个授权，session 也带自己的分享/隐私开关。接线前先读[访问与安全文档](https://docs.devin.ai/work-with-devin/bots/access-and-security)：能给专家发消息却读不到它 repo 的 Bot，实际上接不住交接。
+
 ## 第 4 步 — 汇总 thread
 
 这是最重要的一条指令——它把 20 个 Bot 的打扰折算成一个习惯：
@@ -133,5 +135,5 @@ Jenny **每天 4 次**跑这个、**用 emoji** 回答。纪律：你从不直�
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack 数字、grant 交接变体
 - [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack 社区模板 + 16 个官方模板
-- [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants、memory、access
+- [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants、memory、[access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - 相关：[第 5 篇 — 参考基准锚定的 swarm](bots-204-reference-grounded-swarm.md)（*构建*而非*运营*的 swarm）

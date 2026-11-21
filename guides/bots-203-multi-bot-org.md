@@ -67,6 +67,8 @@ staging ──► PM Bot reports status in channel
 
 Approve grants narrowly: the orchestrator reads and messages specialists; specialists don't all need to reach each other.
 
+**Nov 20 access model.** Shared Bots and service users now see only the resources you explicitly grant — repos, secrets, plugins, playbooks, skills and MCP servers are scoped per-Bot, and sessions carry their own share/privacy controls. Read [access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security) before wiring the org: a Bot that can message a specialist but can't read its repo can't actually take the handoff.
+
 ## Step 4 — The roll-up thread
 
 This is the single most important instruction — it converts 20 Bots' worth of interruptions into one habit:
@@ -131,5 +133,5 @@ Six days after switching: decisions made by Bots without her **12×'d**, repeate
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack numbers, grant-handoff variant
 - [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack community template + 16 official templates
-- [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants, memory, access
+- [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants, memory, [access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Related: [Guide 5 — Reference-grounded swarm](bots-204-reference-grounded-swarm.md) for swarms that *write* rather than *operate*

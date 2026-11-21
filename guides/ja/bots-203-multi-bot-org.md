@@ -67,6 +67,8 @@ QA Bot がバグ発見 ──grant──► Developer Bot が修正 ──► QA
 
 grant は狭く承認する：オーケストレーターはスペシャリストを読みメッセージする；スペシャリスト同士が全員互いに届く必要はない。
 
+**11/20 のアクセスモデル。** 共有 Bot とサービスユーザーは明示的に grant されたリソースしか見えなくなった——repo・シークレット・プラグイン・プレイブック・スキル・MCP サーバーは Bot ごとにスコープされ、セッションにも個別の共有/プライバシー制御がある。組織を配線する前に[アクセスとセキュリティ](https://docs.devin.ai/work-with-devin/bots/access-and-security)を読む：スペシャリストにメッセージできてもその repo を読めない Bot は、実際にはハンドオフを受けられない。
+
 ## ステップ 4 — 集約スレッド
 
 最も重要な指示——20 Bot 分の割り込みを 1 つの習慣に変換する：
@@ -131,5 +133,5 @@ Jenny はこれを **1 日 4 回**運用し、**絵文字で**答える。規律
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack の数値、grant ハンドオフの亜種
 - [Bot マーケットプレイス](https://devin.ai/bots/templates) — SuperJennyStack コミュニティテンプレート + 公式テンプレート 16 種
-- [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) — grants、メモリ、アクセス
+- [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) — grants、メモリ、[アクセスとセキュリティ](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - 関連：[ガイド 5 — 参照基盤スウォーム](bots-204-reference-grounded-swarm.md) *運用*ではなく*執筆*するスウォーム向け
