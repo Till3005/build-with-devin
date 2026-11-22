@@ -138,6 +138,8 @@ Read stages in order the first time; after that, jump.
 
 Curriculum gaps found by the steward — each needs a fix in all 4 languages.
 
+Resolved Nov 22: Access & Sharing launch (Nov 20 release) — user groups + per-session sharing + granular secrets + repo sync added to Guide 1's sharing section (4 langs).
+
 Resolved in the Nov 20 drift pass (all 4 languages): CLI daemon deep-dive + multi-client join semantics (Guide 12, with our recorded Desktop lock exception), Bot template mechanics — library/marketplace/empty-start/Share-as-template (Guide 1), `memory_enabled: false` on session create (Guide 6), *Mark done* vs Archive + subscribers/Phonebook (Guide 17), `DetectProxy` policy (Guide 17).
 
 ## Contributing
