@@ -12,7 +12,7 @@
 
 <sub>维护者 [@darega0mae](https://x.com/darega0mae) · 姊妹登记库：[built-with-devin](https://github.com/Till3005/built-with-devin) · [改进指南](CONTRIBUTING.md) · [站点阅读（目录/筛选/四语）](https://till3005.github.io/built-with-devin/guides/zh/index.html)</sub>
 
-<sub>**19** 篇指南 · **4** 个阶段 · 每个模式都逆向自实名、有据可查的部署</sub>
+<sub>**20** 篇指南 · **4** 个阶段 · 每个模式都逆向自实名、有据可查的部署</sub>
 
 <sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -29,6 +29,8 @@ flowchart LR
     subgraph S0["零阶 · 起步"]
       G18["18 · 跟 Devin 说话"] --> G17["17 · Devin Desktop"]
       G18 --> G12["12 · Devin CLI"]
+      G18 --> G19["19 · 会话全环"]
+      G19 --> G1
       G17 --> G1["1 · 第一个 Bot"]
       G12 --> G1
       G1 --> G13["13 · 官方食谱"]
@@ -62,6 +64,7 @@ flowchart LR
 | # | 指南 | 你将做出 | 基于 | 难度 |
 | --- | --- | --- | --- | --- |
 | 18 | [跟 Devin 说话：提示词基本法](guides/zh/talking-to-devin.md) | Devin 不可能误读的指令——说怎么做、可检查的成功、80% 规则 | [Coding Agents 101](https://devin.ai/agents101) + [官方提示词文档](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) | 从这里开始 |
+| 19 | [会话全环](guides/zh/the-session-loop.md) | 理解 → 委托 → 审查 → 复盘：DeepWiki、Ask Devin、Devin Review、Session Insights + ACU 计费 | [Devin University](https://learndevin.com) + 官方产品文档 | 从这里开始 |
 | 17 | [Devin Desktop](guides/zh/devin-desktop.md) | 面向 agent 的原生编辑器：Command Center、持久本地会话、Bots——一个窗口 | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | 从这里开始 |
 | 12 | [Devin CLI 与扩展性](guides/zh/devin-cli.md) | 本地 agent：daemon 会话、云端交接、skills、hooks | [CLI 文档](https://docs.devin.ai/cli/index.md) | 进阶 |
 | 1 | [你的第一个 Bot](guides/zh/bots-101-first-bot.md) | 一个对结果负责的 Bot——chat、sessions、Needs-you、记忆、接入面 | [官方文档](https://docs.devin.ai/work-with-devin/bots) + 发布帖 | 从这里开始 |

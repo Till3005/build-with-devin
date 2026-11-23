@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md) · [Read on the site](https://till3005.github.io/built-with-devin/guides/)</sub>
 
-<sub>**19** guides · **4** stages · every pattern reverse-engineered from a named, documented deployment</sub>
+<sub>**20** guides · **4** stages · every pattern reverse-engineered from a named, documented deployment</sub>
 
 <sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -37,6 +37,8 @@ flowchart LR
     subgraph S0["Stage 0 · Foundations"]
       G18["18 · Talking to Devin"] --> G17["17 · Desktop"]
       G18 --> G12["12 · CLI"]
+      G18 --> G19["19 · The session loop"]
+      G19 --> G1
       G17 --> G1["1 · Your first Bot"]
       G12 --> G1
       G1 --> G13["13 · Official cookbook"]
@@ -70,6 +72,7 @@ flowchart LR
 | # | Guide | You'll build | Based on | Level |
 | --- | --- | --- | --- | --- |
 | 18 | [Talking to Devin](guides/talking-to-devin.md) | Briefs Devin can't misread — say-how, checkable success, the 80% rule | [Coding Agents 101](https://devin.ai/agents101) + [official prompting docs](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) | Start here |
+| 19 | [The session loop](guides/the-session-loop.md) | Understand → delegate → review → learn: DeepWiki, Ask Devin, Devin Review, Session Insights + the ACU meter | [Devin University](https://learndevin.com) + official product docs | Start here |
 | 17 | [Devin Desktop](guides/devin-desktop.md) | The agent-native editor: Command Center, durable local sessions, Bots — one window | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | Start here |
 | 12 | [Devin CLI & extensibility](guides/devin-cli.md) | The local agent: daemon sessions, cloud handoff, skills, hooks | [CLI docs](https://docs.devin.ai/cli/index.md) | Intermediate |
 | 1 | [Your first Bot](guides/bots-101-first-bot.md) | A Bot that owns an outcome — chat, sessions, Needs-you, memory, surfaces | [Official docs](https://docs.devin.ai/work-with-devin/bots) + launch post | Start here |

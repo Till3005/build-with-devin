@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · 姉妹レジストリ：[built-with-devin](https://github.com/Till3005/built-with-devin) · [ガイドを改善](CONTRIBUTING.md) · [サイトで読む](https://till3005.github.io/built-with-devin/guides/ja/index.html)</sub>
 
-<sub>**19** ガイド · **4** ステージ · すべてのパターンは実名・実証済みの導入から逆算</sub>
+<sub>**20** ガイド · **4** ステージ · すべてのパターンは実名・実証済みの導入から逆算</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · 日本語 · [Português](README.pt.md)</sub>
 
@@ -29,6 +29,8 @@ flowchart LR
     subgraph S0["ステージ0 · 基礎"]
       G18["18 · Devin への伝え方"] --> G17["17 · Devin Desktop"]
       G18 --> G12["12 · Devin CLI"]
+      G18 --> G19["19 · セッションの全ループ"]
+      G19 --> G1
       G17 --> G1["1 · 初めての Bot"]
       G12 --> G1
       G1 --> G13["13 · 公式クックブック"]
@@ -62,6 +64,7 @@ flowchart LR
 | # | ガイド | 作るもの | ベース | レベル |
 | --- | --- | --- | --- | --- |
 | 18 | [Devin への伝え方：プロンプトの教義](guides/ja/talking-to-devin.md) | Devin が読み違えないブリーフ——say-how、チェック可能な成功、80% ルール | [Coding Agents 101](https://devin.ai/agents101) + [公式プロンプトドキュメント](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) | ここから |
+| 19 | [セッションの全ループ](guides/ja/the-session-loop.md) | 理解 → 委任 → レビュー → 学習：DeepWiki、Ask Devin、Devin Review、Session Insights + ACU メーター | [Devin University](https://learndevin.com) + 公式プロダクトドキュメント | ここから |
 | 17 | [Devin Desktop](guides/ja/devin-desktop.md) | エージェントネイティブなエディタ：Command Center、永続ローカルセッション、Bots——1つのウィンドウ | [Desktop changelog](https://docs.devin.ai/desktop/changelog) | ここから |
 | 12 | [Devin CLI と拡張性](guides/ja/devin-cli.md) | ローカルエージェント：daemon セッション、クラウドハンドオフ、skills、hooks | [CLI ドキュメント](https://docs.devin.ai/cli/index.md) | 中級 |
 | 1 | [初めての Bot](guides/ja/bots-101-first-bot.md) | 成果に責任を持つ Bot —— chat、セッション、Needs-you、メモリ、接続面 | [公式ドキュメント](https://docs.devin.ai/work-with-devin/bots) + ローンチ記事 | ここから |

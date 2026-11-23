@@ -12,7 +12,7 @@
 
 <sub>Curado por [@darega0mae](https://x.com/darega0mae) · Registro irmão: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Melhore um guia](CONTRIBUTING.md) · [Ler no site](https://till3005.github.io/built-with-devin/guides/pt/index.html)</sub>
 
-<sub>**19** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
+<sub>**20** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português</sub>
 
@@ -29,6 +29,8 @@ flowchart LR
     subgraph S0["Estágio 0 · Fundamentos"]
       G18["18 · Falando com Devin"] --> G17["17 · Devin Desktop"]
       G18 --> G12["12 · Devin CLI"]
+      G18 --> G19["19 · O loop da sessão"]
+      G19 --> G1
       G17 --> G1["1 · Primeiro Bot"]
       G12 --> G1
       G1 --> G13["13 · Cookbook oficial"]
@@ -62,6 +64,7 @@ flowchart LR
 | # | Guia | Você vai construir | Baseado em | Nível |
 | --- | --- | --- | --- | --- |
 | 18 | [Falando com Devin: a doutrina do prompt](guides/pt/talking-to-devin.md) | Briefs que Devin não lê errado — say-how, sucesso verificável, regra dos 80% | [Coding Agents 101](https://devin.ai/agents101) + [docs oficiais de prompting](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) | Comece aqui |
+| 19 | [O loop da sessão](guides/pt/the-session-loop.md) | Entender → delegar → revisar → aprender: DeepWiki, Ask Devin, Devin Review, Session Insights + o medidor de ACU | [Devin University](https://learndevin.com) + docs oficiais do produto | Comece aqui |
 | 17 | [Devin Desktop](guides/pt/devin-desktop.md) | O editor nativo de agentes: Command Center, sessões locais duráveis, Bots — uma janela | [Changelog do Desktop](https://docs.devin.ai/desktop/changelog) | Comece aqui |
 | 12 | [Devin CLI & extensibilidade](guides/pt/devin-cli.md) | O agente local: sessões daemon, handoff para a nuvem, skills, hooks | [Docs do CLI](https://docs.devin.ai/cli/index.md) | Intermediário |
 | 1 | [Seu primeiro Bot](guides/pt/bots-101-first-bot.md) | Um Bot dono de um resultado — chat, sessões, Needs-you, memória, superfícies | [Documentação oficial](https://docs.devin.ai/work-with-devin/bots) + post de lançamento | Comece aqui |
