@@ -122,4 +122,5 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)
 - [Migration & Modernization + 5 个示例 playbook](https://docs.devin.ai/use-cases/migration-modernization.md)
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
+- [Cognition 的 .NET 迁移 playbook](https://cognition.com/blog/dotnet-migration-with-devin) —— Ask Devin 按上下文给 controller 排序，协调会话并行移植：月 → 周（厂商发布）
 - 相关：[第 7 篇 — 企业级铺开](enterprise-playbook.md)（形态 1 就是本篇的组织级版本）

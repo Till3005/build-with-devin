@@ -35,6 +35,7 @@ Usuários que obtêm resultados tratam o Devin como um **engenheiro júnior ass�
 - **Bordas de degradação elegante.** Num [duelo de três agentes](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2) na mesma tarefa de rate-limiting, a implementação do Devin seguiu as convenções do codebase e o sliding-window em Redis estava correto — mas o caminho de falha do Redis lançou um rejection não tratado em vez de continuar. Não teria ido a produção sem um humano ler o caminho de erro.
 - **Quando a categoria inteira não serve.** A [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) rodou uma avaliação disciplinada de uma semana, 10 sessões no Pro, em 3 repositórios, e deliberadamente *não adotou* — não porque o Devin falhou, mas porque os pontos fortes do agente em nuvem não combinavam com seu formato: os solicitantes eram todos engenheiros (as entradas via Slack/Jira viraram overhead de rastreamento de sessões), o compartilhamento de sessões era redundante com 6 pessoas, o simulador de iOS não roda num sandbox Linux e faltava detalhamento de custo por parte. A recusa certa ensina tanto quanto uma adoção.
 - **Trabalho não verificável.** [expectedwrong](https://expectedwrong.com/devin-appraised) e o [teste de 10 tarefas de alanwest](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) documentam o modo de falha: saída confiante que está quebrada ou ausente, créditos queimados em loops. Suas tarefas penderam para trabalho sem verificação clara — o mesmo gate que o playbook oficial torna obrigatório (Guia 11).
+- **Opacidade em escala de frota.** O primeiro relato em escala de frota ([raijuna, Day 1–2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)) bateu numa classe de falha que usuários de sessão única nunca veem: com ~15 Bots rodando, *qual sessão produziu qual PR* fica sem rastreio, contexto se perdia em minutos num modelo não-Devin, e um terço da quota semanal sumiu em setup — orquestração cobra seu próprio imposto.
 
 ## Implantações de times nomeados (comunidade, com números)
 
@@ -63,6 +64,14 @@ As ideias reutilizáveis dentro: **gating por tabela de política** (arufian: s�
 - Gasto invisível de ACU: por padrão, todo comentário num PR do Devin acorda uma sessão. Ativaram **"Only respond to PR comments that mention Devin"** para as pessoas discutirem PRs livremente.
 - Onboarding de repositórios é serial — um repo em setup bloqueia o próximo; agende.
 - O split de ROI deles: alto em pré-revisão de PR (~1–2 ACU cada via rótulo `devin-review` → Actions → Playbook de API), avaliações de risco agendadas de upgrade de libs, e trabalho em legado alimentado com um *PR existente similar*; baixo em refactors amplos e tarefas pequenas demais para importar.
+
+## A era dos Bots — primeiros recibos (nov/2026)
+
+Os relatos pós-lançamento ainda são escassos, mas valem acompanhar — os três autorrelatados, sem benchmark independente:
+
+- **A semana do swyx** — entregou a uma org de Devin Bots seu AEO, QA, portabilidade entre plataformas, admin pessoal e edição de vídeo; saiu dos worktrees locais. Veredito: *"você não quer 'Funcionários de IA', quer gerentes de agentes que são donos de resultados."* A ressalva, declarada por ele mesmo: afiliado à Cognition, sem métricas de qualidade — relato de praticante, não benchmark ([post](https://x.com/swyx/status/2122746401482592549)).
+- **100 Days do raijuna** — o operador de fábrica de agentes portando a própria fábrica para Bots. Day 1: ~15 Bots no ar, 18% da quota semanal só em setup, queixas honestas de UX (rastrear sessões não escala para frota). Day 2: Bots perdiam contexto em minutos num modelo GPT (ressalva dele: talvez o modelo), 33% da semana foi — *"ainda não compete com open source e o que você constrói nas próprias máquinas"* ([Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1), [Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)).
+- **SupaSEO** — o artefato entregue mais limpo até agora: uma cadeia Chief-of-Staff→líder→especialistas de 8 Bots construiu um SaaS pago (SEO local + rastreio de citações em IA, $99) em ~48h, ~951 commits; o humano escreveu só a landing page. Dicas reproduzíveis dele: Bots especialistas compartilhados entre projetos, prompts granulares ([thread de lançamento](https://x.com/noah_z_zhang/status/2124146220159377769)).
 
 ## As lições destiladas
 

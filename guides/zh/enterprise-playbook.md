@@ -10,7 +10,7 @@
 
 | | |
 | --- | --- |
-| 部署 | Nubank：数百万行、8 年 ETL 单体 → 子模块。Comarch：20 年、千万行 ERP 重建 |
+| 部署 | Nubank：数百万行、8 年 ETL 单体 → 子模块。Comarch：20 年、千万行 ERP 重建。Odyssey Logistics（Cognizant）：Access/VBA TMS → 云原生，**净成本节省 37%** |
 | 结果 | 工程效率 8–12×、成本节省 20×（Nubank） |
 | 机制 | 在*你的*代码库上 fine-tune Devin（Nubank 把 ~40 分钟/任务压到 ~10），然后把迁移当持续项目交给它——可追踪的小 PR，不是重写 |
 
@@ -20,7 +20,7 @@
 
 | | |
 | --- | --- |
-| 部署 | EBANX：**92% 已合并 PR 由 Devin 写**。Gumroad：Devin 是 repo **第一贡献者**（1,500+ PR）。Finch：3,000 PR，省 ~20 工程师月 |
+| 部署 | EBANX：**92% 已合并 PR 由 Devin 写**。Gumroad：Devin 是 repo **第一贡献者**（1,500+ PR）。Finch：3,000 PR，省 ~20 工程师月。Gamma：~10 agent 舰队 + 3 名工程师重建 PowerPoint 导入——**3,500+ merges**，工作量按 5–10 工程师×一年估算 |
 | 机制 | Devin 在这些 repo 上不是助手——是默认作者。人类评审和指挥 |
 
 **怎么抄：** 挑一个高吞吐 repo；ticket 默认路由给 Devin 会话；人类评审。要盯的指标是 authored-PR 占比——超过 ~50% 你就在这个形态里了；低于它，你还在试点期。
@@ -56,7 +56,7 @@
 
 | | |
 | --- | --- |
-| 部署 | Hamming：Devin 写 25% 代码量。Litera：回归周期缩短 90%。Eight Sleep：交付量 8× |
+| 部署 | Hamming：Devin 写 25% 代码量。Litera：回归周期缩短 90%。Eight Sleep：交付量 8×。Zeb（SAP 咨询）：交付周期 **4 周 → 2.5 周**；8 天 142 个对象 |
 | 机制 | Devin 拥有管线的一个阶段——回归测试、QA——而不是整个产品 |
 
 **怎么抄：** 找人力成本最痛的那个管线阶段（回归周期、QA）；指派给 Bot 或 automation；量这个阶段的前后周期时间。
@@ -87,3 +87,4 @@
 
 - [devin.ai/customers](https://devin.ai/customers) — 引用的全部案例与数字
 - [built-with-devin — 企业索引](https://github.com/Till3005/built-with-devin#enterprise-deployments) — 登记表里的已核验案例表
+- [Devin for Admins](https://learndevin.com/course/devin-for-admins) — 官方 11 课管理员课程：蓝图层级、密钥态势、ACU 治理、推广分析（课程免费，考试需 Enterprise）

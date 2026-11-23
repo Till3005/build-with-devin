@@ -35,6 +35,7 @@ Users who get results treat Devin as an **asynchronous junior engineer**, not a 
 - **Graceful-degradation edge cases.** In a [three-agent shootout](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2) on the same rate-limiting task, Devin's implementation matched codebase conventions and its Redis sliding-window was correct — but the Redis-down path threw an unhandled rejection instead of falling through. Wouldn't have shipped without a human reading the error path.
 - **When the whole category doesn't fit.** [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) ran a disciplined one-week, 10-session Pro evaluation across 3 repos and deliberately *didn't* adopt — not because Devin failed, but because the cloud-agent strengths didn't match their shape: requesters were all engineers (Slack/Jira entry points became session-tracking overhead), session sharing was redundant at 6 people, the iOS simulator can't run on a Linux sandbox, and per-part cost breakdown was missing. The right rejection is as instructive as an adoption.
 - **Uncheckable work.** [expectedwrong](https://expectedwrong.com/devin-appraised) and [alanwest's 10-task test](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063) document the failure mode: confident output that's broken or absent, credit burned in loops. Their tasks skewed to work with no clear verification — the same gate the official playbook makes mandatory (Guide 11).
+- **Fleet-scale opacity.** The first fleet-scale report ([raijuna, Day 1–2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)) hit a new failure class single-session users never see: with ~15 Bots running, *which session produced which PR* becomes untracked, context dropped within minutes on a non-Devin model, and a third of the weekly quota vanished into setup — orchestration has its own tax.
 
 ## Named team deployments (community, with numbers)
 
@@ -63,6 +64,14 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 - Silent ACU burn: by default every comment on a Devin-authored PR wakes a session. They switched on **"Only respond to PR comments that mention Devin"** so people can discuss PRs freely.
 - Repo onboarding is serial — one repository mid-setup blocks the next; schedule it.
 - Their ROI split: high on PR pre-review (~1–2 ACU each via a `devin-review` label → Actions → API Playbook), scheduled library-upgrade risk assessments, and legacy work fed a *similar existing PR*; low on wide refactors and tasks too small to matter.
+
+## The Bots era — first receipts (Nov 2026)
+
+The post-launch reports are thinner but worth tracking — all three self-reported, none independently benchmarked:
+
+- **swyx's week** — handed a Devin Bots org his AEO, QA, cross-platform porting, personal admin and video editing; moved off local worktrees. Verdict: *"you don't want 'AI Employees', you want agent managers that own outcomes."* His caveat, stated himself: Cognition-affiliated, no quality metrics — practitioner report, not benchmark ([post](https://x.com/swyx/status/2122746401482592549)).
+- **raijuna's 100 Days** — the factory operator porting his own agent factory to Bots. Day 1: ~15 Bots live, 18% of weekly quota on setup alone, honest UX complaints (session tracking doesn't scale to a fleet). Day 2: Bots lost context within minutes on a GPT model (his caveat: maybe the model), 33% of the week gone — *"doesn't compete with open source and what you can build on your own machines"* yet ([Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1), [Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)).
+- **SupaSEO** — the cleanest shipped artifact so far: an 8-Bot Chief-of-Staff→lead→specialist chain built a paying SaaS (local SEO + AI-citation tracking, $99) in ~48h, ~951 commits; the human wrote only the landing page. His reproducible tips: shared specialist Bots across projects, granular prompts ([launch thread](https://x.com/noah_z_zhang/status/2124146220159377769)).
 
 ## The distilled lessons
 

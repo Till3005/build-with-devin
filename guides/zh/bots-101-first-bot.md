@@ -151,4 +151,4 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots) —— 机制、权限、用量上限
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) —— 发布帖，Android Bot 的原话 prompt
 - [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) —— 社区实战指南；上面的有界首个任务和权限/用量提醒出自此
-- 上一篇：[指南 18 — 跟 Devin 说话](talking-to-devin.md)（outcome prompt 底下的基本法）· 下一篇：[第 2 篇 — 产品所有制 Bot](bots-201-product-owner.md)
+- 上一篇：[指南 18 — 跟 Devin 说话](talking-to-devin.md)（outcome prompt 底下的基本法）· 下一篇：[第 2 篇 — 产品所有制 Bot](bots-201-product-owner.md) · 另见：[指南 19 — 会话全环](the-session-loop.md)（研究 → 委托 → 审查 → 复盘）

@@ -95,4 +95,4 @@ Cognition 自身のモデルプロンプトに注釈：
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — 公式 do/don't と上で解剖した見本ブリーフ
 - [Devin チュートリアルライブラリ](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — 動画・コース形式の教材
 - 現場メモ：[コミュニティ実践レポート](community-field-reports.md)のすべてが同じ結論に収束する——願いではなくブリーフを
-- 次：[ガイド 1 — 初めての Bot](bots-101-first-bot.md)（同じ教義、より大きな対象）· [outcome prompts リファレンス](bot-outcome-prompts.md)
+- 次：[ガイド 19 — セッションの全ループ](the-session-loop.md)（ブリーフを取り巻く一巡り）· [ガイド 1 — 初めての Bot](bots-101-first-bot.md)（同じ教義、より大きな対象）· [outcome prompts リファレンス](bot-outcome-prompts.md)

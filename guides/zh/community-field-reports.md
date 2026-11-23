@@ -35,6 +35,7 @@
 - **优雅降级的边角。** 一篇[三 agent 对决](https://dev.to/dextralabs/devin-ai-vs-claude-code-vs-cursor-agent-which-one-actually-ships-production-code-benchmarks-3mi2)里同一个限流任务，Devin 的实现贴合代码库规范、Redis 滑动窗口也写对了——但 Redis 挂了的路径抛出未处理 rejection 而不是放行兜底。没人读错误路径就上不了线。
 - **整个品类不合适的情况。** [vesslabs](https://zenn.dev/vesslabs/articles/da9593d77369ee) 用 Pro 做了一周、10 个会话、3 个仓库的严谨评估，最终主动决定*不采用*——不是 Devin 不行，而是云端 agent 的优势和他们不匹配：提需求的全是工程师（Slack/Jira 入口反而成了会话跟踪负担）、6 人团队会话共享多余、iOS 模拟器跑不了 Linux 沙箱、成本拆不到会话粒度。正确的拒绝和采用同样有信息量。
 - **不可检验的活。** [expectedwrong](https://expectedwrong.com/devin-appraised) 和 [alanwest 的 10 任务测试](https://dev.to/alanwest/i-gave-devin-10-real-tasks-it-completed-3-3063)记录了失败模式：自信但坏掉或缺失的输出、credit 在循环中烧掉。他们的任务偏向没有明确验证的活——正是官方 playbook 强制要求的那道闸（第 11 篇）。
+- **舰队级的不透明。** 第一份舰队规模报告（[raijuna，Day 1–2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)）撞上了单会话用户永远遇不到的失败类：~15 个 Bot 同时跑时，*哪个会话产出了哪个 PR* 变得无法追踪；非 Devin 模型上上下文几分钟就丢；每周额度的三分之一消失在搭建里——编排本身是有税的。
 
 ## 实名团队部署（社区、带数字）
 
@@ -63,6 +64,14 @@
 - 隐形 ACU 消耗：默认 Devin 开的 PR 上每条评论都会唤醒会话。他们打开了 **"Only respond to PR comments that mention Devin"**，让人随便讨论。
 - 仓库 onboarding 是串行的——一个在 setup 中就卡住下一个，得排期。
 - 他们的 ROI 分布：高的在 PR 预评审（`devin-review` 标签 → Actions → API Playbook，每次 ~1–2 ACU）、定期库升级风险评估、以及喂了*相似既有 PR* 的遗留代码活；低的在大范围重构和小到不值得的任务。
+
+## Bots 时代——第一批回执（2026 年 11 月）
+
+发布后的报告还薄，但值得盯着——三份都是自述，无独立基准：
+
+- **swyx 的一周**——把一个 Devin Bots 组织交给了 AEO、QA、跨平台移植、个人事务和视频剪辑；搬离了本地 worktree。结论：*"你要的不是 'AI 员工'，而是对结果负责的 agent 管理者。"* 他自己标注的保留意见：与 Cognition 有关联、无质量指标——从业者报告，不是基准（[帖子](https://x.com/swyx/status/2122746401482592549)）。
+- **raijuna 的 100 天**——自家 agent 工厂的运营者把工厂移植到 Bots。Day 1：~15 个 Bot 上线，仅搭建就烧掉每周额度 18%，对 UX 的诚实抱怨（会话追踪扛不住舰队规模）。Day 2：GPT 模型上 Bot 几分钟就丢上下文（他的保留：可能是模型问题），一周没了 33%——*目前"还比不过开源自建"*（[Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1)、[Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)）。
+- **SupaSEO**——目前最干净的可交付物：8 Bot 的 Chief-of-Staff→负责→专家链 ~48 小时建成一个收费 SaaS（本地 SEO + AI 引用追踪，$99），~951 commits；人类只写落地页。他的可复现技巧：专家 Bot 跨项目共享、提示词细粒度（[发布串](https://x.com/noah_z_zhang/status/2124146220159377769)）。
 
 ## 蒸馏出的教训
 

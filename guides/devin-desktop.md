@@ -20,7 +20,7 @@ The Command Center is the session hub — not an editor:
 
 - **Tabs** (v3.13.4): several sessions and pages open in one window, each tab with its own Back/Forward history — treat it like a browser for your fleet.
 - **Session header "..." menu**: the session's MCP servers — toggle one, or re-authenticate it, per session.
-- **Devin Review**: the PR walkthrough (diff, bugs, test recording) opens as a page in the same window.
+- **Devin Review**: the PR walkthrough (diff, bugs, test recording) opens as a page in the same window — the review step of the loop in [Guide 19](the-session-loop.md).
 
 ## Devin Local — the daemon change
 

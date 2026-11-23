@@ -2,7 +2,7 @@
 
 **目標：** 定期的な品質チェックを所有する Bot——スケジュールで実行し、失敗をトリアージし、原因まで追跡し、修正を出荷する。
 **レベル：** 中級
-**出典となる導入事例：** Cognition の **Layout Bot**——Devin web アプリのレイアウトシフト退行を監視。3 時間ごとに本番 `main` をビルドし、初回/再訪/遅延リクエストの訪問をシミュレートして修正を出荷する。**3 週間で 159 PR；ラグ −70%。**
+**出典となる導入事例：** Cognition の **Layout Bot**——Devin web アプリのレイアウトシフト退行を監視。3 時間ごとに本番 `main` をビルドし、初回/再訪/遅延リクエストの訪問をシミュレートして修正を出荷する。**3 週間で 159 PR；ラグ −70%。** 野生では同じ形が最大規模で動いている：Grant Sanderson の **Manim メンテナー Bot** が 3Blue1Brown を支えるオープンソースエンジンの issue 事前トリアージを担当——**96.6k stars、月 25 万ダウンロード**分の保守が、メンテナの目に届く前に処理される。
 **出典：** [ローンチ記事](https://devin.ai/blog/introducing-devin-bots) · [Automations ドキュメント](https://docs.devin.ai/product-guides/automations)
 
 ## パターン

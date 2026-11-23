@@ -55,4 +55,5 @@ You can also say "publish this as an App" inside any session that produced a bro
 ## Sources
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)
+- [Devin Apps tutorial — build a private internal app by prompt](https://lightmind24.blogspot.com/2026/11/devin-apps-tutorial-build-private.html) — the most complete third-party walkthrough: what belongs in the first prompt, how Apps pick up your design system, where Apps stops being the right tool
 - Related: [Guide 6 — Event-driven automations](automations-101-event-driven.md) for scheduled refresh

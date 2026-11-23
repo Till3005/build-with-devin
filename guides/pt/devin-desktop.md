@@ -20,7 +20,7 @@ O Command Center é o hub de sessões — não é um editor:
 
 - **Abas** (v3.13.4): várias sessões e páginas abertas numa janela, cada aba com histórico próprio de voltar/avançar — trate como o navegador da sua frota.
 - **Menu "..." do cabeçalho da sessão**: os MCP servers da sessão — liga/desliga um, ou reautentica, por sessão.
-- **Devin Review**: o walkthrough do PR (diff, bugs, gravação do teste) abre como página na mesma janela.
+- **Devin Review**: o walkthrough do PR (diff, bugs, gravação do teste) abre como página na mesma janela — a etapa de revisão do loop do [Guia 19](the-session-loop.md).
 
 ## Devin Local — a mudança do daemon
 

@@ -22,6 +22,8 @@ Don't build one Bot that does everything — build a small company:
 
 The human is the CEO: the orchestrator collects every subordinate Bot's pending decisions into **one Slack thread, 4×/day**, answered with emoji.
 
+The smallest documented version of this shape shipped a real product: Noah Zixin Zhang ran a **Chief-of-Staff → product-lead → specialist** chain of ~8 Bots that built [SupaSEO](https://supaseo.dev) end-to-end in ~48h (~951 commits; the human wrote only the landing page). His two field notes apply at any scale: **one shared specialist Bot across projects beats one per project**, and prompts stay granular — the org chart doesn't replace the brief.
+
 ## Prerequisites
 
 - Guide 1 done — you can create and instruct a Bot

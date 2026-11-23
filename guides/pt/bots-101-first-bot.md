@@ -153,4 +153,4 @@ Apenas o criador e papéis com Manage Bots veem Archive/Delete. Em planos Enterp
 
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
-- Próximo: [Guia 2 — Bot product-owner](bots-201-product-owner.md)
+- Próximo: [Guia 2 — Bot product-owner](bots-201-product-owner.md) · Ver também: [Guia 19 — O loop da sessão](the-session-loop.md) (pesquisar → delegar → revisar → aprender)

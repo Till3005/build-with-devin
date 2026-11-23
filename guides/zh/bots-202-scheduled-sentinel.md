@@ -2,7 +2,7 @@
 
 **目标：** 一个拥有某 recurring 质量检查的 Bot——按时间表运行它、分拣失败、追到根因、交付修复。
 **级别：** 中级
-**出处部署：** Cognition 的 **Layout Bot**——盯 Devin web app 的 layout-shift 回归。每 3 小时构建生产 `main`，模拟首次/重复/延迟请求三种访问，提交修复。**3 周 159 个 PR；卡顿 −70%。**
+**出处部署：** Cognition 的 **Layout Bot**——盯 Devin web app 的 layout-shift 回归。每 3 小时构建生产 `main`，模拟首次/重复/延迟请求三种访问，提交修复。**3 周 159 个 PR；卡顿 −70%。** 在野生环境里，同一形态已跑到最大规模：Grant Sanderson 的 **Manim 维护 Bot** 在 3Blue1Brown 背后的开源引擎上做 issue 预检——**96.6k stars、月下载 25 万**的维护量在维护者看到之前就被消化。
 **来源：** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Automations docs](https://docs.devin.ai/product-guides/automations)
 
 ## 模式

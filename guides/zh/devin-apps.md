@@ -55,4 +55,5 @@ Devin App 是一个直接托管在 Devin 云机器上的私密 web 应用。你�
 ## Sources
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)
+- [Devin Apps 教程 — 用提示词建私有内部应用](https://lightmind24.blogspot.com/2026/11/devin-apps-tutorial-build-private.html) —— 第三方最完整的实操：第一条 prompt 该放什么、App 如何继承你的设计体系、哪里是 Apps 的边界
 - 相关：[第 6 篇 — 事件驱动的 Automations](automations-101-event-driven.md)（定时刷新）

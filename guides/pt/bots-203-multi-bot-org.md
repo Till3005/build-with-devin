@@ -22,6 +22,8 @@ Não construa um Bot que faz tudo — construa uma pequena empresa:
 
 O humano é o CEO: o orquestrador coleta todas as decisões pendentes dos Bots subordinados em **uma thread de Slack, 4×/dia**, respondida com emoji.
 
+A menor versão documentada dessa forma já entregou produto real: Noah Zixin Zhang rodou uma cadeia **Chief-of-Staff → líder de produto → especialistas** de ~8 Bots que construiu o [SupaSEO](https://supaseo.dev) de ponta a ponta em ~48h (~951 commits; o humano escreveu só a landing page). As duas notas de campo dele valem em qualquer escala: **um Bot especialista compartilhado entre projetos vence um por projeto**, e os prompts continuam granulares — o organograma não substitui o brief.
+
 ## Pré-requisitos
 
 - Guia 1 feito — você sabe criar e instruir um Bot

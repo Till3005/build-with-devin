@@ -122,4 +122,5 @@ Devin 自身のドキュメントはスケールするものを率直に述べ�
 - [ベストプラクティス — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)
 - [移行とモダナイゼーション + 5 つのプレイブック例](https://docs.devin.ai/use-cases/migration-modernization.md)
 - [ユースケースギャラリー — 移行](https://docs.devin.ai/use-cases/gallery/index.md)
+- [Cognition の .NET 移行プレイブック](https://cognition.com/blog/dotnet-migration-with-devin) —— Ask Devin がコンテキストでコントローラーをランク付け、連携セッションが並列移植：月 → 週（ベンダー公開）
 - 関連：[ガイド 7 — エンタープライズ導入](enterprise-playbook.md)（形 1 はこのガイドの組織スケール版）

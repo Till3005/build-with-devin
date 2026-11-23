@@ -10,7 +10,7 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 | | |
 | --- | --- |
-| Implantação | Nubank: monólito ETL de 8 anos e milhões de linhas → sub-módulos. Comarch: reconstrução de ERP de 20 anos e 10M linhas |
+| Implantação | Nubank: monólito ETL de 8 anos e milhões de linhas → sub-módulos. Comarch: reconstrução de ERP de 20 anos e 10M linhas. Odyssey Logistics (Cognizant): TMS em Access/VBA → cloud-native, **economia líquida de 37%** |
 | Resultado | 8–12× eficiência de engenharia, 20× economia de custo (Nubank) |
 | Mecanismo | Fazer fine-tune do Devin no *seu* codebase (Nubank cortou ~40 min/tarefa para ~10), depois apontá-lo para a migração como programa contínuo — PRs pequenos rastreados, não uma reescrita |
 
@@ -20,7 +20,7 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 | | |
 | --- | --- |
-| Implantação | EBANX: **92% dos PRs mergeados autoria do Devin**. Gumroad: Devin é o **contribuidor nº 1** do repo (1.500+ PRs). Finch: 3.000 PRs, ~20 engenheiro-meses economizados |
+| Implantação | EBANX: **92% dos PRs mergeados autoria do Devin**. Gumroad: Devin é o **contribuidor nº 1** do repo (1.500+ PRs). Finch: 3.000 PRs, ~20 engenheiro-meses economizados. Gamma: frota de ~10 agentes + 3 engenheiros reconstruíram a importação de PowerPoint — **3.500+ merges**, trabalho estimado em 5–10 engenheiros × 1 ano |
 | Mecanismo | O Devin não é assistente nesses repos — é o autor padrão. Humanos revisam e direcionam |
 
 **Como copiar:** escolha um repo de alta velocidade; roteie tickets para sessões Devin por padrão; humanos revisam. A métrica a vigiar é a fatia de PRs autorais — acima de ~50%, você está nesta forma; abaixo, ainda em modo piloto.
@@ -56,7 +56,7 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 | | |
 | --- | --- |
-| Implantação | Hamming: Devin escreve 25% do volume de código. Litera: ciclos de regressão cortados em 90%. Eight Sleep: 8× mais entregue |
+| Implantação | Hamming: Devin escreve 25% do volume de código. Litera: ciclos de regressão cortados em 90%. Eight Sleep: 8× mais entregue. Zeb (consultoria SAP): entrega **4 semanas → 2,5 semanas**; 142 objetos em 8 dias |
 | Mecanismo | O Devin é dono de um estágio do pipeline — testes de regressão, QA — não do produto inteiro |
 
 **Como copiar:** ache o estágio do pipeline com o pior custo humano (ciclos de regressão, QA); atribua a um Bot ou automação; meça o tempo de ciclo do estágio antes/depois.
@@ -87,3 +87,4 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 - [devin.ai/customers](https://devin.ai/customers) — todos os casos e números citados
 - [built-with-devin — índice enterprise](https://github.com/Till3005/built-with-devin#enterprise-deployments) — a tabela de casos verificada do registry
+- [Devin for Admins](https://learndevin.com/course/devin-for-admins) — o curso oficial de admin em 11 lições: hierarquia de blueprints, postura de secrets, governança de ACU, analytics de rollout (aulas grátis, exame exige Enterprise)

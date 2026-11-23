@@ -151,4 +151,4 @@ Only the creator and roles with Manage Bots see Archive/Delete. On Enterprise pl
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots) — mechanics, access, usage limits
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — launch post, the Android Bot prompt
 - [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) — community field guide; the bounded-first-assignment pattern and access/usage caveats above
-- Back: [Guide 18 — Talking to Devin](talking-to-devin.md) (the doctrine under the outcome prompt) · Next: [Guide 2 — Product-owner Bot](bots-201-product-owner.md)
+- Back: [Guide 18 — Talking to Devin](talking-to-devin.md) (the doctrine under the outcome prompt) · Next: [Guide 2 — Product-owner Bot](bots-201-product-owner.md) · Also: [Guide 19 — The session loop](the-session-loop.md) (research → delegate → review → learn)

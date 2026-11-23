@@ -20,7 +20,7 @@ Command Center 是会话中枢，不是编辑器：
 
 - **标签页**（v3.13.4）：一个窗口里开多个会话和页面，每个标签有自己的前进/后退历史——当成你舰队的浏览器用。
 - **会话头部 "..." 菜单**：该会话的 MCP servers——按会话开关某一个、或重新授权。
-- **Devin Review**：PR 走查（diff、bug、测试录像）以页面形式开在同一个窗口。
+- **Devin Review**：PR 走查（diff、bug、测试录像）以页面形式开在同一个窗口——即[指南 19](the-session-loop.md) 环路里的审查一环。
 
 ## Devin Local —— daemon 变化
 

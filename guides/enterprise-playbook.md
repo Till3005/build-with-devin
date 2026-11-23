@@ -10,7 +10,7 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 | | |
 | --- | --- |
-| Deployment | Nubank: multi-million-line, 8-year-old ETL monolith → sub-modules. Comarch: 20-year, 10M-line ERP rebuild |
+| Deployment | Nubank: multi-million-line, 8-year-old ETL monolith → sub-modules. Comarch: 20-year, 10M-line ERP rebuild. Odyssey Logistics (Cognizant): Access/VBA TMS → cloud-native, **37% net cost saving** |
 | Result | 8–12× engineering efficiency, 20× cost savings (Nubank) |
 | Mechanism | Fine-tune Devin on *your* codebase (Nubank cut ~40 min/task to ~10), then point it at the migration as a continuous program — tracked small PRs, not a rewrite |
 
@@ -20,7 +20,7 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 | | |
 | --- | --- |
-| Deployment | EBANX: **92% of merged PRs Devin-authored**. Gumroad: Devin is the repo's **#1 contributor** (1,500+ PRs). Finch: 3,000 PRs, ~20 engineer-months saved |
+| Deployment | EBANX: **92% of merged PRs Devin-authored**. Gumroad: Devin is the repo's **#1 contributor** (1,500+ PRs). Finch: 3,000 PRs, ~20 engineer-months saved. Gamma: ~10-agent fleet + 3 engineers rebuilt PowerPoint import — **3,500+ merges** on a job sized at 5–10 engineers × a year |
 | Mechanism | Devin isn't an assistant on these repos — it's the default author. Humans review and direct |
 
 **How to copy:** pick one high-velocity repo; route tickets to Devin sessions by default; humans review. The metric to watch is authored-PR share — above ~50%, you're in this shape; below it, you're still in pilot mode.
@@ -56,7 +56,7 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 | | |
 | --- | --- |
-| Deployment | Hamming: Devin writes 25% of code volume. Litera: regression cycles cut 90%. Eight Sleep: 8× more shipped |
+| Deployment | Hamming: Devin writes 25% of code volume. Litera: regression cycles cut 90%. Eight Sleep: 8× more shipped. Zeb (SAP consultancy): delivery **4 weeks → 2.5 weeks**; 142 objects in 8 days |
 | Mechanism | Devin owns a stage of the pipeline — regression testing, QA — not the whole product |
 
 **How to copy:** find the pipeline stage with the worst human cost (regression cycles, QA); assign it to a Bot or automation; measure the stage's cycle time before/after.
@@ -87,3 +87,4 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 - [devin.ai/customers](https://devin.ai/customers) — all cases and numbers cited
 - [built-with-devin — enterprise index](https://github.com/Till3005/built-with-devin#enterprise-deployments) — the registry's verified case table
+- [Devin for Admins](https://learndevin.com/course/devin-for-admins) — the official 11-lesson admin course: blueprint hierarchy, secrets posture, ACU governance, rollout analytics (free lessons; exam needs Enterprise)

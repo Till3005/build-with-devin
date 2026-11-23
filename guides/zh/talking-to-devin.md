@@ -95,4 +95,4 @@ Cognition 自己的样板 prompt，逐行注解：
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — 官方 do/don't 清单和上面解剖的示范指令
 - [Devin 教程库](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — 想要视频和课程形态的同类内容去这里
 - 田野注：[社区实战报告](community-field-reports.md)里每一篇都收敛到同一个结论——要指令，不要许愿
-- 下一篇：[指南 1 — 你的第一个 Bot](bots-101-first-bot.md)（同一套教义，更大的对象）· [outcome prompts 参考](bot-outcome-prompts.md)
+- 下一篇：[指南 19 — 会话全环](the-session-loop.md)（简报之外的一整环）· [指南 1 — 你的第一个 Bot](bots-101-first-bot.md)（同一套教义，更大的对象）· [outcome prompts 参考](bot-outcome-prompts.md)

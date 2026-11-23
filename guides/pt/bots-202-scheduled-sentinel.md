@@ -2,7 +2,7 @@
 
 **Objetivo:** um Bot dono de uma checagem de qualidade recorrente — roda no horário, tria falhas, rastreia até a causa e envia correções.
 **Nível:** intermediário
-**Implantação de origem:** o **Layout Bot** da Cognition — vigia regressões de layout-shift no app web do Devin. A cada 3 horas builda o `main` de produção, simula visitas de primeira/repetida/requisições atrasadas, e envia correções. **159 PRs em 3 semanas; lag −70%.**
+**Implantações de origem:** o **Layout Bot** da Cognition — vigia regressões de layout-shift no app web do Devin. A cada 3 horas builda o `main` de produção, simula visitas de primeira/repetida/requisições atrasadas, e envia correções. **159 PRs em 3 semanas; lag −70%.** Na natureza, a mesma forma roda na maior escala até agora: o **Bot mantenedor do Manim** de Grant Sanderson faz triagem preventiva de issues no motor open-source por trás do 3Blue1Brown — **96,6 mil stars, 250 mil downloads/mês** de manutenção resolvida antes de chegar ao mantenedor.
 **Fontes:** [post de lançamento](https://devin.ai/blog/introducing-devin-bots) · [docs de Automations](https://docs.devin.ai/product-guides/automations)
 
 ## O padrão

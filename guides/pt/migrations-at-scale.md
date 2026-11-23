@@ -122,4 +122,5 @@ A parte de escala (centenas de sessões paralelas) precisa de cota de nuvem — 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)
 - [Migration & Modernization + 5 playbooks de exemplo](https://docs.devin.ai/use-cases/migration-modernization.md)
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
+- [Playbook de migração .NET da Cognition](https://cognition.com/blog/dotnet-migration-with-devin) — Ask Devin ranqueia controllers por contexto, sessões coordenadas portam em paralelo: meses → semanas (publicado pelo fornecedor)
 - Relacionado: [Guia 7 — Rollout enterprise](enterprise-playbook.md) (a Forma 1 é este guia em escala de org)

@@ -55,4 +55,5 @@ Você também pode dizer "publish this as an App" dentro de qualquer sessão que
 ## Fontes
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)
+- [Tutorial de Devin Apps — app interno privado por prompt](https://lightmind24.blogspot.com/2026/11/devin-apps-tutorial-build-private.html) — o walkthrough de terceiros mais completo: o que vai no primeiro prompt, como os Apps herdam seu design system, onde o Apps deixa de ser a ferramenta certa
 - Relacionado: [Guia 6 — Automações orientadas a eventos](automations-101-event-driven.md) para refresh agendado

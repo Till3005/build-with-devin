@@ -2,7 +2,7 @@
 
 **Goal:** a Bot that owns a recurring quality check — runs it on a schedule, triages failures, traces them to the cause, and ships fixes.
 **Level:** intermediate
-**Source deployment:** Cognition's **Layout Bot** — watches layout-shift regression on the Devin web app. Every 3 hours it builds production `main`, simulates first/repeat/delayed-request visits, and ships fixes. **159 PRs in 3 weeks; lag −70%.**
+**Source deployments:** Cognition's **Layout Bot** — watches layout-shift regression on the Devin web app. Every 3 hours it builds production `main`, simulates first/repeat/delayed-request visits, and ships fixes. **159 PRs in 3 weeks; lag −70%.** In the wild, the same shape runs on the largest scale yet: Grant Sanderson's **Manim Maintainer Bot** does preemptive issue triage on the open-source engine behind 3Blue1Brown — **96.6k stars, 250k downloads/month** of maintenance surfaced before the maintainer sees it.
 **Sources:** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Automations docs](https://docs.devin.ai/product-guides/automations)
 
 ## The pattern

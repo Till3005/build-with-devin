@@ -95,4 +95,4 @@ A doutrina executada num `demo-repo` descartável: um brief de quatro linhas —
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — a lista oficial de do/don't e o brief de referência dissecado acima
 - [Biblioteca de tutoriais](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — o mesmo material em vídeo e curso
 - Nota de campo: todos os relatos em [community field reports](community-field-reports.md) convergem para a mesma conclusão — briefs, não desejos
-- Próximo: [Guia 1 — Seu primeiro Bot](bots-101-first-bot.md) (mesma doutrina, objeto maior) · [referência de outcome prompts](bot-outcome-prompts.md)
+- Próximo: [Guia 19 — O loop da sessão](the-session-loop.md) (o loop ao redor do brief) · [Guia 1 — Seu primeiro Bot](bots-101-first-bot.md) (mesma doutrina, objeto maior) · [referência de outcome prompts](bot-outcome-prompts.md)

@@ -22,6 +22,8 @@
 
 人类是 CEO：编排者把每个下级 Bot 的待决事项收进**一个 Slack thread，每天 4 次**，用 emoji 回答。
 
+这个形态最小的有据版本已经出了真产品：Noah Zixin Zhang 用 **Chief-of-Staff → 产品负责 Bot → 专家 Bot** 的约 8 Bot 链路，~48 小时端到端建成 [SupaSEO](https://supaseo.dev)（~951 commits；人类只写了落地页）。他的两条实战笔记在任何规模都适用：**一个跨项目共享的专家 Bot 胜过每项目各建一个**，且提示词保持细粒度——组织架构替代不了简报。
+
 ## 前置条件
 
 - 完成第 1 篇——会创建和指挥 Bot

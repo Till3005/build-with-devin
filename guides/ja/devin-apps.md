@@ -55,4 +55,5 @@ Devin App は Devin のクラウドマシン上に直接ホストされる、実
 ## 出典
 
 - [Introducing Devin Apps](https://devin.ai/blog/devin-apps)
+- [Devin Apps チュートリアル — プロンプトでプライベート内部アプリを作る](https://lightmind24.blogspot.com/2026/11/devin-apps-tutorial-build-private.html) —— サードパーティ製で最も完全なウォークスルー：最初のプロンプトに入れるべきもの、デザインシステムの継承、Apps が適さなくなる境界
 - 関連：[ガイド 6 — イベント駆動の自動化](automations-101-event-driven.md) 定期更新用

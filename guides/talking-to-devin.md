@@ -95,4 +95,4 @@ The doctrine run live on a throwaway `demo-repo`: a four-line brief — scope + 
 - [Instructing Devin Effectively](https://docs.devin.ai/essential-guidelines/instructing-devin-effectively) — the official do/don't list and the reference brief dissected above
 - [Devin tutorial library](https://docs.devin.ai/tutorial-library) + [Devin University](https://learndevin.com) — official videos and courses if you want the same material in another medium
 - Field note: every report in [community field reports](community-field-reports.md) converges on the same conclusion — briefs, not wishes
-- Next: [Guide 1 — Your first Bot](bots-101-first-bot.md) (same doctrine, bigger object) · [Outcome prompts reference](bot-outcome-prompts.md)
+- Next: [Guide 19 — The session loop](the-session-loop.md) (the loop around the brief) · [Guide 1 — Your first Bot](bots-101-first-bot.md) (same doctrine, bigger object) · [Outcome prompts reference](bot-outcome-prompts.md)

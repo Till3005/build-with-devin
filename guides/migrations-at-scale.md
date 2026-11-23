@@ -122,4 +122,5 @@ The scale part (hundreds of parallel sessions) needs cloud quota — the *loop* 
 - [Best Practices — docs.devin.ai](https://docs.devin.ai/use-cases/best-practices.md)
 - [Migration & Modernization + 5 example playbooks](https://docs.devin.ai/use-cases/migration-modernization.md)
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
+- [Cognition's .NET migration playbook](https://cognition.com/blog/dotnet-migration-with-devin) — Ask Devin ranks controllers by context, coordinated sessions port in parallel: months → weeks (vendor-published)
 - Related: [Guide 7 — Enterprise rollout](enterprise-playbook.md) (Shape 1 is this guide at org scale)

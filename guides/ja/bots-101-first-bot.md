@@ -153,4 +153,4 @@ Archive/Delete を見られるのは作成者と Manage Bots 権限を持つロ�
 
 - [Devin Bots — ドキュメント](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
-- 次：[ガイド 2 — プロダクトオーナー Bot](bots-201-product-owner.md)
+- 次：[ガイド 2 — プロダクトオーナー Bot](bots-201-product-owner.md) · 関連：[ガイド 19 — セッションの全ループ](the-session-loop.md)（リサーチ → 委任 → レビュー → 学習）
