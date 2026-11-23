@@ -136,6 +136,6 @@ Jenny **每天 4 次**跑这个、**用 emoji** 回答。纪律：你从不直�
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack 数字、grant 交接变体
-- [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack 社区模板 + 16 个官方模板
+- [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack 社区模板 + 18 个官方模板
 - [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants、memory、[access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - 相关：[第 5 篇 — 参考基准锚定的 swarm](bots-204-reference-grounded-swarm.md)（*构建*而非*运营*的 swarm）

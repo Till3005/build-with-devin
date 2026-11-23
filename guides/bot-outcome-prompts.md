@@ -22,7 +22,7 @@ The Android Bot's entire assignment. One sentence produced 44 days of self-direc
 
 ## Patterns from the official template marketplace
 
-The 16 [marketplace templates](https://devin.ai/bots/templates) all follow the same grammar. Reusable formulations, generalized:
+The 18 [marketplace templates](https://devin.ai/bots/templates) all follow the same grammar. Reusable formulations, generalized:
 
 **Ownership of a domain** — "Find bugs, improvements, performance and refactoring work in a named product area; open one small PR at a time with proof it works." (Software Factory)
 

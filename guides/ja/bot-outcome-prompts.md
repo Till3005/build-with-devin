@@ -22,7 +22,7 @@ Android Bot の割り当てのすべて。一文が 44 日間の自走的作業�
 
 ## 公式テンプレートマーケットプレイスのパターン
 
-16 の[マーケットプレイステンプレート](https://devin.ai/bots/templates)はすべて同じ文法に従う。汎化した再利用可能な定式：
+18 の[マーケットプレイステンプレート](https://devin.ai/bots/templates)はすべて同じ文法に従う。汎化した再利用可能な定式：
 
 **領域の所有** —— "Find bugs, improvements, performance and refactoring work in a named product area; open one small PR at a time with proof it works."（Software Factory）
 

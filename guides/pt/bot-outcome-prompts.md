@@ -22,7 +22,7 @@ Toda a atribuição do Android Bot. Uma frase produziu 44 dias de trabalho auto-
 
 ## Padrões do marketplace oficial de templates
 
-Os 16 [templates do marketplace](https://devin.ai/bots/templates) seguem todos a mesma gramática. Formulações reutilizáveis, generalizadas:
+Os 18 [templates do marketplace](https://devin.ai/bots/templates) seguem todos a mesma gramática. Formulações reutilizáveis, generalizadas:
 
 **Propriedade de um domínio** — "Find bugs, improvements, performance and refactoring work in a named product area; open one small PR at a time with proof it works." (Software Factory)
 

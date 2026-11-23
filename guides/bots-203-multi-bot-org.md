@@ -134,6 +134,6 @@ Six days after switching: decisions made by Bots without her **12×'d**, repeate
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack numbers, grant-handoff variant
-- [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack community template + 16 official templates
+- [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack community template + 18 official templates
 - [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants, memory, [access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Related: [Guide 5 — Reference-grounded swarm](bots-204-reference-grounded-swarm.md) for swarms that *write* rather than *operate*

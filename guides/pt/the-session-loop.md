@@ -53,7 +53,7 @@ Toda sessão concluída ganha um **Session Insights** (menu **⋯ → Session in
 - **Mensagens do usuário** — contagem alta indica brief sem contexto; cada mensagem é uma correção de rota que podia ter sido escrita no início.
 - A análise recomenda melhorias concretas — prompts mais firmes, knowledge faltando, escopo errado. A meta do Cloud 103 é a certa: *cada sessão mais barata que a anterior.*
 
-Higiene de custo presente em todo field report: escopo estreito por sessão, mate sessões ociosas (pensar e esperar ambos cobram), cheque a quota antes de soltar uma frota — o operador do 100 Days queimou **33% da quota semanal em dois dias** de setup de Bots ([field reports](community-field-reports.md)).
+Higiene de custo presente em todo field report: escopo estreito por sessão, mate sessões ociosas (pensar e esperar ambos cobram), cheque a quota antes de soltar uma frota — o operador do 100 Days queimou **33% da quota semanal em dois dias** de setup de Bots ([field reports](community-field-reports.md)). Ressalva reportada pela comunidade específica de Bots: plugar sua *própria* chave de modelo nas sessões-filho de um Bot **não** impede a quota semanal do plano de drenar — o raciocínio do próprio Bot mais a computação em nuvem ainda cobram do plano ([relato no linux.do](https://linux.do/t/topic/3225152), zh).
 
 ## Checklist de verificação
 

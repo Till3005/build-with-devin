@@ -134,6 +134,6 @@ Seis dias após a troca: decisões tomadas por Bots sem ela **12×**, pedidos re
 ## Fontes
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — números do SuperJennyStack, variante grant-handoff
-- [Bot marketplace](https://devin.ai/bots/templates) — template comunitário SuperJennyStack + 16 templates oficiais
+- [Bot marketplace](https://devin.ai/bots/templates) — template comunitário SuperJennyStack + 18 templates oficiais
 - [Docs de Bots](https://docs.devin.ai/work-with-devin/bots) — grants, memória, [acesso e segurança](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Relacionado: [Guia 5 — Enxame ancorado em referência](bots-204-reference-grounded-swarm.md) para enxames que *escrevem* em vez de *operar*

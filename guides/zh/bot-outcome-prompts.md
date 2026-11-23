@@ -22,7 +22,7 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 
 ## 官方模板市场的句式
 
-16 个[市场模板](https://devin.ai/bots/templates)都遵循同一套语法。泛化后的可复用公式：
+18 个[市场模板](https://devin.ai/bots/templates)都遵循同一套语法。泛化后的可复用公式：
 
 **拥有一个领域** —— "Find bugs, improvements, performance and refactoring work in a named product area; open one small PR at a time with proof it works."（Software Factory：在指定产品域找 bug/改进/性能/重构工作，每次开一个小 PR 并附上能跑通的证据）
 

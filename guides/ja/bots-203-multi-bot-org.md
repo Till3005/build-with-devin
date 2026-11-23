@@ -134,6 +134,6 @@ Jenny はこれを **1 日 4 回**運用し、**絵文字で**答える。規律
 ## 出典
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack の数値、grant ハンドオフの亜種
-- [Bot マーケットプレイス](https://devin.ai/bots/templates) — SuperJennyStack コミュニティテンプレート + 公式テンプレート 16 種
+- [Bot マーケットプレイス](https://devin.ai/bots/templates) — SuperJennyStack コミュニティテンプレート + 公式テンプレート 18 種
 - [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) — grants、メモリ、[アクセスとセキュリティ](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - 関連：[ガイド 5 — 参照基盤スウォーム](bots-204-reference-grounded-swarm.md) *運用*ではなく*執筆*するスウォーム向け
