@@ -2,8 +2,8 @@
 
 **Objetivo:** uma hierarquia de Bots que roda uma unidade de negócio inteira — um orquestrador delegando para Bots especialistas, um humano decidindo por uma única thread diária.
 **Nível:** avançado
-**Implantação de origem:** o **SuperJennyStack** de Jenny Xu — ~20 Bots rodando um estúdio de jogos mobile. ~50 → **1.900 PRs/semana**, releases semanais, receita do estúdio 6×. Publicado como template comunitário no [Bot marketplace](https://devin.ai/bots/templates). O **handoff por grant bot-para-bot** oficial (QA → Developer → reteste → relatório do PM) usa a mesma mecânica em escala menor.
-**Fontes:** stack publicado de Jenny Xu ([via cobertura do lançamento](https://x.com/cognition/status/2122737511684587551)) · [docs de Bots](https://docs.devin.ai/work-with-devin/bots) · [post do BotSpeak](https://x.com/xujennyc/status/2123111543105868166)
+**Implantação de origem:** o **SuperJennyStack** de Jenny Xu — ~20 Bots rodando um estúdio de jogos mobile. O [post de lançamento](https://devin.ai/blog/introducing-devin-bots) da Cognition reporta ~50 → **1.900 PRs/semana** e releases semanais. Publicado como template comunitário no [Bot marketplace](https://devin.ai/bots/templates). O **handoff por grant bot-para-bot** oficial (QA → Developer → reteste → relatório do PM) usa a mesma mecânica em escala menor.
+**Fontes:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · stack publicado de Jenny Xu ([via cobertura do lançamento](https://x.com/cognition/status/2122737511684587551)) · [docs de Bots](https://docs.devin.ai/work-with-devin/bots) · [post do BotSpeak](https://x.com/xujennyc/status/2123111543105868166)
 
 ## O padrão
 
@@ -22,7 +22,7 @@ Não construa um Bot que faz tudo — construa uma pequena empresa:
 
 O humano é o CEO: o orquestrador coleta todas as decisões pendentes dos Bots subordinados em **uma thread de Slack, 4×/dia**, respondida com emoji.
 
-A menor versão documentada dessa forma já entregou produto real: Noah Zixin Zhang rodou uma cadeia **Chief-of-Staff → líder de produto → especialistas** de ~8 Bots que construiu o [SupaSEO](https://supaseo.dev) de ponta a ponta em ~48h (~951 commits; o humano escreveu só a landing page). As duas notas de campo dele valem em qualquer escala: **um Bot especialista compartilhado entre projetos vence um por projeto**, e os prompts continuam granulares — o organograma não substitui o brief.
+Uma versão menor e documentada dessa forma funciona até para um operador solo: Mark Fenner roda quatro Bots com funções específicas sob um Chief Agent Bot coordenador ("Frankie"), consolidando atualizações em uma única superfície de decisão ([walkthrough](https://x.com/markfenner/status/2122740244328145211)). O organograma reduz bem de escala desde que cada Bot tenha um papel claro e os prompts continuem granulares.
 
 ## Pré-requisitos
 

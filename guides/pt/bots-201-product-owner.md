@@ -2,8 +2,8 @@
 
 **Objetivo:** um Bot que gere um produto inteiro — abre os próprios tickets, os constrói, mergeia e reporta diariamente.
 **Nível:** intermediário · **Carga humana após setup:** ~1 mensagem a cada 6 PRs mergeados
-**Implantação de origem:** o **Android Bot** da Cognition — lançou o app Android do Devin no beta aberto do Google Play em **44 dias**: 1.134 PRs mergeados, 344.651 linhas de Kotlin, 2.841 testes de screenshot, 1.217 tickets. Seu humano enviou **183 mensagens no total** (22 dias de silêncio) e **88% dos PRs foram auto-mergeados**. Hoje é dono da paridade de features Android/iOS.
-**Fontes:** [post de lançamento](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) · notas de dogfooding de Russell Kaplan
+**Implantação de origem:** o **Android Bot** da Cognition — segundo o [post de lançamento](https://devin.ai/blog/introducing-devin-bots) da Cognition, construiu o app Android do Devin até o teste aberto no Google Play em **44 dias**: 1.134 PRs mergeados, 344.651 linhas de Kotlin, 2.841 testes de screenshot e 1.217 tickets fechados. Seu humano enviou **183 mensagens no total** (22 dias sem enviar nenhuma); o Bot mergeia os PRs que passam no CI e no Devin Review e atualiza o app quando novas features chegam ao iOS.
+**Fontes:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 
 ## O padrão
 
@@ -103,12 +103,11 @@ Depois do build inicial, o mesmo Bot passa a *possuir* a superfície:
 
 ## Teste de conhecimento
 
-1. O Android Bot mergeou 88% dos próprios PRs — o que tornou o auto-merge seguro o bastante? *(Havia verificação: 2.841 testes de screenshot mais gates de review; a propriedade funcionou porque "pronto" era verificável por máquina.)*
+1. O Android Bot mergeou autonomamente os PRs que passaram no CI e no Devin Review — o que tornou o merge autônomo seguro o bastante? *(Havia verificação: 2.841 testes de screenshot mais gates de CI e Devin Review; a propriedade funcionou porque "pronto" era verificável por máquina.)*
 2. Por que abrir tickets em vez de só disparar sessões direto? *(Tickets criam uma fila auditável que o Bot tria por prioridade — e o humano revisa uma fila, não 50 sessões.)*
 3. O que "22 dias de silêncio" diz sobre o modelo de controle? *(Escalonamento-por-exceção só funciona quando a definição de pronto do Bot é verificável; o silêncio é a feature, não negligência.)*
 
 ## Fontes
 
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — números e prompt do Android Bot
-- [Exclusivo Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 183 mensagens, 88% auto-merge, notas de dogfooding
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — prompt do Android Bot, métricas de 44 dias (1.134 PRs, 344.651 linhas de Kotlin, 2.841 testes de screenshot, 1.217 tickets, 183 mensagens) e fluxo em estado estacionário
 - Relacionado: [Guia 4 — Organização multi-Bot](bots-203-multi-bot-org.md) quando uma superfície vira um negócio

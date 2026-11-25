@@ -67,11 +67,10 @@
 
 ## Bots 时代——第一批回执（2026 年 11 月）
 
-发布后的报告还薄，但值得盯着——三份都是自述，无独立基准：
+发布后的报告还薄，但值得盯着——两份都是自述，无独立基准：
 
 - **swyx 的一周**——把一个 Devin Bots 组织交给了 AEO、QA、跨平台移植、个人事务和视频剪辑；搬离了本地 worktree。结论：*"你要的不是 'AI 员工'，而是对结果负责的 agent 管理者。"* 他自己标注的保留意见：与 Cognition 有关联、无质量指标——从业者报告，不是基准（[帖子](https://x.com/swyx/status/2122746401482592549)）。
 - **raijuna 的 100 天**——自家 agent 工厂的运营者把工厂移植到 Bots。Day 1：~15 个 Bot 上线，仅搭建就烧掉每周额度 18%，对 UX 的诚实抱怨（会话追踪扛不住舰队规模）。Day 2：GPT 模型上 Bot 几分钟就丢上下文（他的保留：可能是模型问题），一周没了 33%——*目前"还比不过开源自建"*（[Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1)、[Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)）。
-- **SupaSEO**——目前最干净的可交付物：8 Bot 的 Chief-of-Staff→负责→专家链 ~48 小时建成一个收费 SaaS（本地 SEO + AI 引用追踪，$99），~951 commits；人类只写落地页。他的可复现技巧：专家 Bot 跨项目共享、提示词细粒度（[发布串](https://x.com/noah_z_zhang/status/2124146220159377769)）。
 
 ## 蒸馏出的教训
 

@@ -67,11 +67,10 @@ As ideias reutilizáveis dentro: **gating por tabela de política** (arufian: s�
 
 ## A era dos Bots — primeiros recibos (nov/2026)
 
-Os relatos pós-lançamento ainda são escassos, mas valem acompanhar — os três autorrelatados, sem benchmark independente:
+Os relatos pós-lançamento ainda são escassos, mas valem acompanhar — ambos autorrelatados, sem benchmark independente:
 
 - **A semana do swyx** — entregou a uma org de Devin Bots seu AEO, QA, portabilidade entre plataformas, admin pessoal e edição de vídeo; saiu dos worktrees locais. Veredito: *"você não quer 'Funcionários de IA', quer gerentes de agentes que são donos de resultados."* A ressalva, declarada por ele mesmo: afiliado à Cognition, sem métricas de qualidade — relato de praticante, não benchmark ([post](https://x.com/swyx/status/2122746401482592549)).
 - **100 Days do raijuna** — o operador de fábrica de agentes portando a própria fábrica para Bots. Day 1: ~15 Bots no ar, 18% da quota semanal só em setup, queixas honestas de UX (rastrear sessões não escala para frota). Day 2: Bots perdiam contexto em minutos num modelo GPT (ressalva dele: talvez o modelo), 33% da semana foi — *"ainda não compete com open source e o que você constrói nas próprias máquinas"* ([Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1), [Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)).
-- **SupaSEO** — o artefato entregue mais limpo até agora: uma cadeia Chief-of-Staff→líder→especialistas de 8 Bots construiu um SaaS pago (SEO local + rastreio de citações em IA, $99) em ~48h, ~951 commits; o humano escreveu só a landing page. Dicas reproduzíveis dele: Bots especialistas compartilhados entre projetos, prompts granulares ([thread de lançamento](https://x.com/noah_z_zhang/status/2124146220159377769)).
 
 ## As lições destiladas
 

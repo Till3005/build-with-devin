@@ -92,7 +92,7 @@ flowchart LR
 | 2 | [プロダクトオーナー Bot](guides/ja/bots-201-product-owner.md) | アプリ全体をプロダクト管理する Bot | Android Bot —— 44 日、1,134 PR | 中級 |
 | 3 | [スケジュール監視 Bot](guides/ja/bots-202-scheduled-sentinel.md) | cron でチェックを監視し回帰を自ら修正する Bot | Layout Bot —— 3 週間で 159 PR | 中級 |
 | 4 | [マルチ Bot 組織](guides/ja/bots-203-multi-bot-org.md) | grants とロールアップ報告を持つ Bot 階層 | SuperJennyStack —— ~20 Bot、週 1,900 PR | 上級 |
-| 5 | [参照グラウンデッド swarm](guides/ja/bots-204-reference-grounded-swarm.md) | 検証済みシステムを書く指揮された swarm | Harvey "Phil" —— ~30 エージェント、100 万行超 | 上級 |
+| 5 | [参照グラウンデッド swarm](guides/ja/bots-204-reference-grounded-swarm.md) | 検証済みシステムを書く指揮された swarm | Harvey "Phil" パターン（一次投稿待ち・規模数値除外） | 上級 |
 | 11 | [大規模マイグレーション](guides/ja/migrations-at-scale.md) | 数百の小さな検証済み PR としてのマイグレーション | 公式 playbook + Nubank | 中級 |
 | 15 | [本番トレースからの Living evals](guides/ja/living-evals.md) | 自己増殖する eval スイート：Devin がシステムの完全コピーで本番障害を再生 | Rox —— 実使用量カバレッジ 72%（手書き 43–57%） | 上級 |
 | 7 | [エンタープライズ展開パターン](guides/ja/enterprise-playbook.md) | 最大の顧客成果を生んだ 6 つの導入形態 | Nubank、Gumroad、EBANX、Modal、Airbyte…… | 中級 |

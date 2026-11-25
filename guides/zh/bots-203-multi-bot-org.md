@@ -2,8 +2,8 @@
 
 **目标：** 一个跑整个业务单元的 Bot 层级——一个编排者向专家 Bot 委派，一个人类通过单一每日 thread 做决策。
 **级别：** 高级
-**出处部署：** Jenny Xu 的 **SuperJennyStack**——~20 个 Bot 运营一家手游工作室。~50 → **1,900 PR/周**，每周发版，工作室收入 ×6。已作为社区模板上架 [Bot 市场](https://devin.ai/bots/templates)。官方的 **bot 间 grant 交接**（QA → Developer → 复测 → PM 汇报）用的是同一套机制、更小规模。
-**来源：** Jenny Xu 公开的栈（[via 发布报道](https://x.com/cognition/status/2122737511684587551)）· [Bots docs](https://docs.devin.ai/work-with-devin/bots)
+**出处部署：** Jenny Xu 的 **SuperJennyStack**——~20 个 Bot 运营一家手游工作室。Cognition [发布帖](https://devin.ai/blog/introducing-devin-bots) 报告其从 ~50 → **1,900 PR/周**、每周发版。已作为社区模板上架 [Bot 市场](https://devin.ai/bots/templates)。官方的 **bot 间 grant 交接**（QA → Developer → 复测 → PM 汇报）用的是同一套机制、更小规模。
+**来源：** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · Jenny Xu 公开的栈（[via 发布报道](https://x.com/cognition/status/2122737511684587551)）· [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak 原推](https://x.com/xujennyc/status/2123111543105868166)
 
 ## 模式
 
@@ -22,7 +22,7 @@
 
 人类是 CEO：编排者把每个下级 Bot 的待决事项收进**一个 Slack thread，每天 4 次**，用 emoji 回答。
 
-这个形态最小的有据版本已经出了真产品：Noah Zixin Zhang 用 **Chief-of-Staff → 产品负责 Bot → 专家 Bot** 的约 8 Bot 链路，~48 小时端到端建成 [SupaSEO](https://supaseo.dev)（~951 commits；人类只写了落地页）。他的两条实战笔记在任何规模都适用：**一个跨项目共享的专家 Bot 胜过每项目各建一个**，且提示词保持细粒度——组织架构替代不了简报。
+这种形态的小规模有据版本在单人场景下同样跑得通：Mark Fenner 在一个统筹型 Chief Agent Bot（"Frankie"）下运行 4 个岗位专职 Bot，把更新汇总到一个决策面（[拆解](https://x.com/markfenner/status/2122740244328145211)）。只要每个 Bot 职责清晰、提示词保持细粒度，这套组织架构就能平滑缩放到小团队或个人。
 
 ## 前置条件
 

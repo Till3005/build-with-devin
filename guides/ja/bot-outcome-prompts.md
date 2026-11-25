@@ -16,7 +16,7 @@ Android Bot の割り当てのすべて。一文が 44 日間の自走的作業�
 | 要素 | 役割 | 例 |
 | --- | --- | --- |
 | **役割** | 何を作るかだけでなく、どう*振る舞う*かを伝える | "product manage"、"own the QA of onboarding flows" |
-| **境界のある領域** | Bot が全体を見通せるスコープ——アプリ、チェック、データソース | "the android app"、"layout regressions"、"30+ onboarding flows" |
+| **境界のある領域** | Bot が全体を見通せるスコープ——アプリ、チェック、データソース | "the android app"、"layout regressions"、"onboarding flows" |
 | **暗黙の完了定義** | Bot が自己検証できる状態 | "feature parity with iOS"、"no layout-shift regressions"、"every flow green" |
 | **恒常の権限** | Bot が*いつ*と*次に何を*を決める——それがスクリプトではなく Bot たる所以 | "your job is to…"、"keep…"、"watch for…" |
 
@@ -45,7 +45,7 @@ Android Bot の割り当てのすべて。一文が 44 日間の自走的作業�
 - **タスク型プロンプト。** 「この 12 issue を直せ」——Bot は終わってアイドルになる；Bot ではなくセッションを得る。
 - **検証不能な成果。** 「アプリを良くして」——自己チェックがないと、Bot の唯一の出口は Needs-you スパム。
 - **隠れたスコープ。** 成果が Bot に見えないシステム（届かないステージング環境、読めないダッシュボード）を必要とするなら、停滞するか進捗を幻覚する。領域を与えるか成果を縮める。
-- **マージ権限の物語なし。** 88% の自己マージ率が存在するのは CI とレビューゲートが自律マージ用に事前設定されていたから。明記する："merge when CI is green and diff < N lines" または "always open as draft for human review"。
+- **マージ権限の物語なし。** 自律マージ（Android Bot が CI と Devin Review を通過した PR をマージしたような運用）は、CI とレビューゲートが自律マージ用に事前設定されていて初めて機能する。明記する："merge when CI is green and diff < N lines" または "always open as draft for human review"。
 
 ## あなたのものを起草——3 行テスト
 

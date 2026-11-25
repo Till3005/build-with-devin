@@ -2,8 +2,8 @@
 
 **Goal:** direct a swarm of agents to write a large, *verifiable* system — where correctness is checked continuously against a trusted reference, not against vibes.
 **Level:** advanced
-**Source deployment:** Harvey's **"Phil"** — ~30 agents wrote a collaborative, Word-compatible editor engine in Rust + TypeScript: **1M+ lines in 3 weeks, zero human engineers**. Verified continuously against real Microsoft Word behavior and simulated lawyer negotiations. Humans steered through memory + decision logs, never by reading code.
-**Sources:** Gabe Pereyra's launch write-up ([via @gabepereyra](https://x.com/gabepereyra)) · [launch post](https://devin.ai/blog/introducing-devin-bots)
+**Source deployment:** Pattern distilled from Harvey's reported **"Phil"** multi-agent build (a collaborative, Word-compatible editor engine verified continuously against real Microsoft Word behavior and simulated lawyer negotiations, steered through memory and decision logs). *Evidence note: earlier drafts cited agent count, line count, timeline, and staffing figures, which are withheld here until a claim-specific primary post is linked (only Gabe Pereyra's profile is currently public).*
+**Sources:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [@gabepereyra](https://x.com/gabepereyra) *(profile only — claim-specific primary post pending)*
 
 ## The pattern
 
@@ -14,7 +14,7 @@ A swarm fails when nobody can tell whether the output is right. Phil worked beca
             ▲ compare
             │
 ┌───────────┴────────────┐
-│  swarm of ~30 agents   │──► 1M+ LOC (Rust + TypeScript)
+│  multi-agent swarm     │──► verified system output
 └────────────────────────┘
             ▲ steer
             │
@@ -43,7 +43,7 @@ Put the comparison in CI or a script the swarm runs constantly — "does output 
 
 ## Step 2 — Decompose into owned slices
 
-~30 agents didn't share one backlog — the work was sliced so each agent owned a subsystem (document model, layout engine, collab protocol, …). Structure it like Guide 4's org chart, except every "employee" is a coding session pointed at a module boundary:
+A coding swarm shouldn't share one backlog — slice the work so each agent owns a subsystem (document model, layout engine, collab protocol, …). Structure it like Guide 4's org chart, except every "employee" is a coding session pointed at a module boundary:
 
 ```text
 You own the <module>. Its contract is <interface/reference behavior>.
@@ -53,7 +53,7 @@ code looks done.
 
 ## Step 3 — Humans steer above the code
 
-Nobody at Harvey read the million lines. Steering happened through:
+At swarm scale, humans cannot read every generated line. Steering happens through:
 
 - **Memory** — the Bot's accumulated facts about decisions made and why
 - **Decision logs** — what the swarm chose at each fork
@@ -81,11 +81,11 @@ Harvey layered a second check: **simulated lawyer negotiations** — realistic u
 ## Knowledge check
 
 1. Why did Harvey's swarm work where most multi-agent attempts collapse? *(A trusted external reference — real Word behavior — made correctness machine-checkable at swarm speed.)*
-2. Why did humans steer through memory and decision logs instead of code review? *(1M+ LOC in 3 weeks exceeds any human read capacity; steering happens at the intent layer.)*
+2. Why steer through memory and decision logs instead of line-by-line code review? *(Swarm output exceeds human read capacity; steering happens at the intent layer.)*
 3. What's the prerequisite you'd check before attempting this pattern? *(Whether your domain has a reference the swarm can check itself against — if not, build the oracle first.)*
 
 ## Sources
 
-- [@gabepereyra](https://x.com/gabepereyra) — Harvey's Phil write-up: ~30 agents, 1M+ LOC, Word-reference verification, lawyer simulations
+- [@gabepereyra](https://x.com/gabepereyra) — Gabe Pereyra's profile *(claim-specific primary post for Harvey's "Phil" pending; unverified scale figures withheld)*
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - Related: [Guide 4 — Multi-Bot organization](bots-203-multi-bot-org.md) (same hierarchy, different purpose: operations vs. construction)

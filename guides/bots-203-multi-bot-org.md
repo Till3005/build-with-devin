@@ -2,8 +2,8 @@
 
 **Goal:** a hierarchy of Bots that runs an entire business unit — one orchestrator delegating to specialist Bots, one human deciding through a single daily thread.
 **Level:** advanced
-**Source deployment:** Jenny Xu's **SuperJennyStack** — ~20 Bots running a mobile game studio. ~50 → **1,900 PRs/week**, weekly releases, studio revenue 6×'d. Published as a community template in the [Bot marketplace](https://devin.ai/bots/templates). The official **bot-to-bot grant handoff** (QA → Developer → retest → PM report) uses the same mechanics at smaller scale.
-**Sources:** Jenny Xu's published stack ([via launch coverage](https://x.com/cognition/status/2122737511684587551)) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)
+**Source deployment:** Jenny Xu's **SuperJennyStack** — ~20 Bots running a mobile game studio. Cognition's [launch post](https://devin.ai/blog/introducing-devin-bots) reports ~50 → **1,900 PRs/week** and weekly releases. Published as a community template in the [Bot marketplace](https://devin.ai/bots/templates). The official **bot-to-bot grant handoff** (QA → Developer → retest → PM report) uses the same mechanics at smaller scale.
+**Sources:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · Jenny Xu's published stack ([via launch coverage](https://x.com/cognition/status/2122737511684587551)) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)
 
 ## The pattern
 
@@ -22,7 +22,7 @@ Don't build one Bot that does everything — build a small company:
 
 The human is the CEO: the orchestrator collects every subordinate Bot's pending decisions into **one Slack thread, 4×/day**, answered with emoji.
 
-The smallest documented version of this shape shipped a real product: Noah Zixin Zhang ran a **Chief-of-Staff → product-lead → specialist** chain of ~8 Bots that built [SupaSEO](https://supaseo.dev) end-to-end in ~48h (~951 commits; the human wrote only the landing page). His two field notes apply at any scale: **one shared specialist Bot across projects beats one per project**, and prompts stay granular — the org chart doesn't replace the brief.
+A smaller documented version of this shape works even for a solo operator: Mark Fenner runs four job-specific Bots under a coordinating Chief Agent Bot ("Frankie"), rolling updates into one decision surface ([walkthrough](https://x.com/markfenner/status/2122740244328145211)). The org chart scales down cleanly as long as each Bot owns a clear job and prompts stay granular.
 
 ## Prerequisites
 

@@ -2,8 +2,8 @@
 
 **目标：** 一个像产品经理一样拥有整个 app 面的 Bot——自己建 ticket、实现、合并、每日汇报。
 **级别：** 中级 · **建好后的人类负载：** 约每 6 个已合并 PR 1 条消息
-**出处部署：** Cognition 的 **Android Bot**——**44 天**把 Devin 安卓 app 送上 Google Play 开放 beta：1,134 个已合并 PR、344,651 行 Kotlin、2,841 个截图测试、1,217 张 ticket。人类**总共发了 183 条消息**（其中 22 天零消息），**88% 的 PR 自合并**。它现在负责 Android/iOS 功能对齐。
-**来源：** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) · Russell Kaplan 的 dogfooding 笔记
+**出处部署：** Cognition 的 **Android Bot**——据 Cognition [发布帖](https://devin.ai/blog/introducing-devin-bots)，**44 天**把 Devin 安卓 app 送上 Google Play 开放测试：1,134 个已合并 PR、344,651 行 Kotlin、2,841 个截图测试、1,217 张已关闭 ticket。人类**总共发了 183 条消息**（其中 22 天零消息）；通过 CI 和 Devin Review 的 PR 由 Bot 自主合并，并在 iOS 项目上线新功能时同步更新安卓端。
+**来源：** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 
 ## 模式
 
@@ -103,12 +103,11 @@ what needs a human. Include a screen recording of visible changes.
 
 ## 自检
 
-1. Android Bot 自合并 88% 的 PR——什么让自合并足够安全？*（验证存在：2,841 个截图测试 + review 门；所有权能成立是因为「完成」是机器可检查的。）*
+1. Android Bot 会自主合并通过 CI 和 Devin Review 的 PR——什么让自动合并足够安全？*（验证存在：2,841 个截图测试 + CI 与 Devin Review 门；所有权能成立是因为「完成」是机器可检查的。）*
 2. 为什么让 Bot 自己建 ticket 而不是直接给会话下 prompt？*（ticket 形成可审计队列，Bot 按优先级分诊——人审一个队列而不是 50 个会话。）*
 3. 「22 天零消息」说明了什么控制模型？*（例外升级制：只有「完成」可验证时才成立；沉默是特性不是失职。）*
 
 ## Sources
 
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot 数字与 prompt
-- [Fortune exclusive](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 183 条消息、88% 自合并、dogfooding 笔记
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot 原话 prompt、44 天数据（1,134 PR、344,651 行 Kotlin、2,841 截图测试、1,217 张 ticket、183 条消息）与稳态流程
 - 相关：[第 4 篇 — 多 Bot 组织](bots-203-multi-bot-org.md)（当一个面变成一门生意）

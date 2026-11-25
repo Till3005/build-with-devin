@@ -2,8 +2,8 @@
 
 **Objetivo:** dirigir um enxame de agentes para escrever um sistema grande e *verificável* — onde a correção é checada continuamente contra uma referência confiável, não contra impressões.
 **Nível:** avançado
-**Implantação de origem:** o **"Phil"** da Harvey — ~30 agentes escreveram um motor de editor colaborativo compatível com Word em Rust + TypeScript: **1M+ linhas em 3 semanas, zero engenheiros humanos**. Verificado continuamente contra o comportamento real do Microsoft Word e negociações de advogados simuladas. Humanos direcionaram via memória + logs de decisão, nunca lendo código.
-**Fontes:** relato de lançamento de Gabe Pereyra ([via @gabepereyra](https://x.com/gabepereyra)) · [post de lançamento](https://devin.ai/blog/introducing-devin-bots)
+**Implantação de origem:** padrão destilado da construção multiagente **"Phil"** relatada pela Harvey (um motor de editor colaborativo compatível com Word, verificado continuamente contra o comportamento real do Microsoft Word e negociações de advogados simuladas, direcionado via memória e logs de decisão). *Nota de evidência: versões anteriores citavam contagem de agentes, volume de linhas, prazo e equipe; esses números ficam retidos até que um post primário específico da afirmação seja vinculado (atualmente só o perfil de Gabe Pereyra está público).*
+**Fontes:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [@gabepereyra](https://x.com/gabepereyra) *(apenas perfil — post primário específico pendente)*
 
 ## O padrão
 
@@ -14,7 +14,7 @@ Um enxame falha quando ninguém consegue dizer se a saída está certa. O Phil f
             ▲ compara
             │
 ┌───────────┴────────────┐
-│  enxame de ~30 agentes │──► 1M+ LOC (Rust + TypeScript)
+│  enxame multiagente    │──► saída verificada do sistema
 └────────────────────────┘
             ▲ direciona
             │
@@ -43,7 +43,7 @@ Coloque a comparação no CI ou num script que o enxame roda constantemente — 
 
 ## Passo 2 — Decomponha em fatias possuídas
 
-~30 agentes não compartilhavam um backlog — o trabalho foi fatiado para que cada agente fosse dono de um subsistema (modelo de documento, motor de layout, protocolo de colaboração, …). Estruture como o organograma do Guia 4, exceto que cada "funcionário" é uma sessão de código apontada para uma fronteira de módulo:
+Um enxame de código não deve compartilhar um único backlog — fatie o trabalho para que cada agente seja dono de um subsistema (modelo de documento, motor de layout, protocolo de colaboração, …). Estruture como o organograma do Guia 4, exceto que cada "funcionário" é uma sessão de código apontada para uma fronteira de módulo:
 
 ```text
 You own the <module>. Its contract is <interface/reference behavior>.
@@ -53,7 +53,7 @@ code looks done.
 
 ## Passo 3 — Humanos direcionam acima do código
 
-Ninguém na Harvey leu o milhão de linhas. A direção aconteceu via:
+Em escala de enxame, humanos não conseguem ler cada linha gerada. A direção acontece via:
 
 - **Memória** — os fatos acumulados do Bot sobre decisões tomadas e por quê
 - **Logs de decisão** — o que o enxame escolheu em cada bifurcação
@@ -81,11 +81,11 @@ A Harvey adicionou uma segunda camada: **negociações de advogados simuladas** 
 ## Teste de conhecimento
 
 1. Por que o enxame da Harvey funcionou onde a maioria das tentativas multi-agente colapsa? *(Uma referência externa confiável — o comportamento real do Word — tornou a correção verificável por máquina na velocidade do enxame.)*
-2. Por que humanos direcionaram via memória e logs de decisão em vez de revisar código? *(1M+ LOC em 3 semanas excede qualquer capacidade humana de leitura; a direção acontece na camada de intenção.)*
+2. Por que direcionar via memória e logs de decisão em vez de revisar código linha por linha? *(A saída de um enxame excede a capacidade humana de leitura; a direção acontece na camada de intenção.)*
 3. Qual pré-requisito você checaria antes de tentar esse padrão? *(Se seu domínio tem uma referência contra a qual o enxame possa se checar — se não, construa o oráculo primeiro.)*
 
 ## Fontes
 
-- [@gabepereyra](https://x.com/gabepereyra) — relato do Phil da Harvey: ~30 agentes, 1M+ LOC, verificação por referência ao Word, simulações de advogados
+- [@gabepereyra](https://x.com/gabepereyra) — perfil de Gabe Pereyra *(post primário específico sobre o "Phil" da Harvey pendente; números de escala não verificados foram retidos)*
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - Relacionado: [Guia 4 — Organização multi-Bot](bots-203-multi-bot-org.md) (mesma hierarquia, propósito diferente: operação vs. construção)

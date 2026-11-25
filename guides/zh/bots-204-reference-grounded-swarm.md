@@ -2,8 +2,8 @@
 
 **目标：** 指挥一个 agent swarm 写出大型且*可验证*的系统——正确性持续对照可信基准检验，而不是对照感觉。
 **级别：** 高级
-**出处部署：** Harvey 的 **"Phil"**——~30 个 agent 写出协作式、Word 兼容的编辑器引擎（Rust + TypeScript）：**3 周 100 万+ 行，零人类工程师**。持续对照真实 Microsoft Word 行为和模拟律师谈判验证。人类通过记忆 + 决策日志掌舵，从不读代码。
-**来源：** Gabe Pereyra 的发布实录（[via @gabepereyra](https://x.com/gabepereyra)）· [launch post](https://devin.ai/blog/introducing-devin-bots)
+**出处部署：** 从 Harvey 已公开提及的 **"Phil"** 多 agent 实践提炼出的模式（协作式、Word 兼容编辑器引擎，持续对照真实 Microsoft Word 行为与模拟律师谈判验证，人类通过记忆与决策日志掌舵）。*证据说明：早期版本引用的 agent 数量、代码行数、周期与人力数字在补齐具体原帖链接前暂不引用（目前仅公开 Gabe Pereyra 个人主页）。*
+**来源：** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · [@gabepereyra](https://x.com/gabepereyra) *（仅个人主页，具体原帖待补）*
 
 ## 模式
 
@@ -14,7 +14,7 @@ swarm 失败的原因是没人能判断输出对不对。Phil 成功是因为每
             ▲ compare
             │
 ┌───────────┴────────────┐
-│  swarm of ~30 agents   │──► 1M+ LOC (Rust + TypeScript)
+│  multi-agent swarm     │──► verified system output
 └────────────────────────┘
             ▲ steer
             │
@@ -43,7 +43,7 @@ swarm 失败的原因是没人能判断输出对不对。Phil 成功是因为每
 
 ## 第 2 步 — 拆成各有归属的切片
 
-~30 个 agent 不共享同一个 backlog——工作按子系统切分，每个 agent 拥有一个（文档模型、排版引擎、协作协议……）。结构同第 4 篇的组织架构，只是每个"员工"都是对准模块边界的编码会话：
+编码 swarm 不能共享同一个 backlog——把工作按子系统切分，每个 agent 拥有一个（文档模型、排版引擎、协作协议……）。结构同第 4 篇的组织架构，只是每个"员工"都是对准模块边界的编码会话：
 
 ```text
 You own the <module>. Its contract is <interface/reference behavior>.
@@ -53,7 +53,7 @@ code looks done.
 
 ## 第 3 步 — 人类在代码之上掌舵
 
-Harvey 没人读过那百万行。掌舵靠三层：
+到 swarm 规模后，人类不可能逐行读完生成代码。掌舵靠三层：
 
 - **Memory** —— Bot 积累的"做过什么决定、为什么"
 - **决策日志** —— swarm 在每个岔口选了什么
@@ -81,11 +81,11 @@ Harvey 叠了第二层检查：**模拟律师谈判**——真实使用场景，
 ## 自检
 
 1. 为什么 Harvey 的 swarm 能成而多数多 agent 尝试崩溃？*（可信的外部参照——真实 Word 行为——让正确性在 swarm 速度下仍可机器检查。）*
-2. 为什么人类通过 memory 和 decision log 引导而不是 review 代码？*（3 周 1M+ 行超出任何人阅读量；引导发生在意图层。）*
+2. 为什么人类通过 memory 和 decision log 引导而不是逐行 review 代码？*（swarm 产出超出人类阅读容量；引导必须发生在意图层。）*
 3. 采用此模式前要先验证的前提是什么？*（你的领域有没有 swarm 可以自我核对的参照——没有就先建 oracle。）*
 
 ## Sources
 
-- [@gabepereyra](https://x.com/gabepereyra) — Harvey Phil 实录：~30 agent、1M+ 行、Word 基准验证、律师模拟
+- [@gabepereyra](https://x.com/gabepereyra) — Gabe Pereyra 个人主页 *（Harvey "Phil" 的具体原帖待补，未核验规模数字已暂不引用）*
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - 相关：[第 4 篇 — 多 Bot 组织](bots-203-multi-bot-org.md)（同一套层级，不同目的：运营 vs 构建）
