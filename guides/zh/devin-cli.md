@@ -9,10 +9,10 @@
 Devin CLI 是住在你终端里、连着 Devin Cloud 的编码 agent。两种工作模式，威力在两者之间移动：
 
 - **本地** —— 直接编辑你机器上已检出的 repo
-- **云端** —— `devin --cloud` 创建/操控/恢复云会话；`/handoff` 把本地任务交给云端 Devin，`/pickup` 把云会话接回你本机（`/open` 则是在网页端或 Devin Desktop 里打开它）
+- **云端** —— `devin --cloud` 可创建、引导和恢复云端会话。在本地会话中运行 `/handoff`，可将任务交给 Devin Cloud；在 CLI 里的云端会话中运行同一命令，则会拉取该会话的 PR 分支、切换到该分支，并在其上启动本地会话（`/open` 会在网页端或 Devin Desktop 中打开会话）。
 
 ```text
-local repo ──/handoff──► Devin Cloud session ──/pickup──► local repo
+local repo ──/handoff──► Devin Cloud session ──/handoff──► local repo
      ▲                        │
      └──── devin ssh / forward (inspect its VM) ────┘
 ```
@@ -45,7 +45,7 @@ daemon 还重写了多客户端语义：在别的终端或编辑器里打开的�
 
 ## 三个值得抄的工作流
 
-**1. 本地 → 云端扇出。** 本地起任务、触到上限、`/handoff` 给一个在自己机器上继续跑的云会话——用 `/pickup` 把会话接回本机。
+**1. 本地 → 云端扇出。** 先在本地开始任务，需要云端资源时运行 `/handoff`，让任务在 Devin 的机器上继续。云端会话有了 PR 后，在 CLI 中打开或恢复该会话，再在里面运行 `/handoff`，回到本机的 PR 分支继续工作。
 
 **2. Skills 当记忆。** 把任何重复流程（第 11 篇的迁移 skill、hotfix runbook、发版切割）写成 `SKILL.md`——CLI docs 建议把*成功会话的记录*回灌进 skill 来补缺。plugins 把它们打包分发给全团队。
 
@@ -99,7 +99,7 @@ Keep it under 10 lines.
 ## Verify it
 
 - [ ] `devin` 能跑本地会话；`devin --cloud` 能列出/创建云会话
-- [ ] 一个 `/handoff` 的任务在云端完成、经 `/pickup` 接回了本机
+- [ ] 用 `/handoff` 交给云端的任务生成了 PR；在该云端会话里运行 `/handoff` 后，本机切换到了 PR 分支并启动了本地会话
 - [ ] 斜杠命令调用 `SKILL.md` 跑通了你的流程
 - [ ] （企业版）团队 marketplace 能把你的 plugin 发给另一个成员
 

@@ -48,9 +48,9 @@ Hand off the Ask-Devin-generated prompt (or your own brief per [Guide 18](talkin
 
 Every completed session gets a **Session Insights** read (menu **⋯ → Session insights**, free):
 
-- **Session size chip** — XS–XL classification auto-generated at teardown; L/XL sessions get a full analysis automatically, smaller ones on demand.
+- **Session size chip** — XS–XL classification based on how much usage the session consumes, not how many messages you send. L/XL sessions get a full analysis automatically, smaller ones on demand.
 - **ACU usage** (or on-demand dollars on quota plans) — compare similar tasks to spot sessions that burned compute on retries and dead ends.
-- **User messages** — a high count means the brief lacked context; each message is a course correction you could have written upfront.
+- **User messages** — a separate metric. A high count can signal frequent course corrections and suggest what context to include upfront.
 - The analysis recommends concrete improvements — tighter prompts, missing knowledge, wrong scope. The goal stated in Cloud 103 is the right one: *make every session cheaper than the last.*
 
 Cost hygiene that shows up in every field report: scope sessions narrowly, kill idle ones (thinking and waiting both bill), and check quota before kicking off a fleet — the 100 Days operator burned **33% of his weekly quota in two days** of Bot setup ([field reports](community-field-reports.md)). Community-reported caveat on Bots specifically: wiring your *own* model key into a Bot's child sessions does **not** stop the plan's weekly quota from draining — the Bot's own reasoning plus cloud compute still bill to the plan ([linux.do report](https://linux.do/t/topic/3225152), zh).
@@ -73,7 +73,7 @@ Cost hygiene that shows up in every field report: scope sessions narrowly, kill 
 
 1. *Why start a session from Ask Devin instead of the Devin sidebar?* Because Plan mode grounds the prompt in indexed code — the where-to-start, the existing pattern, and the checkable surface all come from the repo itself, so the session opens with the context you'd otherwise type or discover mid-run.
 2. *The session's own report says the work is done and tested. Why run Devin Review?* Independence. The session graded its own homework; Review is a different agent reading the diff with fresh context — same reason a teammate's PR doesn't get self-approved.
-3. *ACUs are flat and a session came in at XL. What do you check first?* User-messages count in Session Insights — a large session driven by many small corrections is a briefing problem, not a task-size problem. Split or re-brief before assuming the work was just big.
+3. *A session came in at XL. What do you check first?* Look at its usage and check the Issue Timeline in Session Insights for repeated errors or retries. Many user messages can suggest that the brief needed more context, but they don't affect the size rating.
 
 ## Sources
 

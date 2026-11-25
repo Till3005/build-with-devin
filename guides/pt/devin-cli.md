@@ -9,10 +9,10 @@
 O Devin CLI é um agente de código que vive no seu terminal e se conecta ao Devin Cloud. Dois modos de trabalho, e o poder está em mover entre eles:
 
 - **Local** — edita seu repo checked-out na sua máquina
-- **Cloud** — `devin --cloud` cria/dirige/retoma sessões na nuvem; `/handoff` manda uma tarefa local para um Devin na nuvem, `/pickup` traz uma sessão cloud de volta para sua máquina (`/open` abre no web app ou no Devin Desktop)
+- **Cloud** — `devin --cloud` cria, orienta e retoma sessões na nuvem. Use `/handoff` na sessão local para enviar a tarefa ao Devin Cloud. Na sessão na nuvem, dentro da CLI, o mesmo comando busca a branch do PR, muda o checkout para ela e inicia uma sessão local nessa branch. (`/open` abre a sessão no web app ou no Devin Desktop.)
 
 ```text
-repo local ──/handoff──► sessão Devin Cloud ──/pickup──► repo local
+repo local ──/handoff──► sessão Devin Cloud ──/handoff──► repo local
      ▲                          │
      └──── devin ssh / forward (inspecionar a VM) ────┘
 ```
@@ -45,7 +45,7 @@ O daemon também reescreveu a semântica multi-cliente: uma sessão aberta em ou
 
 ## Três workflows que valem copiar
 
-**1. Local → fan-out na cloud.** Comece uma tarefa localmente, bata nos limites, `/handoff` para uma sessão cloud que continua na própria máquina — traga o trabalho de volta com `/pickup`.
+**1. Local → fan-out na cloud.** Comece a tarefa localmente. Quando precisar da nuvem, use `/handoff` para que ela continue na máquina do Devin. Assim que a sessão na nuvem tiver um PR, abra ou retome a sessão na CLI e rode `/handoff` nela para continuar localmente na branch do PR.
 
 **2. Skills como memória.** Transforme qualquer procedimento repetido (o skill de migração do Guia 11, um runbook de hotfix, um corte de release) num `SKILL.md` — os docs do CLI notam alimentar *transcrições de sessões bem-sucedidas* de volta em skills para fechar lacunas. Plugins empacotam e compartilham para o time todo.
 
@@ -99,7 +99,7 @@ Keep it under 10 lines.
 ## Checklist de verificação
 
 - [ ] `devin` roda uma sessão local; `devin --cloud` lista/cria sessões cloud
-- [ ] Uma tarefa enviada por `/handoff` completou na nuvem e voltou para sua máquina via `/pickup`
+- [ ] Uma tarefa enviada à nuvem com `/handoff` gerou um PR; rodar `/handoff` nessa sessão na nuvem fez checkout da branch do PR e iniciou uma sessão local
 - [ ] Um `SKILL.md` invocado por slash command rodou seu procedimento
 - [ ] (Enterprise) o team marketplace serve seu plugin a outro membro
 
