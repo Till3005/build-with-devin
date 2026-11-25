@@ -48,12 +48,21 @@ def title_number(text):
 
 
 def structural_lines(text):
-    in_fence = False
+    fence_char = None
+    fence_length = 0
     for line in text.splitlines():
-        if re.match(r"^\s*(```|~~~)", line):
-            in_fence = not in_fence
-            continue
-        if not in_fence:
+        match = re.match(r"^\s*(`{3,}|~{3,})", line)
+        if match:
+            marker = match.group(1)
+            if fence_char is None:
+                fence_char = marker[0]
+                fence_length = len(marker)
+                continue
+            if marker[0] == fence_char and len(marker) >= fence_length:
+                fence_char = None
+                fence_length = 0
+                continue
+        if fence_char is None:
             yield line
 
 
