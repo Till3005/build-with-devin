@@ -1,0 +1,8 @@
+Repo: Till3005/bwd-rerun-sandbox (private scratch repo, synthetic data only), base main at 9c73372.
+
+First, answer: how does retry work in the billing poller? Where does it live and what calls it? Give 2-4 lines with file paths.
+
+Then do this scoped change: poll_invoices() caps the retry count but not the cumulative backoff (6 retries sleep 1+2+4+8+16+32 = 63 s). Add a max_total_backoff parameter (default 30 seconds) so the poller stops retrying once the next sleep would push total backoff past the cap, and raise the same error it raises today when retries run out. Add a unittest for the cap that doesn't really sleep.
+Success check: `python3 -m unittest -v` passes. Run it yourself before reporting done.
+Open one PR against main with the test output in the description. Do not merge it, and don't change repo or org settings.
+When done, report the PR URL and the test output, then stop.
