@@ -48,9 +48,9 @@ O **Devin Review** é um revisor independente, não um replay da autoavaliação
 
 Toda sessão concluída ganha um **Session Insights** (menu **⋯ → Session insights**, grátis):
 
-- **Chip de tamanho da sessão** — classificação XS–XL gerada no teardown; sessões L/XL ganham análise completa automática, as menores por demanda.
+- **Indicador de tamanho da sessão** — a classificação XS–XL se baseia no consumo da sessão, não no número de mensagens do usuário. Sessões L/XL recebem uma análise completa automaticamente; nas menores, ela é gerada sob demanda.
 - **Uso de ACU** (ou dólares on-demand em planos por quota) — compare tarefas semelhantes para achar sessões que queimaram computação em retries e becos sem saída.
-- **Mensagens do usuário** — contagem alta indica brief sem contexto; cada mensagem é uma correção de rota que podia ter sido escrita no início.
+- **Mensagens do usuário** — uma métrica separada. Uma contagem alta pode sinalizar correções de rota frequentes e ajudar a identificar que contexto incluir logo no início.
 - A análise recomenda melhorias concretas — prompts mais firmes, knowledge faltando, escopo errado. A meta do Cloud 103 é a certa: *cada sessão mais barata que a anterior.*
 
 Higiene de custo presente em todo field report: escopo estreito por sessão, mate sessões ociosas (pensar e esperar ambos cobram), cheque a quota antes de soltar uma frota — o operador do 100 Days queimou **33% da quota semanal em dois dias** de setup de Bots ([field reports](community-field-reports.md)). Ressalva reportada pela comunidade específica de Bots: plugar sua *própria* chave de modelo nas sessões-filho de um Bot **não** impede a quota semanal do plano de drenar — o raciocínio do próprio Bot mais a computação em nuvem ainda cobram do plano ([relato no linux.do](https://linux.do/t/topic/3225152), zh).
@@ -73,7 +73,7 @@ Higiene de custo presente em todo field report: escopo estreito por sessão, mat
 
 1. *Por que iniciar a sessão pelo Ask Devin e não pela sidebar do Devin?* Porque o modo Plan ancora o prompt no código indexado — o ponto de partida, o padrão existente e a superfície verificável vêm do próprio repo, então a sessão abre com o contexto que você digitaria ou descobriria no meio do caminho.
 2. *O relatório da sessão diz que o trabalho está feito e testado. Por que rodar o Devin Review?* Independência. A sessão corrigiu a própria lição; o Review é outro agente lendo o diff com contexto novo — o mesmo motivo pelo qual o PR de um colega não é auto-aprovado.
-3. *ACU é taxa fixa e uma sessão veio XL. O que checar primeiro?* A contagem de mensagens do usuário no Session Insights — uma sessão grande movida a muitas correções pequenas é problema de brief, não de tamanho de tarefa. Divida ou re-escreva o brief antes de concluir que o trabalho era grande mesmo.
+3. *Uma sessão foi classificada como XL. O que conferir primeiro?* Veja o consumo e procure erros recorrentes ou novas tentativas na aba Issue Timeline do Session Insights. Muitas mensagens podem indicar que faltou contexto no brief, mas não afetam a classificação de tamanho.
 
 ## Fontes
 

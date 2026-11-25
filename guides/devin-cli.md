@@ -9,10 +9,10 @@
 Devin CLI is a coding agent that lives in your terminal and connects to Devin Cloud. Two working modes, and the power is in moving between them:
 
 - **Local** — it edits your checked-out repo on your machine
-- **Cloud** — `devin --cloud` creates/steers/resumes cloud sessions; `/handoff` sends a local task to a cloud Devin, `/pickup` pulls a cloud session back to your machine (`/open` opens it in the web app or Devin Desktop)
+- **Cloud** — `devin --cloud` creates/steers/resumes cloud sessions. Run `/handoff` in a local session to send the task to Devin Cloud. Run it in the cloud session in the CLI to fetch its PR branch, switch your checkout to that branch, and start a local session on it. (`/open` opens the session in the web app or Devin Desktop.)
 
 ```text
-local repo ──/handoff──► Devin Cloud session ──/pickup──► local repo
+local repo ──/handoff──► Devin Cloud session ──/handoff──► local repo
      ▲                        │
      └──── devin ssh / forward (inspect its VM) ────┘
 ```
@@ -45,7 +45,7 @@ This is where teams make the CLI *theirs* — same layering as Guide 9, applied 
 
 ## Three workflows worth copying
 
-**1. Local → cloud fan-out.** Start a task locally, hit its limits, `/handoff` to a cloud session that keeps going on its own machine — pull the work back to your machine with `/pickup`.
+**1. Local → cloud fan-out.** Start a task locally. When it needs the cloud, run `/handoff` to keep it going on Devin's machine. Once the cloud session has a PR, open or resume that session in the CLI and run `/handoff` there to continue locally on its PR branch.
 
 **2. Skills as memory.** Turn any repeated procedure (Guide 11's migration skill, a hotfix runbook, a release cut) into a `SKILL.md` — the CLI docs note feeding *successful session transcripts* back into skills to close gaps. Plugins package and share them to the whole team.
 
@@ -99,7 +99,7 @@ Keep it under 10 lines.
 ## Verify it
 
 - [ ] `devin` runs a local session; `devin --cloud` lists/creates cloud sessions
-- [ ] A `/handoff`'d task completed in the cloud and the session came back to your machine via `/pickup`
+- [ ] A task sent to the cloud with `/handoff` produced a PR; running `/handoff` in that cloud session checked out the PR branch and started a local session
 - [ ] A `SKILL.md` invoked by slash command ran your procedure
 - [ ] (Enterprise) team marketplace serves your plugin to another member
 
