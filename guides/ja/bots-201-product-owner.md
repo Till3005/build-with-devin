@@ -2,8 +2,8 @@
 
 **目標：** アプリの一つの領域（サーフェス）全体をプロダクト管理する Bot——自分でチケットを起票し、実装し、マージし、毎日レポートする。
 **レベル：** 中級 · **導入後の人間の負荷：** マージ 6 PR あたり約 1 メッセージ
-**出典となる導入事例：** Cognition の **Android Bot**——Devin Android アプリを Google Play オープンベータまで **44 日**で出荷：マージ PR 1,134 件、Kotlin 344,651 行、スクリーンショットテスト 2,841 件、チケット 1,217 件。担当者の送信メッセージは**合計 183 件**（22 日間の無発言期間あり）、**PR の 88% が自己マージ**。現在は Android/iOS の機能パリティを所有している。
-**出典：** [ローンチ記事](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) · Russell Kaplan のドッグフーディング記録
+**出典となる導入事例：** Cognition の **Android Bot**——Cognition の[ローンチ記事](https://devin.ai/blog/introducing-devin-bots)によれば、Devin Android アプリを Google Play オープンテストまで **44 日**で構築：マージ PR 1,134 件、Kotlin 344,651 行、スクリーンショットテスト 2,841 件、クローズ済みチケット 1,217 件。担当者の送信メッセージは**合計 183 件**（22 日間の無発言期間あり）。CI と Devin Review を通過した PR を自律マージし、iOS に新機能が入るたび Android 側を更新する。
+**出典：** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 
 ## パターン
 
@@ -103,12 +103,11 @@ what needs a human. Include a screen recording of visible changes.
 
 ## 理解度チェック
 
-1. Android Bot は自分の PR の 88% を自己マージした——自己マージを許せるほど安全にしたものは何か？*（検証が存在した：2,841 件のスクリーンショットテストとレビューゲート；「完了」が機械判定可能だから所有が機能した）*
+1. Android Bot は CI と Devin Review を通った PR を自律的にマージした——自律マージを許せるほど安全にしたものは何か？*（検証が存在した：2,841 件のスクリーンショットテストと CI・Devin Review ゲート；「完了」が機械判定可能だから所有が機能した）*
 2. セッションを直接プロンプトせず、なぜチケットを起票するのか？*（チケットは Bot が優先度でトリアージする監査可能なキューを作る——人間は 50 のセッションではなく 1 つのキューをレビューする）*
 3. 「22 日間の無発言」は制御モデルについて何を示すか？*（例外時のみ報告が機能するのは Bot の「完了」定義が検証可能な場合だけ；沈黙は怠慢ではなく機能そのもの）*
 
 ## 出典
 
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot の数値とプロンプト
-- [Fortune 独占記事](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 183 メッセージ、88% 自己マージ、ドッグフーディング記録
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot のプロンプト、44 日間の数値（1,134 PR、Kotlin 344,651 行、スクリーンショットテスト 2,841 件、チケット 1,217 件、183 メッセージ）、定常運用フロー
 - 関連：[ガイド 4 — マルチ Bot 組織](bots-203-multi-bot-org.md) 一つのサーフェスが事業になったとき

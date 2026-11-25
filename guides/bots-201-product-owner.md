@@ -2,8 +2,8 @@
 
 **Goal:** a Bot that product-manages an entire app surface — files its own tickets, builds them, merges, and reports daily.
 **Level:** intermediate · **Human load after setup:** ~1 message per 6 merged PRs
-**Source deployment:** Cognition's **Android Bot** — shipped the Devin Android app to Google Play open beta in **44 days**: 1,134 merged PRs, 344,651 lines of Kotlin, 2,841 screenshot tests, 1,217 tickets. Its human sent **183 messages total** (22 days of silence), and **88% of PRs were self-merged**. It now owns Android/iOS feature parity.
-**Sources:** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) · Russell Kaplan's dogfooding notes
+**Source deployment:** Cognition's **Android Bot** — per Cognition's [launch post](https://devin.ai/blog/introducing-devin-bots), built the Devin Android app to Google Play open testing in **44 days**: 1,134 merged PRs, 344,651 lines of Kotlin, 2,841 screenshot tests, and 1,217 closed tickets. Its human sent **183 messages total** (22 days with none); the Bot merges PRs that pass CI and Devin Review and updates the app when new features land on iOS.
+**Sources:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 
 ## The pattern
 
@@ -103,12 +103,11 @@ After the initial build, the same Bot switches to *owning* the surface:
 
 ## Knowledge check
 
-1. Android Bot merged 88% of its own PRs — what made self-merge safe enough to allow? *(Verification existed: 2,841 screenshot tests plus review gates; ownership worked because 'done' was machine-checkable.)*
+1. Android Bot merged PRs that passed CI and Devin Review on its own — what made autonomous merges safe enough to allow? *(Verification existed: 2,841 screenshot tests plus CI and Devin Review gates; ownership worked because 'done' was machine-checkable.)*
 2. Why file tickets instead of just prompting sessions directly? *(Tickets create an auditable queue the Bot triages by priority — and the human reviews one queue, not 50 sessions.)*
 3. What does '22 days of silence' tell you about the control model? *(Escalation-by-exception works only when the Bot's definition of done is verifiable; silence is the feature, not neglect.)*
 
 ## Sources
 
-- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot numbers and prompt
-- [Fortune exclusive](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 183 messages, 88% self-merge, dogfooding notes
+- [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot prompt, 44-day metrics (1,134 PRs, 344,651 lines of Kotlin, 2,841 screenshot tests, 1,217 tickets, 183 messages), and steady-state workflow
 - Related: [Guide 4 — Multi-Bot organization](bots-203-multi-bot-org.md) when one surface becomes a business

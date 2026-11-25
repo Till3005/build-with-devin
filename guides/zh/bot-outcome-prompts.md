@@ -16,7 +16,7 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 | 要素 | 作用 | 示例 |
 | --- | --- | --- |
 | **一个角色** | 规定 bot 如何*行事*，而不只是产出什么 | "product manage"、"own the QA of onboarding flows" |
-| **有边界的面** | bot 能完整看见的范围——一个 app、一项检查、一个数据源 | "the android app"、"layout regressions"、"30+ onboarding flows" |
+| **有边界的面** | bot 能完整看见的范围——一个 app、一项检查、一个数据源 | "the android app"、"layout regressions"、"onboarding flows" |
 | **隐含的完成定义** | bot 能自我核验的状态 | "feature parity with iOS"、"no layout-shift regressions"、"every flow green" |
 | **常驻授权** | bot 自己决定*何时*以及*下一步做什么*——这才是 bot 而不是脚本 | "your job is to…"、"keep…"、"watch for…" |
 
@@ -45,7 +45,7 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 - **任务形 prompt。** "Fix these 12 issues"——bot 干完就闲置；你得到的是一个 session，不是 bot。
 - **不可验证的结果。** "Make the app better"——没有自检手段，bot 唯一的出口就是 Needs-you 刷屏。
 - **看不见的域。** 如果结果需要 bot 接触不到的系统（够不着的 staging、读不了的仪表盘），它会卡住或编造进度。给它那个面，或者缩小结果。
-- **没有合并授权故事。** 88% 的自合并率存在的前提是 CI 和评审门已按自动合并配置好。写明规则："merge when CI is green and diff < N lines"或"always open as draft for human review"。
+- **没有合并授权故事。** 自动合并（如 Android Bot 自主合并通过 CI 和 Devin Review 的 PR）的前提是 CI 和评审门已预先按自动合并配置好。写明规则："merge when CI is green and diff < N lines"或"always open as draft for human review"。
 
 ## 起草你自己的——三行测试
 

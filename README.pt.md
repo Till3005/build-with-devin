@@ -92,7 +92,7 @@ flowchart LR
 | 2 | [Bot dono de produto](guides/pt/bots-201-product-owner.md) | Um Bot que gerencia como produto uma superfície inteira de app | Android Bot — 44 dias, 1.134 PRs | Intermediário |
 | 3 | [Bot sentinela agendado](guides/pt/bots-202-scheduled-sentinel.md) | Um Bot em cron que vigia uma checagem e corrige regressões | Layout Bot — 159 PRs/3 sem. | Intermediário |
 | 4 | [Organização multi-Bot](guides/pt/bots-203-multi-bot-org.md) | Uma hierarquia de Bots com grants e relatórios consolidados | SuperJennyStack — ~20 Bots, 1.900 PRs/sem | Avançado |
-| 5 | [Swarm ancorado em referência](guides/pt/bots-204-reference-grounded-swarm.md) | Um swarm dirigido escrevendo um sistema verificado | Harvey "Phil" — ~30 agentes, 1M+ linhas | Avançado |
+| 5 | [Swarm ancorado em referência](guides/pt/bots-204-reference-grounded-swarm.md) | Um swarm dirigido escrevendo um sistema verificado | Padrão Harvey "Phil" (post primário pendente; números retidos) | Avançado |
 | 11 | [Migrações em escala](guides/pt/migrations-at-scale.md) | Uma migração como centenas de PRs pequenos e verificados | Playbook oficial + Nubank | Intermediário |
 | 15 | [Living evals de traces de produção](guides/pt/living-evals.md) | Uma suite de evals autocrescente: Devin reproduz falhas de produção numa cópia completa do sistema | Rox — 72% de cobertura de uso vs 43–57% escrito à mão | Avançado |
 | 7 | [Padrões de rollout corporativo](guides/pt/enterprise-playbook.md) | As seis formas de implantação por trás dos maiores resultados | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediário |

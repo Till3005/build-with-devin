@@ -2,8 +2,8 @@
 
 **目標：** 事業部門全体を運営する Bot 階層——スペシャリスト Bot に委任するオーケストレーター 1 体と、日次スレッド 1 本で決裁する人間 1 人。
 **レベル：** 上級
-**出典となる導入事例：** Jenny Xu の **SuperJennyStack**——モバイルゲームスタジオを運営する約 20 の Bot。週 約50 → **1,900 PR**、週次リリース、スタジオ収益 6 倍。[Bot マーケットプレイス](https://devin.ai/bots/templates)にコミュニティテンプレートとして公開済み。公式の **bot 間 grant ハンドオフ**（QA → Developer → 再テスト → PM レポート）も同じ機構を小規模で使っている。
-**出典：** Jenny Xu の公開スタック（[ローンチ報道経由](https://x.com/cognition/status/2122737511684587551)）· [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak 記事](https://x.com/xujennyc/status/2123111543105868166)
+**出典となる導入事例：** Jenny Xu の **SuperJennyStack**——モバイルゲームスタジオを運営する約 20 の Bot。Cognition の[ローンチ記事](https://devin.ai/blog/introducing-devin-bots)によれば、週 約50 → **1,900 PR**、週次リリースを達成。[Bot マーケットプレイス](https://devin.ai/bots/templates)にコミュニティテンプレートとして公開済み。公式の **bot 間 grant ハンドオフ**（QA → Developer → 再テスト → PM レポート）も同じ機構を小規模で使っている。
+**出典：** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) · Jenny Xu の公開スタック（[ローンチ報道経由](https://x.com/cognition/status/2122737511684587551)）· [Bots ドキュメント](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak 記事](https://x.com/xujennyc/status/2123111543105868166)
 
 ## パターン
 
@@ -22,7 +22,7 @@
 
 人間は CEO：オーケストレーターが全部下 Bot の未決事項を **Slack スレッド 1 本に 1 日 4 回**集約し、絵文字で回答する。
 
-この形の最小の実証版が実製品を出している：Noah Zixin Zhang が **Chief-of-Staff → プロダクトリード → スペシャリスト** の約 8 Bot チェーンで [SupaSEO](https://supaseo.dev) を約 48 時間でエンドツーエンド構築（約 951 commits；人間が書いたのはランディングページのみ）。彼の 2 つのフィールドノートはどの規模でも通用する：**プロジェクト横断の共有スペシャリスト Bot は、プロジェクトごとの個別 Bot に勝る**——そしてプロンプトは粒度を保つ。組織図はブリーフの代わりにならない。
+この形のより小規模な実証例は個人運用でも成立している：Mark Fenner は統括用の Chief Agent Bot（「Frankie」）の下で 4 体の役割別 Bot を動かし、更新を 1 つの意思決定面に集約している（[ウォークスルー](https://x.com/markfenner/status/2122740244328145211)）。各 Bot の責務が明確でプロンプトの粒度が保たれていれば、組織図は小規模にもきれいにスケールダウンできる。
 
 ## 前提条件
 

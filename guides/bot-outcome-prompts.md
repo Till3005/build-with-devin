@@ -16,7 +16,7 @@ The Android Bot's entire assignment. One sentence produced 44 days of self-direc
 | Element | What it does | Example |
 | --- | --- | --- |
 | **A role** | Tells the bot how to *behave*, not just what to produce | "product manage", "own the QA of onboarding flows" |
-| **A bounded surface** | A scope the bot can fully see — an app, a check, a data source | "the android app", "layout regressions", "30+ onboarding flows" |
+| **A bounded surface** | A scope the bot can fully see — an app, a check, a data source | "the android app", "layout regressions", "onboarding flows" |
 | **An implicit definition of done** | A state the bot can verify itself against | "feature parity with iOS", "no layout-shift regressions", "every flow green" |
 | **Standing authority** | The bot decides *when* and *what next* — that's what makes it a bot, not a script | "your job is to…", "keep…", "watch for…" |
 
@@ -45,7 +45,7 @@ In fleets (SuperJennyStack, Frankie, tigsbot) the chief bot's prompt contains th
 - **Task-shaped prompts.** "Fix these 12 issues" — the bot finishes and idles; you get a session, not a bot.
 - **Unverifiable outcomes.** "Make the app better" — no self-check means the bot's only exit is Needs-you spam.
 - **Hidden scope.** If the outcome requires systems the bot can't see (a staging env it can't reach, a dashboard it can't read), it will either stall or hallucinate progress. Give it the surface or shrink the outcome.
-- **No merge authority story.** The 88% self-merge rate exists because CI and review gates were pre-configured for autonomous merges. State it: "merge when CI is green and diff < N lines" or "always open as draft for human review."
+- **No merge authority story.** Autonomous merges (as in Android Bot merging PRs that pass CI and Devin Review) only work when CI and review gates are pre-configured for them. State it: "merge when CI is green and diff < N lines" or "always open as draft for human review."
 
 ## Drafting yours — the three-line test
 

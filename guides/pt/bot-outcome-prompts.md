@@ -16,7 +16,7 @@ Toda a atribuição do Android Bot. Uma frase produziu 44 dias de trabalho auto-
 | Elemento | O que faz | Exemplo |
 | --- | --- | --- |
 | **Um papel** | Diz ao bot como *se comportar*, não só o que produzir | "product manage", "own the QA of onboarding flows" |
-| **Uma superfície delimitada** | Um escopo que o bot consegue ver por inteiro — um app, uma checagem, uma fonte de dados | "the android app", "layout regressions", "30+ onboarding flows" |
+| **Uma superfície delimitada** | Um escopo que o bot consegue ver por inteiro — um app, uma checagem, uma fonte de dados | "the android app", "layout regressions", "onboarding flows" |
 | **Uma definição de pronto implícita** | Um estado contra o qual o bot pode se verificar | "feature parity with iOS", "no layout-shift regressions", "every flow green" |
 | **Autoridade permanente** | O bot decide *quando* e *o que depois* — é isso que o torna um bot, não um script | "your job is to…", "keep…", "watch for…" |
 
@@ -45,7 +45,7 @@ Em frotas (SuperJennyStack, Frankie, tigsbot) o prompt do bot chefe contém o *c
 - **Prompts em formato de tarefa.** "Fix these 12 issues" — o bot termina e fica ocioso; você ganha uma sessão, não um bot.
 - **Resultados não verificáveis.** "Make the app better" — sem auto-checagem, a única saída do bot é spam de Needs-you.
 - **Escopo oculto.** Se o resultado exige sistemas que o bot não vê (um staging que não alcança, um dashboard que não lê), ele ou trava ou alucina progresso. Dê a superfície ou encolha o resultado.
-- **Sem história de autoridade de merge.** Os 88% de auto-merge existem porque CI e gates de review foram pré-configurados para merges autônomos. Declare: "merge when CI is green and diff < N lines" ou "always open as draft for human review."
+- **Sem história de autoridade de merge.** Merges autônomos (como o Android Bot mergeando PRs que passam no CI e no Devin Review) só funcionam quando CI e gates de review foram pré-configurados para isso. Declare: "merge when CI is green and diff < N lines" ou "always open as draft for human review."
 
 ## Redigindo o seu — o teste das três linhas
 
