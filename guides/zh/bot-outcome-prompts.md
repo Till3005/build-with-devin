@@ -85,24 +85,24 @@ Bot 需要 Max 或 Teams 方案——但本篇教的 prompt 机制与接入面�
 
 **视频（64 秒，无声）：** 基线 → 任务式跑 → +6 行 → outcome 式跑 → 自己分解出覆盖图 → +37 行。
 
-[![outcome 会话的汇报——13 个测试全绿，覆盖图是 agent 自己列的]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![outcome 会话的汇报——13 个测试全绿，覆盖图是 agent 自己列的](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough.mp4)
 
-![1. 基线上输入任务式 prompt——2 个测试，只点名条目]({B}/step1-task-prompt.webp)
+![1. 基线上输入任务式 prompt——2 个测试，只点名条目](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step1-task-prompt.webp)
 *1. 基线上的任务式 prompt——给 agent 的是一张购物清单*
 
-![2. 任务式跑完——恰好加了点名的 2 个测试、4 个全绿、“Nothing committed”，然后停住]({B}/step2-task-done.webp)
+![2. 任务式跑完——恰好加了点名的 2 个测试、4 个全绿、“Nothing committed”，然后停住](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step2-task-done.webp)
 *2. 任务式：做完清单就停——这是个会话，不是个 owner*
 
-![3. 相同副本上输入 outcome 式 prompt——角色、界面边界、可验证状态，没有任务清单]({B}/step3-outcome-prompt.webp)
+![3. 相同副本上输入 outcome 式 prompt——角色、界面边界、可验证状态，没有任务清单](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step3-outcome-prompt.webp)
 *3. outcome 式：角色 + 有边界的管辖面 + “好”的定义——不给清单*
 
-![4. outcome prompt 产出的 diff——每个分支都是 agent 自己枚举的]({B}/step4-outcome-diff.webp)
+![4. outcome prompt 产出的 diff——每个分支都是 agent 自己枚举的](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step4-outcome-diff.webp)
 *4. 没人告诉它写哪些测试——+39 行，分支全是它自己列的*
 
-![5. 汇报的是一个“状态”而不是“做完了”——“All 13 tests pass. Branch coverage: …”]({B}/step5-coverage-report.webp)
+![5. 汇报的是一个“状态”而不是“做完了”——“All 13 tests pass. Branch coverage: …”](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step5-coverage-report.webp)
 *5. 它对着“好”的定义自检，汇报的是覆盖图*
 
-![6. 并排对比——任务式 +6 行；outcome 式 +37 行。同一模型、同一仓库]({B}/step6-side-by-side.webp)
+![6. 并排对比——任务式 +6 行；outcome 式 +37 行。同一模型、同一仓库](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step6-side-by-side.webp)
 *6. 同模型同仓库，只差 prompt 形状：+6 对 +37，4 个测试对 13 个*
 
 ## Sources

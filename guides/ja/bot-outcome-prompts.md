@@ -85,24 +85,24 @@ Bot には Max または Teams プランが必要——しかしこのガイド�
 
 **動画（64 秒・無音）：** ベースライン → タスク実行 → +6 行 → outcome 実行 → 自ら分解したカバレッジマップ → +37 行。
 
-[![outcome 実行のレポート——13 テスト全緑、分岐カバレッジはエージェント自身が列挙]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![outcome 実行のレポート——13 テスト全緑、分岐カバレッジはエージェント自身が列挙](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough.mp4)
 
-![1. ベースラインにタスク型プロンプト——テスト 2 件、項目を列挙するだけ]({B}/step1-task-prompt.webp)
+![1. ベースラインにタスク型プロンプト——テスト 2 件、項目を列挙するだけ](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step1-task-prompt.webp)
 *1. タスク型プロンプト——エージェントに渡したのは買い物リスト*
 
-![2. タスク実行完了——指定の 2 テストだけ追加、4 件全緑、「Nothing committed」、その後停止]({B}/step2-task-done.webp)
+![2. タスク実行完了——指定の 2 テストだけ追加、4 件全緑、「Nothing committed」、その後停止](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step2-task-done.webp)
 *2. タスク型：リストを終えたら停止——オーナーではなくセッション*
 
-![3. 同一コピーに outcome 型プロンプト——役割・担当面・検証可能な状態。項目リストなし]({B}/step3-outcome-prompt.webp)
+![3. 同一コピーに outcome 型プロンプト——役割・担当面・検証可能な状態。項目リストなし](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step3-outcome-prompt.webp)
 *3. outcome 型：役割 + 境界ある担当面 + 「良い状態」の定義——チェックリストなし*
 
-![4. outcome プロンプトが生んだ diff——全分岐をエージェントが自分で列挙]({B}/step4-outcome-diff.webp)
+![4. outcome プロンプトが生んだ diff——全分岐をエージェントが自分で列挙](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step4-outcome-diff.webp)
 *4. どのテストを書くか教えていない——+39 行、分岐はすべて自己列挙*
 
-![5. レポートは「完了」ではなく「状態」——「All 13 tests pass. Branch coverage: …」]({B}/step5-coverage-report.webp)
+![5. レポートは「完了」ではなく「状態」——「All 13 tests pass. Branch coverage: …」](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step5-coverage-report.webp)
 *5. 「良い状態」の定義に照らして検証し、カバレッジマップを報告*
 
-![6. 並べて比較——タスク型 +6 行、outcome 型 +37 行。同じモデル・同じリポジトリ]({B}/step6-side-by-side.webp)
+![6. 並べて比較——タスク型 +6 行、outcome 型 +37 行。同じモデル・同じリポジトリ](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step6-side-by-side.webp)
 *6. 同モデル・同リポジトリ、違いはプロンプトの形だけ：+6 対 +37、テスト 4 対 13*
 
 ## 出典

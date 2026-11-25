@@ -85,24 +85,24 @@ Bots need a Max or Teams plan — but the *prompt mechanics* this guide teaches 
 
 **Video (64 s, silent):** baseline → task run → +6 lines → outcome run → self-decomposed coverage map → +37 lines.
 
-[![The outcome run's report — 13 tests green, branch coverage enumerated by the agent]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![The outcome run's report — 13 tests green, branch coverage enumerated by the agent](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough.mp4)
 
-![1. The task-shaped prompt on the baseline — 2 tests, named items only]({B}/step1-task-prompt.webp)
+![1. The task-shaped prompt on the baseline — 2 tests, named items only](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step1-task-prompt.webp)
 *1. Task-shaped prompt on the baseline — the agent is given a shopping list*
 
-![2. Task run finished — exactly the 2 named tests, 4 green, "Nothing committed", then it idles]({B}/step2-task-done.webp)
+![2. Task run finished — exactly the 2 named tests, 4 green, "Nothing committed", then it idles](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step2-task-done.webp)
 *2. Task run: exactly the listed items, then it stops — a session, not an owner*
 
-![3. The outcome-shaped prompt on an identical copy — role, surface, verifiable state, no item list]({B}/step3-outcome-prompt.webp)
+![3. The outcome-shaped prompt on an identical copy — role, surface, verifiable state, no item list](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step3-outcome-prompt.webp)
 *3. Outcome-shaped prompt: role + bounded surface + a definition of good — no checklist*
 
-![4. The diff the outcome prompt produced — the agent enumerated every branch itself]({B}/step4-outcome-diff.webp)
+![4. The diff the outcome prompt produced — the agent enumerated every branch itself](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step4-outcome-diff.webp)
 *4. +39 lines written without being told which tests — it named every branch on its own*
 
-![5. The report is a state, not a checklist — "All 13 tests pass. Branch coverage: …"]({B}/step5-coverage-report.webp)
+![5. The report is a state, not a checklist — "All 13 tests pass. Branch coverage: …"](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step5-coverage-report.webp)
 *5. It verifies against the stated definition of good and reports the coverage map*
 
-![6. Side by side — task prompt: +6 lines; outcome prompt: +37 lines. Same model, same repo]({B}/step6-side-by-side.webp)
+![6. Side by side — task prompt: +6 lines; outcome prompt: +37 lines. Same model, same repo](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step6-side-by-side.webp)
 *6. Same model, same repo, different prompt shape: +6 vs +37 — and 4 vs 13 tests*
 
 ## Sources
