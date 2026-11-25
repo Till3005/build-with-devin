@@ -15,26 +15,48 @@ ROOT = Path(__file__).resolve().parent.parent
 LANGS = ("zh", "ja", "pt")
 COVERAGE = ROOT / "ops" / "curriculum" / "coverage.json"
 VALID_STATUSES = {"covered", "partial", "gap", "watch"}
+GUIDE_LINK = re.compile(r"guides/[a-z0-9/-]+\.mdx?\b")
 
 REQUIRED_MARKERS = {
     "goal": "**Goal:**",
     "level": "**Level:**",
     "source_header": "**Source",
-    "verification": "Verify",
-    "pitfalls": "Pitfall",
-    "knowledge_check": "Knowledge check",
-    "sources_section": "## Sources",
+}
+
+REQUIRED_HEADINGS = {
+    "verification": re.compile(r"^##\s+Verify\b", re.MULTILINE),
+    "pitfalls": re.compile(r"^##\s+Pitfalls\b", re.MULTILINE),
+    "knowledge_check": re.compile(r"^##\s+Knowledge check\b", re.MULTILINE),
+    "sources_section": re.compile(r"^##\s+Sources\b", re.MULTILINE),
 }
 
 
 def guide_links(md_text):
-    return sorted(set(re.findall(r"guides/[a-z0-9/-]+\.md", md_text)))
+    return sorted(set(GUIDE_LINK.findall(md_text)))
 
 
 def english_guide_number(text):
     first = text.splitlines()[0] if text.splitlines() else ""
     match = re.match(r"# Guide (\d+)\b", first)
     return int(match.group(1)) if match else None
+
+
+def title_number(text):
+    first = text.splitlines()[0] if text.splitlines() else ""
+    match = re.search(r"\d+", first)
+    return int(match.group(0)) if match else None
+
+
+def h2_count(text):
+    return sum(1 for line in text.splitlines() if line.startswith("## "))
+
+
+def audit_guide_link(link, readme_name, errors):
+    if not link.endswith(".md"):
+        errors.append(f"{readme_name} uses unsupported guide link extension: {link}")
+        return
+    if not (ROOT / link).exists():
+        errors.append(f"{readme_name} links missing file: {link}")
 
 
 def audit_guides():
@@ -49,6 +71,9 @@ def audit_guides():
         for name, marker in REQUIRED_MARKERS.items():
             if marker not in text:
                 errors.append(f"{rel}: missing {name} marker {marker!r}")
+        for name, pattern in REQUIRED_HEADINGS.items():
+            if not pattern.search(text):
+                errors.append(f"{rel}: missing {name} section")
 
         number = english_guide_number(text)
         if number is not None:
@@ -58,6 +83,18 @@ def audit_guides():
             translated = ROOT / "guides" / lang / path.name
             if not translated.exists():
                 errors.append(f"missing translation: {translated.relative_to(ROOT)}")
+                continue
+            translated_text = translated.read_text()
+            translated_number = title_number(translated_text)
+            if translated_number != number:
+                errors.append(
+                    f"{translated.relative_to(ROOT)}: title number {translated_number} "
+                    f"does not match English guide number {number}"
+                )
+            if h2_count(translated_text) != h2_count(text):
+                errors.append(
+                    f"{translated.relative_to(ROOT)}: section count does not match {rel}"
+                )
 
     for number, paths in sorted(numbers.items()):
         if len(paths) > 1:
@@ -65,8 +102,8 @@ def audit_guides():
 
     readme = (ROOT / "README.md").read_text()
     for link in guide_links(readme):
-        if link.startswith("guides/") and not (ROOT / link).exists():
-            errors.append(f"README.md links missing file: {link}")
+        if link.startswith("guides/"):
+            audit_guide_link(link, "README.md", errors)
 
     for lang in LANGS:
         lang_readme = ROOT / f"README.{lang}.md"
@@ -74,8 +111,8 @@ def audit_guides():
             errors.append(f"missing README.{lang}.md")
             continue
         for link in guide_links(lang_readme.read_text()):
-            if link.startswith(f"guides/{lang}/") and not (ROOT / link).exists():
-                errors.append(f"README.{lang}.md links missing file: {link}")
+            if link.startswith(f"guides/{lang}/"):
+                audit_guide_link(link, f"README.{lang}.md", errors)
 
     return errors, warnings, len(guides)
 
@@ -112,8 +149,16 @@ def audit_coverage():
         if not row.get("official_sources"):
             errors.append(f"coverage matrix {label}: missing official_sources")
 
-        for guide in row.get("guides", []):
-            if not (ROOT / guide).exists():
+        guides = row.get("guides", [])
+        if not isinstance(guides, list):
+            errors.append(f"coverage matrix {label}: guides must be a list")
+            guides = []
+        if row.get("status") == "covered" and not guides:
+            errors.append(f"coverage matrix {label}: covered outcome has no guide reference")
+        for guide in guides:
+            if not guide.startswith("guides/") or not guide.endswith(".md"):
+                errors.append(f"coverage matrix {label}: invalid guide reference {guide}")
+            elif not (ROOT / guide).exists():
                 errors.append(f"coverage matrix {label}: missing guide file {guide}")
 
     return errors, rows
