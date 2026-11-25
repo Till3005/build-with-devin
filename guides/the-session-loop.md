@@ -53,8 +53,6 @@ Every completed session gets a **Session Insights** read (menu **⋯ → Session
 - **User messages** — a high count means the brief lacked context; each message is a course correction you could have written upfront.
 - The analysis recommends concrete improvements — tighter prompts, missing knowledge, wrong scope. The goal stated in Cloud 103 is the right one: *make every session cheaper than the last.*
 
-Analysis can take time after the session ends. For a smaller session, request it on demand and check back if it isn’t ready; use the size and usage fields in the meantime. In the [community calibration rerun](../runs/2026-11-calibration/g19-session-loop/RUN.md), a Lite XS session’s analysis still wasn’t available about nine minutes after the API request.
-
 Cost hygiene that shows up in every field report: scope sessions narrowly, kill idle ones (thinking and waiting both bill), and check quota before kicking off a fleet — the 100 Days operator burned **33% of his weekly quota in two days** of Bot setup ([field reports](community-field-reports.md)). Community-reported caveat on Bots specifically: wiring your *own* model key into a Bot's child sessions does **not** stop the plan's weekly quota from draining — the Bot's own reasoning plus cloud compute still bill to the plan ([linux.do report](https://linux.do/t/topic/3225152), zh).
 
 ## Verify it

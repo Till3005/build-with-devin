@@ -35,7 +35,7 @@ Step 1: `Where does the registry entry validation live and what calls it?`
 
 - Ask/Plan web toggles are blocked by the login gate. The owner card “Create the private rerun sandbox repo” had not been approved after about 25 minutes. Once approved, create the private sandbox and rerun steps 2–4 with one Lite/default child for the change and a separate, independent review on its unmerged PR. The native UI handoff also needs an already signed-in web surface.
 - The Insights API returned `acus_consumed=0.0`, `num_user_messages=0`, `num_devin_messages=0`, and `session_size=xs`. Both counters read zero even though the child exchanged three visible messages (prompt, acknowledgment, result); the reason for the discrepancy is unknown.
-- Guide 19 now says to request analysis for smaller sessions and check back when ready. This rerun observed no analysis about nine minutes after requesting it; it did not measure completion time.
+- **Suggested guide fix:** Tell learners to request analysis on demand for smaller sessions and check back if it isn’t ready. This rerun observed no analysis about nine minutes after the request; it did not measure completion time.
 
 ## Human interventions
 
