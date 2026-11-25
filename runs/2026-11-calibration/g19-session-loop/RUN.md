@@ -6,7 +6,7 @@ Research a sandbox repository, delegate a scoped change, independently review th
 
 ## Plan/mode/version
 
-Pending. Record the actual tool, session mode, plan, and version where available.
+Step 1 only: free Ask/DeepWiki equivalent via `devin_ask_wiki_question`. No new Devin session for this step.
 
 ## Baseline commit
 
@@ -15,21 +15,25 @@ Pending. Record the actual tool, session mode, plan, and version where available
 
 ## Fixture
 
-Pending. Record the sandbox and synthetic inputs.
+For step 1, used indexed `Till3005/built-with-devin` (the sister repository); `Till3005/build-with-devin` itself was not indexed.
 
 ## Exact prompts (verbatim)
 
-Pending. Record each submitted prompt, including any fixture substitutions.
+Step 1: `Where does the registry entry validation live and what calls it?`
 
 ## Steps
 
 | Step | Result | Evidence |
 | --- | --- | --- |
-| — | Pending | — |
+| 1. Research in Ask/DeepWiki | Completed via the equivalent tool. The answer cited `tools/export_registry.py`, `tools/verify_sources.py`, and `tools/sync.py` for validation and where it is called. | [Ask result](https://app.devin.ai/search/api_6b98e2e9-fcce-4b56-b92a-60ffe66f4bfe) |
+| 2. Scope the change in Plan mode | Pending sandbox repo | — |
+| 3. Delegate the scoped change | Pending sandbox repo | — |
+| 4. Review the sandbox PR independently | Pending sandbox repo | — |
+| 5. Read Session Insights | Pending sandbox repo | — |
 
 ## Broken/blocked steps + fix
 
-Pending. For each failure or gate, record the cause, evidence, and fix or follow-up.
+Ask/Plan mode toggles in the web UI are **BLOCKED** by the [login gate](../gate-web-login.png). The equivalent Ask result does not verify the web toggles or the Plan-to-session handoff.
 
 ## Human interventions
 
