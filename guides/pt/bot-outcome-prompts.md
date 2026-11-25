@@ -84,24 +84,24 @@ Bots exigem plano Max ou Teams — mas a *mecânica de prompt* deste guia indepe
 
 **Vídeo (64 s, sem som):** baseline → execução por tarefa → +6 linhas → execução por resultado → mapa de cobertura decomposto pelo agente → +37 linhas.
 
-[![Relatório da execução por resultado — 13 testes verdes, cobertura de branches enumerada pelo agente]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![Relatório da execução por resultado — 13 testes verdes, cobertura de branches enumerada pelo agente](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/walkthrough.mp4)
 
-![1. Prompt em forma de tarefa na baseline — 2 testes, só itens nomeados]({B}/step1-task-prompt.webp)
+![1. Prompt em forma de tarefa na baseline — 2 testes, só itens nomeados](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step1-task-prompt.webp)
 *1. Prompt-tarefa — o agente recebe uma lista de compras*
 
-![2. Execução-tarefa concluída — exatamente os 2 testes nomeados, 4 verdes, "Nothing committed", e parou]({B}/step2-task-done.webp)
+![2. Execução-tarefa concluída — exatamente os 2 testes nomeados, 4 verdes, "Nothing committed", e parou](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step2-task-done.webp)
 *2. Tarefa: fez a lista e parou — uma sessão, não um dono*
 
-![3. Prompt em forma de resultado numa cópia idêntica — papel, superfície delimitada, estado verificável, sem lista]({B}/step3-outcome-prompt.webp)
+![3. Prompt em forma de resultado numa cópia idêntica — papel, superfície delimitada, estado verificável, sem lista](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step3-outcome-prompt.webp)
 *3. Resultado: papel + superfície delimitada + definição de "bom" — sem checklist*
 
-![4. O diff produzido pelo prompt de resultado — o agente enumerou sozinho cada branch]({B}/step4-outcome-diff.webp)
+![4. O diff produzido pelo prompt de resultado — o agente enumerou sozinho cada branch](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step4-outcome-diff.webp)
 *4. +39 linhas sem ninguém dizer quais testes — ele nomeou cada branch sozinho*
 
-![5. O relatório é um estado, não um checklist — "All 13 tests pass. Branch coverage: …"]({B}/step5-coverage-report.webp)
+![5. O relatório é um estado, não um checklist — "All 13 tests pass. Branch coverage: …"](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step5-coverage-report.webp)
 *5. Ele verifica contra a definição de "bom" e reporta o mapa de cobertura*
 
-![6. Lado a lado — prompt-tarefa: +6 linhas; prompt-resultado: +37. Mesmo modelo, mesmo repo]({B}/step6-side-by-side.webp)
+![6. Lado a lado — prompt-tarefa: +6 linhas; prompt-resultado: +37. Mesmo modelo, mesmo repo](https://till3005.github.io/built-with-devin/assets/guides/bot-outcome-prompts/step6-side-by-side.webp)
 *6. Mesmo modelo, mesmo repo, só muda a forma do prompt: +6 vs +37 — e 4 vs 13 testes*
 
 ## Fontes

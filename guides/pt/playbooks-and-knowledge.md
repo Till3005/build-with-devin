@@ -96,15 +96,15 @@ Playbooks de organização vivem na nuvem, mas a tese central deste guia — *es
 
 **Vídeo (30 s, sem som):** o arquivo de regras → sessão sem lembretes → as três regras obedecidas.
 
-[![Arquivo de regras, um pedido sem dicas, todas as regras seguidas]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![Arquivo de regras, um pedido sem dicas, todas as regras seguidas](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough.mp4)
 
-![1. As regras mineradas e o prompt cru — "Add a line_total(items) function … Write a test for it too."]({B}/step1-rules-and-prompt.webp)
+![1. As regras mineradas e o prompt cru — "Add a line_total(items) function … Write a test for it too."](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step1-rules-and-prompt.webp)
 *1. Três regras commitadas; o prompt não menciona convenções*
 
-![2. Ele reutilizou total(), rodou `python3 -m unittest` (não pytest), 3 testes passaram]({B}/step2-rules-obeyed.webp)
+![2. Ele reutilizou total(), rodou `python3 -m unittest` (não pytest), 3 testes passaram](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step2-rules-obeyed.webp)
 *2. Todas as regras seguidas sem um único lembrete — é a camada de conhecimento funcionando*
 
-![3. Após /exit — `M orders.py`, `M tests/test_orders.py`, e `git log` mostra só o commit inicial]({B}/step3-no-commits.webp)
+![3. Após /exit — `M orders.py`, `M tests/test_orders.py`, e `git log` mostra só o commit inicial](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step3-no-commits.webp)
 *3. Até "nunca commitar" foi respeitado — verificado no git, não no relatório*
 
 ## Fontes

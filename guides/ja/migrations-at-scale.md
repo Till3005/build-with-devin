@@ -103,18 +103,18 @@ Devin 自身のドキュメントはスケールするものを率直に述べ�
 
 **動画（41 秒・無音）：** ベースライン → skill 呼び出し → 4 スライスそれぞれで緑 → `optparse` 残存ゼロ。
 
-[![スライスループ全体——各ツール移行後にテスト緑、レシピどおりのまとめ]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![スライスループ全体——各ツール移行後にテスト緑、レシピどおりのまとめ](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough.mp4)
 
-![1. ベースライン——optparse ツール 4 本、振る舞いテスト 7 件全緑]({B}/step1-baseline.webp)
+![1. ベースライン——optparse ツール 4 本、振る舞いテスト 7 件全緑](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step1-baseline.webp)
 *1. ベースライン：OptionParser 4 本・テスト 7 件・skill レシピをコミット済み*
 
-![2. .devin/skills から skill が自動呼び出し——まず全ツールとテストを読む]({B}/step2-skill-invoked.webp)
+![2. .devin/skills から skill が自動呼び出し——まず全ツールとテストを読む](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step2-skill-invoked.webp)
 *2. `Invoked skill optparse-to-argparse`——レシピが実行を駆動*
 
-![3. スライスループ——「Green. Now calc.py——rest で位置引数を読むので parse_known_args で形を保つ」]({B}/step3-slice-loop.webp)
+![3. スライスループ——「Green. Now calc.py——rest で位置引数を読むので parse_known_args で形を保つ」](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step3-slice-loop.webp)
 *3. スライスごとに検証。calc.py に `parse_known_args` が必要な点も自力で検出*
 
-![4. /exit 後に検証——4 ファイル移行、+18/−18、optparse 参照ゼロ、コミットなし]({B}/step4-verify-diff.webp)
+![4. /exit 後に検証——4 ファイル移行、+18/−18、optparse 参照ゼロ、コミットなし](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step4-verify-diff.webp)
 *4. 検証済みの小さな diff ×4——スライス規律そのもの（並列フリートは除く）*
 
 ## 出典

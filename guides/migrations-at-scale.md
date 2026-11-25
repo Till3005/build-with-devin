@@ -103,18 +103,18 @@ The scale part (hundreds of parallel sessions) needs cloud quota — the *loop* 
 
 **Video (41 s, silent):** baseline → skill invoked → 4 slices, suite green after each → zero `optparse` left.
 
-[![The full slice loop — each tool migrated, suite green after each, per-skill recipe summary]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![The full slice loop — each tool migrated, suite green after each, per-skill recipe summary](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough.mp4)
 
-![1. Baseline — 4 optparse tools, 7 behavior tests green]({B}/step1-baseline.webp)
+![1. Baseline — 4 optparse tools, 7 behavior tests green](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step1-baseline.webp)
 *1. Baseline: 4 tools on OptionParser, 7 tests, one skill recipe committed*
 
-![2. Skill auto-invoked from .devin/skills — then it reads every tool and the test file first]({B}/step2-skill-invoked.webp)
+![2. Skill auto-invoked from .devin/skills — then it reads every tool and the test file first](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step2-skill-invoked.webp)
 *2. `Invoked skill optparse-to-argparse` — the recipe drives the run*
 
-![3. The slice loop — "Green. Now calc.py — it relies on rest for positional args, so parse_known_args preserves that shape."]({B}/step3-slice-loop.webp)
+![3. The slice loop — "Green. Now calc.py — it relies on rest for positional args, so parse_known_args preserves that shape."](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step3-slice-loop.webp)
 *3. Per-slice verify; it even caught that calc.py needs `parse_known_args` to keep positional operands*
 
-![4. Verified after /exit — 4 files migrated, +18/−18, no optparse references left, nothing committed]({B}/step4-verify-diff.webp)
+![4. Verified after /exit — 4 files migrated, +18/−18, no optparse references left, nothing committed](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step4-verify-diff.webp)
 *4. Four small verified diffs — the slice discipline, minus the parallel fleet*
 
 ## Sources
