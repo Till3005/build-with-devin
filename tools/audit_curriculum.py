@@ -43,12 +43,26 @@ def english_guide_number(text):
 
 def title_number(text):
     first = text.splitlines()[0] if text.splitlines() else ""
-    match = re.search(r"\d+", first)
-    return int(match.group(0)) if match else None
+    match = re.match(r"#\s*(?:Guide|指南|ガイド|Guia)\s+(\d+)\b", first, re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
+def structural_lines(text):
+    in_fence = False
+    for line in text.splitlines():
+        if re.match(r"^\s*(```|~~~)", line):
+            in_fence = not in_fence
+            continue
+        if not in_fence:
+            yield line
+
+
+def structural_text(text):
+    return "\n".join(structural_lines(text))
 
 
 def h2_count(text):
-    return sum(1 for line in text.splitlines() if line.startswith("## "))
+    return sum(1 for line in structural_lines(text) if line.startswith("## "))
 
 
 def audit_guide_link(link, readme_name, errors):
@@ -71,8 +85,9 @@ def audit_guides():
         for name, marker in REQUIRED_MARKERS.items():
             if marker not in text:
                 errors.append(f"{rel}: missing {name} marker {marker!r}")
+        structural = structural_text(text)
         for name, pattern in REQUIRED_HEADINGS.items():
-            if not pattern.search(text):
+            if not pattern.search(structural):
                 errors.append(f"{rel}: missing {name} section")
 
         number = english_guide_number(text)
