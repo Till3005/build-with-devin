@@ -1,0 +1,13 @@
+Setup (synthetic fixture, not part of the task): download the attached demo-repo.tgz, extract it to ~/demo-repo, and cd there. It is a local git repo at baseline commit 63863124c167d057942f33d2116aeae6775b9f3e; it has no remote and needs none.
+
+Task:
+
+Add divide(a, b) to app.py: returns a / b, and raises ValueError('division by zero') when b == 0 — follow the style of multiply().
+Rewrite test_app.py as unittest (pytest isn't installed on this machine) covering all four functions, including the zero-division case.
+Success check: `python3 -m unittest -v` passes — run it yourself before reporting done.
+Do not commit.
+
+When done, attach the final app.py, test_app.py, the output of `python3 -m unittest -v`, `git status`, `git diff --stat` and `git rev-parse HEAD` as a single text file, and stop.
+
+[attachment: demo-repo.tgz]
+[+ platform-appended standard child-session routing instructions, not authored by the rerun]

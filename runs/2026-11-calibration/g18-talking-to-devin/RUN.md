@@ -19,14 +19,7 @@ Reconstructed synthetic baseline: [app.py](fixture/app.py) and [test_app.py](fix
 
 ## Exact prompts (verbatim)
 
-The setup instructed the child to fetch and extract the fixture archive; setup preamble not reproduced verbatim. The guide’s brief was sent verbatim:
-
-```text
-Add divide(a, b) to app.py: returns a / b, and raises ValueError('division by zero') when b == 0 — follow the style of multiply().
-Rewrite test_app.py as unittest (pytest isn't installed on this machine) covering all four functions, including the zero-division case.
-Success check: `python3 -m unittest -v` passes — run it yourself before reporting done.
-Do not commit.
-```
+See the [verbatim submitted prompt](prompt.txt), including the setup preamble, the guide’s brief, and the request to attach evidence.
 
 ## Steps
 
