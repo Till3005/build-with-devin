@@ -2,6 +2,7 @@
 
 **目標：** 文書化された導入が実際にやったように成果プロンプトを書く——タスクリストではなく領域の所有。
 **レベル：** 中級 · **所要時間：** 草案 20 分、調整に 1 週間
+**出典：** [Devin Bots 発表](https://devin.ai/blog/introducing-devin-bots) + [Bots 公式ドキュメント](https://docs.devin.ai/work-with-devin/bots) + [built-with-devin](https://github.com/Till3005/built-with-devin#documented-deployments) の導入レポート
 
 大きな数値を出した公開 Bot 導入はすべて、*成果*を割り当てる短いプロンプトから始まった。このガイドは実物を集め、なぜ機能するのかを逆工学する。
 

@@ -2,6 +2,7 @@
 
 **Goal:** write outcome prompts the way the documented deployments actually did — ownership of an area, not a task list.
 **Level:** intermediate · **Time:** 20 min to draft, a week to calibrate
+**Source:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) + [Bots docs](https://docs.devin.ai/work-with-devin/bots) + deployment reports in [built-with-devin](https://github.com/Till3005/built-with-devin#documented-deployments)
 
 Every public bot deployment that produced big numbers started with a short prompt assigning an *outcome*. This guide collects the real ones and reverse-engineers why they work.
 

@@ -72,9 +72,9 @@ The write-up's real lesson: quality came from *iterations* — "the ring draws t
 
 ## Knowledge check
 
-1. Why did the Spraycash author publish every prompt verbatim? *(The prompt sequence *is* the design artifact — art direction through conversation is reproducible only if the conversation is.)*
+1. Why did the Spraycash author publish every prompt verbatim? *(The prompt sequence is the design artifact — art direction through conversation is reproducible only if the conversation is.)*
 2. What does 'generated imagery + layered animation' require that a screenshot mock doesn't? *(Shippable assets and a working animation system — the verification is a rendered page, not a picture of one.)*
-3. When is chat-direction better than a design tool for landing pages? *(When the output must be production code anyway — the design session *is* the implementation.)*
+3. When is chat-direction better than a design tool for landing pages? *(When the output must be production code anyway — the design session is the implementation.)*
 
 ## Walkthrough — brief by mechanism, refine by critique, on Devin CLI v3000.14 (swe-2-flash-medium)
 

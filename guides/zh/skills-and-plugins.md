@@ -1,4 +1,4 @@
-# 指南 17 — Skills 与 plugins：playbook 之后的封装层
+# 指南 16 — Skills 与 plugins：playbook 之后的封装层
 
 **目标：** 把组织里可重复的流程编码成 `SKILL.md` 文件，让每个会话和 Bot 都按它执行——并用 plugins 跨仓库打包分享。
 **级别：** 中级 · 取代 playbook 的那一层

@@ -1,0 +1,373 @@
+{
+  "version": 1,
+  "purpose": "Map official Devin product areas and Devin University outcomes to curriculum coverage. Update this file when official docs, Devin University, or guides change.",
+  "status_definitions": {
+    "covered": "A learner can complete the outcome from current guides, with verification and sources.",
+    "partial": "Some material exists, but a learner cannot complete the full outcome without missing steps or external improvisation.",
+    "gap": "No adequate guide coverage exists.",
+    "watch": "The product behavior is changing or undocumented; track before investing in a stable guide."
+  },
+  "areas": [
+    {
+      "id": "foundations-cloud-agent",
+      "area": "Cloud-agent mental model and the Plan-Act-Verify loop",
+      "official_sources": [
+        "https://learndevin.com/course/devin-foundations",
+        "https://devin.ai/agents101"
+      ],
+      "university": "Devin Foundations",
+      "guides": [
+        "guides/the-session-loop.md",
+        "guides/talking-to-devin.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "Core concepts exist. Keep examples aligned with Devin University terminology."
+    },
+    {
+      "id": "deepwiki-ask-devin-review",
+      "area": "Understand a repository with DeepWiki and Ask Devin, then review the PR with Devin Review",
+      "official_sources": [
+        "https://learndevin.com/course/cloud-101"
+      ],
+      "university": "Cloud 101",
+      "guides": [
+        "guides/the-session-loop.md"
+      ],
+      "status": "partial",
+      "priority": "P0",
+      "notes": "The loop is explained, but there is no dedicated hands-on lab for DeepWiki, Ask Devin, and Devin Review."
+    },
+    {
+      "id": "first-session-delegation",
+      "area": "Scope and delegate a first task, then drive the resulting PR to merge",
+      "official_sources": [
+        "https://learndevin.com/course/cloud-101",
+        "https://docs.devin.ai/essential-guidelines/instructing-devin-effectively"
+      ],
+      "university": "Cloud 101",
+      "guides": [
+        "guides/talking-to-devin.md",
+        "guides/the-session-loop.md"
+      ],
+      "status": "partial",
+      "priority": "P0",
+      "notes": "Prompting doctrine exists. The end-to-end first-task lab needs clearer expected evidence."
+    },
+    {
+      "id": "acu-efficiency",
+      "area": "Understand ACUs, session sizing, modes, parallelism, and Session Insights",
+      "official_sources": [
+        "https://learndevin.com/course/cloud-103"
+      ],
+      "university": "Cloud 103",
+      "guides": [
+        "guides/the-session-loop.md"
+      ],
+      "status": "partial",
+      "priority": "P0",
+      "notes": "Cost is mentioned, but there is no dedicated efficiency guide with XS-XL sizing and post-mortem practice."
+    },
+    {
+      "id": "prompting-and-delegation",
+      "area": "Write delegation-quality prompts with say-how, checkable success, and bounded autonomy",
+      "official_sources": [
+        "https://docs.devin.ai/essential-guidelines/instructing-devin-effectively",
+        "https://devin.ai/agents101"
+      ],
+      "guides": [
+        "guides/talking-to-devin.md",
+        "guides/bot-outcome-prompts.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "Core strength of the current curriculum."
+    },
+    {
+      "id": "bots-fundamentals",
+      "area": "Create and operate a Bot that owns an outcome",
+      "official_sources": [
+        "https://docs.devin.ai/work-with-devin/bots",
+        "https://devin.ai/blog/introducing-devin-bots"
+      ],
+      "guides": [
+        "guides/bots-101-first-bot.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "Strong foundation. Keep the six mechanics synchronized with official docs."
+    },
+    {
+      "id": "bot-templates-sharing",
+      "area": "Use, share, and govern Bot templates",
+      "official_sources": [
+        "https://docs.devin.ai/work-with-devin/bots/templates",
+        "https://devin.ai/bots/templates"
+      ],
+      "guides": [
+        "guides/bots-101-first-bot.md",
+        "guides/bot-outcome-prompts.md"
+      ],
+      "status": "partial",
+      "priority": "P1",
+      "notes": "Mechanics are present, but template governance and public-link risk need a sharper operational checklist."
+    },
+    {
+      "id": "bot-access-security",
+      "area": "Control who can use a Bot and what the Bot can access",
+      "official_sources": [
+        "https://docs.devin.ai/work-with-devin/bots/access-and-security"
+      ],
+      "guides": [
+        "guides/bots-101-first-bot.md",
+        "guides/bots-203-multi-bot-org.md"
+      ],
+      "status": "partial",
+      "priority": "P0",
+      "notes": "Access is introduced, but there is no dedicated security review exercise for sharing a Bot safely."
+    },
+    {
+      "id": "bot-connections-secrets",
+      "area": "Provision Bot connections, MCP sign-ins, plugins, secrets, Slack, and iMessage",
+      "official_sources": [
+        "https://docs.devin.ai/work-with-devin/bots/connections",
+        "https://docs.devin.ai/work-with-devin/bots/slack",
+        "https://docs.devin.ai/work-with-devin/bots/imessage"
+      ],
+      "guides": [
+        "guides/bots-101-first-bot.md"
+      ],
+      "status": "partial",
+      "priority": "P1",
+      "notes": "Needs a provisioning runbook with least-privilege examples."
+    },
+    {
+      "id": "automations-events",
+      "area": "Create event-driven and scheduled automations",
+      "official_sources": [
+        "https://docs.devin.ai/product-guides/automations",
+        "https://docs.devin.ai/tutorial-library/automations"
+      ],
+      "guides": [
+        "guides/automations-101-event-driven.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "Core guide exists. Keep triggers and preflight behavior synchronized with official docs."
+    },
+    {
+      "id": "context-rules-skills-plugins",
+      "area": "Choose among rules, skills, plugins, prompts, and playbooks for reusable context",
+      "official_sources": [
+        "https://learndevin.com/course/cloud-102",
+        "https://docs.devin.ai/product-guides/skills",
+        "https://docs.devin.ai/product-guides/using-playbooks"
+      ],
+      "university": "Cloud 102",
+      "guides": [
+        "guides/playbooks-and-knowledge.md",
+        "guides/skills-and-plugins.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "Coverage exists. Maintain a decision matrix because this area changes quickly."
+    },
+    {
+      "id": "devin-apps",
+      "area": "Build and operate live internal tools with Devin Apps",
+      "official_sources": [
+        "https://devin.ai/blog/devin-apps"
+      ],
+      "guides": [
+        "guides/devin-apps.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Guide exists. Needs periodic verification because Apps are a fast-moving product area."
+    },
+    {
+      "id": "desktop",
+      "area": "Use Devin Desktop and the Agent Command Center",
+      "official_sources": [
+        "https://docs.devin.ai/desktop/changelog"
+      ],
+      "guides": [
+        "guides/devin-desktop.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Current guide exists. Changelog drift should trigger small updates."
+    },
+    {
+      "id": "cli-core",
+      "area": "Use Devin CLI for local sessions and cloud handoff",
+      "official_sources": [
+        "https://docs.devin.ai/cli/index.md",
+        "https://docs.devin.ai/cli/cloud.md",
+        "https://docs.devin.ai/cli/handoff.md"
+      ],
+      "guides": [
+        "guides/devin-cli.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Core CLI workflow exists."
+    },
+    {
+      "id": "cli-advanced-extensibility",
+      "area": "Use CLI subagents, sandboxing, hooks, MCP servers, editor integrations, and plugin packaging",
+      "official_sources": [
+        "https://docs.devin.ai/cli/extensibility/index.md",
+        "https://docs.devin.ai/cli/subagents.md",
+        "https://docs.devin.ai/cli/sandbox.md"
+      ],
+      "guides": [
+        "guides/devin-cli.md",
+        "guides/skills-and-plugins.md"
+      ],
+      "status": "partial",
+      "priority": "P1",
+      "notes": "Advanced product areas are mentioned but need deeper examples and verification."
+    },
+    {
+      "id": "api-automation",
+      "area": "Programmatically create, steer, observe, and analyze Devin sessions through the API",
+      "official_sources": [
+        "https://docs.devin.ai/api-reference/getting-started/teams-quickstart.md",
+        "https://docs.devin.ai/api-reference/common-flows.md",
+        "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions.md"
+      ],
+      "guides": [],
+      "status": "gap",
+      "priority": "P0",
+      "notes": "No dedicated API guide. Important for operators who want repeatable fleet automation."
+    },
+    {
+      "id": "migrations-at-scale",
+      "area": "Run a migration as many small verified pull requests",
+      "official_sources": [
+        "https://docs.devin.ai/use-cases/gallery/index.md"
+      ],
+      "guides": [
+        "guides/migrations-at-scale.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Named-deployment-backed guide exists."
+    },
+    {
+      "id": "living-evals",
+      "area": "Build living evals from production traces",
+      "official_sources": [
+        "https://docs.devin.ai/use-cases/gallery/index.md"
+      ],
+      "guides": [
+        "guides/living-evals.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Advanced guide exists. Reproduction cost must stay explicit."
+    },
+    {
+      "id": "multi-bot-organizations",
+      "area": "Design a multi-Bot organization with ownership, grants, roll-up reporting, and cost controls",
+      "official_sources": [
+        "https://docs.devin.ai/work-with-devin/bots/access-and-security"
+      ],
+      "guides": [
+        "guides/bots-203-multi-bot-org.md",
+        "guides/bots-204-reference-grounded-swarm.md"
+      ],
+      "status": "covered",
+      "priority": "P0",
+      "notes": "A differentiating strength of the curriculum."
+    },
+    {
+      "id": "enterprise-rollout",
+      "area": "Roll out Devin across a team or enterprise with adoption patterns and operating controls",
+      "official_sources": [
+        "https://devin.ai/customers"
+      ],
+      "guides": [
+        "guides/enterprise-playbook.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Case-backed guide exists."
+    },
+    {
+      "id": "admin-governance",
+      "area": "Provision users, configure environments, govern cost, manage secrets, and operate organization controls",
+      "official_sources": [
+        "https://docs.devin.ai/onboard-devin/environment.md",
+        "https://docs.devin.ai/admin/billing/usage.md",
+        "https://docs.devin.ai/admin/billing/usage-policies.md",
+        "https://learndevin.com/course/devin-for-admins"
+      ],
+      "university": "Devin for Admins",
+      "guides": [
+        "guides/enterprise-playbook.md"
+      ],
+      "status": "partial",
+      "priority": "P0",
+      "notes": "Enterprise patterns exist, but there is no admin operations guide."
+    },
+    {
+      "id": "security-operations",
+      "area": "Apply security guardrails, audit trails, network controls, secrets handling, and secure rollout patterns",
+      "official_sources": [
+        "https://docs.devin.ai/product-guides/security-profiles.md",
+        "https://docs.devin.ai/product-guides/secrets.md",
+        "https://docs.devin.ai/admin/security.md",
+        "https://docs.devin.ai/work-with-devin/bots/access-and-security.md",
+        "https://learndevin.com/"
+      ],
+      "university": "Devin for Security",
+      "guides": [],
+      "status": "gap",
+      "priority": "P0",
+      "notes": "Official role track is coming soon. Track docs and prepare a security operations guide when stable."
+    },
+    {
+      "id": "non-engineer-track",
+      "area": "Enable non-technical teammates to delegate, review, and collaborate with Devin safely",
+      "official_sources": [
+        "https://learndevin.com/"
+      ],
+      "university": "Devin for Non-Engineers",
+      "guides": [
+        "guides/talking-to-devin.md",
+        "guides/the-session-loop.md"
+      ],
+      "status": "partial",
+      "priority": "P1",
+      "notes": "Current material assumes engineering context. Needs examples outside code review."
+    },
+    {
+      "id": "design-work",
+      "area": "Art-direct design and visual work through Devin",
+      "official_sources": [
+        "https://dev.to/ibrahimpima/designing-the-spraycash-ui-with-kimi-k3-in-devin-4l2f"
+      ],
+      "guides": [
+        "guides/design-with-devin.md"
+      ],
+      "status": "covered",
+      "priority": "P2",
+      "notes": "Useful role-expanding guide."
+    },
+    {
+      "id": "field-reports",
+      "area": "Learn from named field reports, wins, failures, and published numbers",
+      "official_sources": [
+        "https://github.com/Till3005/built-with-devin"
+      ],
+      "guides": [
+        "guides/community-field-reports.md"
+      ],
+      "status": "covered",
+      "priority": "P1",
+      "notes": "Should consume newly verified registry entries continuously."
+    }
+  ]
+}
