@@ -11,7 +11,7 @@ Test a bounded ownership prompt with one synthetic newsletter signup run and rec
 ## Baseline commit
 
 - Guide repository: `f55cb53db2800d27a794bf939a35a36c156181e2`
-- Sandbox: not created; owner approval pending.
+- Sandbox: `Till3005/bwd-rerun-sandbox` now exists; no Bot run used it.
 
 ## Fixture
 
@@ -53,7 +53,7 @@ Use the guide’s check-in unchanged. For Memory, give a real sandbox-specific c
 
 | Step | Result | Evidence |
 | --- | --- | --- |
-| 1. Create a private Bot | **BLOCKED:** web requires login; API needs owner approval and the scratch repo | [Login gate](../gate-web-login.png); sandbox card pending |
+| 1. Create a private Bot | **BLOCKED:** web requires login; API still needs separate Bot-creation approval | [Login gate](../gate-web-login.png) |
 | 2. Assign a bounded outcome | **BLOCKED:** no Bot, staging URL, or test mailbox | Planned synthetic substitute above |
 | 3. Observe child dispatch and Needs you | **BLOCKED:** no Bot or child | No run |
 | 4. Set standing instructions and verify a Memory correction | **BLOCKED:** no Bot | No run |
@@ -62,11 +62,11 @@ Use the guide’s check-in unchanged. For Memory, give a real sandbox-specific c
 
 ## Broken/blocked steps + fix
 
-After owner approval of “Create the private rerun sandbox repo,” create the sandbox with existing access only, then obtain the required Bot-creation approval. Run one child on the synthetic outcome, capture Needs you and Memory evidence, and archive the Bot after stopping the child. A native newsletter check also needs an already authorized staging URL and synthetic mailbox; a native UI walkthrough needs an already signed-in web surface. If any gate remains, keep the affected step blocked.
+The scratch repo is available, but that does not unblock Bot creation. Dirtboi declined a dedicated test login, and a staging URL and test mailbox are still unavailable. The repair path is unchanged: obtain separate Bot-creation approval, run one child on the synthetic outcome with existing access only, capture Needs you and Memory evidence, then stop the child and archive the Bot. A native newsletter check still needs an already authorized staging URL and synthetic mailbox; the native UI needs an already signed-in web surface.
 
 ## Human interventions
 
-None in a Bot run. Sandbox owner approval was still pending.
+None in a Bot run. Bot-creation approval is still required.
 
 ## Meter
 
