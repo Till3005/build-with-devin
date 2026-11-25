@@ -139,7 +139,19 @@ Read stages in order the first time; after that, jump.
 
 ## Watchlist
 
-Curriculum gaps found by the steward — each needs a fix in all 4 languages.
+Curriculum gaps found by the steward and Source Scout — each needs a fix in all 4 languages.
+
+Open (triaged Nov 25, 2026 — verified Grade A official docs unless noted):
+
+- **72h watchlist (existing-guide updates):**
+  - [Nov 23 release notes](https://docs.devin.ai/release-notes/overview) — side-by-side session panes (`Option/Alt+click`), `Cmd/Ctrl+K` session search, Preflight secret delete warning, Offered vs Required plugins, MCP `Allow for this session`, API-key MCP secret binding, custom MCP Automatic auth, Automations right-click `Run now` → Guides 19, 16, 6.
+  - [SWE-2.1 launch](https://cognition.ai/blog/swe-2-1) (Nov 24, 2026) — Grade A for availability (`SWE-2.1`, `SWE-2.1 Ultrafast`, `SWE-2.1 Cyber`; free on Desktop/CLI through 2026-12-08), Grade C for vendor self-reported benchmarks (do not cite as independent proof) → Guides 17, 12.
+  - [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) — cloud-to-local execution via Desktop Approve / `devin connect` / `devin --cloud` (distinct from Devin Connect) → Guides 17, 12.
+  - [Stacked PRs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub.com-only atomic bottom-up stacks → Guides 19, 11.
+  - [Devin Memory & Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed personal memory vs Bot shared memory, daily Dreaming opt-out, org/enterprise admin locks → Guides 1, 9.
+  - [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) — summary pointer for self-hosted execution → Guide 7.
+- **Proposed new guides (pending approval):** [Dynamic Workflows](https://docs.devin.ai/work-with-devin/dynamic-workflows); [Security Profiles](https://docs.devin.ai/product-guides/security-profiles) & [Cloud OIDC](https://docs.devin.ai/product-guides/oidc); [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
+- **Evidence-boundary cleanup (from Registry Maintainer audit):** downgrade/re-source hold-list claims in Guides 2, 4, 5, 7, 14 (SupaSEO 404 link/numbers, Super Jenny 6× revenue, Android Bot 88% self-merge/GA, Harvey "Phil" 1M LOC/3 wks, Zeb vs unnamed customer 142 objects/8 days).
 
 Resolved Nov 22: Access & Sharing launch (Nov 20 release) — user groups + per-session sharing + granular secrets + repo sync added to Guide 1's sharing section (4 langs).
 
