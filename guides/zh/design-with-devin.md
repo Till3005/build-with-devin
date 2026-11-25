@@ -82,21 +82,21 @@ Spraycash 的圆环、云层、交错入场全部按这个精度指定——交�
 
 **视频（61 秒，无声）：** 裸页 → 机制 brief → 实现 → 渲染 hero → critique → 精修渲染。
 
-[![从裸 HTML 到设计完成的 hero——brief、渲染、critique、再渲染]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![从裸 HTML 到设计完成的 hero——brief、渲染、critique、再渲染](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough.mp4)
 
-![1. 起点——纯 HTML，默认样式]({B}/step1-bare-page.webp)
+![1. 起点——纯 HTML，默认样式](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step1-bare-page.webp)
 *1. 之前：三行文案一个按钮，仅此而已*
 
-![2. 实现汇报——每个机制都具名：dashoffset 1131→203.6 / 1.4s、40/60/90s 云层、56/28/16 字阶]({B}/step2-brief-applied.webp)
+![2. 实现汇报——每个机制都具名：dashoffset 1131→203.6 / 1.4s、40/60/90s 云层、56/28/16 字阶](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step2-brief-applied.webp)
 *2. brief 里的数值原样落进代码——还自己加了 prefers-reduced-motion 兜底*
 
-![3. 首次渲染——navy hero、82% 画环、漂移云层、等宽数字]({B}/step3-first-render.webp)
+![3. 首次渲染——navy hero、82% 画环、漂移云层、等宽数字](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step3-first-render.webp)
 *3. 第一轮产出——是真 CSS/SVG，不是效果图*
 
-![4. critique 落地——云层压到 12% 透明度、环色收到 #3ECF8E、数字区距 48px；它还主动指出 CTA 仍用旧绿]({B}/step4-critique-applied.webp)
+![4. critique 落地——云层压到 12% 透明度、环色收到 #3ECF8E、数字区距 48px；它还主动指出 CTA 仍用旧绿](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step4-critique-applied.webp)
 *4. 手艺活在 critique 里：精确数值进、精确 diff 出——还抓住了我们没提的错配*
 
-![5. 最终渲染——同结构，沉稳平衡]({B}/step5-final-render.webp)
+![5. 最终渲染——同结构，沉稳平衡](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step5-final-render.webp)
 *5. 第二轮产出——迭代是一句话，不是一张工单*
 
 ## Sources

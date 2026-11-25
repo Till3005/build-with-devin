@@ -95,15 +95,15 @@ Devin Coach（官方 Bot 模板）就是为这个生的——每周汇报 Devin 
 
 **视频（30 秒，无声）：** 规则文件 → 没提规矩的新会话 → 三条全守住。
 
-[![家规文件、一个不带提醒的需求、条条被遵守]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![家规文件、一个不带提醒的需求、条条被遵守](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough.mp4)
 
-![1. 挖出来的规则 + 光秃秃的 prompt——“加个 line_total(items)，再写个测试”]({B}/step1-rules-and-prompt.webp)
+![1. 挖出来的规则 + 光秃秃的 prompt——“加个 line_total(items)，再写个测试”](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step1-rules-and-prompt.webp)
 *1. 三条家规已入库；prompt 对约定一字未提*
 
-![2. 它复用了 total()、跑的是 `python3 -m unittest`（不是 pytest）、3 个测试全过]({B}/step2-rules-obeyed.webp)
+![2. 它复用了 total()、跑的是 `python3 -m unittest`（不是 pytest）、3 个测试全过](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step2-rules-obeyed.webp)
 *2. 零提醒下条条遵守——这就是知识层在起作用*
 
-![3. /exit 之后——`M orders.py`、`M tests/test_orders.py`，`git log` 只有 init 一个提交]({B}/step3-no-commits.webp)
+![3. /exit 之后——`M orders.py`、`M tests/test_orders.py`，`git log` 只有 init 一个提交](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step3-no-commits.webp)
 *3. 连「永不提交」都守住了——用 git 验证，不是听它自己汇报*
 
 ## Sources

@@ -82,21 +82,21 @@ Uma página fintech crua (`index.html`, fonte padrão), um brief estilo Spraycas
 
 **Vídeo (61 s, sem som):** página crua → brief mecânico → implementação → hero renderizado → crítica → render refinado.
 
-[![De HTML cru a um hero desenhado — brief, render, crítica, re-render]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![De HTML cru a um hero desenhado — brief, render, crítica, re-render](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough.mp4)
 
-![1. O ponto de partida — HTML puro, estilo padrão]({B}/step1-bare-page.webp)
+![1. O ponto de partida — HTML puro, estilo padrão](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step1-bare-page.webp)
 *1. Antes: três linhas de texto e um botão*
 
-![2. O relatório de implementação — cada mecanismo nomeado: dashoffset 1131→203.6 em 1.4s, camadas 40/60/90s, escala 56/28/16]({B}/step2-brief-applied.webp)
+![2. O relatório de implementação — cada mecanismo nomeado: dashoffset 1131→203.6 em 1.4s, camadas 40/60/90s, escala 56/28/16](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step2-brief-applied.webp)
 *2. Os números do brief caíram verbatim no código — mais um fallback de prefers-reduced-motion que ele mesmo adicionou*
 
-![3. Primeiro render — hero navy, anel desenhando a 82%, nuvens à deriva, números em mono]({B}/step3-first-render.webp)
+![3. Primeiro render — hero navy, anel desenhando a 82%, nuvens à deriva, números em mono](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step3-first-render.webp)
 *3. Saída da rodada 1 — CSS/SVG real, não mockup*
 
-![4. A crítica aplicada — nuvens a 12% de opacidade, anel suavizado para #3ECF8E, gap de stats 48px; ele até apontou que o CTA ainda usava o verde antigo]({B}/step4-critique-applied.webp)
+![4. A crítica aplicada — nuvens a 12% de opacidade, anel suavizado para #3ECF8E, gap de stats 48px; ele até apontou que o CTA ainda usava o verde antigo](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step4-critique-applied.webp)
 *4. O ofício mora na crítica: valores exatos entram, diff exato sai — e ele pegou uma inconsistência que não mencionamos*
 
-![5. Render final — mesma estrutura, equilibrada e sóbria]({B}/step5-final-render.webp)
+![5. Render final — mesma estrutura, equilibrada e sóbria](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step5-final-render.webp)
 *5. Saída da rodada 2 — a iteração é uma mensagem, não um ticket*
 
 ## Fontes

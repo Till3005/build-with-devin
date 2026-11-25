@@ -96,15 +96,15 @@ Bot の **Instructions**（ガイド 1）はナレッジの Bot スコープ版�
 
 **動画（30 秒・無音）：** ルールファイル → 何も言われていないセッション → 3 条すべて遵守。
 
-[![ハウスルール、ヒントなしの依頼、すべてのルール遵守]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![ハウスルール、ヒントなしの依頼、すべてのルール遵守](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough.mp4)
 
-![1. 採掘したルールと素のプロンプト——「line_total(items) を追加して。テストも書いて」]({B}/step1-rules-and-prompt.webp)
+![1. 採掘したルールと素のプロンプト——「line_total(items) を追加して。テストも書いて」](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step1-rules-and-prompt.webp)
 *1. ルール 3 条をコミット済み。プロンプトは規約に触れない*
 
-![2. total() を再利用し、`python3 -m unittest`（pytest ではなく）を実行、3 件全パス]({B}/step2-rules-obeyed.webp)
+![2. total() を再利用し、`python3 -m unittest`（pytest ではなく）を実行、3 件全パス](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step2-rules-obeyed.webp)
 *2. リマインドなしで全遵守——ナレッジ層の実働*
 
-![3. /exit 後——`M orders.py`、`M tests/test_orders.py`、`git log` には init コミットのみ]({B}/step3-no-commits.webp)
+![3. /exit 後——`M orders.py`、`M tests/test_orders.py`、`git log` には init コミットのみ](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step3-no-commits.webp)
 *3. 「コミット禁止」まで守られた——報告ではなく git で検証*
 
 ## 出典

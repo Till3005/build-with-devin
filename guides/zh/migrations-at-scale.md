@@ -103,18 +103,18 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 
 **视频（41 秒，无声）：** 基线 → skill 被调用 → 4 片各绿 → optparse 残留为零。
 
-[![完整切片回路——每个工具迁完都跑测试，逐 skill 配方的收尾汇报]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![完整切片回路——每个工具迁完都跑测试，逐 skill 配方的收尾汇报](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/walkthrough.mp4)
 
-![1. 基线——4 个 optparse 工具，7 个行为测试全绿]({B}/step1-baseline.webp)
+![1. 基线——4 个 optparse 工具，7 个行为测试全绿](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step1-baseline.webp)
 *1. 基线：4 个 OptionParser 工具、7 个测试、一个已提交的 skill 配方*
 
-![2. skill 从 .devin/skills 自动调用——先读全部工具和测试文件再动手]({B}/step2-skill-invoked.webp)
+![2. skill 从 .devin/skills 自动调用——先读全部工具和测试文件再动手](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step2-skill-invoked.webp)
 *2. `Invoked skill optparse-to-argparse`——配方驱动整轮*
 
-![3. 切片回路——“Green. Now calc.py——它靠 rest 读位置参数，所以用 parse_known_args 保持形状。”]({B}/step3-slice-loop.webp)
+![3. 切片回路——“Green. Now calc.py——它靠 rest 读位置参数，所以用 parse_known_args 保持形状。”](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step3-slice-loop.webp)
 *3. 逐片验证；它甚至自己发现 calc.py 需要 `parse_known_args` 保位置参数*
 
-![4. /exit 后验证——4 个文件迁完，+18/−18，optparse 引用清零，零提交]({B}/step4-verify-diff.webp)
+![4. /exit 后验证——4 个文件迁完，+18/−18，optparse 引用清零，零提交](https://till3005.github.io/built-with-devin/assets/guides/migrations-at-scale/step4-verify-diff.webp)
 *4. 四个各自验证过的小 diff——这就是切片纪律，只是没有并行舰队*
 
 ## Sources

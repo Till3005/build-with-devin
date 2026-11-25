@@ -82,21 +82,21 @@ A bare fintech page (`index.html`, default sans-serif), one Spraycash-style brie
 
 **Video (61 s, silent):** bare page → mechanism brief → implementation → rendered hero → critique → refined render.
 
-[![From a bare HTML page to a designed hero — brief, render, critique, re-render]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![From a bare HTML page to a designed hero — brief, render, critique, re-render](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/walkthrough.mp4)
 
-![1. The starting point — plain HTML, default styling]({B}/step1-bare-page.webp)
+![1. The starting point — plain HTML, default styling](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step1-bare-page.webp)
 *1. Before: three lines of copy and a button, nothing else*
 
-![2. The implementation report — every mechanism named: dashoffset 1131→203.6 over 1.4s, 40/60/90s layers, 56/28/16 scale]({B}/step2-brief-applied.webp)
+![2. The implementation report — every mechanism named: dashoffset 1131→203.6 over 1.4s, 40/60/90s layers, 56/28/16 scale](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step2-brief-applied.webp)
 *2. The brief's numbers landed verbatim in the code — plus a prefers-reduced-motion fallback it added itself*
 
-![3. First render — navy hero, draw-on ring at 82%, drifting cloud layers, mono stat figures]({B}/step3-first-render.webp)
+![3. First render — navy hero, draw-on ring at 82%, drifting cloud layers, mono stat figures](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step3-first-render.webp)
 *3. Round 1 output — real CSS/SVG, not a mockup*
 
-![4. The critique round applied — clouds to 12% opacity, ring muted to #3ECF8E, stats gap 48px; it even flagged the CTA still used the old green]({B}/step4-critique-applied.webp)
+![4. The critique round applied — clouds to 12% opacity, ring muted to #3ECF8E, stats gap 48px; it even flagged the CTA still used the old green](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step4-critique-applied.webp)
 *4. Critique is where the craft lives: exact values in, exact diff out — and it caught a mismatch we didn't mention*
 
-![5. Final render — same structure, muted and balanced]({B}/step5-final-render.webp)
+![5. Final render — same structure, muted and balanced](https://till3005.github.io/built-with-devin/assets/guides/design-with-devin/step5-final-render.webp)
 *5. Round 2 output — the loop is a message, not a ticket*
 
 ## Sources

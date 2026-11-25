@@ -95,15 +95,15 @@ Org playbooks live in the cloud, but the core claim of this guide — *write the
 
 **Video (30 s, silent):** the rule file → an unprompted session → all three rules obeyed.
 
-[![House rules file, one unprompted feature request, every rule followed]({B}/walkthrough-poster.webp)]({B}/walkthrough.mp4)
+[![House rules file, one unprompted feature request, every rule followed](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough-poster.webp)](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/walkthrough.mp4)
 
-![1. The mined rules and the bare prompt — "Add a line_total(items) function … Write a test for it too."]({B}/step1-rules-and-prompt.webp)
+![1. The mined rules and the bare prompt — "Add a line_total(items) function … Write a test for it too."](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step1-rules-and-prompt.webp)
 *1. Three house rules committed; the prompt says nothing about conventions*
 
-![2. It reused total(), ran `python3 -m unittest` (not pytest), all 3 tests pass]({B}/step2-rules-obeyed.webp)
+![2. It reused total(), ran `python3 -m unittest` (not pytest), all 3 tests pass](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step2-rules-obeyed.webp)
 *2. Every rule obeyed with zero reminders — that is the knowledge layer working*
 
-![3. After /exit — `M orders.py`, `M tests/test_orders.py`, and `git log` shows only the init commit]({B}/step3-no-commits.webp)
+![3. After /exit — `M orders.py`, `M tests/test_orders.py`, and `git log` shows only the init commit](https://till3005.github.io/built-with-devin/assets/guides/playbooks-and-knowledge/step3-no-commits.webp)
 *3. Even "never commit" held — verified from git, not from its report*
 
 ## Sources
