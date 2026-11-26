@@ -127,6 +127,12 @@ Automations 页面右上 **Create automation** 下拉里有四条创建路径：
 ![8. 验证过的产出——一份真把本周 103 个 commit 分类的 changelog，以附件交付](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
 *8. 验证过的产出——一份真把本周 103 个 commit 分类的 changelog，以 artifact 交付*
 
+## 安全地运营它
+
+- **信任排程前先手动跑一遍。**在 Automations 列表里右键一行，可以看到 **Run now**、**Open in new tab** 和 **Copy link**。在让 cron 或 webhook 无人值守运行前，先用 **Run now** 带一个无害 payload 跑一次；它会走同一条 action 路径，不必等下一次触发。
+- **secret 可能是 automation 的依赖。**删除 org secret 前，Secrets 页面会列出哪些 automation 的 Preflight check 正在使用它。先轮换或重新绑定这些检查；直接删除会把一次配置清理变成故障。
+- **Preflight 是成本闸门，不是正确性证明。**用它便宜地跳过无关事件；但即使 preflight 通过，破坏性动作仍要留在显式 review 后面。
+
 ## Verify it
 
 - [ ] 手动触发一次（评论 `/devin test` 或推一个失败 commit），看到会话带着事件载荷启动
@@ -150,3 +156,4 @@ Automations 页面右上 **Create automation** 下拉里有四条创建路径：
 - [Automations — docs](https://docs.devin.ai/product-guides/automations)
 - [Devin Automations QuickStart (video)](https://www.youtube.com/watch?v=6xxKtIpgOyE)
 - 相关：[第 3 篇 — 定时哨兵 Bot](bots-202-scheduled-sentinel.md)（在 cron 之上加 Bot 判断）
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — 右键 `Run now`；删除 secret 前提示 Preflight 依赖

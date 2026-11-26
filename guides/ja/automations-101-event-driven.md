@@ -127,6 +127,12 @@ Automations ページ右上の **Create automation** ドロップダウンに 4 
 ![8. 検証された出力 — 今週の 103 コミットを分類した本物の changelog、artifact として配信](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
 *8. 検証された出力 — 今週の 103 コミットを分類した本物の changelog、artifact として配信*
 
+## 安全に運用する
+
+- **スケジュールを信用する前に手動実行する。**Automations 一覧で行を右クリックすると、**Run now**、**Open in new tab**、**Copy link** が出る。cron や webhook を放置する前に、無害な payload で **Run now** を一度実行する。次の tick を待たずに同じ action 経路を確かめられる。
+- **secret は automation の依存になりうる。**org secret を削除する前、Secrets ページにはその secret を使っている Preflight check を持つ automation が一覧される。先にローテーションまたは再バインドする。先に消すと、設定掃除が障害になる。
+- **Preflight はコストゲートであり、正しさの証明ではない。**無関係なイベントを安く弾くには有効だが、preflight が通っても、破壊的な action は明示的レビューの後ろに置く。
+
 ## 検証チェックリスト
 
 - [ ] トリガーを手動で一度発火（`/devin test` とコメント、または失敗コミットを push）し、イベントペイロード付きでセッションが始まるのを確認した
@@ -150,3 +156,4 @@ Automations ページ右上の **Create automation** ドロップダウンに 4 
 - [Automations — ドキュメント](https://docs.devin.ai/product-guides/automations)
 - [Devin Automations QuickStart（動画）](https://www.youtube.com/watch?v=6xxKtIpgOyE)
 - 関連：[ガイド 3 — 定期監視 Bot](bots-202-scheduled-sentinel.md) cron の上に Bot の判断を載せる
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — 右クリックの `Run now`；secret 削除時に Preflight 依存を警告
