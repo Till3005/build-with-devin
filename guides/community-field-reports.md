@@ -67,11 +67,10 @@ The reusable ideas inside: **policy-table gating** (arufian: only auto-PR low-ri
 
 ## The Bots era — first receipts (Nov 2026)
 
-The post-launch reports are thinner but worth tracking — all three self-reported, none independently benchmarked:
+The post-launch reports are thinner but worth tracking — both are self-reported, neither independently benchmarked:
 
 - **swyx's week** — handed a Devin Bots org his AEO, QA, cross-platform porting, personal admin and video editing; moved off local worktrees. Verdict: *"you don't want 'AI Employees', you want agent managers that own outcomes."* His caveat, stated himself: Cognition-affiliated, no quality metrics — practitioner report, not benchmark ([post](https://x.com/swyx/status/2122746401482592549)).
 - **raijuna's 100 Days** — the factory operator porting his own agent factory to Bots. Day 1: ~15 Bots live, 18% of weekly quota on setup alone, honest UX complaints (session tracking doesn't scale to a fleet). Day 2: Bots lost context within minutes on a GPT model (his caveat: maybe the model), 33% of the week gone — *"doesn't compete with open source and what you can build on your own machines"* yet ([Day 1](https://www.raijuna.com/blog/devin-100-day-challenge-day-1), [Day 2](https://www.raijuna.com/blog/devin-100-day-challenge-day-2)).
-- **SupaSEO** — the cleanest shipped artifact so far: an 8-Bot Chief-of-Staff→lead→specialist chain built a paying SaaS (local SEO + AI-citation tracking, $99) in ~48h, ~951 commits; the human wrote only the landing page. His reproducible tips: shared specialist Bots across projects, granular prompts ([launch thread](https://x.com/noah_z_zhang/status/2124146220159377769)).
 
 ## The distilled lessons
 
