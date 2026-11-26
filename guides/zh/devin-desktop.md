@@ -21,6 +21,8 @@ Command Center 是会话中枢，不是编辑器：
 - **标签页**（v3.13.4）：一个窗口里开多个会话和页面，每个标签有自己的前进/后退历史——当成你舰队的浏览器用。
 - **会话头部 "..." 菜单**：该会话的 MCP servers——按会话开关某一个、或重新授权。
 - **Devin Review**：PR 走查（diff、bug、测试录像）以页面形式开在同一个窗口——即[指南 19](the-session-loop.md) 环路里的审查一环。
+- **分屏面板**（11 月 23 日）：`Option/Alt+点击` 会话链接可并排打开——对比两次运行，或一边盯长会话一边开新任务。
+- **`Cmd/Ctrl+K` 会话搜索**：会话搜索已移入命令面板，Sessions 侧栏的内联搜索移除。
 
 ## Devin Local —— daemon 变化
 
@@ -34,11 +36,26 @@ Command Center 是会话中枢，不是编辑器：
 
 实际后果：本地工作变成持久的了。开个长任务，合上电脑，从另一个客户端接回来——会话一直在跑。
 
+## Local Hands —— 云会话伸手到你的机器
+
+Local Hands 和 Devin Local 不是一回事。Devin Local 本身就是跑在你机器上的会话；Local Hands 则保留云会话和它的 VM，再给它一组经过你批准、在你电脑上执行的工具，用来访问文件、命令或 VPN 内资源。
+
+- Desktop 里直接批准会话中的访问卡。
+- Web 端按卡片提示运行 `devin connect`，并保持进程运行。
+- 若会话用 `devin --cloud` 启动，CLI 会自动连接你的机器。
+- 只有会话 owner 能连接机器；无人值守的定时会话、automation、service-user API 会话不能发起请求。
+
+Local Hands **不是 Devin Connect**（私有网络功能）。只在云 agent 需要本地状态时使用；每次文件复制和命令执行都按跨边界操作对待。
+
 ## IDE 模式
 
 - 内嵌 IDE 用 **Cmd/Ctrl+S** 手动保存（不再自动保存）；未保存标签带个点。
 - 在 Devin Local 的浏览器预览里，**点选一个页面元素或 console 输出会直接放进 composer**——指着 bug 而不是描述 bug。
 - Files 标签能预览 PDF、把 CSV/TSV 渲染成表格、播放媒体。
+
+## 模型说明 —— SWE-2.1
+
+SWE-2.1 已在 Devin Desktop、Cloud、CLI 提供。Cognition 称 Desktop/CLI 到 2026 年 12 月 8 日免费，并以折扣价持续到 2027 年 1 月 30 日。**SWE-2.1 Ultrafast** 通过 Cerebras 以 10× token 速度提供同一模型；**SWE-2.1 Cyber** 正在进入 Devin Security，用更宽松的安全护栏支持防御性安全工作。公开 benchmark 数字按厂商自报处理，不当作独立验证。
 
 ## 两个值得抄的工作流
 
@@ -107,6 +124,8 @@ Command Center 是会话中枢，不是编辑器：
 ## 来源
 
 - [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（标签页、后台本地会话）、v3.14（Bots 进 Desktop、`DetectProxy` 策略）
-- [Devin release notes](https://docs.devin.ai/release-notes/2026) —— 11 月 16 日：*Mark done* 取代 Archive、订阅侧栏、Phonebook
+- [Devin release notes](https://docs.devin.ai/release-notes/2026) —— 11 月 16/23 日：*Mark done*、订阅侧栏、Phonebook、分屏、Cmd/Ctrl+K 会话搜索
+- [Local Hands 文档](https://docs.devin.ai/work-with-devin/local-hands)——云会话经 Desktop、`devin connect` 或 `devin --cloud` 访问你的机器
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1)——可用性与厂商自报模型声明
 - [Devin CLI changelog](https://docs.devin.ai/cli/changelog/stable) —— v3000.13.4：`devin daemon`、`--process-model`、会话监视器
 - 相关：[指南 12 — Devin CLI 与可扩展性](devin-cli.md) · [指南 1 — 你的第一个 Bot](bots-101-first-bot.md)

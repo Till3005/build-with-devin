@@ -21,6 +21,8 @@ Command Center はセッションのハブであり、エディタではない�
 - **タブ**（v3.13.4）：1つのウィンドウで複数セッションとページを開け、各タブに独自の戻る/進む履歴——フリートのブラウザと考える。
 - **セッションヘッダーの "..." メニュー**：そのセッションの MCP servers——セッションごとに切替え・再認証。
 - **Devin Review**：PR ウォークスルー（diff、バグ、テスト録画）が同じウィンドウのページとして開く——[ガイド 19](the-session-loop.md) のループにおけるレビュー工程。
+- **分割ペイン**（11/23）：`Option/Alt+click` でセッションリンクを並べて開く——2 つの実行を比較、または長時間セッションを監視しながら別件を開始。
+- **`Cmd/Ctrl+K` のセッション検索**：セッション検索はコマンドパレットへ移動し、Sessions サイドバーのインライン検索は廃止。
 
 ## Devin Local —— daemon 化
 
@@ -34,11 +36,26 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 
 実務上の帰結：ローカル作業が永続化した。長いタスクを始めてノートPCを閉じ、別クライアントから再接続できる——セッションは動き続けている。
 
+## Local Hands —— クラウドセッションがあなたのマシンに届く
+
+Local Hands は Devin Local とは別物。Devin Local はマシン上で動くセッション本体。Local Hands はクラウドセッションと VM を保ったまま、ファイル・コマンド・VPN 内リソースのために、承認済みツール一式をあなたのコンピュータへ追加する。
+
+- Desktop ではセッションのアクセスカードを承認。
+- Web アプリではカードに表示される `devin connect` を実行したままにする。
+- `devin --cloud` で始めたセッションなら CLI が自動接続。
+- 接続できるのはセッション所有者だけ。無人の scheduled session、automation、service-user の API session は要求できない。
+
+Local Hands は **Devin Connect ではない**（プライベートネットワーク機能）。クラウド agent がローカル状態を必要とする時だけ使い、ファイルコピーとコマンド実行は境界を越える操作として扱う。
+
 ## IDE モード
 
 - 埋め込み IDE は **Cmd/Ctrl+S** で手動保存（自動保存は廃止）。未保存タブにはドットが付く。
 - Devin Local のブラウザプレビューで**ページ要素やコンソール出力を選ぶと composer に追加される**——バグを説明せず、指し示す。
 - Files タブは PDF をプレビュー、CSV/TSV を表として描画、メディアを再生する。
+
+## モデルメモ —— SWE-2.1
+
+SWE-2.1 は Devin Desktop、Cloud、CLI で利用可能。Cognition によると Desktop/CLI では 2026-12-08 まで無料、2027-01-30 まで割引価格。**SWE-2.1 Ultrafast** は Cerebras 経由で同一モデルを 10× の token 速度で提供。**SWE-2.1 Cyber** は防御的セキュリティ用途に向け、より permissive な safeguards で Devin Security に展開中。公開 benchmark はベンダー自報として扱い、独立検証と混同しない。
 
 ## 真似る価値のあるワークフロー2つ
 
@@ -107,6 +124,8 @@ v3.13.4（Desktop）/ v3000.13.4（CLI）以降、ローカルセッションは
 ## ソース
 
 - [Devin Desktop changelog](https://docs.devin.ai/desktop/changelog) —— v3.13.4（タブ、バックグラウンドローカルセッション）、v3.14（Desktop 内 Bots、`DetectProxy` ポリシー）
-- [Devin リリースノート](https://docs.devin.ai/release-notes/2026) —— 11/16：*Mark done* が Archive を置換、購読サイドバー、Phonebook
+- [Devin リリースノート](https://docs.devin.ai/release-notes/2026) —— 11/16・11/23：*Mark done*、購読サイドバー、Phonebook、分割ペイン、Cmd/Ctrl+K 検索
+- [Local Hands ドキュメント](https://docs.devin.ai/work-with-devin/local-hands) — Desktop、`devin connect`、`devin --cloud` 経由のマシンアクセス
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1) — 提供形態とベンダー自報のモデル主張
 - [Devin CLI changelog](https://docs.devin.ai/cli/changelog/stable) —— v3000.13.4：`devin daemon`、`--process-model`、セッションモニター
 - 関連：[ガイド 12 — Devin CLI と拡張性](devin-cli.md) · [ガイド 1 — 初めての Bot](bots-101-first-bot.md)

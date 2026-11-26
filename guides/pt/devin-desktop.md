@@ -21,6 +21,8 @@ O Command Center é o hub de sessões — não é um editor:
 - **Abas** (v3.13.4): várias sessões e páginas abertas numa janela, cada aba com histórico próprio de voltar/avançar — trate como o navegador da sua frota.
 - **Menu "..." do cabeçalho da sessão**: os MCP servers da sessão — liga/desliga um, ou reautentica, por sessão.
 - **Devin Review**: o walkthrough do PR (diff, bugs, gravação do teste) abre como página na mesma janela — a etapa de revisão do loop do [Guia 19](the-session-loop.md).
+- **Paines lado a lado** (23/11): `Option/Alt+clique` num link de sessão abre em split pane — compare duas execuções ou monitore uma sessão longa enquanto inicia outra.
+- **Busca de sessões em `Cmd/Ctrl+K`**: a busca mudou para a command palette; a busca inline da barra Sessions foi removida.
 
 ## Devin Local — a mudança do daemon
 
@@ -34,11 +36,26 @@ Desde a v3.13.4 (Desktop) / v3000.13.4 (CLI), uma sessão local roda num **proce
 
 Consequência prática: trabalho local agora é durável. Comece uma tarefa longa, feche o laptop, reconecte de outro cliente — a sessão continuou rodando.
 
+## Local Hands — uma sessão cloud alcança sua máquina
+
+Local Hands é diferente de Devin Local. Devin Local *é* uma sessão rodando na sua máquina; Local Hands mantém a sessão cloud e a VM dela, e adiciona um segundo conjunto de ferramentas aprovadas no seu computador para arquivos, comandos ou recursos atrás da VPN.
+
+- No Desktop, aprove o cartão de acesso da sessão.
+- No app web, rode o comando `devin connect` mostrado no cartão e deixe em execução.
+- Se a sessão começou com `devin --cloud`, o CLI conecta sua máquina automaticamente.
+- Só o dono da sessão pode conectar uma máquina; sessões agendadas sem humano, automations e sessões API de service user não podem pedir isso.
+
+Local Hands **não é Devin Connect** (o recurso de rede privada). Use quando o agente cloud precisa de estado local; trate cada cópia de arquivo e comando como travessia de fronteira.
+
 ## Modo IDE
 
 - O IDE embutido salva com **Cmd/Ctrl+S** (sem auto-save); abas não salvas mostram um ponto.
 - No preview do navegador do Devin Local, **selecionar um elemento da página ou saída do console adiciona ao composer** — aponte o bug em vez de descrevê-lo.
 - A aba Files pré-visualiza PDFs, renderiza CSV/TSV como tabelas e toca mídia.
+
+## Notas de modelo — SWE-2.1
+
+SWE-2.1 está disponível no Devin Desktop, Cloud e CLI. Segundo a Cognition, é grátis no Desktop/CLI até 8 de dezembro de 2026 e tem preço promocional até 30 de janeiro de 2027. **SWE-2.1 Ultrafast** serve o mesmo modelo a 10× velocidade de tokens via Cerebras; **SWE-2.1 Cyber** está sendo lançado no Devin Security com salvaguardas mais permissivas para trabalho defensivo. Trate os benchmarks publicados como autorrelato do fornecedor, não verificação independente.
 
 ## Dois fluxos que valem copiar
 
@@ -107,6 +124,8 @@ Uma execução de verdade, não uma montagem: macOS, plano Pro. Uma sessão Devi
 ## Fontes
 
 - [Changelog do Devin Desktop](https://docs.devin.ai/desktop/changelog) — v3.13.4 (abas, sessões locais em background), v3.14 (Bots no Desktop, política `DetectProxy`)
-- [Release notes do Devin](https://docs.devin.ai/release-notes/2026) — 16/11: *Mark done* substitui Archive, barra de assinaturas, Phonebook
+- [Release notes do Devin](https://docs.devin.ai/release-notes/2026) — 16/23 de nov.: *Mark done*, barra de assinaturas, Phonebook, split panes, busca Cmd/Ctrl+K
+- [Docs de Local Hands](https://docs.devin.ai/work-with-devin/local-hands) — acesso de sessão cloud à sua máquina via Desktop, `devin connect` ou `devin --cloud`
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1) — disponibilidade e claims de modelo autorrelatados
 - [Changelog do Devin CLI](https://docs.devin.ai/cli/changelog/stable) — v3000.13.4: `devin daemon`, `--process-model`, monitor de sessões
 - Relacionado: [Guia 12 — Devin CLI e extensibilidade](devin-cli.md) · [Guia 1 — Seu primeiro Bot](bots-101-first-bot.md)
