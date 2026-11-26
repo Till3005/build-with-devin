@@ -78,6 +78,12 @@ Small error rates compound across thousands of slices. Operate on a dashboard, n
 - Failed slices feed back into the skill (the docs' own loop: *"feed session links into Devin to patch the gaps"*)
 - Merge order is free because slices are isolated — exploit it
 
+## When the migration diff needs a stack
+
+When several migration slices form one coherent dependency chain, do not squash them into one impossible review. When a coherent change has natural layers — schema, transformation machinery, one migrated slice, then cleanup — ask Devin for a **stacked PR series**. Each layer is a small PR based on the one below it; merging is bottom-up and atomic, and GitHub retargets the remaining layers as the base lands.
+
+The constraints matter: stacked PRs are **GitHub.com only**, contain 2–100 PRs, and cannot use the regular GitHub merge flow. Keep routine independent migration slices as ordinary parallel PRs; reserve stacks for ordered dependencies that must land together.
+
 ## Verify it
 
 - [ ] Every slice finishes under ~90 min and merges independently
@@ -124,3 +130,4 @@ The scale part (hundreds of parallel sessions) needs cloud quota — the *loop* 
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
 - [Cognition's .NET migration playbook](https://cognition.com/blog/dotnet-migration-with-devin) — Ask Devin ranks controllers by context, coordinated sessions port in parallel: months → weeks (vendor-published)
 - Related: [Guide 7 — Enterprise rollout](enterprise-playbook.md) (Shape 1 is this guide at org scale)
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — bottom-up atomic stacks and their GitHub.com-only limits

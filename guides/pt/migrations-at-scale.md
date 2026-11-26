@@ -78,6 +78,12 @@ Taxas de erro pequenas compõem através de milhares de fatias. Opere num dashbo
 - Fatias falhas alimentam de volta o skill (o loop dos próprios docs: *"feed session links into Devin to patch the gaps"*)
 - A ordem de merge é livre porque as fatias são isoladas — explore isso
 
+## Quando o diff da migração precisa de uma stack
+
+Quando várias fatias de migração formam uma única cadeia coerente de dependências, não as esmague num diff impossível de revisar. Quando uma mudança coerente tem camadas naturais — schema, maquinaria de transformação, uma fatia migrada e limpeza — peça a Devin uma **série de PRs empilhados**. Cada camada é um PR pequeno baseado no anterior; o merge é bottom-up e atômico, e o GitHub retargeta as camadas restantes conforme a base entra.
+
+As restrições importam: PRs empilhados existem **somente no GitHub.com**, contêm 2–100 PRs e não podem usar o fluxo normal de merge do GitHub. Mantenha fatias independentes de migração como PRs paralelos comuns; reserve stacks para dependências ordenadas que precisam entrar juntas.
+
 ## Checklist de verificação
 
 - [ ] Toda fatia termina em ~90 min e mergeia independentemente
@@ -124,3 +130,4 @@ A parte de escala (centenas de sessões paralelas) precisa de cota de nuvem — 
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
 - [Playbook de migração .NET da Cognition](https://cognition.com/blog/dotnet-migration-with-devin) — Ask Devin ranqueia controllers por contexto, sessões coordenadas portam em paralelo: meses → semanas (publicado pelo fornecedor)
 - Relacionado: [Guia 7 — Rollout enterprise](enterprise-playbook.md) (a Forma 1 é este guia em escala de org)
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — stacks bottom-up atômicas e limites exclusivos do GitHub.com

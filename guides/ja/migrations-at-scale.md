@@ -78,6 +78,12 @@ Devin 自身のドキュメントはスケールするものを率直に述べ�
 - 失敗したスライスはスキルにフィードバック（ドキュメント自身のループ：*「セッションリンクを Devin に投入してギャップをパッチ」*）
 - スライスが孤立しているためマージ順は自由——それを活用する
 
+## 移行 diff に stack が必要なとき
+
+複数の移行スライスが一貫した依存チェーンを成すとき、それらをレビュー不能な巨大 diff に押し込まない。schema、変換機構、最初の移行スライス、クリーンアップのように、一貫した変更に自然な層があるときは、Devin に **stacked PR series** を頼む。各層は下の PR の上に乗る小さな PR で、マージは bottom-up かつアトミック。base が入ると GitHub が残りの層を自動で retarget する。
+
+制約も重要である。stacked PRs は **GitHub.com のみ**、2–100 件の PR で構成され、GitHub の通常 merge フローは使えない。独立した通常の移行スライスは普通の並列 PR のままにし、順序どおりに一緒に入れる必要がある依存層だけを stack にする。
+
 ## 検証チェックリスト
 
 - [ ] すべてのスライスが約 90 分以内に終わり独立してマージできる
@@ -124,3 +130,4 @@ Devin 自身のドキュメントはスケールするものを率直に述べ�
 - [ユースケースギャラリー — 移行](https://docs.devin.ai/use-cases/gallery/index.md)
 - [Cognition の .NET 移行プレイブック](https://cognition.com/blog/dotnet-migration-with-devin) —— Ask Devin がコンテキストでコントローラーをランク付け、連携セッションが並列移植：月 → 週（ベンダー公開）
 - 関連：[ガイド 7 — エンタープライズ導入](enterprise-playbook.md)（形 1 はこのガイドの組織スケール版）
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — bottom-up atomic stack と GitHub.com 限定の制約

@@ -78,6 +78,12 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 - 失败的片回灌进 skill（文档自己的回路：*"feed session links into Devin to patch the gaps"*——把会话链接喂给 Devin 修补缺口）
 - 片是隔离的所以合并顺序自由——利用它
 
+## 什么时候迁移 diff 需要 stack
+
+当多个迁移切片构成同一条连贯依赖链时，不要把它们压成一个无法 review 的巨 diff。当一个连贯改动天然有层次——schema、转换机制、第一个迁移切片、清理——让 Devin 做 **stacked PR series**。每层都是压在下一层之上的小 PR；合并自下而上且原子完成，底层落地后 GitHub 会自动 retarget 剩余层。
+
+限制也很重要：stacked PRs **只支持 GitHub.com**，包含 2–100 个 PR，不能使用 GitHub 常规 merge 流程。彼此独立的常规迁移切片仍走普通并行 PR；只有必须按顺序落地的依赖层才用 stack。
+
 ## Verify it
 
 - [ ] 每片 ~90 分钟内完成且可独立合并
@@ -124,3 +130,4 @@ skill 定稿后，把切片扇出到各会话——走 [API](https://docs.devin.
 - [Use-case gallery — Migrations](https://docs.devin.ai/use-cases/gallery/index.md)
 - [Cognition 的 .NET 迁移 playbook](https://cognition.com/blog/dotnet-migration-with-devin) —— Ask Devin 按上下文给 controller 排序，协调会话并行移植：月 → 周（厂商发布）
 - 相关：[第 7 篇 — 企业级铺开](enterprise-playbook.md)（形态 1 就是本篇的组织级版本）
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — 自下而上的原子 stack 及其 GitHub.com 限定
