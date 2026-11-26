@@ -85,6 +85,13 @@ permissions:
 ![5. 結果：フルカバレッジ — 全ブランチを挙げた関数別表；ファイル無変更、コミットなし](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
 *5. 結果：フルカバレッジ — SKILL.md が要求した通りのレポート*
 
+## plugins と MCP アクセスを治理する
+
+- **Offered と Required は管理者の選択。**組織および enterprise の管理者は marketplace plugin を **Required** ではなく **Offered** にできる。Required は管理基線の一部で、Offered はメンバー任意の追加である。便利パックを Required にしない——全メンバーが継承する管理基線が広がる。
+- **MCP 承認は最も狭い範囲で。**MCP ツール承認カードに **Allow for this session** が追加された。同じタスク内では繰り返し必要だが権限はセッションと一緒に消えてほしい場合はこれを優先し、広い承認は監査済みツールだけに残す。
+- **API key は secrets に置く。**API-key marketplace MCP server の空 header は secret にバインドされ、未使用 secret はフラグされる。生キーを plugin 設定、プロンプト、チャットに入れない。
+- **Automatic は未認証という意味ではない。**新しい custom MCP server は最初から **Automatic** authentication が選択される。本番スコープへ接続する前に、サーバーが実際に何をネゴシエートするか確認する。
+
 ## 検証チェックリスト
 
 - [ ] 新しいセッションが skill を名前つきで列挙する（起動時に name + description が読まれる）
@@ -110,3 +117,4 @@ permissions:
 - [Devin Skills ドキュメント](https://docs.devin.ai/product-guides/skills) — ファイル形式、発見パス、frontmatter
 - [Release notes](https://docs.devin.ai/release-notes/overview) — playbooks→Skills 移行、Customize ページ
 - 関連：[ガイド 9 — Playbooks & knowledge](playbooks-and-knowledge.md)（skills の隣にあるコンテキスト層）
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — Offered plugins、セッション単位の MCP 承認、secret にバインドされた API-key header、Automatic auth の既定

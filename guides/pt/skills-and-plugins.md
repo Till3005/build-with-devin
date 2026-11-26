@@ -85,6 +85,13 @@ O caminho *explícito* do Passo 3, de ponta a ponta: uma skill `coverage-check` 
 ![5. Resultado: cobertura total — tabelas por função citando cada branch; nenhum arquivo modificado, sem commits](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
 *5. Resultado: cobertura total — cada branch contabilizada, exatamente o relatório que a SKILL.md pediu*
 
+## Governar plugins e acesso MCP
+
+- **Offered versus Required é uma escolha do admin.** Admins de organização e enterprise podem marcar um plugin do marketplace como **Offered** em vez de **Required**. Required faz parte da base administrada; Offered é opcional para membros. Não marque um pacote de conveniência como Required — isso amplia a base administrada herdada por todos os membros.
+- **Use a aprovação MCP mais estreita.** Os cartões de aprovação de ferramentas MCP agora incluem **Allow for this session**. Prefira essa opção quando a tarefa precisa repetir a ferramenta, mas a permissão deve morrer com a sessão; deixe aprovações mais amplas para ferramentas já auditadas.
+- **API keys ficam em secrets.** Headers em branco em servidores MCP de marketplace com API key são vinculados a secrets, e secrets não usados são sinalizados. Mantenha chaves cruas fora de configuração de plugin, prompts e chat.
+- **Automatic não significa sem autenticação.** Novos servidores MCP customizados começam com autenticação **Automatic** selecionada. Verifique o que o servidor realmente negocia antes de conectá-lo a escopos de produção.
+
 ## Checklist de verificação
 
 - [ ] Uma sessão nova lista seu skill pelo nome (name + description carregam no início)
@@ -110,3 +117,4 @@ O caminho *explícito* do Passo 3, de ponta a ponta: uma skill `coverage-check` 
 - [Docs de Devin Skills](https://docs.devin.ai/product-guides/skills) — formato, caminhos de descoberta, frontmatter
 - [Release notes](https://docs.devin.ai/release-notes/overview) — migração playbooks→Skills, página Customize
 - Relacionado: [Guia 9 — Playbooks & knowledge](playbooks-and-knowledge.md) (a camada de contexto ao lado dos skills)
+- [Release notes — 23 nov 2026](https://docs.devin.ai/release-notes/overview) — plugins Offered, aprovação MCP por sessão, headers de API key ligados a secrets, padrão Automatic auth
