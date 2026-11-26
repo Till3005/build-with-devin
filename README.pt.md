@@ -12,7 +12,7 @@
 
 <sub>Curado por [@darega0mae](https://x.com/darega0mae) · Registro irmão: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Melhore um guia](CONTRIBUTING.md) · [Ler no site](https://till3005.github.io/built-with-devin/guides/pt/index.html)</sub>
 
-<sub>**20** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
+<sub>**21** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português</sub>
 
@@ -48,6 +48,7 @@ flowchart LR
       G4 --> G5["5 · Swarm"]
       G11["11 · Migrações"] --> G15["15 · Living evals"]
       G7["7 · Rollout corporativo"]
+      G4 --> G20["20 · Dynamic Workflows"]
     end
     subgraph S3["Estágio 3 · Campo"]
       G14["14 · Relatos de campo"]
@@ -96,6 +97,7 @@ flowchart LR
 | 11 | [Migrações em escala](guides/pt/migrations-at-scale.md) | Uma migração como centenas de PRs pequenos e verificados | Playbook oficial + Nubank | Intermediário |
 | 15 | [Living evals de traces de produção](guides/pt/living-evals.md) | Uma suite de evals autocrescente: Devin reproduz falhas de produção numa cópia completa do sistema | Rox — 72% de cobertura de uso vs 43–57% escrito à mão | Avançado |
 | 7 | [Padrões de rollout corporativo](guides/pt/enterprise-playbook.md) | As seis formas de implantação por trás dos maiores resultados | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediário |
+| 20 | [Dynamic Workflows](guides/pt/dynamic-workflows.md) | Orquestração multiagente determinística com handoffs estruturados e runs retomáveis | [Documentação de Dynamic Workflows](https://docs.devin.ai/work-with-devin/dynamic-workflows) | Avançado |
 
 ### Estágio 3 · Campo
 
