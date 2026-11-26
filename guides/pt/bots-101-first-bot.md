@@ -95,6 +95,8 @@ Você pode responder com suas próprias palavras, adiar ou descartar qualquer it
 - **Instructions** (Settings → General): suas regras permanentes — lidas no início de cada sessão que o Bot roda. Coloque política duradoura aqui, não no chat.
 - **Memory** (Settings → Memory): arquivos que o próprio Bot escreve — preferências, correções, fatos do projeto. Para mudar o que ele lembra, basta dizer no chat ("remember: we deploy via Cloud Run, never bare VMs"). Todo mundo que pode usar o Bot pode ler sua memória — trate a memória de um Bot compartilhado como compartilhada.
 
+Memória pessoal e memória de Bot são camadas diferentes. Sua memória pessoal é privada dentro de cada organização; a memória do Bot pertence ao Bot e fica visível para todos que podem usá-lo. Devin guarda a memória pessoal como notas Markdown em um memory drive versionado em Git, e uma sessão **Dreaming** aproximadamente diária consolida notas velhas ou sobrepostas. Sessões iniciadas por automações não leem nem escrevem sua memória pessoal; sessões de Bot ainda usam a memória do próprio Bot. Você pode desligar memória pessoal ou Dreaming em **Customize → Memory**, enquanto admins de organização e enterprise podem travar a disponibilidade nas configurações.
+
 O padrão que escala: corrija o Bot uma vez, deixe-o gravar a correção na memória, e toda sessão futura a herda. A Cognition mergeia mais de 2.000 PRs/semana nesse loop.
 
 ## Antes de compartilhar — acesso e uso
@@ -154,3 +156,4 @@ Apenas o criador e papéis com Manage Bots veem Archive/Delete. Em planos Enterp
 - [Devin Bots — docs](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - Próximo: [Guia 2 — Bot product-owner](bots-201-product-owner.md) · Ver também: [Guia 19 — O loop da sessão](the-session-loop.md) (pesquisar → delegar → revisar → aprender)
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — memória pessoal vs Bot, Dreaming diário, controles de admin

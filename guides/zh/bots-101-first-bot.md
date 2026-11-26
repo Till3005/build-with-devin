@@ -95,6 +95,8 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 - **Instructions**（Settings → General）：你的常驻规则——Bot 跑的每个会话启动时都会读。持久策略放这里，不放聊天。
 - **Memory**（Settings → Memory）：Bot 自己写的文件——偏好、纠正、项目事实。要改它的记忆，直接在聊天里说（"remember: we deploy via Cloud Run, never bare VMs"）。能用这个 Bot 的人都能读它的记忆——共享 Bot 的记忆按共享对待。
 
+个人 memory 和 Bot memory 是两层。你的个人 memory 在每个组织内只属于你；Bot memory 属于 Bot，能用这个 Bot 的人都能看到。Devin 把个人 memory 存成 Git-backed memory drive 里的 Markdown notes，并由大约每天一次的 **Dreaming** 会话合并陈旧或重叠条目。由 automation 启动的 session 不读写你的个人 memory；Bot session 仍会使用 Bot 自己的 memory。你可以在 **Customize → Memory** 关闭个人 memory 或 Dreaming；组织和 enterprise 管理员也能在设置里锁定 memory 可用性。
+
 可扩展的模式：纠正 Bot 一次，让它把纠正写进记忆，之后每个会话都继承。Cognition 就靠这个循环每周合并 2,000+ PR。
 
 ## 共享之前——权限与用量
@@ -152,3 +154,4 @@ Bot 标记事项时打开 **Needs you**（聊天顶部）：
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) —— 发布帖，Android Bot 的原话 prompt
 - [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) —— 社区实战指南；上面的有界首个任务和权限/用量提醒出自此
 - 上一篇：[指南 18 — 跟 Devin 说话](talking-to-devin.md)（outcome prompt 底下的基本法）· 下一篇：[第 2 篇 — 产品所有制 Bot](bots-201-product-owner.md) · 另见：[指南 19 — 会话全环](the-session-loop.md)（研究 → 委托 → 审查 → 复盘）
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — 个人 memory vs Bot memory、每日 Dreaming、管理员控制

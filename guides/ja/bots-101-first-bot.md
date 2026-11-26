@@ -95,6 +95,8 @@ Bot が何かを報告したら **Needs you**（チャット上部）を開く�
 - **Instructions**（Settings → General）：あなたの恒常ルール——Bot が起動する全セッションの開始時に読まれる。恒久的な方針はチャットではなくここに。
 - **Memory**（Settings → Memory）：Bot が自分で書くファイル——好み、修正、プロジェクトの事実。記憶を変えたければチャットで伝えるだけ（「覚えておいて：デプロイは Cloud Run。ベア VM は絶対ダメ」）。Bot を使える全員がメモリを読める——共有 Bot のメモリは共有情報として扱う。
 
+個人 memory と Bot memory は別の層である。個人 memory は各 organization 内であなた専用であり、Bot memory は Bot に属し、その Bot を使える全員に見える。Devin は個人 memory を Git-backed memory drive 内の Markdown note として保存し、ほぼ毎日動く **Dreaming** セッションが古い重複 note を整理する。automation から起動した session は個人 memory を読み書きしないが、Bot session は Bot 自身の memory を使う。個人 memory と Dreaming は **Customize → Memory** で無効化でき、organization / enterprise の管理者は設定で memory の利用可否を固定できる。
+
 スケールするパターン：Bot を一度修正し、それをメモリに書かせる。以後の全セッションがそれを継承する。Cognition はこのループで週 2,000 件以上の PR をマージしている。
 
 ## 共有する前に——アクセスと使用量
@@ -154,3 +156,4 @@ Archive/Delete を見られるのは作成者と Manage Bots 権限を持つロ�
 - [Devin Bots — ドキュメント](https://docs.devin.ai/work-with-devin/bots)
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - 次：[ガイド 2 — プロダクトオーナー Bot](bots-201-product-owner.md) · 関連：[ガイド 19 — セッションの全ループ](the-session-loop.md)（リサーチ → 委任 → レビュー → 学習）
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — 個人 memory vs Bot memory、日次 Dreaming、管理者制御
