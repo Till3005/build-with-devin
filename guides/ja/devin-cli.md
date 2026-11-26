@@ -9,7 +9,7 @@
 Devin CLI はターミナルに住み Devin Cloud に接続するコーディングエージェント。2 つの動作モードがあり、力はその往復にある：
 
 - **ローカル** —— チェックアウト済みのリポジトリをあなたのマシン上で編集
-- **クラウド** —— `devin --cloud` でクラウドセッションを作成・操作・再開する。ローカルセッションで `/handoff` を実行すると、タスクを Devin Cloud に引き継げる。CLI で開いたクラウドセッション内で `/handoff` を実行すると、その PR のブランチを取得して切り替え、そのブランチでローカルセッションを開始する（`/open` は Web アプリか Devin Desktop でセッションを開く）。
+- **クラウド** —— `devin --cloud` でクラウドセッションを作成・操作・再開する。ローカルセッションで `/handoff` を実行すると、タスクを Devin Cloud に引き継げる。CLI で開いたクラウドセッション内で `/handoff` を実行すると、その PR のブランチを取得して切り替え、そのブランチでローカルセッションを開始する（`/open` は Web アプリか Devin Desktop でセッションを開く）。この方法で始めたクラウドセッションは [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) で承認済みコマンド/ファイル操作をあなたのマシン上で実行できる。CLI が接続を持つため、セッションが要求した時に自動で接続される。
 
 ```text
 ローカルリポジトリ ──/handoff──► Devin Cloud セッション ──/handoff──► ローカルリポジトリ
@@ -23,7 +23,7 @@ Devin CLI はターミナルに住み Devin Cloud に接続するコーディン
 | --- | --- |
 | `devin ssh` / `devin forward` | クラウドセッションの VM へ SSH、ポート転送、`scp` でファイル転送 |
 | サブエージェント | 独自プロファイル・権限を持つ独立エージェントへの委任（フォア/バックグラウンド） |
-| モデル | 適応ルーティングがタスクごとにモデルを選択；Fusion はフロンティアリード + 安価なサイドキックのペア |
+| モデル | 適応ルーティングがタスクごとにモデルを選択；Fusion はフロンティアリード + 安価なサイドキックのペア。SWE-2.1 は CLI/Desktop/Cloud で利用可能。Cognition によれば Desktop/CLI で 2026-12-08 まで無料、2027-01-30 まで割引 |
 | ACP | Agent Client Protocol 経由で JetBrains、Zed、Xcode 内で動作 |
 | Daemon | v3000.13.4 以降、ローカルセッションはバックグラウンドプロセスで実行——アプリを閉じても止まらず、任意のクライアントから再接続（`devin daemon`、`devin ls` セッションモニター） |
 
@@ -118,4 +118,6 @@ Keep it under 10 lines.
 ## 出典
 
 - [Devin CLI ドキュメント](https://docs.devin.ai/cli/index.md) — クイックスタート、コマンド、クラウド連携、拡張性、ACP、モデル
+- [Local Hands ドキュメント](https://docs.devin.ai/work-with-devin/local-hands) — CLI/Desktop 経由でクラウドセッションがマシンを使用
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1) — 提供形態とベンダー自報のモデル主張
 - 関連：[ガイド 9 — プレイブックとナレッジ](playbooks-and-knowledge.md)（同じ規約層の組織版）

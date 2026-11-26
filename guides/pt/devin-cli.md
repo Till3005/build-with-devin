@@ -9,7 +9,7 @@
 O Devin CLI é um agente de código que vive no seu terminal e se conecta ao Devin Cloud. Dois modos de trabalho, e o poder está em mover entre eles:
 
 - **Local** — edita seu repo checked-out na sua máquina
-- **Cloud** — `devin --cloud` cria, orienta e retoma sessões na nuvem. Use `/handoff` na sessão local para enviar a tarefa ao Devin Cloud. Na sessão na nuvem, dentro da CLI, o mesmo comando busca a branch do PR, muda o checkout para ela e inicia uma sessão local nessa branch. (`/open` abre a sessão no web app ou no Devin Desktop.)
+- **Cloud** — `devin --cloud` cria, orienta e retoma sessões na nuvem. Use `/handoff` na sessão local para enviar a tarefa ao Devin Cloud. Na sessão na nuvem, dentro da CLI, o mesmo comando busca a branch do PR, muda o checkout para ela e inicia uma sessão local nessa branch. (`/open` abre a sessão no web app ou no Devin Desktop.) Uma sessão cloud iniciada assim também pode usar [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) para executar comandos/arquivos aprovados na sua máquina; como o CLI detém a conexão, ele conecta automaticamente quando a sessão pede acesso.
 
 ```text
 repo local ──/handoff──► sessão Devin Cloud ──/handoff──► repo local
@@ -23,7 +23,7 @@ repo local ──/handoff──► sessão Devin Cloud ──/handoff──► r
 | --- | --- |
 | `devin ssh` / `devin forward` | SSH na VM de uma sessão cloud, forward de portas, `scp` de arquivos |
 | Subagents | Delega a agentes independentes (foreground/background) com perfis e permissões próprios |
-| Models | Adaptive routing escolhe o modelo por tarefa; Fusion emparelha um lead frontier + sidekick barato |
+| Models | Adaptive routing escolhe o modelo por tarefa; Fusion emparelha um lead frontier + sidekick barato. SWE-2.1 está disponível em CLI/Desktop/Cloud; segundo a Cognition, é grátis no Desktop/CLI até 2026-12-08 e promocional até 2027-01-30 |
 | Daemon | Desde a v3000.13.4 sessões locais rodam num processo em background — fechar o app não interrompe, qualquer cliente reconecta (`devin daemon`, monitor `devin ls`) |
 | ACP | Roda dentro de JetBrains, Zed, Xcode via Agent Client Protocol |
 
@@ -118,4 +118,6 @@ Keep it under 10 lines.
 ## Fontes
 
 - [Docs do Devin CLI](https://docs.devin.ai/cli/index.md) — quickstart, comandos, integração cloud, extensibilidade, ACP, modelos
+- [Docs de Local Hands](https://docs.devin.ai/work-with-devin/local-hands) — sessões cloud usando sua máquina via CLI/Desktop
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1) — disponibilidade e claims de modelo autorrelatados
 - Relacionado: [Guia 9 — Playbooks & knowledge](playbooks-and-knowledge.md) (mesma camada de convenções, org-wide)
