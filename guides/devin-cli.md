@@ -9,7 +9,7 @@
 Devin CLI is a coding agent that lives in your terminal and connects to Devin Cloud. Two working modes, and the power is in moving between them:
 
 - **Local** — it edits your checked-out repo on your machine
-- **Cloud** — `devin --cloud` creates/steers/resumes cloud sessions. Run `/handoff` in a local session to send the task to Devin Cloud. Run it in the cloud session in the CLI to fetch its PR branch, switch your checkout to that branch, and start a local session on it. (`/open` opens the session in the web app or Devin Desktop.)
+- **Cloud** — `devin --cloud` creates/steers/resumes cloud sessions. Run `/handoff` in a local session to send the task to Devin Cloud. Run it in the cloud session in the CLI to fetch its PR branch, switch your checkout to that branch, and start a local session on it. (`/open` opens the session in the web app or Devin Desktop.) A cloud session started this way can also use [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) to execute approved commands/files on your machine; because the CLI owns the connection, it connects automatically when the session requests access.
 
 ```text
 local repo ──/handoff──► Devin Cloud session ──/handoff──► local repo
@@ -23,7 +23,7 @@ local repo ──/handoff──► Devin Cloud session ──/handoff──► l
 | --- | --- |
 | `devin ssh` / `devin forward` | SSH into a cloud session's VM, forward its ports, `scp` files |
 | Subagents | Delegate to independent agents (foreground/background) with own profiles and permissions |
-| Models | Adaptive routing picks the model per task; Fusion pairs a frontier lead + cheap sidekick |
+| Models | Adaptive routing picks the model per task; Fusion pairs a frontier lead + cheap sidekick. SWE-2.1 is available in CLI/Desktop/Cloud; Cognition says it is free on Desktop/CLI through Dec 8, 2026 and discounted through Jan 30, 2027 |
 | ACP | Runs inside JetBrains, Zed, Xcode via the Agent Client Protocol |
 | Daemon | Since v3000.13.4 local sessions run in a background process — close the app, reattach from any client (`devin daemon`, `devin ls` session monitor) |
 
@@ -118,4 +118,6 @@ Keep it under 10 lines.
 ## Sources
 
 - [Devin CLI docs](https://docs.devin.ai/cli/index.md) — quickstart, commands, cloud integration, extensibility, ACP, models
+- [Local Hands docs](https://docs.devin.ai/work-with-devin/local-hands) — cloud sessions using your machine through CLI/Desktop
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1) — availability and vendor-reported model claims
 - Related: [Guide 9 — Playbooks & knowledge](playbooks-and-knowledge.md) (same conventions layer, org-wide)

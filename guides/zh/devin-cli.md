@@ -9,7 +9,7 @@
 Devin CLI 是住在你终端里、连着 Devin Cloud 的编码 agent。两种工作模式，威力在两者之间移动：
 
 - **本地** —— 直接编辑你机器上已检出的 repo
-- **云端** —— `devin --cloud` 可创建、引导和恢复云端会话。在本地会话中运行 `/handoff`，可将任务交给 Devin Cloud；在 CLI 里的云端会话中运行同一命令，则会拉取该会话的 PR 分支、切换到该分支，并在其上启动本地会话（`/open` 会在网页端或 Devin Desktop 中打开会话）。
+- **云端** —— `devin --cloud` 可创建、引导和恢复云端会话。在本地会话中运行 `/handoff`，可将任务交给 Devin Cloud；在 CLI 里的云端会话中运行同一命令，则会拉取该会话的 PR 分支、切换到该分支，并在其上启动本地会话（`/open` 会在网页端或 Devin Desktop 中打开会话）。这样启动的云会话还可以通过 [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) 在你的机器上执行经批准的命令/文件操作；因为连接由 CLI 持有，会话请求访问时它会自动接入。
 
 ```text
 local repo ──/handoff──► Devin Cloud session ──/handoff──► local repo
@@ -23,7 +23,7 @@ local repo ──/handoff──► Devin Cloud session ──/handoff──► l
 | --- | --- |
 | `devin ssh` / `devin forward` | SSH 进云会话的 VM、转发端口、`scp` 文件 |
 | Subagents | 委派给独立 agent（前台/后台），各自带配置和权限 |
-| Models | 自适应路由按任务挑模型；Fusion 是前沿主力 + 廉价副手 |
+| Models | 自适应路由按任务挑模型；Fusion 是前沿主力 + 廉价副手。SWE-2.1 已在 CLI/Desktop/Cloud 提供；Cognition 称 Desktop/CLI 到 2026-12-08 免费，折扣价到 2027-01-30 |
 | ACP | 通过 Agent Client Protocol 跑在 JetBrains、Zed、Xcode 里 |
 | Daemon | v3000.13.4 起本地会话跑在后台进程——关掉应用不停会话，任何客户端可接回（`devin daemon`、`devin ls` 会话监视器） |
 
@@ -118,4 +118,6 @@ Keep it under 10 lines.
 ## Sources
 
 - [Devin CLI docs](https://docs.devin.ai/cli/index.md) — quickstart、命令、云集成、可扩展性、ACP、模型
+- [Local Hands 文档](https://docs.devin.ai/work-with-devin/local-hands)——云会话通过 CLI/Desktop 使用你的机器
+- [Introducing SWE-2.1](https://cognition.ai/blog/swe-2-1)——可用性与厂商自报模型声明
 - 相关：[第 9 篇 — Playbooks 与知识层](playbooks-and-knowledge.md)（同一套约定层，组织级）
