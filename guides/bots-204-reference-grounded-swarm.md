@@ -2,8 +2,8 @@
 
 **Goal:** direct a swarm of agents to write a large, *verifiable* system — where correctness is checked continuously against a trusted reference, not against vibes.
 **Level:** advanced
-**Source deployment:** Harvey's **"Phil"** — ~30 agents wrote a collaborative, Word-compatible editor engine in Rust + TypeScript: **1M+ lines in 3 weeks, zero human engineers**. Verified continuously against real Microsoft Word behavior and simulated lawyer negotiations. Humans steered through memory + decision logs, never by reading code.
-**Sources:** Gabe Pereyra's launch write-up ([via @gabepereyra](https://x.com/gabepereyra)) · [launch post](https://devin.ai/blog/introducing-devin-bots)
+**Source deployment:** Harvey's **"Phil"** — in Gabe Pereyra's first-hand write-up, ~30 agents wrote a collaborative, Word-compatible editor engine in Rust + TypeScript: **1M+ lines in 3 weeks, zero human engineers**. Verified continuously against real Microsoft Word behavior and simulated lawyer negotiations. Humans steered through memory + decision logs, never by reading code.
+**Sources:** Gabe Pereyra's launch write-up ([direct post](https://x.com/gabepereyra/status/2122756324173992166)) · [launch post](https://devin.ai/blog/introducing-devin-bots)
 
 ## The pattern
 
@@ -86,6 +86,6 @@ Harvey layered a second check: **simulated lawyer negotiations** — realistic u
 
 ## Sources
 
-- [@gabepereyra](https://x.com/gabepereyra) — Harvey's Phil write-up: ~30 agents, 1M+ LOC, Word-reference verification, lawyer simulations
+- [Gabe Pereyra direct post](https://x.com/gabepereyra/status/2122756324173992166) — Harvey's Phil write-up: ~30 agents, 1M+ LOC, Word-reference verification, lawyer simulations
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - Related: [Guide 4 — Multi-Bot organization](bots-203-multi-bot-org.md) (same hierarchy, different purpose: operations vs. construction)
