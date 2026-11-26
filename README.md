@@ -148,15 +148,15 @@ Curriculum gaps found by the steward and Source Scout — each needs a fix in al
 Open (triaged Nov 25, 2026 — verified Grade A official docs unless noted):
 
 - **72h watchlist (existing-guide updates):**
-  - [Nov 23 release notes](https://docs.devin.ai/release-notes/overview) — side-by-side session panes (`Option/Alt+click`), `Cmd/Ctrl+K` session search, Preflight secret delete warning, Offered vs Required plugins, MCP `Allow for this session`, API-key MCP secret binding, custom MCP Automatic auth, Automations right-click `Run now` → Guides 19, 16, 6.
-  - [SWE-2.1 launch](https://cognition.ai/blog/swe-2-1) (Nov 24, 2026) — Grade A for availability (`SWE-2.1`, `SWE-2.1 Ultrafast`, `SWE-2.1 Cyber`; free on Desktop/CLI through 2026-12-08), Grade C for vendor self-reported benchmarks (do not cite as independent proof) → Guides 17, 12.
-  - [Local Hands](https://docs.devin.ai/work-with-devin/local-hands) — cloud-to-local execution via Desktop Approve / `devin connect` / `devin --cloud` (distinct from Devin Connect) → Guides 17, 12.
+  - [Nov 23 release notes](https://docs.devin.ai/release-notes/overview) — Preflight secret delete warning, Offered vs Required plugins, MCP `Allow for this session`, API-key MCP secret binding, custom MCP Automatic auth, Automations right-click `Run now` → Guides 19, 16, 6.
   - [Stacked PRs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub.com-only atomic bottom-up stacks → Guides 19, 11.
   - [Devin Memory & Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed personal memory vs Bot shared memory, daily Dreaming opt-out, org/enterprise admin locks → Guides 1, 9.
   - [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) — summary pointer for self-hosted execution → Guide 7.
 - **Proposed new guide (pending approval/budget):** [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
 
 Resolved Nov 26: Dynamic Workflows and Security Profiles & Cloud OIDC added as Guides 20 and 21 in all 4 languages. They are official-source-backed; independent reproduction evidence is still pending and must not be overstated.
+
+Resolved Nov 26: Guide 17 now covers split panes, Cmd/Ctrl+K session search, Local Hands, and SWE-2.1; Guide 12 now covers CLI Local Hands and SWE-2.1 availability. Benchmark claims remain vendor-reported, not independent evidence.
 
 Resolved Nov 22: Access & Sharing launch (Nov 20 release) — user groups + per-session sharing + granular secrets + repo sync added to Guide 1's sharing section (4 langs).
 
