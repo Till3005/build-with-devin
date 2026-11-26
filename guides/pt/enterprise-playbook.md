@@ -56,7 +56,7 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 | | |
 | --- | --- |
-| Implantação | Hamming: Devin escreve 25% do volume de código. Litera: ciclos de regressão cortados em 90%. Eight Sleep: 8× mais entregue. Zeb (consultoria SAP): entrega **4 semanas → 2,5 semanas**; 142 objetos em 8 dias |
+| Implantação | Hamming: Devin escreve 25% do volume de código. Litera: ciclos de regressão cortados em 90%. Eight Sleep: 8× mais entregue. Zeb: entrega NetSuite→Databricks em **4 semanas → 2,5 semanas**; migração separada de uma empresa de energia Fortune 500 não nomeada: **142 objetos em 8 dias** |
 | Mecanismo | O Devin é dono de um estágio do pipeline — testes de regressão, QA — não do produto inteiro |
 
 **Como copiar:** ache o estágio do pipeline com o pior custo humano (ciclos de regressão, QA); atribua a um Bot ou automação; meça o tempo de ciclo do estágio antes/depois.
@@ -86,5 +86,6 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 ## Fontes
 
 - [devin.ai/customers](https://devin.ai/customers) — todos os casos e números citados
+- [Devin for Databricks Migrations](https://devin.ai/blog/devin-for-databricks-migrations) — prazo da Zeb e a migração separada de 142 objetos
 - [built-with-devin — índice enterprise](https://github.com/Till3005/built-with-devin#enterprise-deployments) — a tabela de casos verificada do registry
 - [Devin for Admins](https://learndevin.com/course/devin-for-admins) — o curso oficial de admin em 11 lições: hierarquia de blueprints, postura de secrets, governança de ACU, analytics de rollout (aulas grátis, exame exige Enterprise)

@@ -56,7 +56,7 @@
 
 | | |
 | --- | --- |
-| 部署 | Hamming：Devin 写 25% 代码量。Litera：回归周期缩短 90%。Eight Sleep：交付量 8×。Zeb（SAP 咨询）：交付周期 **4 周 → 2.5 周**；8 天 142 个对象 |
+| 部署 | Hamming：Devin 写 25% 代码量。Litera：回归周期缩短 90%。Eight Sleep：交付量 8×。Zeb：NetSuite→Databricks 交付 **4 周 → 2.5 周**；另一家未具名财富 500 能源企业：**8 天 142 个对象** |
 | 机制 | Devin 拥有管线的一个阶段——回归测试、QA——而不是整个产品 |
 
 **怎么抄：** 找人力成本最痛的那个管线阶段（回归周期、QA）；指派给 Bot 或 automation；量这个阶段的前后周期时间。
@@ -86,5 +86,6 @@
 ## Sources
 
 - [devin.ai/customers](https://devin.ai/customers) — 引用的全部案例与数字
+- [Devin for Databricks Migrations](https://devin.ai/blog/devin-for-databricks-migrations)——Zeb 周期，以及另一起 142 对象能源企业迁移
 - [built-with-devin — 企业索引](https://github.com/Till3005/built-with-devin#enterprise-deployments) — 登记表里的已核验案例表
 - [Devin for Admins](https://learndevin.com/course/devin-for-admins) — 官方 11 课管理员课程：蓝图层级、密钥态势、ACU 治理、推广分析（课程免费，考试需 Enterprise）
