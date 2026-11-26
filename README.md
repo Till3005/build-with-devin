@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · Sister registry: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Improve a guide](CONTRIBUTING.md) · [Read on the site](https://till3005.github.io/built-with-devin/guides/)</sub>
 
-<sub>**21** guides · **4** stages · every pattern reverse-engineered from a named, documented deployment</sub>
+<sub>**22** guides · **4** stages · every pattern reverse-engineered from a named, documented deployment</sub>
 
 <sub>English · [简体中文](README.zh.md) · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -57,6 +57,7 @@ flowchart LR
       G11["11 · Migrations"] --> G15["15 · Living evals"]
       G7["7 · Enterprise rollout"]
       G4 --> G20["20 · Dynamic Workflows"]
+      G7 --> G21["21 · Security & OIDC"]
     end
     subgraph S3["Stage 3 · Field wisdom"]
       G14["14 · Field reports"]
@@ -106,6 +107,7 @@ flowchart LR
 | 15 | [Living evals from production traces](guides/living-evals.md) | A self-growing eval suite replaying production failures | Rox — 72% usage coverage vs 43–57% hand-written | Advanced |
 | 7 | [Enterprise rollout patterns](guides/enterprise-playbook.md) | The six deployment shapes behind the biggest customer results | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediate |
 | 20 | [Dynamic Workflows](guides/dynamic-workflows.md) | Deterministic multi-agent orchestration with structured handoffs and resumable runs | [Dynamic Workflows docs](https://docs.devin.ai/work-with-devin/dynamic-workflows) | Advanced |
+| 21 | [Security Profiles & Cloud OIDC](guides/security-profiles-cloud-oidc.md) | Least-privilege session envelopes plus keyless cloud authentication | [Security Profiles](https://docs.devin.ai/product-guides/security-profiles) + [Cloud OIDC](https://docs.devin.ai/product-guides/oidc) | Advanced/admin |
 
 ### Stage 3 · Field wisdom
 
@@ -152,10 +154,10 @@ Open (triaged Nov 25, 2026 — verified Grade A official docs unless noted):
   - [Stacked PRs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub.com-only atomic bottom-up stacks → Guides 19, 11.
   - [Devin Memory & Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed personal memory vs Bot shared memory, daily Dreaming opt-out, org/enterprise admin locks → Guides 1, 9.
   - [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) — summary pointer for self-hosted execution → Guide 7.
-- **Proposed new guides (pending approval/budget):** [Security Profiles](https://docs.devin.ai/product-guides/security-profiles) & [Cloud OIDC](https://docs.devin.ai/product-guides/oidc); [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
+- **Proposed new guide (pending approval/budget):** [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
 - **Evidence-boundary cleanup (from Registry Maintainer audit):** downgrade/re-source hold-list claims in Guides 2, 4, 5, 7, 14 (SupaSEO 404 link/numbers, Super Jenny 6× revenue, Android Bot 88% self-merge/GA, Harvey "Phil" 1M LOC/3 wks, Zeb vs unnamed customer 142 objects/8 days).
 
-Resolved Nov 26: Dynamic Workflows added as Guide 20 in all 4 languages. It is official-source-backed; independent reproduction evidence is still pending and must not be overstated.
+Resolved Nov 26: Dynamic Workflows and Security Profiles & Cloud OIDC added as Guides 20 and 21 in all 4 languages. They are official-source-backed; independent reproduction evidence is still pending and must not be overstated.
 
 Resolved Nov 22: Access & Sharing launch (Nov 20 release) — user groups + per-session sharing + granular secrets + repo sync added to Guide 1's sharing section (4 langs).
 

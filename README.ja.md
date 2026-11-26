@@ -12,7 +12,7 @@
 
 <sub>Curated by [@darega0mae](https://x.com/darega0mae) · 姉妹レジストリ：[built-with-devin](https://github.com/Till3005/built-with-devin) · [ガイドを改善](CONTRIBUTING.md) · [サイトで読む](https://till3005.github.io/built-with-devin/guides/ja/index.html)</sub>
 
-<sub>**21** ガイド · **4** ステージ · すべてのパターンは実名・実証済みの導入から逆算</sub>
+<sub>**22** ガイド · **4** ステージ · すべてのパターンは実名・実証済みの導入から逆算</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · 日本語 · [Português](README.pt.md)</sub>
 
@@ -49,6 +49,7 @@ flowchart LR
       G11["11 · 大規模マイグレーション"] --> G15["15 · Living evals"]
       G7["7 · エンタープライズ展開"]
       G4 --> G20["20 · Dynamic Workflows"]
+      G7 --> G21["21 · Security と OIDC"]
     end
     subgraph S3["ステージ3 · フィールド"]
       G14["14 · 実践レポート"]
@@ -98,6 +99,7 @@ flowchart LR
 | 15 | [本番トレースからの Living evals](guides/ja/living-evals.md) | 自己増殖する eval スイート：Devin がシステムの完全コピーで本番障害を再生 | Rox —— 実使用量カバレッジ 72%（手書き 43–57%） | 上級 |
 | 7 | [エンタープライズ展開パターン](guides/ja/enterprise-playbook.md) | 最大の顧客成果を生んだ 6 つの導入形態 | Nubank、Gumroad、EBANX、Modal、Airbyte…… | 中級 |
 | 20 | [Dynamic Workflows](guides/ja/dynamic-workflows.md) | 構造化ハンドオフと再開可能な run を持つ決定的マルチ agent オーケストレーション | [Dynamic Workflows 公式ドキュメント](https://docs.devin.ai/work-with-devin/dynamic-workflows) | 上級 |
+| 21 | [Security Profiles と Cloud OIDC](guides/ja/security-profiles-cloud-oidc.md) | 最小権限 session 境界 + 長期キーなしのクラウド認証 | [Security Profiles](https://docs.devin.ai/product-guides/security-profiles) + [Cloud OIDC](https://docs.devin.ai/product-guides/oidc) | 上級/管理者 |
 
 ### ステージ3 · フィールド
 
