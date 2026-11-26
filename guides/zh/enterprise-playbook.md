@@ -61,6 +61,8 @@
 
 **怎么抄：** 找人力成本最痛的那个管线阶段（回归周期、QA）；指派给 Bot 或 automation；量这个阶段的前后周期时间。
 
+**自托管执行说明。** [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) 是在自有基础设施上运行会话的独立面。把它当基础设施决策，而不是第七种推广形态：在 Devin 托管 VM 之外，你的 orchestrator 必须执行会话网络策略。
+
 ## 案例隐含的反面教材
 
 - **是同事，不是工具。** 数字大的部署都给 Devin 所有权（repo、面、阶段），不是派活——和第 1–5 篇同一个教训。

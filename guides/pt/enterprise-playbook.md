@@ -61,6 +61,8 @@ Seis formas de implantação, destiladas das empresas que publicaram resultados.
 
 **Como copiar:** ache o estágio do pipeline com o pior custo humano (ciclos de regressão, QA); atribua a um Bot ou automação; meça o tempo de ciclo do estágio antes/depois.
 
+**Nota de execução self-hosted.** [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) é a superfície separada para rodar sessões na sua própria infraestrutura. Trate como decisão de infraestrutura, não um sétimo formato de rollout: fora das VMs gerenciadas pelo Devin, seu orquestrador precisa impor a network policy da sessão.
+
 ## Anti-padrões que os casos implicam
 
 - **Ferramenta, não colega.** As implantações de números altos dão ao Devin propriedade (repos, superfícies, estágios), não atribuições — mesma lição dos Guias 1–5.

@@ -61,6 +61,8 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 **How to copy:** find the pipeline stage with the worst human cost (regression cycles, QA); assign it to a Bot or automation; measure the stage's cycle time before/after.
 
+**Self-hosted execution note.** [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) is the separate surface for running sessions on your own infrastructure. Treat it as an infrastructure decision, not a seventh rollout shape: your orchestrator must enforce the session network policy outside Devin-managed VMs.
+
 ## Anti-patterns the cases imply
 
 - **Tool, not colleague.** The high-number deployments give Devin ownership (repos, surfaces, stages), not assignments — same lesson as Guides 1–5.
