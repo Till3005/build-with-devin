@@ -145,14 +145,11 @@ Read stages in order the first time; after that, jump.
 
 Curriculum gaps found by the steward and Source Scout — each needs a fix in all 4 languages.
 
-Open (triaged Nov 25, 2026 — verified Grade A official docs unless noted):
+Open:
 
-- **72h watchlist (existing-guide updates):**
-  - [Nov 23 release notes](https://docs.devin.ai/release-notes/overview) — Preflight secret delete warning, Offered vs Required plugins, MCP `Allow for this session`, API-key MCP secret binding, custom MCP Automatic auth, Automations right-click `Run now` → Guides 19, 16, 6.
-  - [Stacked PRs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub.com-only atomic bottom-up stacks → Guides 19, 11.
-  - [Devin Memory & Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed personal memory vs Bot shared memory, daily Dreaming opt-out, org/enterprise admin locks → Guides 1, 9.
-  - [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) — summary pointer for self-hosted execution → Guide 7.
 - **Proposed new guide (pending approval/budget):** [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
+
+Resolved Nov 26: the initial 72h official-watchlist wave is complete in all 4 languages. Guide 6 covers automation `Run now` and Preflight secret dependency warnings; Guide 16 covers Offered vs Required plugins, session-scoped MCP approval, secret-bound API-key headers, and Automatic auth; Guides 19 and 11 cover stacked PR boundaries; Guides 1 and 9 cover personal vs Bot memory, Dreaming, automation exclusion, and admin controls. Guide 7 also carries the Outposts pointer.
 
 Resolved Nov 26: Dynamic Workflows and Security Profiles & Cloud OIDC added as Guides 20 and 21 in all 4 languages. They are official-source-backed; independent reproduction evidence is still pending and must not be overstated.
 
