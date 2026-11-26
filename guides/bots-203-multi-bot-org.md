@@ -2,8 +2,8 @@
 
 **Goal:** a hierarchy of Bots that runs an entire business unit — one orchestrator delegating to specialist Bots, one human deciding through a single daily thread.
 **Level:** advanced
-**Source deployment:** Jenny Xu's **SuperJennyStack** — ~20 Bots running a mobile game studio. ~50 → **1,900 PRs/week**, weekly releases, studio revenue 6×'d. Published as a community template in the [Bot marketplace](https://devin.ai/bots/templates). The official **bot-to-bot grant handoff** (QA → Developer → retest → PM report) uses the same mechanics at smaller scale.
-**Sources:** Jenny Xu's published stack ([via launch coverage](https://x.com/cognition/status/2122737511684587551)) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)
+**Source deployment:** Jenny Xu's **SuperJennyStack** — ~20 Bots running a mobile game studio. The launch post documents ~50 → **1,900 PRs/week** and weekly releases; Xu separately self-reports **6× studio revenue**. Published as a community template in the [Bot marketplace](https://devin.ai/bots/templates). The official **bot-to-bot grant handoff** (QA → Developer → retest → PM report) uses the same mechanics at smaller scale.
+**Sources:** [Jenny Xu's primary post](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5) · [launch coverage](https://x.com/cognition/status/2122737511684587551) · [Bots docs](https://docs.devin.ai/work-with-devin/bots) · [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)
 
 ## The pattern
 
@@ -21,8 +21,6 @@ Don't build one Bot that does everything — build a small company:
 ```
 
 The human is the CEO: the orchestrator collects every subordinate Bot's pending decisions into **one Slack thread, 4×/day**, answered with emoji.
-
-The smallest documented version of this shape shipped a real product: Noah Zixin Zhang ran a **Chief-of-Staff → product-lead → specialist** chain of ~8 Bots that built [SupaSEO](https://supaseo.dev) end-to-end in ~48h (~951 commits; the human wrote only the landing page). His two field notes apply at any scale: **one shared specialist Bot across projects beats one per project**, and prompts stay granular — the org chart doesn't replace the brief.
 
 ## Prerequisites
 
@@ -134,6 +132,8 @@ Six days after switching: decisions made by Bots without her **12×'d**, repeate
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack numbers, grant-handoff variant
+- [Jenny Xu primary post](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5) — self-reported 6× revenue and operating details
+- [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166) — inter-bot protocol and measured attention effects
 - [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack community template + 18 official templates
 - [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants, memory, [access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Related: [Guide 5 — Reference-grounded swarm](bots-204-reference-grounded-swarm.md) for swarms that *write* rather than *operate*

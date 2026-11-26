@@ -2,8 +2,8 @@
 
 **Objetivo:** uma hierarquia de Bots que roda uma unidade de negócio inteira — um orquestrador delegando para Bots especialistas, um humano decidindo por uma única thread diária.
 **Nível:** avançado
-**Implantação de origem:** o **SuperJennyStack** de Jenny Xu — ~20 Bots rodando um estúdio de jogos mobile. ~50 → **1.900 PRs/semana**, releases semanais, receita do estúdio 6×. Publicado como template comunitário no [Bot marketplace](https://devin.ai/bots/templates). O **handoff por grant bot-para-bot** oficial (QA → Developer → reteste → relatório do PM) usa a mesma mecânica em escala menor.
-**Fontes:** stack publicado de Jenny Xu ([via cobertura do lançamento](https://x.com/cognition/status/2122737511684587551)) · [docs de Bots](https://docs.devin.ai/work-with-devin/bots) · [post do BotSpeak](https://x.com/xujennyc/status/2123111543105868166)
+**Implantação de origem:** o **SuperJennyStack** de Jenny Xu — ~20 Bots rodando um estúdio de jogos mobile. ~50 → **1.900 PRs/semana**, releases semanais e **receita 6× do estúdio**, todos autorrelatados. Publicado como template comunitário no [Bot marketplace](https://devin.ai/bots/templates). O **handoff por grant bot-para-bot** oficial (QA → Developer → reteste → relatório do PM) usa a mesma mecânica em escala menor.
+**Fontes:** [post primário de Jenny Xu](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5) · [cobertura do lançamento](https://x.com/cognition/status/2122737511684587551) · [docs de Bots](https://docs.devin.ai/work-with-devin/bots) · [post do BotSpeak](https://x.com/xujennyc/status/2123111543105868166)
 
 ## O padrão
 
@@ -21,8 +21,6 @@ Não construa um Bot que faz tudo — construa uma pequena empresa:
 ```
 
 O humano é o CEO: o orquestrador coleta todas as decisões pendentes dos Bots subordinados em **uma thread de Slack, 4×/dia**, respondida com emoji.
-
-A menor versão documentada dessa forma já entregou produto real: Noah Zixin Zhang rodou uma cadeia **Chief-of-Staff → líder de produto → especialistas** de ~8 Bots que construiu o [SupaSEO](https://supaseo.dev) de ponta a ponta em ~48h (~951 commits; o humano escreveu só a landing page). As duas notas de campo dele valem em qualquer escala: **um Bot especialista compartilhado entre projetos vence um por projeto**, e os prompts continuam granulares — o organograma não substitui o brief.
 
 ## Pré-requisitos
 
@@ -134,6 +132,8 @@ Seis dias após a troca: decisões tomadas por Bots sem ela **12×**, pedidos re
 ## Fontes
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — números do SuperJennyStack, variante grant-handoff
+- [Post primário de Jenny Xu](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5) — receita 6× autorrelatada e detalhes operacionais
+- [Post do BotSpeak](https://x.com/xujennyc/status/2123111543105868166) — protocolo inter-Bot e efeitos medidos de atenção
 - [Bot marketplace](https://devin.ai/bots/templates) — template comunitário SuperJennyStack + 18 templates oficiais
 - [Docs de Bots](https://docs.devin.ai/work-with-devin/bots) — grants, memória, [acesso e segurança](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - Relacionado: [Guia 5 — Enxame ancorado em referência](bots-204-reference-grounded-swarm.md) para enxames que *escrevem* em vez de *operar*
