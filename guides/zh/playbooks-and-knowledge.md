@@ -71,6 +71,21 @@ Bot 的 **Instructions**（第 1 篇）是 Bot 作用域的知识——每个会
 
 Devin Coach（官方 Bot 模板）就是为这个生的——每周汇报 Devin 在哪里卡住，并每次提一个修复：一条 note、一个 skill、或一项配置改动。
 
+## Memory、Dreaming 与纠正回路
+
+Devin Memory 不是 knowledge 或 playbook 的替代品；它是位于它们下方的捕获层。个人 memory 对组织内的每个用户私有，存成 Git-backed drive 中的 Markdown notes。你纠正 Devin 时，它可以自动保存规则；**Dreaming** 是大约每天一次的后台会话，负责合并重叠、删除陈旧 notes，并补抓原始工作中漏掉的教训。
+
+有意识地分层：
+
+| 层 | 所有者 | 用来放什么 |
+| --- | --- | --- |
+| Personal memory | Devin 为单个用户维护 | 偏好、纠正、会话里学到的项目坑 |
+| Bot memory | Bot，对使用者共享 | 某个 Bot 的长期 outcome 所需的长期教训 |
+| Knowledge / rules | 团队 | 应被明确治理和 review 的组织级约定 |
+| Playbooks / skills | 团队 | 可重复执行的程序 |
+
+由 automation 启动的 session 不读写个人 memory。Memory 和 Dreaming 可在 **Customize → Memory** 关闭；组织和 enterprise 管理员也可以在设置里锁定可用性。个人/Bot memory 中反复出现的教训，只有经过人工 review 后才提升为 org knowledge——memory 负责快速捕获，knowledge 才是被治理的层。
+
 ## Verify it
 
 - [ ] 一个新会话在你的 repo 上零提问知识层已覆盖的问题
@@ -110,3 +125,4 @@ Devin Coach（官方 Bot 模板）就是为这个生的——每周汇报 Devin 
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge、playbooks、Bot instructions/memory
 - 相关：[第 7 篇 — 企业级铺开模式](enterprise-playbook.md)（这一层是大多数铺开跳过的一步）
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed memory drive、Dreaming、automation 排除、管理员控制
