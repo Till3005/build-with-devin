@@ -2,8 +2,8 @@
 
 **目标：** 一个跑整个业务单元的 Bot 层级——一个编排者向专家 Bot 委派，一个人类通过单一每日 thread 做决策。
 **级别：** 高级
-**出处部署：** Jenny Xu 的 **SuperJennyStack**——~20 个 Bot 运营一家手游工作室。~50 → **1,900 PR/周**，每周发版，工作室收入 ×6。已作为社区模板上架 [Bot 市场](https://devin.ai/bots/templates)。官方的 **bot 间 grant 交接**（QA → Developer → 复测 → PM 汇报）用的是同一套机制、更小规模。
-**来源：** Jenny Xu 公开的栈（[via 发布报道](https://x.com/cognition/status/2122737511684587551)）· [Bots docs](https://docs.devin.ai/work-with-devin/bots)
+**出处部署：** Jenny Xu 的 **SuperJennyStack**——~20 个 Bot 运营一家手游工作室。官方发布文记录 ~50 → **1,900 PR/周**和每周发版；收入 ×6 是 Xu 另行自报。已作为社区模板上架 [Bot 市场](https://devin.ai/bots/templates)。官方的 **bot 间 grant 交接**（QA → Developer → 复测 → PM 汇报）用的是同一套机制、更小规模。
+**来源：** [Jenny Xu 的第一手帖子](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5) · [发布报道](https://x.com/cognition/status/2122737511684587551) · [Bots docs](https://docs.devin.ai/work-with-devin/bots)
 
 ## 模式
 
@@ -21,8 +21,6 @@
 ```
 
 人类是 CEO：编排者把每个下级 Bot 的待决事项收进**一个 Slack thread，每天 4 次**，用 emoji 回答。
-
-这个形态最小的有据版本已经出了真产品：Noah Zixin Zhang 用 **Chief-of-Staff → 产品负责 Bot → 专家 Bot** 的约 8 Bot 链路，~48 小时端到端建成 [SupaSEO](https://supaseo.dev)（~951 commits；人类只写了落地页）。他的两条实战笔记在任何规模都适用：**一个跨项目共享的专家 Bot 胜过每项目各建一个**，且提示词保持细粒度——组织架构替代不了简报。
 
 ## 前置条件
 
@@ -136,6 +134,8 @@ Jenny **每天 4 次**跑这个、**用 emoji** 回答。纪律：你从不直�
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — SuperJennyStack 数字、grant 交接变体
+- [Jenny Xu 第一手帖子](https://www.linkedin.com/posts/xujennyc_i-used-to-have-50-prs-a-week-now-i-have-activity-7528501881103601665-TXX5)——自报收入 ×6 与运营细节
+- [BotSpeak post](https://x.com/xujennyc/status/2123111543105868166)——Bot 间协议及注意力效果数据
 - [Bot marketplace](https://devin.ai/bots/templates) — SuperJennyStack 社区模板 + 18 个官方模板
 - [Bots docs](https://docs.devin.ai/work-with-devin/bots) — grants、memory、[access & security](https://docs.devin.ai/work-with-devin/bots/access-and-security)
 - 相关：[第 5 篇 — 参考基准锚定的 swarm](bots-204-reference-grounded-swarm.md)（*构建*而非*运营*的 swarm）
