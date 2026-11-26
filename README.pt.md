@@ -12,7 +12,7 @@
 
 <sub>Curado por [@darega0mae](https://x.com/darega0mae) · Registro irmão: [built-with-devin](https://github.com/Till3005/built-with-devin) · [Melhore um guia](CONTRIBUTING.md) · [Ler no site](https://till3005.github.io/built-with-devin/guides/pt/index.html)</sub>
 
-<sub>**21** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
+<sub>**22** guias · **4** estágios · todo padrão derivado de uma implantação nomeada e documentada</sub>
 
 <sub>[English](README.md) · [简体中文](README.zh.md) · [日本語](README.ja.md) · Português</sub>
 
@@ -49,6 +49,7 @@ flowchart LR
       G11["11 · Migrações"] --> G15["15 · Living evals"]
       G7["7 · Rollout corporativo"]
       G4 --> G20["20 · Dynamic Workflows"]
+      G7 --> G21["21 · Security e OIDC"]
     end
     subgraph S3["Estágio 3 · Campo"]
       G14["14 · Relatos de campo"]
@@ -98,6 +99,7 @@ flowchart LR
 | 15 | [Living evals de traces de produção](guides/pt/living-evals.md) | Uma suite de evals autocrescente: Devin reproduz falhas de produção numa cópia completa do sistema | Rox — 72% de cobertura de uso vs 43–57% escrito à mão | Avançado |
 | 7 | [Padrões de rollout corporativo](guides/pt/enterprise-playbook.md) | As seis formas de implantação por trás dos maiores resultados | Nubank, Gumroad, EBANX, Modal, Airbyte… | Intermediário |
 | 20 | [Dynamic Workflows](guides/pt/dynamic-workflows.md) | Orquestração multiagente determinística com handoffs estruturados e runs retomáveis | [Documentação de Dynamic Workflows](https://docs.devin.ai/work-with-devin/dynamic-workflows) | Avançado |
+| 21 | [Security Profiles e Cloud OIDC](guides/pt/security-profiles-cloud-oidc.md) | Envelopes de sessão de menor privilégio + autenticação cloud sem chaves longas | [Security Profiles](https://docs.devin.ai/product-guides/security-profiles) + [Cloud OIDC](https://docs.devin.ai/product-guides/oidc) | Avançado/admin |
 
 ### Estágio 3 · Campo
 
