@@ -56,7 +56,7 @@ Six deployment shapes, distilled from the companies that published results. Most
 
 | | |
 | --- | --- |
-| Deployment | Hamming: Devin writes 25% of code volume. Litera: regression cycles cut 90%. Eight Sleep: 8× more shipped. Zeb (SAP consultancy): delivery **4 weeks → 2.5 weeks**; 142 objects in 8 days |
+| Deployment | Hamming: Devin writes 25% of code volume. Litera: regression cycles cut 90%. Eight Sleep: 8× more shipped. Zeb: NetSuite→Databricks delivery **4 weeks → 2.5 weeks**; separate unnamed Fortune 500 energy migration: **142 objects in 8 days** |
 | Mechanism | Devin owns a stage of the pipeline — regression testing, QA — not the whole product |
 
 **How to copy:** find the pipeline stage with the worst human cost (regression cycles, QA); assign it to a Bot or automation; measure the stage's cycle time before/after.
@@ -86,5 +86,6 @@ Six deployment shapes, distilled from the companies that published results. Most
 ## Sources
 
 - [devin.ai/customers](https://devin.ai/customers) — all cases and numbers cited
+- [Devin for Databricks Migrations](https://devin.ai/blog/devin-for-databricks-migrations) — Zeb timing and the separate 142-object energy-company migration
 - [built-with-devin — enterprise index](https://github.com/Till3005/built-with-devin#enterprise-deployments) — the registry's verified case table
 - [Devin for Admins](https://learndevin.com/course/devin-for-admins) — the official 11-lesson admin course: blueprint hierarchy, secrets posture, ACU governance, rollout analytics (free lessons; exam needs Enterprise)
