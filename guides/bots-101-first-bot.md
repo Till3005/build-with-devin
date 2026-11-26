@@ -95,6 +95,8 @@ You can reply in your own words, snooze, or dismiss any item.
 - **Instructions** (Settings → General): your standing rules — read at the start of every session the Bot runs. Put enduring policy here, not chat.
 - **Memory** (Settings → Memory): files the Bot writes itself — preferences, corrections, project facts. To change what it remembers, just tell it in chat ("remember: we deploy via Cloud Run, never bare VMs"). Everyone who can use the Bot can read its memory — treat shared-Bot memory as shared.
 
+Personal memory and Bot memory are different layers. Your personal memory is private to you inside each organization; a Bot memory belongs to the Bot and is visible to everyone who can use that Bot. Devin stores personal memory as Markdown notes in a Git-backed memory drive, and a roughly daily **Dreaming** session consolidates stale or overlapping notes. Automation-started sessions do not read or write your personal memory; Bot sessions still use the Bot's own memory. You can turn personal memory or Dreaming off under **Customize → Memory**, while org and enterprise admins can lock memory availability in settings.
+
 The pattern that scales: correct the Bot once, let it write the correction to memory, and every future session inherits it. Cognition merges 2,000+ PRs/week on this loop.
 
 ## Before you share it — access and usage
@@ -152,3 +154,4 @@ Only the creator and roles with Manage Bots see Archive/Delete. On Enterprise pl
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — launch post, the Android Bot prompt
 - [AI Native Operators — Devin Bots: give an agent a job to own](https://ainativeoperators.ai/blog/devin-bots-guide) — community field guide; the bounded-first-assignment pattern and access/usage caveats above
 - Back: [Guide 18 — Talking to Devin](talking-to-devin.md) (the doctrine under the outcome prompt) · Next: [Guide 2 — Product-owner Bot](bots-201-product-owner.md) · Also: [Guide 19 — The session loop](the-session-loop.md) (research → delegate → review → learn)
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — personal vs Bot memory, daily Dreaming, admin controls
