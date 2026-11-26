@@ -72,6 +72,21 @@ Bot の **Instructions**（ガイド 1）はナレッジの Bot スコープ版�
 
 まさにこのための公式 Bot テンプレート Devin Coach がある——Devin がどこで詰まったかを週次報告し、毎回 1 つの修正案（メモ、スキル、セットアップ変更）を提示する。
 
+## Memory、Dreaming、修正ループ
+
+Devin Memory は knowledge や playbook の代替ではなく、その下にある捕捉層である。個人 memory は organization 内の各ユーザーに私有で、Git-backed drive 上の Markdown note として保存される。Devin を修正すると、そのルールを自動保存できる。**Dreaming** はほぼ毎日動くバックグラウンドセッションで、重複を統合し、古い note を削除し、元の作業で拾えなかった教訓を補足する。
+
+層を意識的に使い分ける：
+
+| 層 | 所有者 | 用途 |
+| --- | --- | --- |
+| Personal memory | 各ユーザーについて Devin | セッションで学んだ好み、修正、プロジェクトの落とし穴 |
+| Bot memory | Bot とその利用者 | ある Bot の成果に必要な恒常的な教訓 |
+| Knowledge / rules | チーム | 明示的に治理・レビューすべき組織規約 |
+| Playbooks / skills | チーム | 再現可能な手順 |
+
+automation から起動した session は個人 memory を読み書きしない。Memory と Dreaming は **Customize → Memory** で無効化でき、organization / enterprise の管理者は設定で利用可否を固定できる。個人/Bot memory で繰り返し出る教訓は、人間のレビュー後にだけ org knowledge へ昇格させる——memory は速く捕らえる層、knowledge は治理される層である。
+
 ## 検証チェックリスト
 
 - [ ] あなたのリポジトリでの新規セッションが、ナレッジに答えのある質問をゼロ件尋ねる
@@ -111,3 +126,4 @@ Bot の **Instructions**（ガイド 1）はナレッジの Bot スコープ版�
 
 - [docs.devin.ai](https://docs.devin.ai) — ナレッジ、プレイブック、Bot の instructions/memory
 - 関連：[ガイド 7 — エンタープライズ導入パターン](enterprise-playbook.md)（この層はほとんどの導入が飛ばすステップ）
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed memory drive、Dreaming、automation 除外、管理者制御

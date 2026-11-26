@@ -72,6 +72,21 @@ Knowledge apodrece. O loop que o mantém verdadeiro:
 
 O Devin Coach (um template oficial de Bot) existe exatamente para isso — reporta semanalmente onde o Devin travou e propõe uma correção por vez: uma nota, um skill ou uma mudança de setup.
 
+## Memory, Dreaming e o loop de correção
+
+Devin Memory não substitui knowledge ou playbooks; é a camada de captura abaixo deles. A memória pessoal é privada para cada usuário em uma organização e fica em notas Markdown num drive versionado em Git. Quando você corrige Devin, ele pode salvar a regra automaticamente; **Dreaming** é uma sessão de fundo aproximadamente diária que consolida sobreposições, remove notas velhas e recupera lições perdidas no trabalho original.
+
+Use as camadas deliberadamente:
+
+| Camada | Dono | Para que serve |
+| --- | --- | --- |
+| Memória pessoal | Devin para um usuário | Preferências, correções e armadilhas de projeto aprendidas em sessões |
+| Memória de Bot | O Bot, compartilhada com usuários | Lições permanentes para o resultado de um Bot |
+| Knowledge / rules | Seu time | Convenções organizacionais deliberadas e revisadas |
+| Playbooks / skills | Seu time | Procedimentos repetíveis |
+
+Sessões iniciadas por automações não leem nem escrevem memória pessoal. Memory e Dreaming podem ser desligados em **Customize → Memory**; admins de organização e enterprise também podem travar a disponibilidade nas configurações. Promova lições repetidas da memória pessoal/do Bot para knowledge organizacional somente após revisão humana — memória captura rápido, mas knowledge é a camada governada.
+
 ## Checklist de verificação
 
 - [ ] Uma sessão nova no seu repo faz zero perguntas que seu knowledge já responde
@@ -111,3 +126,4 @@ Playbooks de organização vivem na nuvem, mas a tese central deste guia — *es
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge, playbooks, instructions/memória de Bot
 - Relacionado: [Guia 7 — Padrões de rollout enterprise](enterprise-playbook.md) (esta camada é o passo que a maioria dos rollouts pula)
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — memory drive em Git, Dreaming, exclusão de automações, controles admin

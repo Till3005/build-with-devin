@@ -71,6 +71,21 @@ Knowledge rots. The loop that keeps it true:
 
 Devin Coach (an official Bot template) exists for exactly this — it reports weekly where Devin got stuck and proposes one fix each time: a note, a skill, or a setup change.
 
+## Memory, Dreaming, and the correction loop
+
+Devin Memory is not a replacement for knowledge or playbooks; it is the capture layer underneath them. Personal memory is private to each user in an organization and is stored as Markdown notes in a Git-backed drive. When you correct Devin, it can save the rule automatically; **Dreaming** is a roughly daily background session that consolidates overlap, removes stale notes, and surfaces lessons missed during the original work.
+
+Use the layers deliberately:
+
+| Layer | Owner | Use it for |
+| --- | --- | --- |
+| Personal memory | Devin for one user | Preferences, corrections, project gotchas learned in sessions |
+| Bot memory | The Bot, shared with its users | Standing lessons for one Bot's outcome |
+| Knowledge / rules | Your team | Org-wide conventions that should be deliberate and reviewed |
+| Playbooks / skills | Your team | Repeatable procedures |
+
+Automation-started sessions do not read or write personal memory. Memory and Dreaming can be turned off under **Customize → Memory**; organization and enterprise admins can also lock availability in settings. Promote repeated personal/Bot-memory lessons into org knowledge only after a human review — memory captures quickly, but knowledge is the governed layer.
+
 ## Verify it
 
 - [ ] A fresh session on your repo asks zero questions your knowledge already answers
@@ -110,3 +125,4 @@ Org playbooks live in the cloud, but the core claim of this guide — *write the
 
 - [docs.devin.ai](https://docs.devin.ai) — knowledge, playbooks, Bot instructions/memory
 - Related: [Guide 7 — Enterprise rollout patterns](enterprise-playbook.md) (this layer is the step most rollouts skip)
+- [Devin Memory and Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed memory drive, Dreaming, automation exclusion, admin controls
