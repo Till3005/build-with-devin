@@ -85,6 +85,13 @@ Step 3's *explicit* path, end-to-end: a `coverage-check` skill committed at `.de
 ![5. Result: full coverage — per-function tables naming every branch; no files modified, no commits](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
 *5. Result: full coverage — every branch accounted for, exactly the report the SKILL.md asked for*
 
+## Govern plugins and MCP access
+
+- **Offered vs. Required is an admin choice.** Org and enterprise admins can mark a marketplace plugin as **Offered** instead of **Required**. Required plugins are part of the managed baseline; Offered plugins are optional for members. Do not use Required for a convenience bundle — it expands the managed baseline for every member.
+- **Use the narrowest MCP approval.** MCP tool approval cards now include **Allow for this session**. Prefer it when the task needs a tool repeatedly but the permission should die with the session; reserve broader approval for tools you have already audited.
+- **API keys belong in secrets.** Blank headers on API-key marketplace MCP servers are bound to secrets, and unused secrets are flagged. Keep raw keys out of plugin config, prompts, and chat.
+- **Automatic does not mean unauthenticated.** New custom MCP servers start with **Automatic** authentication selected. Verify what the server actually negotiates before connecting it to production scopes.
+
 ## Verify it
 
 - [ ] A fresh session lists your skill by name (name + description load at start)
@@ -110,3 +117,4 @@ Step 3's *explicit* path, end-to-end: a `coverage-check` skill committed at `.de
 - [Devin Skills docs](https://docs.devin.ai/product-guides/skills) — file format, discovery paths, frontmatter
 - [Release notes](https://docs.devin.ai/release-notes/overview) — playbooks→Skills migration, Customize page
 - Related: [Guide 9 — Playbooks & knowledge](playbooks-and-knowledge.md) (the context layer skills sit beside)
+- [Release notes — Nov 23, 2026](https://docs.devin.ai/release-notes/overview) — Offered plugins, session-scoped MCP approval, secret-bound API-key headers, Automatic auth default

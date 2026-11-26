@@ -85,6 +85,13 @@ permissions:
 ![5. 结果：全覆盖——逐函数表列出每个分支；未改文件、零提交](https://till3005.github.io/built-with-devin/assets/guides/skills-and-plugins/step5-full-coverage.webp)
 *5. 结果：全覆盖——每个分支都有交代，正是 SKILL.md 要求的报告*
 
+## 治理 plugins 与 MCP 访问
+
+- **Offered 和 Required 是管理员选择。**组织和 enterprise 管理员可以把 marketplace plugin 标成 **Offered**，而不是 **Required**。Required plugin 是托管基线的一部分；Offered plugin 由成员自行选择。不要把便利合集设成 Required——它会扩大每个成员都要继承的托管基线。
+- **用最窄的 MCP 批准范围。**MCP 工具批准卡现在提供 **Allow for this session**。当任务需要反复调用某个工具、但权限应随会话结束时，优先选它；更宽的范围只留给已经审计过的工具。
+- **API key 放在 secrets。**API-key marketplace MCP server 的空白 header 会绑定到 secret，未使用的 secret 会被标记。不要把原始 key 写进 plugin 配置、prompt 或聊天。
+- **Automatic 不等于未认证。**新建 custom MCP server 默认选中 **Automatic** authentication。把它接入生产权限前，先确认 server 实际协商出的认证方式。
+
 ## 验证清单
 
 - [ ] 新会话能按名字列出你的 skill（启动时载入 name + description）
@@ -110,3 +117,4 @@ permissions:
 - [Devin Skills 文档](https://docs.devin.ai/product-guides/skills) — 文件格式、发现路径、frontmatter
 - [Release notes](https://docs.devin.ai/release-notes/overview) — playbooks→Skills 迁移、Customize 页
 - 相关：[指南 9 — Playbooks & knowledge](playbooks-and-knowledge.md)（skills 旁边的上下文层）
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — Offered plugins、会话级 MCP 批准、secret 绑定 API-key header、Automatic auth 默认值
