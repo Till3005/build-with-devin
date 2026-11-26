@@ -45,7 +45,7 @@ In fleets (SuperJennyStack, Frankie, tigsbot) the chief bot's prompt contains th
 - **Task-shaped prompts.** "Fix these 12 issues" — the bot finishes and idles; you get a session, not a bot.
 - **Unverifiable outcomes.** "Make the app better" — no self-check means the bot's only exit is Needs-you spam.
 - **Hidden scope.** If the outcome requires systems the bot can't see (a staging env it can't reach, a dashboard it can't read), it will either stall or hallucinate progress. Give it the surface or shrink the outcome.
-- **No merge authority story.** The 88% self-merge rate exists because CI and review gates were pre-configured for autonomous merges. State it: "merge when CI is green and diff < N lines" or "always open as draft for human review."
+- **No merge authority story.** Autonomous merge authority exists only when CI and review gates were pre-configured for it. State it: "merge when CI is green and diff < N lines" or "always open as draft for human review."
 
 ## Drafting yours — the three-line test
 

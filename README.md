@@ -155,7 +155,6 @@ Open (triaged Nov 25, 2026 — verified Grade A official docs unless noted):
   - [Devin Memory & Dreaming](https://docs.devin.ai/product-guides/memory) — Git-backed personal memory vs Bot shared memory, daily Dreaming opt-out, org/enterprise admin locks → Guides 1, 9.
   - [Devin Outposts](https://docs.devin.ai/cloud/outposts/overview) — summary pointer for self-hosted execution → Guide 7.
 - **Proposed new guide (pending approval/budget):** [Outposts + Modal GPU post-training](https://docs.devin.ai/tutorial-library/post-training-modal) (budget-gated).
-- **Evidence-boundary cleanup (from Registry Maintainer audit):** downgrade/re-source hold-list claims in Guides 2, 4, 5, 7, 14 (SupaSEO 404 link/numbers, Super Jenny 6× revenue, Android Bot 88% self-merge/GA, Harvey "Phil" 1M LOC/3 wks, Zeb vs unnamed customer 142 objects/8 days).
 
 Resolved Nov 26: Dynamic Workflows and Security Profiles & Cloud OIDC added as Guides 20 and 21 in all 4 languages. They are official-source-backed; independent reproduction evidence is still pending and must not be overstated.
 

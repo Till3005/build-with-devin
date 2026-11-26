@@ -45,7 +45,7 @@ Em frotas (SuperJennyStack, Frankie, tigsbot) o prompt do bot chefe contém o *c
 - **Prompts em formato de tarefa.** "Fix these 12 issues" — o bot termina e fica ocioso; você ganha uma sessão, não um bot.
 - **Resultados não verificáveis.** "Make the app better" — sem auto-checagem, a única saída do bot é spam de Needs-you.
 - **Escopo oculto.** Se o resultado exige sistemas que o bot não vê (um staging que não alcança, um dashboard que não lê), ele ou trava ou alucina progresso. Dê a superfície ou encolha o resultado.
-- **Sem história de autoridade de merge.** Os 88% de auto-merge existem porque CI e gates de review foram pré-configurados para merges autônomos. Declare: "merge when CI is green and diff < N lines" ou "always open as draft for human review."
+- **Sem história de autoridade de merge.** Autoridade autônoma de merge só existe quando CI e gates de review foram pré-configurados para isso. Declare: "merge when CI is green and diff < N lines" ou "always open as draft for human review."
 
 ## Redigindo o seu — o teste das três linhas
 
