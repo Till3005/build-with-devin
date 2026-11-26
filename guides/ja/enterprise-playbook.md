@@ -56,7 +56,7 @@
 
 | | |
 | --- | --- |
-| 導入 | Hamming：Devin がコード量の 25% を記述。Litera：回帰サイクル 90% 短縮。Eight Sleep：出荷量 8 倍。Zeb（SAP コンサル）：デリバリー **4 週間 → 2.5 週間**、8 日で 142 オブジェクト |
+| 導入 | Hamming：Devin がコード量の 25% を記述。Litera：回帰サイクル 90% 短縮。Eight Sleep：出荷量 8 倍。Zeb：NetSuite→Databricks デリバリー **4 週間 → 2.5 週間**、別件の未公開 Fortune 500 エネルギー企業：**8 日で 142 オブジェクト** |
 | 機構 | Devin はパイプラインの一段階——回帰テスト、QA——を所有する。製品全体ではない |
 
 **真似る方法：** 人間コストが最悪のパイプライン段階（回帰サイクル、QA）を見つける；Bot か自動化に割り当てる；その段階のサイクルタイムを前後で測る。
@@ -86,5 +86,6 @@
 ## 出典
 
 - [devin.ai/customers](https://devin.ai/customers) — 引用したすべての事例と数値
+- [Devin for Databricks Migrations](https://devin.ai/blog/devin-for-databricks-migrations) — Zeb の期間と別件の 142 オブジェクト移行
 - [built-with-devin — エンタープライズ索引](https://github.com/Till3005/built-with-devin#enterprise-deployments) — レジストリの検証済み事例表
 - [Devin for Admins](https://learndevin.com/course/devin-for-admins) — 公式 11 レッスンの管理者コース：ブループリント階層、シークレット体制、ACU ガバナンス、ロールアウト分析（レッスン無料、試験は Enterprise 必要）
