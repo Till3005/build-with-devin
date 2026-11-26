@@ -36,6 +36,12 @@
 
 Ask Devin が生成したプロンプト（または[ガイド 18](talking-to-devin.md) 通りに書いたブリーフ）をスコープされたセッションとして渡す。変わるのは、ブリーフがすべてを知っていることだけ：ファイル、パターン、検証チェック、境界。
 
+## 委任インターフェースを選ぶ
+
+- **境界のある1件のタスク：**通常の scoped session が既定。
+- **定期またはイベント起点の作業：**automation にし、trigger を信用する前に一覧行の右クリックから **Run now** を一度実行する。org secret が Preflight check を支えている場合、削除前に Secrets ページが依存する automation を表示する——先に再バインドしてからローテーションする。
+- **大きな1つの変更：**モノリシック PR ではなく **stacked PR series** を Devin に頼む。stack は下から上へ順序付けられ、各レイヤーには自分の diff だけが出る。あるレイヤーをマージすると、その下の open PR もすべてアトミックに入る。stack は GitHub.com のみ対応で、2–100 件の PR を持ち、GitHub の通常 merge フローは使えない。schema → service → UI のような意図的な層には使うが、たまたま branch が別 branch の上に乗っただけのものには使わない。
+
 ## レビュー：すべての PR に第二のエージェント
 
 **Devin Review** は独立したレビュアーであり、セッションの自己評価の再演ではない：
@@ -82,3 +88,5 @@ Ask Devin が生成したプロンプト（または[ガイド 18](talking-to-de
 - [Devin Review](https://docs.devin.ai/work-with-devin/devin-review)——`/devin review`、自動レビュー、[Review 2.0 のコスト削減](https://devin.ai/blog/devin-review-2)
 - [Session Insights](https://docs.devin.ai/product-guides/session-insights)——XS–XL サイズ分け、ACU/メッセージ指標、API
 - 次へ：[ガイド 18 — Devin との話し方](talking-to-devin.md) をまだなら · [ガイド 9 — Playbooks](playbooks-and-knowledge.md) で改善したブリーフを永続化
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub の bottom-up stack、atomic merge、制限
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — automation の `Run now` と Preflight secret 依存警告

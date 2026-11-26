@@ -36,6 +36,12 @@ The doctrine pays off twice here: a brief informed by indexed facts is both more
 
 Hand off the Ask-Devin-generated prompt (or your own brief per [Guide 18](talking-to-devin.md)) as a scoped session. Everything that changes is what the brief already knows: the files, the pattern, the check, the boundary.
 
+## Choose the delegation surface
+
+- **One bounded task:** a normal scoped session is the default.
+- **Recurring or event-triggered work:** make it an automation, then right-click its row and use **Run now** once before trusting the trigger. If an org secret powers a Preflight check, the Secrets page now warns which automations depend on it before deletion — rebind before rotating it away.
+- **One large change:** ask Devin for a **stacked PR series** instead of a monolith. A stack is ordered bottom-to-top; every layer shows only its own diff, and merging a layer atomically lands every open PR below it. Stacks are GitHub.com-only, contain 2–100 PRs, and do not use GitHub's regular merge flow. Use them for deliberate layers such as schema → service → UI, not merely because one branch happens to sit on another.
+
 ## Review: a second agent on every PR
 
 **Devin Review** is an independent reviewer, not a rerun of the session's own opinion:
@@ -82,3 +88,5 @@ Cost hygiene that shows up in every field report: scope sessions narrowly, kill 
 - [Devin Review](https://docs.devin.ai/work-with-devin/devin-review) — `/devin review`, auto-review, [Review 2.0 cost cut](https://devin.ai/blog/devin-review-2)
 - [Session Insights](https://docs.devin.ai/product-guides/session-insights) — XS–XL sizing, ACU/message metrics, API
 - Next: [Guide 18 — Talking to Devin](talking-to-devin.md) if you haven't · [Guide 9 — Playbooks](playbooks-and-knowledge.md) to make the improved brief permanent
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — ordered bottom-up GitHub stacks, atomic merge, limitations
+- [Release notes — Nov 23, 2026](https://docs.devin.ai/release-notes/overview) — automation `Run now` and Preflight secret dependency warnings

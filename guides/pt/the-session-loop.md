@@ -36,6 +36,12 @@ O retorno é duplo: um brief informado por fatos indexados é mais específico *
 
 Entregue o prompt gerado pelo Ask Devin (ou seu próprio brief do [Guia 18](talking-to-devin.md)) como uma sessão com escopo. O que muda é que o brief já sabe tudo: os arquivos, o padrão, o check, o limite.
 
+## Escolha a superfície de delegação
+
+- **Uma tarefa delimitada:** uma sessão normal com escopo é o padrão.
+- **Trabalho recorrente ou disparado por evento:** transforme em automação e use **Run now** no menu de contexto da linha antes de confiar no gatilho. Se um secret da organização alimenta um Preflight check, a página Secrets agora mostra quais automações dependem dele antes da exclusão — religue antes de rotacionar/remover.
+- **Uma mudança grande:** peça a Devin uma **série de PRs empilhados** em vez de um monólito. A stack é ordenada de baixo para cima; cada camada mostra apenas o próprio diff, e mergear uma camada aplica atomicamente todos os PRs abertos abaixo dela. Stacks só existem no GitHub.com, têm 2–100 PRs e não usam o fluxo normal de merge do GitHub. Use para camadas deliberadas como schema → serviço → UI, não apenas porque um branch ficou sobre outro.
+
 ## Revisar: um segundo agente em todo PR
 
 O **Devin Review** é um revisor independente, não um replay da autoavaliação da sessão:
@@ -82,3 +88,5 @@ Higiene de custo presente em todo field report: escopo estreito por sessão, mat
 - [Devin Review](https://docs.devin.ai/work-with-devin/devin-review) — `/devin review`, auto-review, [corte de custo do Review 2.0](https://devin.ai/blog/devin-review-2)
 - [Session Insights](https://docs.devin.ai/product-guides/session-insights) — dimensionamento XS–XL, métricas de ACU/mensagens, API
 - Próximo: [Guia 18 — Falando com o Devin](talking-to-devin.md) se ainda não leu · [Guia 9 — Playbooks](playbooks-and-knowledge.md) para fixar o brief melhorado
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — stacks GitHub bottom-up, merge atômico, limitações
+- [Release notes — 23 nov 2026](https://docs.devin.ai/release-notes/overview) — `Run now` em automações e aviso de dependência de secret em Preflight

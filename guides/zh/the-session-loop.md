@@ -36,6 +36,12 @@
 
 把 Ask Devin 生成的提示词（或你按[指南 18](talking-to-devin.md) 写的简报）作为一个有边界的会话交出去。变化只在于简报已经知道一切：文件、模式、验收检查、边界。
 
+## 选择委托入口
+
+- **一个有界任务：**默认开普通 scoped session。
+- **周期性或事件触发的工作：**做成 automation，然后右键它的列表行，先用一次 **Run now**，再信任触发器。如果某个 org secret 给 Preflight check 供能，删除它之前 Secrets 页面会显示哪些 automation 依赖它——先重新绑定，再轮换删除。
+- **一个大改动：**让 Devin 做 **stacked PR series**，不要塞成一个巨 PR。stack 自下而上排序；每层只显示自己的 diff，合并某一层会原子地落掉它下面所有 open PR。stack 只支持 GitHub.com，包含 2–100 个 PR，且不能用 GitHub 常规 merge 流程。适合 schema → service → UI 这种刻意分层，不适合“碰巧一个分支叠在另一个分支上”。
+
 ## 审查：每个 PR 上的第二个 agent
 
 **Devin Review** 是独立审查者，不是会话自评的重播：
@@ -82,3 +88,5 @@
 - [Devin Review](https://docs.devin.ai/work-with-devin/devin-review)——`/devin review`、自动审查、[Review 2.0 降价](https://devin.ai/blog/devin-review-2)
 - [Session Insights](https://docs.devin.ai/product-guides/session-insights)——XS–XL 分档、ACU/消息指标、API
 - 下一条：[指南 18 — 和 Devin 说话](talking-to-devin.md) 如果还没读 · [指南 9 — Playbooks](playbooks-and-knowledge.md) 把改好的简报固化下来
+- [Stacked PRs docs](https://docs.devin.ai/work-with-devin/stacked-prs) — GitHub 自下而上的有序 stack、原子合并、限制
+- [Release notes — 2026-11-23](https://docs.devin.ai/release-notes/overview) — automation `Run now` 与 Preflight secret 依赖警告
