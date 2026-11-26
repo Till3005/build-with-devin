@@ -45,7 +45,7 @@ Android Bot 的全部任务书。一句话产生了 44 天的自主工作：bot 
 - **任务形 prompt。** "Fix these 12 issues"——bot 干完就闲置；你得到的是一个 session，不是 bot。
 - **不可验证的结果。** "Make the app better"——没有自检手段，bot 唯一的出口就是 Needs-you 刷屏。
 - **看不见的域。** 如果结果需要 bot 接触不到的系统（够不着的 staging、读不了的仪表盘），它会卡住或编造进度。给它那个面，或者缩小结果。
-- **没有合并授权故事。** 88% 的自合并率存在的前提是 CI 和评审门已按自动合并配置好。写明规则："merge when CI is green and diff < N lines"或"always open as draft for human review"。
+- **没有合并授权故事。** 自动合并权限成立的前提是 CI 和评审门已按自动合并配置好。写明规则："merge when CI is green and diff < N lines"或"always open as draft for human review"。
 
 ## 起草你自己的——三行测试
 
