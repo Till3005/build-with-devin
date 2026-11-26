@@ -127,6 +127,12 @@ O caminho *Create with Devin* de ponta a ponta: descrever uma varredura semanal 
 ![8. A saída verificada — um changelog categorizado real dos 103 commits da semana, entregue como artifact](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
 *8. A saída verificada — um changelog categorizado real dos 103 commits da semana, entregue como artifact*
 
+## Opere com segurança
+
+- **Execute manualmente antes de confiar no agendamento.** Na lista de Automations, clique com o botão direito em uma linha para ver **Run now**, **Open in new tab** e **Copy link**. Use **Run now** uma vez com um payload inofensivo antes de deixar um cron ou webhook sem supervisão; ele exercita o mesmo caminho da ação sem esperar o próximo disparo.
+- **Secrets podem ser dependências de automações.** Antes de apagar um secret da organização, a página Secrets lista as automações cujos Preflight checks o usam. Rotacione ou religue esses checks primeiro; apagar o secret antes transforma uma limpeza de configuração em incidente.
+- **Preflight é um portão de custo, não uma prova de correção.** Use-o para descartar eventos irrelevantes barato, mas mantenha ações destrutivas atrás de revisão explícita mesmo quando o preflight passar.
+
 ## Checklist de verificação
 
 - [ ] Dispare o trigger manualmente uma vez (comente `/devin test`, ou faça push de um commit que falha) e veja uma sessão iniciar com o payload do evento
@@ -150,3 +156,4 @@ O caminho *Create with Devin* de ponta a ponta: descrever uma varredura semanal 
 - [Automations — docs](https://docs.devin.ai/product-guides/automations)
 - [Devin Automations QuickStart (vídeo)](https://www.youtube.com/watch?v=6xxKtIpgOyE)
 - Relacionado: [Guia 3 — Bot sentinela agendado](bots-202-scheduled-sentinel.md) para adicionar julgamento de Bot em cima de um cron
+- [Release notes — 23 nov 2026](https://docs.devin.ai/release-notes/overview) — `Run now` no menu de contexto; exclusão de secret avisa dependências de Preflight

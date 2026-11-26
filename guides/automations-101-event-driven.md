@@ -127,6 +127,12 @@ The *Create with Devin* path end-to-end: describe a weekly changelog sweep in pl
 ![8. The verified output — a real categorized changelog of the week's 103 commits, delivered as a file](https://till3005.github.io/built-with-devin/assets/guides/automations-101-event-driven/step8-report.webp)
 *8. The verified output — a real categorized changelog of the week's 103 commits, delivered as an artifact*
 
+## Operate it safely
+
+- **Manual run before trusting the schedule.** On the Automations list, right-click a row for **Run now**, **Open in new tab**, and **Copy link**. Use **Run now** once with a harmless payload before leaving a cron or webhook unattended; it exercises the same action path without waiting for the next tick.
+- **Secrets can be automation dependencies.** Before deleting an org secret, the Secrets page lists the automations whose Preflight checks use it. Rotate or rebind those checks first; deleting the secret first turns a configuration cleanup into an outage.
+- **Preflight is a cost gate, not a correctness proof.** Use it to skip irrelevant events cheaply, but keep destructive actions behind explicit review even when the preflight passes.
+
 ## Verify it
 
 - [ ] Fire the trigger manually once (comment `/devin test`, or push a failing commit) and watch a session start with the event payload
@@ -150,3 +156,4 @@ The *Create with Devin* path end-to-end: describe a weekly changelog sweep in pl
 - [Automations — docs](https://docs.devin.ai/product-guides/automations)
 - [Devin Automations QuickStart (video)](https://www.youtube.com/watch?v=6xxKtIpgOyE)
 - Related: [Guide 3 — Scheduled-sentinel Bot](bots-202-scheduled-sentinel.md) for adding Bot judgment on top of a cron
+- [Release notes — Nov 23, 2026](https://docs.devin.ai/release-notes/overview) — right-click `Run now`; secret deletion warns about Preflight dependencies
