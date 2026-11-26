@@ -2,8 +2,8 @@
 
 **目標：** エージェントの群れに大規模で*検証可能な*システムを書かせる——正しさを雰囲気ではなく信頼できる参照に対して継続的にチェックする。
 **レベル：** 上級
-**出典となる導入事例：** Harvey の **「Phil」**——約 30 のエージェントが Rust + TypeScript で Word 互換の共同編集エンジンを記述：**3 週間で 100 万行超、人間のエンジニア 0 人**。実際の Microsoft Word の挙動とシミュレートされた弁護士の交渉に対して継続検証。人間はメモリ + 決定ログを通じて操縦し、コードは一切読まなかった。
-**出典：** Gabe Pereyra のローンチ記事（[@gabepereyra](https://x.com/gabepereyra) 経由）· [ローンチ記事](https://devin.ai/blog/introducing-devin-bots)
+**出典となる導入事例：** Harvey の **「Phil」**——Gabe Pereyra の一次記事では、約 30 のエージェントが Rust + TypeScript で Word 互換の共同編集エンジンを記述：**3 週間で 100 万行超、人間のエンジニア 0 人**。実際の Microsoft Word の挙動とシミュレートされた弁護士の交渉に対して継続検証。人間はメモリ + 決定ログを通じて操縦し、コードは一切読まなかった。
+**出典：** Gabe Pereyra のローンチ記事（[直接ポスト](https://x.com/gabepereyra/status/2122756324173992166)）· [ローンチ記事](https://devin.ai/blog/introducing-devin-bots)
 
 ## パターン
 
@@ -86,6 +86,6 @@ Harvey は第 2 のチェックを重ねた：**シミュレートされた弁�
 
 ## 出典
 
-- [@gabepereyra](https://x.com/gabepereyra) — Harvey の Phil 記事：約 30 エージェント、100 万行超、Word 参照検証、弁護士シミュレーション
+- [Gabe Pereyra の直接ポスト](https://x.com/gabepereyra/status/2122756324173992166) — Harvey の Phil 記事：約 30 エージェント、100 万行超、Word 参照検証、弁護士シミュレーション
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - 関連：[ガイド 4 — マルチ Bot 組織](bots-203-multi-bot-org.md)（同じ階層、目的は異なる：運用 vs 構築）

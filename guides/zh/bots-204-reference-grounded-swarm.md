@@ -2,8 +2,8 @@
 
 **目标：** 指挥一个 agent swarm 写出大型且*可验证*的系统——正确性持续对照可信基准检验，而不是对照感觉。
 **级别：** 高级
-**出处部署：** Harvey 的 **"Phil"**——~30 个 agent 写出协作式、Word 兼容的编辑器引擎（Rust + TypeScript）：**3 周 100 万+ 行，零人类工程师**。持续对照真实 Microsoft Word 行为和模拟律师谈判验证。人类通过记忆 + 决策日志掌舵，从不读代码。
-**来源：** Gabe Pereyra 的发布实录（[via @gabepereyra](https://x.com/gabepereyra)）· [launch post](https://devin.ai/blog/introducing-devin-bots)
+**出处部署：** Harvey 的 **"Phil"**——据 Gabe Pereyra 的第一手实录，~30 个 agent 写出协作式、Word 兼容的编辑器引擎（Rust + TypeScript）：**3 周 100 万+ 行，零人类工程师**。持续对照真实 Microsoft Word 行为和模拟律师谈判验证。人类通过记忆 + 决策日志掌舵，从不读代码。
+**来源：** Gabe Pereyra 的发布实录（[直接帖子](https://x.com/gabepereyra/status/2122756324173992166)）· [launch post](https://devin.ai/blog/introducing-devin-bots)
 
 ## 模式
 
@@ -86,6 +86,6 @@ Harvey 叠了第二层检查：**模拟律师谈判**——真实使用场景，
 
 ## Sources
 
-- [@gabepereyra](https://x.com/gabepereyra) — Harvey Phil 实录：~30 agent、1M+ 行、Word 基准验证、律师模拟
+- [Gabe Pereyra 直接帖子](https://x.com/gabepereyra/status/2122756324173992166)——Harvey Phil 实录：~30 agent、1M+ 行、Word 基准验证、律师模拟
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - 相关：[第 4 篇 — 多 Bot 组织](bots-203-multi-bot-org.md)（同一套层级，不同目的：运营 vs 构建）

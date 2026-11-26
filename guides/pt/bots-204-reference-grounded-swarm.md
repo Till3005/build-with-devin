@@ -2,8 +2,8 @@
 
 **Objetivo:** dirigir um enxame de agentes para escrever um sistema grande e *verificável* — onde a correção é checada continuamente contra uma referência confiável, não contra impressões.
 **Nível:** avançado
-**Implantação de origem:** o **"Phil"** da Harvey — ~30 agentes escreveram um motor de editor colaborativo compatível com Word em Rust + TypeScript: **1M+ linhas em 3 semanas, zero engenheiros humanos**. Verificado continuamente contra o comportamento real do Microsoft Word e negociações de advogados simuladas. Humanos direcionaram via memória + logs de decisão, nunca lendo código.
-**Fontes:** relato de lançamento de Gabe Pereyra ([via @gabepereyra](https://x.com/gabepereyra)) · [post de lançamento](https://devin.ai/blog/introducing-devin-bots)
+**Implantação de origem:** o **"Phil"** da Harvey — segundo o relato direto de Gabe Pereyra, ~30 agentes escreveram um motor de editor colaborativo compatível com Word em Rust + TypeScript: **1M+ linhas em 3 semanas, zero engenheiros humanos**. Verificado continuamente contra o comportamento real do Microsoft Word e negociações de advogados simuladas. Humanos direcionaram via memória + logs de decisão, nunca lendo código.
+**Fontes:** relato de lançamento de Gabe Pereyra ([post direto](https://x.com/gabepereyra/status/2122756324173992166)) · [post de lançamento](https://devin.ai/blog/introducing-devin-bots)
 
 ## O padrão
 
@@ -86,6 +86,6 @@ A Harvey adicionou uma segunda camada: **negociações de advogados simuladas** 
 
 ## Fontes
 
-- [@gabepereyra](https://x.com/gabepereyra) — relato do Phil da Harvey: ~30 agentes, 1M+ LOC, verificação por referência ao Word, simulações de advogados
+- [Post direto de Gabe Pereyra](https://x.com/gabepereyra/status/2122756324173992166) — relato do Phil da Harvey: ~30 agentes, 1M+ LOC, verificação por referência ao Word, simulações de advogados
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots)
 - Relacionado: [Guia 4 — Organização multi-Bot](bots-203-multi-bot-org.md) (mesma hierarquia, propósito diferente: operação vs. construção)
