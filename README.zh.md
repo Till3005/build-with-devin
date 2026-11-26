@@ -12,7 +12,7 @@
 
 <sub>维护者 [@darega0mae](https://x.com/darega0mae) · 姊妹登记库：[built-with-devin](https://github.com/Till3005/built-with-devin) · [改进指南](CONTRIBUTING.md) · [站点阅读（目录/筛选/四语）](https://till3005.github.io/built-with-devin/guides/zh/index.html)</sub>
 
-<sub>**20** 篇指南 · **4** 个阶段 · 每个模式都逆向自实名、有据可查的部署</sub>
+<sub>**21** 篇指南 · **4** 个阶段 · 每个模式都逆向自实名、有据可查的部署</sub>
 
 <sub>[English](README.md) · 简体中文 · [日本語](README.ja.md) · [Português](README.pt.md)</sub>
 
@@ -48,6 +48,7 @@ flowchart LR
       G4 --> G5["5 · 基准 swarm"]
       G11["11 · 大规模迁移"] --> G15["15 · 活评测集"]
       G7["7 · 企业级铺开"]
+      G4 --> G20["20 · Dynamic Workflows"]
     end
     subgraph S3["三阶 · 田野"]
       G14["14 · 实战报告"]
@@ -96,6 +97,7 @@ flowchart LR
 | 11 | [大规模迁移](guides/zh/migrations-at-scale.md) | 拆成数百个可验证小 PR 的迁移 | 官方 playbook + Nubank | 进阶 |
 | 15 | [生产 trace 驱动的活评测集](guides/zh/living-evals.md) | 自我增长的评测集：Devin 在你系统的完整副本里回放生产失败 | Rox —— 覆盖率 72%（手写 43–57%） | 高级 |
 | 7 | [企业级铺开模式](guides/zh/enterprise-playbook.md) | 最大客户结果背后的六种部署形态 | Nubank、Gumroad、EBANX、Modal、Airbyte…… | 进阶 |
+| 20 | [Dynamic Workflows](guides/zh/dynamic-workflows.md) | 确定性多 agent 编排：结构化交接、可恢复运行、成本可见 | [Dynamic Workflows 官方文档](https://docs.devin.ai/work-with-devin/dynamic-workflows) | 高级 |
 
 ### 三阶 · 田野
 
