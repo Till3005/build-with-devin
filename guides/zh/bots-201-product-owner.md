@@ -2,8 +2,8 @@
 
 **目标：** 一个像产品经理一样拥有整个 app 面的 Bot——自己建 ticket、实现、合并、每日汇报。
 **级别：** 中级 · **建好后的人类负载：** 约每 6 个已合并 PR 1 条消息
-**出处部署：** Cognition 的 **Android Bot**——**44 天**把 Devin 安卓 app 送上 Google Play 开放 beta：1,134 个已合并 PR、344,651 行 Kotlin、2,841 个截图测试、1,217 张 ticket。人类**总共发了 183 条消息**（其中 22 天零消息），**88% 的 PR 自合并**。它现在负责 Android/iOS 功能对齐。
-**来源：** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) · Russell Kaplan 的 dogfooding 笔记
+**出处部署：** Cognition 的 **Android Bot**——**44 天**把 Devin 安卓 app 送上 Google Play 开放 beta：1,134 个已合并 PR、344,651 行 Kotlin、2,841 个截图测试、1,217 张 ticket。人类**总共发了 183 条消息**（其中 22 天零消息）。它现在负责安卓端持续开发，并会在 iOS 新功能落地后跟进更新。
+**来源：** [launch post](https://devin.ai/blog/introducing-devin-bots) · [Fortune](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/)
 
 ## 模式
 
@@ -103,12 +103,14 @@ what needs a human. Include a screen recording of visible changes.
 
 ## 自检
 
-1. Android Bot 自合并 88% 的 PR——什么让自合并足够安全？*（验证存在：2,841 个截图测试 + review 门；所有权能成立是因为「完成」是机器可检查的。）*
+1. Android Bot 自己合并 PR——什么让这件事足够安全？*（只有通过 CI 和 Devin Review 的 PR 才会合并；2,841 个截图测试让「完成」机器可检查，需要判断的事则升级给人类。）*
 2. 为什么让 Bot 自己建 ticket 而不是直接给会话下 prompt？*（ticket 形成可审计队列，Bot 按优先级分诊——人审一个队列而不是 50 个会话。）*
 3. 「22 天零消息」说明了什么控制模型？*（例外升级制：只有「完成」可验证时才成立；沉默是特性不是失职。）*
 
 ## Sources
 
 - [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) — Android Bot 数字与 prompt
-- [Fortune exclusive](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 183 条消息、88% 自合并、dogfooding 笔记
+- [Fortune exclusive](https://fortune.com/2026/11/17/exclusive-cognition-bets-on-devin-bots-coding-agents-in-challenge-to-anthropics-duet-and-openais-dots/) — 关于 Bots、访问控制和运营模型的独立发布报道
+- [Russell Kaplan 谈 Android/iOS 对齐](https://x.com/russelljkaplan/status/2122771093920653493)——零安卓工程师维持对齐
+- [Russell Kaplan 谈回归捕获](https://x.com/russelljkaplan/status/2122803486198988970)——Android Bot 抓到 iOS/web 侧回归
 - 相关：[第 4 篇 — 多 Bot 组织](bots-203-multi-bot-org.md)（当一个面变成一门生意）
