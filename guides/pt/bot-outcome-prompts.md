@@ -2,6 +2,7 @@
 
 **Objetivo:** escrever prompts de resultado do jeito que as implantações documentadas realmente fizeram — propriedade de uma área, não uma lista de tarefas.
 **Nível:** intermediário · **Tempo:** 20 min para rascunhar, uma semana para calibrar
+**Fonte:** [Introducing Devin Bots](https://devin.ai/blog/introducing-devin-bots) + [documentação de Bots](https://docs.devin.ai/work-with-devin/bots) + relatórios de implantação em [built-with-devin](https://github.com/Till3005/built-with-devin#documented-deployments)
 
 Toda implantação pública de bot que produziu números grandes começou com um prompt curto atribuindo um *resultado*. Este guia coleta os reais e faz engenharia reversa do porquê funcionam.
 

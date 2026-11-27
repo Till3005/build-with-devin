@@ -1,4 +1,4 @@
-# ガイド 17 — Skills と plugins：playbook の次のパッケージング層
+# ガイド 16 — Skills と plugins：playbook の次のパッケージング層
 
 **目標：** 組織の反復手順を `SKILL.md` としてエンコードし、すべてのセッションと Bot が同じ手順で実行するようにする — plugins でリポジトリをまたいで共有する。
 **レベル：** 中級 · playbook に取って代わった層

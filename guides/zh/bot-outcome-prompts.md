@@ -2,6 +2,7 @@
 
 **目标：** 按已公开部署的真实写法写 outcome prompt——授予一个领域的所有权，而不是派任务清单。
 **级别：** 中级 · **用时：** 起草 20 分钟，校准一周
+**来源：** [Devin Bots 发布文](https://devin.ai/blog/introducing-devin-bots) + [Bots 官方文档](https://docs.devin.ai/work-with-devin/bots) + [built-with-devin](https://github.com/Till3005/built-with-devin#documented-deployments) 中的部署报告
 
 每个产出大数字的公开 bot 部署，开头都是一条指派*结果*的简短 prompt。本篇收集真实案例并反向拆解它们为什么有效。
 

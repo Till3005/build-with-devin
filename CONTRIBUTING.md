@@ -18,7 +18,7 @@ Guides that teach a **documented, reproducible** Devin usage:
 
 ## Format
 
-Follow the existing guide structure: goal/level/source header → pattern diagram → step-by-step → verbatim or reconstructed prompts (marked as such) → Verify it checklist → Pitfalls → Sources.
+Follow the existing guide structure: goal/level/source header → pattern diagram → step-by-step → verbatim or reconstructed prompts (marked as such) → Verify it checklist → Pitfalls → Sources. The maintainer quality contract is in [`ops/curriculum/quality-bar.md`](ops/curriculum/quality-bar.md).
 
 ## Rules
 
@@ -26,6 +26,10 @@ Follow the existing guide structure: goal/level/source header → pattern diagra
 - Numbers come from the cited deployment, not estimates
 - One guide per PR
 - After adding/removing a guide or editing `README.md`, run `python3 tools/sync.py` — it keeps the stats line and all six language READMEs in parity. CI fails on drift.
+
+## Maintainer automation
+
+The lean Devin Bot fleet that maintains this curriculum and the sister registry is defined in [`built-with-devin/ops/bot-fleet/`](https://github.com/Till3005/built-with-devin/tree/main/ops/bot-fleet). Curriculum-specific quality rules live in `ops/curriculum/`.
 
 ## License
 

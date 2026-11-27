@@ -72,9 +72,9 @@ A lição real do relato: a qualidade veio de *iterações* — "o anel desenha 
 
 ## Teste de conhecimento
 
-1. Por que o autor do Spraycash publicou cada prompt verbatim? *(A sequência de prompts *é* o artefato de design — direção de arte por conversa só é reproduzível se a conversa for.)*
+1. Por que o autor do Spraycash publicou cada prompt verbatim? *(A sequência de prompts é o artefato de design — direção de arte por conversa só é reproduzível se a conversa for.)*
 2. O que "imagem gerada + animação em camadas" exige que um mock de screenshot não exige? *(Assets entregáveis e um sistema de animação funcionando — a verificação é uma página renderizada, não a foto de uma.)*
-3. Quando direção por chat é melhor que uma ferramenta de design para landing pages? *(Quando a saída precisa ser código de produção de qualquer forma — a sessão de design *é* a implementação.)*
+3. Quando direção por chat é melhor que uma ferramenta de design para landing pages? *(Quando a saída precisa ser código de produção de qualquer forma — a sessão de design é a implementação.)*
 
 ## Demonstração — brief por mecanismo, refinamento por crítica, no Devin CLI v3000.14 (swe-2-flash-medium)
 

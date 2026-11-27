@@ -1,4 +1,4 @@
-# Guia 17 — Skills e plugins: a camada de empacotamento pós-playbook
+# Guia 16 — Skills e plugins: a camada de empacotamento pós-playbook
 
 **Objetivo:** codificar os procedimentos repetíveis da sua org como `SKILL.md` para que toda sessão e Bot os siga — e empacotar/compartilhar entre repositórios com plugins.
 **Nível:** intermediário · a camada que substituiu os playbooks

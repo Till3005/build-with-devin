@@ -8,4 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 tools/sync.py
+      - run: python3 tools/audit_curriculum.py
       - run: python3 tools/check_links.py

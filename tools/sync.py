@@ -13,7 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 LANGS = ['zh', 'ja', 'pt']
 
 def guide_links(md):
-    return sorted(set(re.findall(r'guides/[a-z0-9/-]+\.md', md)))
+    return sorted(set(re.findall(r'guides/[a-z0-9/-]+\.mdx?\b', md)))
 
 def main():
     en = (ROOT / 'README.md').read_text()

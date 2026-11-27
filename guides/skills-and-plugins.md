@@ -1,4 +1,4 @@
-# Guide 17 — Skills & plugins: the post-playbook packaging layer
+# Guide 16 — Skills & plugins: the post-playbook packaging layer
 
 **Goal:** encode your org's repeatable procedures as `SKILL.md` files so every session and Bot follows them — and package/share them across repos with plugins.
 **Level:** intermediate · the layer that replaced playbooks
