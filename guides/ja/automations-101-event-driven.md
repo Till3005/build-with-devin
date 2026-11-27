@@ -94,6 +94,8 @@ Automations ページ右上の **Create automation** ドロップダウンに 4 
 - GitHub トリガーは特定リポジトリを指名する必要がある
 - 多数運用するなら **Terraform provider** で宣言的管理
 - v3 のセッション作成 API は `memory_enabled: false` を受け付ける——起動されたセッション（とその子セッション）はメモリ無効で動く。実行間に学習コンテキストを持ち越したくない automation 向け
+- 11 月 26 日以降、dispatch ステータス通知は v3 API の `notifications.slack` で Slack チャンネルへ投稿できるようになった。フリートの可視性には使うが、作業結果そのものの代替にはしない
+- 11 月 25 日以降、mention または assignment で起動した Jira Rovo セッションは、設定済みの Jira playbooks を適用し、work item の添付ファイルも受け取るようになった。label マクロは playbook に残し、添付ファイルに証拠を持たせる
 
 ## 実録ウォークスルー — automation を実際に作成・発火・検証、Devin Desktop v3.14（Pro プラン）で収録
 

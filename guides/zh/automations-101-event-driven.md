@@ -94,6 +94,8 @@ Automations 页面右上 **Create automation** 下拉里有四条创建路径：
 - GitHub 触发器必须指定具体 repo
 - automation 多了用 **Terraform provider** 声明式管理
 - v3 的会话创建 API 接受 `memory_enabled: false`——派生会话（及其子会话）全程不开记忆，适合不希望跨运行携带学习上下文的 automation
+- 自 11 月 26 日起，dispatch 状态通知可以通过 v3 API 的 `notifications.slack` 发到 Slack 频道；它是舰队可见性，不是工作结果本身
+- 自 11 月 25 日起，通过 mention 或 assignment 启动的 Jira Rovo 会话会套用配置好的 Jira playbooks，并接收 work item 附件；label 宏留在 playbook 里，让附件承载证据
 
 ## 实录演示 —— 真建、真触发、真验证一个 automation，录于 Devin Desktop v3.14（Pro 方案）
 
