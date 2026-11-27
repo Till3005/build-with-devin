@@ -19,6 +19,7 @@ Você também pode dizer "publish this as an App" dentro de qualquer sessão que
 ## Loop de atualização
 
 - **Edit in session** na página da App → descreva a mudança → o Devin constrói uma nova versão na mesma URL. Toda atualização é um deployment versionado; se uma versão nova falhar ao iniciar, a anterior continua servindo.
+- Desde 25/11, Apps aparecem na barra lateral do app web, e o element picker da aba Browser permite apontar Devin para um elemento visual em vez de descrevê-lo.
 - **Mantida fresca por automação:** ligue uma automação (Guia 6) para re-deployar em agenda ou em mudanças de branch — um dashboard que puxa dados frescos toda manhã é o uso canônico.
 
 ## Como rodam (as partes que importam)

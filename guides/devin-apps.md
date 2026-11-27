@@ -19,6 +19,7 @@ You can also say "publish this as an App" inside any session that produced a bro
 ## Update loop
 
 - **Edit in session** on the App's page → describe the change → Devin builds a new version at the same URL. Every update is a versioned deployment; if a new version fails to start, the previous one keeps serving.
+- Since Nov 25, Apps appear in the web app's left sidebar, and the Browser tab's element picker lets you point Devin at a visual element instead of describing it.
 - **Automation-kept-fresh:** wire an automation (Guide 6) to redeploy on a schedule or on branch changes — a dashboard that pulls fresh data every morning is the canonical use.
 
 ## How they run (the parts that matter)
