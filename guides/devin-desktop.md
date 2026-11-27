@@ -22,7 +22,7 @@ The Command Center is the session hub — not an editor:
 - **Session header "..." menu**: the session's MCP servers — toggle one, or re-authenticate it, per session.
 - **Devin Review**: the PR walkthrough (diff, bugs, test recording) opens as a page in the same window — the review step of the loop in [Guide 19](the-session-loop.md).
 - **Split panes** (Nov 23): `Option/Alt+click` a session link to open it side by side — compare two runs or monitor a long session while starting another.
-- **`Cmd/Ctrl+K` session search**: session search moved into the command palette; the inline Sessions-sidebar search is gone.
+- **`Cmd/Ctrl+K` command palette**: session search moved here and the inline Sessions-sidebar search is gone. Since Nov 24 it has All/Sessions/Bots/Apps/Actions tabs (Tab/Shift+Tab to switch) plus page results for left-rail destinations.
 
 ## Devin Local — the daemon change
 
@@ -51,7 +51,7 @@ Local Hands is **not Devin Connect** (the private-network feature). Use it when 
 
 - The embedded IDE saves on **Cmd/Ctrl+S** (no auto-save); unsaved tabs show a dot.
 - In a Devin Local browser preview, **picking a page element or console output adds it to the composer** — point at the bug instead of describing it.
-- The Files tab previews PDFs, renders CSV/TSV as tables, and plays media.
+- The Files tab previews PDFs, renders CSV/TSV as tables, and plays media. Since Nov 26, the Changes pane also shows the contents of files Devin deleted.
 
 ## Model notes — SWE-2.1
 

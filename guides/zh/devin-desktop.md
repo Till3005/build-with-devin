@@ -51,7 +51,7 @@ Local Hands **不是 Devin Connect**（私有网络功能）。只在云 agent �
 
 - 内嵌 IDE 用 **Cmd/Ctrl+S** 手动保存（不再自动保存）；未保存标签带个点。
 - 在 Devin Local 的浏览器预览里，**点选一个页面元素或 console 输出会直接放进 composer**——指着 bug 而不是描述 bug。
-- Files 标签能预览 PDF、把 CSV/TSV 渲染成表格、播放媒体。
+- Files 标签能预览 PDF、把 CSV/TSV 渲染成表格、播放媒体。自 11 月 26 日起，Changes 页还会显示 Devin 删除文件的内容。
 
 ## 模型说明 —— SWE-2.1
 
