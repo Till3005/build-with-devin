@@ -94,6 +94,8 @@ Notas que mordem as pessoas:
 - Um trigger de GitHub precisa nomear um repo específico
 - Gerencie automações declarativamente com o **provider Terraform** se você roda muitas
 - A API v3 de criação de sessão aceita `memory_enabled: false` — a sessão criada (e suas filhas) roda com memória desligada, para automações que não devem carregar contexto aprendido entre execuções
+- Desde 26/11, notificações de status de dispatch podem ser postadas num canal Slack via `notifications.slack` da API v3; use para visibilidade da frota, não como substituto do resultado do trabalho
+- Desde 25/11, sessões do Jira Rovo iniciadas por menção ou atribuição aplicam seus playbooks Jira configurados e recebem os anexos do work item; mantenha macros de label no playbook e deixe os anexos carregarem evidência
 
 ## Passo a passo real — uma automação criada, disparada e verificada no Devin Desktop v3.14 (plano Pro)
 

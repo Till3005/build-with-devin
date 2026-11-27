@@ -94,6 +94,8 @@ Notes that bite people:
 - A GitHub trigger must name a specific repo
 - Manage automations declaratively with the **Terraform provider** if you're running many
 - The v3 session-create API accepts `memory_enabled: false` — the spawned session (and its child sessions) runs with memory off, for automations that shouldn't carry learned context between runs
+- As of Nov 26, dispatch-status notifications can post to a Slack channel through the v3 API's `notifications.slack`; use it for fleet visibility, not as the work result itself
+- Since Nov 25, Jira Rovo sessions started by mention or assignment apply your configured Jira playbooks and receive the work item's attachments; keep label macros in the playbook and let attachments carry evidence
 
 ## Walkthrough — an automation built, fired and verified on Devin Desktop v3.14 (Pro plan)
 
