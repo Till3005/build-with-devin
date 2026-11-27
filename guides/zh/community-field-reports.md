@@ -101,6 +101,8 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 
 **Hamming 的「Devinable」框架。** Hamming 不问「Devin 能不能做这个任务」，而是把活分成 Devinable 与非 Devinable：任务必须同时满足有界、规格清晰、有客观评估（测试、检查、数字）才算合格。在此之上他们有意识地让代码库对 agent 友好：函数式优先于 OOP，评估驱动优先于无断言测试。结果：Devin 贡献全公司 25% 代码量，与两位人类工程师并列第一。抄法：这套过滤器明天就能用——派活前检查「有界+规格+客观评估」，缺一样，失败就是你的任务形状问题，不是模型问题。防什么：为 agent 优化代码库是真金白银的投入——只有 fleet 规模够大才回本。
 
+**Ahead 的试点过滤器。** Ahead 内部企业技术团队的试点在四周里测试了 8 个生产用例，7 个成功；唯一失败归因于 story 选择，而不是工具。操作形状和结果同样重要：Devin Local 用于人机协作，Devin Cloud 跑在无生产权限的受限账号下，PR 由人类审查后才合并；前置条件是健康的 GitHub 仓库、扎实的 Confluence 文档、定义清楚的 Jira stories。抄法：扩大试点前，把 story 质量和文档卫生当作 preflight 门槛。防什么：报告里的 onboarding 对比（~16 小时 vs 6–9 周、估算节省 $37k）是内部估算，不是独立基准。
+
 **Cognition 自己的成绩单。** 这份 18 个月表现复核是厂商里少见的诚实：PR 合并率 34%→67%，漏洞修复比人快 20 倍（30 分钟→1.5 分钟/个），ETL 迁移 10 倍，测试覆盖率常见地从 50–60% 升到 80–90%，自家 webapp 约三分之一 commit 是 Devin 写的——而且它点名了自己的弱点：需求模糊、中途改范围、软技能（不会反驳一个烂计划）。抄法：拿它在组织内部设预期——Devin 的强项是机械可测的，它的失败模式恰好是一份好 brief 能防住的那几种。防什么：所有强项数字都是厂商自报——这份复核本身是样板：引用任何数字前，先照它的方法审计你自己的 fleet。
 
 **Ryan Carson 的一人舰队。** Untangle 的独立创始人以 ~$20k/月同时跑 ~15 个 Devin agent——调度不用仪表盘，用文件夹系统加一张写着 P0 的纸，因为那个规模下真正的瓶颈是*他的*注意力，不是 agent 吞吐。两个 playbook 撑起整个运营：「Watchdog」盯每个律所账号，一个人顶替整个客户成功团队；「LAN PR」每天合 ~40 个 PR——review 回路 + 视频走查 + auto-merge，没有 QA 审阅人。抄法：扩展的单位是「每个面一份命名 playbook」，不是更多 agent。防什么：他几乎全面弃用本地 agent——长回路归云 agent；唯一保留的例外是用 Codex 跑范围卡死的设计稿实现。
@@ -149,3 +151,4 @@ Cognition 自己委派最多的任务：**前端修复、版本升级、文档�
 - [Cognition — Devin's 2025 Performance Review](https://cognition.com/blog/devin-annual-performance-review-2025) — strengths and named weaknesses, 18 months of internal numbers
 - [Tavrn customer story](https://devin.ai/customers/tavrn) · [Hamming customer story](https://devin.ai/customers/hamming) · [Crosby customer story](https://devin.ai/customers/crosby) — fleet telemetry, the "Devinable" task filter, lawyer-in-the-loop triage
 - [AI Engineer — Walden Yan: 40× merged PRs on 2.7× engineers](https://aietalks.com/talks/40x-more-merged-prs-with-2-7x-the-engineers) — Cognition's internal software-factory talk
+- [Ahead Replay — 四周 Devin 试点](https://rss.com/podcasts/craig-meeting-recaps/3240600/) —— 8 个生产用例 7 个成功；失败源于 story 选择，云端受限账号 + 人类 PR 审查

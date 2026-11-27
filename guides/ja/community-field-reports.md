@@ -101,6 +101,8 @@ Cognition 自身が最も委任するタスク：**フロントエンド修正�
 
 **Hamming の「Devinable」フレームワーク。** Hamming は「Devin にできるか」ではなく、タスクを Devinable / 非 Devinable に振り分ける：有界・仕様が明確・客観的評価（テスト・チェック・数値）があるものだけが合格。その上でコードベース自体をエージェント向けに最適化：OOP より関数型、無アサーションテストより eval 駆動。結果：Devin が全コード量の 25% を生成し、人間エンジニア 2 人と並ぶトップ貢献者。真似る点：明日から使えるフィルター——派遣前に「有界+仕様+客観評価」を確認。どれか欠けたら、失敗はモデルではなくタスクの形の問題。注意点：エージェント向けコードベース最適化は本物の投資——艦隊規模が見合って初めて回収できる。
 
+**Ahead のパイロットフィルター。** Ahead 社内の enterprise-tech パイロットは 4 週間で 8 件の本番ユースケースを検証し、7 件が成功。失敗した 1 件はツールではなく story 選択に起因するとされた。結果と同じく重要なのは運用形状である。Devin Local は補助作業に使い、Devin Cloud は本番アクセスのない制限アカウントで動かし、PR は人間がレビューしてからマージする。前提条件は健全な GitHub リポジトリ、十分な Confluence ドキュメント、明確な Jira stories。真似る点：パイロット拡大前に story 品質とドキュメント衛生を preflight ゲートにする。注意点：報告された onboarding 比較（~16 時間 vs 6–9 週間、推定 $37k 削減）は社内推計であって独立ベンチマークではない。
+
 **Cognition 自身の通信簿。** 18 ヶ月のパフォーマンスレビューはベンダーとして異例に正直：PR マージ率 34%→67%、脆弱性修正は人間の 20 倍速（30 分→1.5 分/件）、ETL 移行 10 倍、カバレッジは概ね 50–60%→80–90%、自社 webapp コミットの約 1/3 が Devin 作——弱点も名指ししている：曖昧な要件、途中でのスコープ変更、ソフトスキル（悪い計画に異議を唱えない）。真似る点：組織内の期待値設定に使う——Devin の強みは機械的で測定可能、失敗モードは良い brief が防げるものだけ。注意点：強みの数字はすべてベンダー公表——このレビュー自体が、どの数字も引用する前に自艦隊を監査する方法の見本。
 
 **Ryan Carson のワンマン艦隊。** Untangle のソロファウンダーは月 ~$20k で ~15 台の Devin エージェントを同時稼働——統制はダッシュボードではなくフォルダシステム + 紙の P0 リスト。その規模で本当のボトルネックはエージェントのスループットではなく*彼の*注意力だから。運用を支える 2 つの playbook：「Watchdog」が全法律事務所アカウントを監視し一人でカスタマーサクセスを担い、「LAN PR」が ~40 PR/日を締める——レビューループ + ビデオウォークスルー + 自動マージ、QA レビュアーなし。真似る点：スケールの単位は「面ごとの命名済み playbook」であってエージェント数ではない。注意点：ローカルエージェントはほぼ卒業——長いループはクラウド担当。残した例外は Codex での厳密スコープの設計書ビルドだけ。
@@ -148,3 +150,4 @@ Cognition 自身が最も委任するタスク：**フロントエンド修正�
 - [Cognition — Devin's 2025 Performance Review](https://cognition.com/blog/devin-annual-performance-review-2025) — strengths and named weaknesses, 18 months of internal numbers
 - [Tavrn customer story](https://devin.ai/customers/tavrn) · [Hamming customer story](https://devin.ai/customers/hamming) · [Crosby customer story](https://devin.ai/customers/crosby) — fleet telemetry, the "Devinable" task filter, lawyer-in-the-loop triage
 - [AI Engineer — Walden Yan: 40× merged PRs on 2.7× engineers](https://aietalks.com/talks/40x-more-merged-prs-with-2-7x-the-engineers) — Cognition's internal software-factory talk
+- [Ahead Replay — 4 週間の Devin パイロット](https://rss.com/podcasts/craig-meeting-recaps/3240600/) — 本番 8 件中 7 件成功；失敗は story 選択、クラウド制限アカウント + 人間の PR レビュー
