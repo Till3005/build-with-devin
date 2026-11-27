@@ -51,7 +51,7 @@ Local Hands **não é Devin Connect** (o recurso de rede privada). Use quando o 
 
 - O IDE embutido salva com **Cmd/Ctrl+S** (sem auto-save); abas não salvas mostram um ponto.
 - No preview do navegador do Devin Local, **selecionar um elemento da página ou saída do console adiciona ao composer** — aponte o bug em vez de descrevê-lo.
-- A aba Files pré-visualiza PDFs, renderiza CSV/TSV como tabelas e toca mídia.
+- A aba Files pré-visualiza PDFs, renderiza CSV/TSV como tabelas e toca mídia. Desde 26/11, o painel Changes também mostra o conteúdo de arquivos que Devin apagou.
 
 ## Notas de modelo — SWE-2.1
 
